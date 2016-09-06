@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/title"
+                android:id="@+id/inc"/>
+
+            <cn.bingoogolapple.bgabanner.BGABanner
+                android:id="@+id/banner_main_default"
+                style="@style/BannerDefaultStyle"
+                android:background="@color/white"
+                app:banner_pointGravity="bottom|right"
+                app:banner_transitionEffect="depth"
+                android:layout_marginTop="5dp"/>
+
+            <include layout="@layout/home_fragment1" />
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:tabBackground="@color/not_enough_business_consumer_"
+                app:tabIndicatorColor="@color/flight_title_orange"
+                app:tabSelectedTextColor="@color/flight_title_orange"
+                app:tabTextColor="@color/black" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

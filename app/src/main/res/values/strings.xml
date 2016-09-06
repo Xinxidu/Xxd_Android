@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">XXD</string>
+    <string name="home">首页</string>
+
+    <!-- Error View -->
+    <string name="error_view_click_to_refresh">点击屏幕,重新加载</string>
+    <string name="error_view_no_data">暂无内容</string>
+    <string name="error_view_loading">加载中…</string>
+    <string name="error_view_load_error_click_to_refresh">内容加载失败\r\n点击重新加载</string>
+    <string name="error_view_network_error_click_to_refresh">没有可用的网络</string>
+    <string name="tip_network_error">没有可用的网络</string>
+
+    <string name="unlogin">未登录，请先登录</string>
+    <string name="unlogin_tip">您还未登录\r\n或网络延迟</string>
+    <string name="my_information_unlogin_tips">未登录</string>
+
+    <string name="hint_username">输入账号/邮箱</string>
+    <string name="hint_password">密码</string>
+    <string name="login">登录</string>
+    <string name="network_err">加载数据失败</string>
+
+    <string name="task">实时快讯</string>
+    <string name="taskhistory">金银牛评</string>
+
+    <string-array name="tab_task">
+        <item>@string/task</item>
+        <item>@string/taskhistory</item>
+    </string-array>
+    <!--行情tabhost-->
+    <string name="huatongboyin">华通铂银</string>
+    <string name="guojiguijinshu">国际贵金属</string>
+    <string name="shangqisuo">上期所</string>
+    <string name="dashangsuo">大商所</string>
+    <string name="zhengshangsuo">郑商所</string>
+    <string name="zhongjinsuo">中金所</string>
+    <string name="shangjinsuo">上金所</string>
+    <string name="lme">LME</string>
+    <string name="cme">CME</string>
+    <string name="ice">ICE</string>
+    <string name="quanjiuwaihui">劝酒外汇</string>
+    <string name="quanqiuzhishu">全球指数</string>
+
+    <string-array name="tab_market">
+        <item>@string/huatongboyin</item>
+        <item>@string/guojiguijinshu</item>
+        <item>@string/shangqisuo</item>
+        <item>@string/dashangsuo</item>
+        <item>@string/zhengshangsuo</item>
+        <item>@string/zhongjinsuo</item>
+        <item>@string/shangjinsuo</item>
+        <item>@string/lme</item>
+        <item>@string/cme</item>
+        <item>@string/ice</item>
+        <item>@string/quanjiuwaihui</item>
+        <item>@string/quanqiuzhishu</item>
+
+
+
+
+
+
+    </string-array>
+
+</resources>
