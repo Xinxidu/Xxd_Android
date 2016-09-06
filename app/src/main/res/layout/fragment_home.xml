@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/inc"
+        layout="@layout/title" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,16 +19,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <include layout="@layout/title"
-                android:id="@+id/inc"/>
-
             <cn.bingoogolapple.bgabanner.BGABanner
                 android:id="@+id/banner_main_default"
-                style="@style/BannerDefaultStyle"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="1dp"
                 android:background="@color/white"
                 app:banner_pointGravity="bottom|right"
-                app:banner_transitionEffect="depth"
-                android:layout_marginTop="5dp"/>
+                app:banner_transitionEffect="depth" />
 
             <include layout="@layout/home_fragment1" />
 
@@ -40,7 +42,7 @@
             <android.support.v4.view.ViewPager
                 android:id="@+id/container"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"/>
+                android:layout_height="300dp" />
 
         </LinearLayout>
     </ScrollView>

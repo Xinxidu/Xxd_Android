@@ -1,5 +1,7 @@
 package com.xinxidu.xxd.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -19,6 +21,11 @@ import com.xinxidu.xxd.fragments.TradeFragment;
  * Created by nick on 15/10/21.
  */
 public class MainActivity extends BaseActivity {
+
+    public static void startMainActivity(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
+    }
 
     private FrameLayout mHomeContent;
     private RadioGroup mHomeRadioGroup;
@@ -125,8 +132,6 @@ public class MainActivity extends BaseActivity {
             return fragment;
         }
     };
-
-
 
 
 }

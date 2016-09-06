@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="50dip"
-    android:background="@color/dan_back"
+    android:background="@color/common_color_seven_fbaela"
     android:orientation="horizontal">
 
     <RelativeLayout

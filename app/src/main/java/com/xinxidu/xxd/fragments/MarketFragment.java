@@ -10,6 +10,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
 
@@ -31,6 +33,10 @@ public class MarketFragment extends Fragment {
         tabTitle = getResources().getStringArray(R.array.tab_market);
         mTabs= (TabLayout) view.findViewById(R.id.market_tabs);
         mContainer= (ViewPager) view.findViewById(R.id.market_container);
+        RelativeLayout back= (RelativeLayout) view.findViewById(R.id.back);
+        TextView tv_title= (TextView) view.findViewById(R.id.tv_title);
+        tv_title.setText("行情");
+        back.setVisibility(View.GONE);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getActivity().getSupportFragmentManager());//getSupportFragmentManager()
         mContainer.setAdapter(mSectionsPagerAdapter);
         mTabs.setupWithViewPager(mContainer);
@@ -48,7 +54,7 @@ public class MarketFragment extends Fragment {
 //                case 0:
 //                    return new TimeNewsFragment();
                 default:
-                    return new TimeNewsFragment();
+                    return new MarketItemFragment();
             }
         }
 
@@ -60,6 +66,14 @@ public class MarketFragment extends Fragment {
         @Override
         public CharSequence getPageTitle(int position) {
             return tabTitle[position];
+        }
+    }
+    //重写setMenuVisibility方法，不然会出现叠层的现象
+    @Override
+    public void setMenuVisibility(boolean menuVisibile) {
+        super.setMenuVisibility(menuVisibile);
+        if (this.getView() != null) {
+            this.getView().setVisibility(menuVisibile ? View.VISIBLE : View.GONE);
         }
     }
 }

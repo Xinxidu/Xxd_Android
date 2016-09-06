@@ -6,35 +6,102 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.ListFragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.activity.HotActivity;
+import com.xinxidu.xxd.activity.HotTradeActivity;
 import com.xinxidu.xxd.base.App;
 import com.xinxidu.xxd.bean.Engine;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindArray;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import cn.bingoogolapple.bgabanner.BGABanner;
 
 public class HomeFagment extends Fragment {
 
+    @BindView(R.id.back)
+    RelativeLayout back;
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
+    @BindView(R.id.tv_title_ok)
+    TextView tvTitleOk;
+    @BindView(R.id.ok)
+    RelativeLayout ok;
+    @BindView(R.id.base_title_layout)
+    RelativeLayout baseTitleLayout;
+    @BindView(R.id.banner_main_default)
+    BGABanner bannerMainDefault;
+    @BindView(R.id.bt_trade1)
+    ImageView btTrade1;
+    @BindView(R.id.bt_trade)
+    RelativeLayout btTrade;
+    @BindView(R.id.bt_activity1)
+    ImageView btActivity1;
+    @BindView(R.id.bt_activity)
+    RelativeLayout btActivity;
+    @BindView(R.id.bt_news1)
+    ImageView btNews1;
+    @BindView(R.id.bt_news)
+    RelativeLayout btNews;
+    @BindView(R.id.bt_calendar1)
+    ImageView btCalendar1;
+    @BindView(R.id.bt_calendar)
+    RelativeLayout btCalendar;
+    @BindView(R.id.textView)
+    TextView textView;
+    @BindView(R.id.textView2)
+    TextView textView2;
+    @BindView(R.id.textView3)
+    TextView textView3;
+    @BindView(R.id.textView4)
+    TextView textView4;
+    @BindView(R.id.view)
+    TextView view;
+    @BindView(R.id.textView6)
+    TextView textView6;
+    @BindView(R.id.textView7)
+    TextView textView7;
+    @BindView(R.id.textView8)
+    TextView textView8;
+    @BindView(R.id.textView9)
+    TextView textView9;
+    @BindView(R.id.textView5)
+    TextView textView5;
+    @BindView(R.id.bt_now_open)
+    Button btNowOpen;
+    @BindView(R.id.imageView)
+    ImageView imageView;
+    @BindView(R.id.textView10)
+    TextView textView10;
+    @BindView(R.id.bt_live_telecast)
+    Button btLiveTelecast;
+    @BindView(R.id.textView11)
+    TextView textView11;
+    @BindView(R.id.iv_more)
+    ImageView ivMore;
+    @BindView(R.id.tabs)
+    TabLayout tabs;
+    @BindView(R.id.container)
+    ViewPager container;
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private BGABanner mDefaultBanner;
     private List<View> mDefaultViews;
     private Engine mEngine;
-    private TextView news,assess;
-    private TabLayout mTabs;
+    private TextView news, assess;
     private ViewPager mContainer;
     private String[] tabTitle;
 
@@ -46,17 +113,41 @@ public class HomeFagment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_home, null);
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        ButterKnife.bind(this, view);
         tabTitle = getResources().getStringArray(R.array.tab_task);
-        mTabs= (TabLayout) view.findViewById(R.id.tabs);
-        mContainer= (ViewPager) view.findViewById(R.id.container);
+        mContainer = (ViewPager) view.findViewById(R.id.container);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getActivity().getSupportFragmentManager());//getSupportFragmentManager()
         mContainer.setAdapter(mSectionsPagerAdapter);
-        mTabs.setupWithViewPager(mContainer);
+        tabs.setupWithViewPager(mContainer);
         initDefault(view);
+        tvTitle.setText("主页");
+        back.setVisibility(View.GONE);
         return view;
     }
+
+    @OnClick({R.id.bt_trade, R.id.bt_activity, R.id.bt_news, R.id.bt_calendar, R.id.bt_now_open, R.id.bt_live_telecast, R.id.iv_more})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.bt_trade:
+                HotTradeActivity.startHotTradeActivity(getActivity());
+                break;
+            case R.id.bt_activity:
+                HotActivity.startHotActivity(getActivity());
+                break;
+            case R.id.bt_news:
+                break;
+            case R.id.bt_calendar:
+                break;
+            case R.id.bt_now_open:
+                break;
+            case R.id.bt_live_telecast:
+                break;
+            case R.id.iv_more:
+                break;
+        }
+    }
+    //TabLayout+个fragment
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -90,7 +181,7 @@ public class HomeFagment extends Fragment {
         mDefaultViews = getViews(4);
         mDefaultBanner.setViews(mDefaultViews);
 
-       // BannerModel bannerModel = new BannerModel();
+        // BannerModel bannerModel = new BannerModel();
         List<String> imgs = new ArrayList<String>();
         imgs.add("http://120.25.164.72/resources/index_banner.png");
         imgs.add("http://120.25.164.72/resources/index_banner.png");
@@ -104,23 +195,23 @@ public class HomeFagment extends Fragment {
         tips.add("西都");
         tips.add("西都");
 
-                SimpleDraweeView simpleDraweeView;
-                for (int i = 0; i < mDefaultViews.size(); i++) {
-                    simpleDraweeView = (SimpleDraweeView) mDefaultViews.get(i);
-                    simpleDraweeView.setImageURI(Uri.parse(imgs.get(i)));
+        SimpleDraweeView simpleDraweeView;
+        for (int i = 0; i < mDefaultViews.size(); i++) {
+            simpleDraweeView = (SimpleDraweeView) mDefaultViews.get(i);
+            simpleDraweeView.setImageURI(Uri.parse(imgs.get(i)));
 
-                    // 为每一页添加点击事件
-                    final int finalPosition = i;
-                    simpleDraweeView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
+            // 为每一页添加点击事件
+            final int finalPosition = i;
+            simpleDraweeView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
 //                            Intent intent = new Intent(getActivity(), ProductListActivity.class);
 //                            getActivity().startActivity(intent);
-                        }
-                    });
                 }
-                mDefaultBanner.setTips(tips);
+            });
+        }
+        mDefaultBanner.setTips(tips);
     }
 
     private List<View> getViews(int count) {
