@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
@@ -29,6 +28,7 @@ public class TimeNewsAdapter extends RecyclerView.Adapter<TimeNewsAdapter.ViewHo
         mItemList = itemList;
         this.mContext = context;
     }
+
     public void setData(List<TimeNewsEvent> timeList) {
         //mItemList.clear();
         mItemList.addAll(timeList);
@@ -37,6 +37,7 @@ public class TimeNewsAdapter extends RecyclerView.Adapter<TimeNewsAdapter.ViewHo
     public TimeNewsAdapter(Context context) {
         mContext = context;
     }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.time_new_items, parent, false);
@@ -60,14 +61,11 @@ public class TimeNewsAdapter extends RecyclerView.Adapter<TimeNewsAdapter.ViewHo
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-
-        @BindView(R.id.text)
-        TextView mText;
+        @BindView(R.id.tv_time)
+        TextView tvTime;
         @BindView(R.id.tv_up_where)
-        TextView mTvUpWhere;
-        LinearLayout mLlListItem;
+        TextView tvUpWhere;
         View itemView;
-
         ViewHolder(View view) {
             super(view);
             this.itemView = view;
