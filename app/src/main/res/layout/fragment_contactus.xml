@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ContactUsFragment"
+    tools:showIn="@layout/activity_main_contactus">
+    <include layout="@layout/title"
+        android:id="@+id/ttt"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/dan_back"
+        android:layout_below="@+id/ttt">
+
+        <Button
+            android:id="@+id/btn_tradeCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="交易所中心"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/btn_about_xinxidu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="鑫西都简介"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/btn_tradeCenter"
+            android:layout_toEndOf="@+id/btn_tradeCenter" />
+
+        <Button
+            android:id="@+id/btn_xinxidu_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="鑫西都新闻"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/btn_about_xinxidu" />
+
+        <Button
+            android:id="@+id/btn_contact_us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="联系我们"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/btn_xinxidu_news"
+            android:layout_toEndOf="@+id/btn_xinxidu_news" />
+    </RelativeLayout>
+</RelativeLayout>
