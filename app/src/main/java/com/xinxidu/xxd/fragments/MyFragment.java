@@ -13,7 +13,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.activity.ContactUsActivity;
+import com.xinxidu.xxd.activity.AboutXiDuActivity;
+
+import com.xinxidu.xxd.activity.MyShiPanAccountActivity;
 import com.xinxidu.xxd.view.CircleImageView;
 
 import butterknife.BindView;
@@ -100,19 +102,20 @@ public class MyFragment extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_my_login:
-                Log.e("", "点击登录了");
+                Log.e("","点击登录了");
                 break;
             case R.id.btn_my_register:
                 Log.v("","点击注册了");
                 break;
             case R.id.my_account:
+                MyShiPanAccountActivity.startMyShiPanAccountActivity(getActivity());
                 break;
             case R.id.my_selection:
                 break;
             case R.id.my_event:
                 break;
             case R.id.my_aboutus:
-                ContactUsActivity.startContactUsActivity(getActivity());
+                AboutXiDuActivity.startAboutXiDuActivity(getActivity());
                 break;
             case R.id.my_contactus:
                 break;
