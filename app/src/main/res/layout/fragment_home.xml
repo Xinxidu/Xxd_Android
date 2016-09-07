@@ -1,49 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-    <include
-        android:id="@+id/inc"
-        layout="@layout/title" />
+    <include layout="@layout/title"
+        android:id="@+id/inc"/>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/inc">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <cn.bingoogolapple.bgabanner.BGABanner
                 android:id="@+id/banner_main_default"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="1dp"
+                android:layout_height="120dp"
                 android:background="@color/white"
                 app:banner_pointGravity="bottom|right"
-                app:banner_transitionEffect="depth" />
+                app:banner_transitionEffect="depth"
+                android:layout_marginTop="5dp"/>
 
-            <include layout="@layout/home_fragment1" />
-
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tabs"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                app:tabBackground="@color/not_enough_business_consumer_"
-                app:tabIndicatorColor="@color/flight_title_orange"
-                app:tabSelectedTextColor="@color/flight_title_orange"
-                app:tabTextColor="@color/black" />
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/banner_main_default">
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/container"
+                <include layout="@layout/home_fragment1"/>
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:tabBackground="@color/not_enough_business_consumer_"
+                    app:tabIndicatorColor="@color/flight_title_orange"
+                    app:tabSelectedTextColor="@color/flight_title_orange"
+                    app:tabTextColor="@color/black" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"/>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+
+</RelativeLayout>

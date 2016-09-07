@@ -50,7 +50,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="16dip"
                 android:textColor="@color/white"
-                android:textSize="22sp"/>
+                android:textSize="16sp"/>
         </RelativeLayout>
 
     </RelativeLayout>

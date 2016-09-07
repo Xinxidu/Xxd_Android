@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="09-07 16:19"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/iv_country_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tv_time"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/australia" />
+
+        <TextView
+            android:id="@+id/tv_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_country_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="美国"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="美国8月26日当前周ECRI领先指标"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_top_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_index"
+            android:layout_marginTop="15dp"
+            android:text="前值"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_forecast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_top_value"
+            android:layout_centerHorizontal="true"
+            android:text="预测"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_actual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_forecast"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/tv_forecast"
+            android:text="实际"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_top_value_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_top_value"
+            android:layout_marginTop="15dp"
+            android:text="138.1"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_forecast_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_top_value_num"
+            android:layout_centerHorizontal="true"
+            android:text="136.0"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_actual_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_forecast_num"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/tv_forecast_num"
+            android:text="138.43"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dan_back"/>
+
+</LinearLayout>

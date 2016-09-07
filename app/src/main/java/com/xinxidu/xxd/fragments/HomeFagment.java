@@ -17,6 +17,8 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.activity.BroadcastNewsActivity;
+import com.xinxidu.xxd.activity.FinanceCalendarActivity;
 import com.xinxidu.xxd.activity.HotActivity;
 import com.xinxidu.xxd.activity.HotTradeActivity;
 import com.xinxidu.xxd.base.App;
@@ -136,8 +138,10 @@ public class HomeFagment extends Fragment {
                 HotActivity.startHotActivity(getActivity());
                 break;
             case R.id.bt_news:
+                BroadcastNewsActivity.startBroadcastNewsActivity(getActivity());
                 break;
             case R.id.bt_calendar:
+                FinanceCalendarActivity.startFinanceCalendarActivity(getActivity());
                 break;
             case R.id.bt_now_open:
                 break;
