@@ -25,6 +25,10 @@
         <activity android:name=".activity.HotActivity" />
         <activity android:name=".activity.BroadcastNewsActivity"/>
         <activity android:name=".activity.FinanceCalendarActivity"/>
+        <activity android:name=".activity.AboutXiDuActivity"/>
+        <activity android:name=".activity.AboutXiDuDetailActivity"/>
+        <activity android:name=".activity.MyShiPanAccountActivity"/>
+        <activity android:name=".activity.AccountInfoActivity"/>
     </application>
 
 </manifest>
