@@ -21,6 +21,7 @@ import com.xinxidu.xxd.activity.BroadcastNewsActivity;
 import com.xinxidu.xxd.activity.FinanceCalendarActivity;
 import com.xinxidu.xxd.activity.HotActivity;
 import com.xinxidu.xxd.activity.HotTradeActivity;
+import com.xinxidu.xxd.activity.HuaTongLoginActivity;
 import com.xinxidu.xxd.base.App;
 import com.xinxidu.xxd.bean.Engine;
 
@@ -144,6 +145,7 @@ public class HomeFagment extends Fragment {
                 FinanceCalendarActivity.startFinanceCalendarActivity(getActivity());
                 break;
             case R.id.bt_now_open:
+                HuaTongLoginActivity.startHuaTongLoginActivity(getActivity());
                 break;
             case R.id.bt_live_telecast:
                 break;

@@ -1,22 +1,26 @@
 [
     {
-        "merged": "/Users/aaronlee/Desktop/XXD/XXD/F:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\F:\\Android project\\project\\XXD\\Bannerlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "/Users/aaronlee/Desktop/XXD/XXD/F:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\F:\\Android project\\project\\XXD\\Bannerlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "C:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\F:\\Android\\Bannerlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\F:\\Android\\Bannerlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
-        "merged": "/Users/aaronlee/Desktop/XXD/XXD/Bannerlibrary/build/intermediates/res/merged/androidTest/debug/color-v23/abc_color_highlight_material.xml",
-        "source": "/Users/aaronlee/Desktop/XXD/XXD/Bannerlibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color-v23/abc_color_highlight_material.xml"
+        "merged": "C:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\F:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\F:\\Android project\\project\\XXD\\Bannerlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\F:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\F:\\Android project\\project\\XXD\\Bannerlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
-        "merged": "/Users/aaronlee/Desktop/XXD/XXD/F:\\Android\\Bannerlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "/Users/aaronlee/Desktop/XXD/XXD/F:\\Android\\Bannerlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "C:\\Users\\limingquan\\Desktop\\Xxd_Android\\Bannerlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\limingquan\\Desktop\\Xxd_Android\\Bannerlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
-        "merged": "/Users/aaronlee/Desktop/XXD/XXD/C:\\Users\\limingquan\\Desktop\\XXD\\Bannerlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "/Users/aaronlee/Desktop/XXD/XXD/C:\\Users\\limingquan\\Desktop\\XXD\\Bannerlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "C:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\Bannerlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\Bannerlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
-        "merged": "/Users/aaronlee/Desktop/XXD/XXD/F:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\Bannerlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "/Users/aaronlee/Desktop/XXD/XXD/F:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\Bannerlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "C:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\C:\\Users\\limingquan\\Desktop\\XXD\\Bannerlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\C:\\Users\\limingquan\\Desktop\\XXD\\Bannerlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\F:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\Bannerlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\F:\\Users\\aaronlee\\Desktop\\XXD\\XXD\\Bannerlibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color-v23\\abc_color_highlight_material.xml"
     }
 ]

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include layout="@layout/title"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="轻松开户，您只需要准备:"
+        android:textColor="@color/black"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="个人身份证（清晰照片/扫描），手机，网上银行账户"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我们支持的银行有：建设银行"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="如果在开户过程中遇到任何问题，请联系华通交易市场，电话：021-31653458"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dan_back"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开户邀请码："
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="请输入开户邀请码"
+                android:digits="1234567890qwertyuiopasdfghjklzxcvbnm"
+                android:maxLength="12"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/trip_appraise_scores_text"
+                android:textColorHint="@color/trip_appraise_scores_text"
+                android:background="@null"/>
+        </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dan_back"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   个人邮箱："
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="请输入个人邮箱"
+            android:maxLength="12"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/trip_appraise_scores_text"
+            android:textColorHint="@color/trip_appraise_scores_text"
+            android:background="@null"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dan_back"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="图片验证码："
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="请输入图片验证码"
+            android:digits="1234567890qwertyuiopasdfghjklzxcvbnm"
+            android:maxLength="12"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/trip_appraise_scores_text"
+            android:textColorHint="@color/trip_appraise_scores_text"
+            android:background="@null"/>
+        <TextView
+            android:id="@+id/tv_code_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/yan" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dan_back"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   手机号码："
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="请输入手机号码"
+            android:digits="1234567890"
+            android:maxLength="12"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/trip_appraise_scores_text"
+            android:textColorHint="@color/trip_appraise_scores_text"
+            android:background="@null"/>
+        <TextView
+            android:id="@+id/tv_send"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="发送"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/round_login1" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dan_back"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手机验证码："
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="请输入手机验证码"
+            android:digits="1234567890qwertyuiopasdfghjklzxcvbnm"
+            android:maxLength="12"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/trip_appraise_scores_text"
+            android:textColorHint="@color/trip_appraise_scores_text"
+            android:background="@null"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dan_back"/>
+
+    <TextView
+        android:id="@+id/tv_next"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/ll_login_body"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/button_commit"
+        android:gravity="center"
+        android:text="下一步"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>
