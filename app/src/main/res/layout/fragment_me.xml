@@ -110,6 +110,11 @@
                     android:src="@mipmap/arrow_right" />
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/between_line" />
+
             <RelativeLayout
                 android:id="@+id/my_selection"
                 android:layout_width="match_parent"
@@ -154,6 +159,11 @@
                 android:layout_height="1px"
                 android:background="@color/between_line" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/between_line" />
+
             <RelativeLayout
                 android:id="@+id/my_event"
                 android:layout_width="match_parent"
@@ -194,6 +204,11 @@
 
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/between_line" />
+
             <RelativeLayout
                 android:id="@+id/my_aboutus"
                 android:layout_width="match_parent"
@@ -232,6 +247,11 @@
                     android:scaleType="fitXY"
                     android:src="@mipmap/arrow_right" />
             </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/between_line" />
 
             <RelativeLayout
                 android:id="@+id/my_contactus"
@@ -277,6 +297,11 @@
                 android:layout_height="1px"
                 android:background="@color/between_line" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/between_line" />
+
             <RelativeLayout
                 android:id="@+id/my_help"
                 android:layout_width="match_parent"
@@ -317,6 +342,11 @@
                     android:src="@mipmap/arrow_right" />
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/between_line" />
+
             <RelativeLayout
                 android:id="@+id/my_setting"
                 android:layout_width="match_parent"
@@ -355,7 +385,6 @@
                     android:scaleType="fitXY"
                     android:src="@mipmap/arrow_right" />
             </RelativeLayout>
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

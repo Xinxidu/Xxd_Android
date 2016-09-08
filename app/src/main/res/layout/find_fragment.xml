@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:orientation="vertical"
     android:weightSum="1">
 
     <include layout="@layout/title" />
@@ -57,6 +57,11 @@
         android:layout_height="1px"
         android:background="@color/between_line" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/between_line" />
+
     <RelativeLayout
         android:id="@+id/find_online"
         android:layout_width="match_parent"
@@ -96,6 +101,11 @@
             android:src="@mipmap/arrow_right" />
 
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/between_line" />
 
     <RelativeLayout
         android:id="@+id/find_investment"
@@ -141,6 +151,11 @@
         android:layout_height="1px"
         android:background="@color/between_line" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/between_line" />
+
     <RelativeLayout
         android:id="@+id/find_profit"
         android:layout_width="match_parent"
@@ -180,6 +195,11 @@
             android:scaleType="fitXY"
             android:src="@mipmap/arrow_right" />
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/between_line" />
 
     <RelativeLayout
         android:id="@+id/find_teacherteam"
@@ -225,6 +245,11 @@
         android:layout_height="1px"
         android:background="@color/between_line" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/between_line" />
+
     <RelativeLayout
         android:id="@+id/find_trade"
         android:layout_width="match_parent"
@@ -263,4 +288,8 @@
             android:scaleType="fitXY"
             android:src="@mipmap/arrow_right" />
     </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/between_line" />
 </LinearLayout>

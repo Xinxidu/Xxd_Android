@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.activity.AtionMessageActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -78,6 +79,7 @@ public class FindFragment extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.find_eventnews:
+                AtionMessageActivity.startAtionMessageActivity(getActivity());
                 break;
             case R.id.find_online:
                 break;

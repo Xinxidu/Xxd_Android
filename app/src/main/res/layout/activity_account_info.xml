@@ -2,106 +2,412 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
-  <include layout="@layout/title" />
+    <include layout="@layout/title" />
 
-  <LinearLayout
-      android:id="@+id/ll_frshop_head"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@color/white"
-      android:orientation="horizontal">
-
-  </LinearLayout>
-
-  <View
-      android:layout_width="match_parent"
-      android:layout_height="10dp"
-      android:background="@color/hui_color" />
-
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@color/white"
-      android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/hui_color" />
 
     <RelativeLayout
         android:id="@+id/rl_accountdetail"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="50dp"
         android:background="@color/white">
 
-      <TextView
-          android:id="@+id/tv111"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_centerVertical="true"
-          android:layout_marginLeft="16dp"
-          android:drawablePadding="6dip"
-          android:text="账户"
-          android:textColor="@color/black"
-          android:textSize="22dp" />
+        <TextView
+            android:id="@+id/tv111"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:drawablePadding="6dip"
+            android:text="账户"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
-      <TextView
-          android:id="@+id/tv222"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_toRightOf="@+id/tv111"
-          android:layout_marginRight="20dp"
-          android:drawablePadding="6dip"
-          android:layout_marginLeft="15dp"
-          android:layout_marginTop="15dp"
-          android:text="66688"
-          android:textColor="@color/black"
-          android:textSize="22dp" />
-      <TextView
-          android:id="@+id/tv333"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_toRightOf="@+id/tv222"
-          android:layout_marginRight="20dp"
-          android:layout_marginLeft="50dp"
-          android:layout_marginTop="18dp"
-          android:drawablePadding="6dip"
-          android:text="风险覆盖率"
-          android:textColor="@color/gray"
-          android:textSize="22dp" />
-      <Button
-          android:layout_toRightOf="@+id/tv333"
-          android:layout_width="60dp"
-          android:layout_height="30dp"
-          android:layout_marginTop="16dp"
-          android:text="安全"
-          android:background="@color/book_order_text"
-          android:layout_marginRight="10dp"/>
+        <TextView
+            android:id="@+id/tv222"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv111"
+            android:drawablePadding="6dip"
+            android:text="66688"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="6dip"
+            android:text="风险覆盖率"
+            android:textColor="@color/gray"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/button"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="55dp"
+            android:layout_height="30dp"
+            android:background="@color/book_order_text"
+            android:text="安全"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
     </RelativeLayout>
 
     <View
+        android:id="@+id/vw2"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="15dp"
         android:background="@color/hui_color" />
-    <RelativeLayout
-        android:id="@+id/rl_5555"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:background="@color/white">
-      <TextView
-          android:id="@+id/tv1122"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginRight="20dp"
-          android:layout_marginLeft="10dp"
-          android:layout_marginTop="18dp"
-          android:drawablePadding="6dip"
-          android:text="风险覆盖率"
-          android:textColor="@color/gray"
-          android:textSize="22dp" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/rl_account1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vw2"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="vertical">
 
-  </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="入金总计"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/checkout_line" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="出金总计"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/checkout_line" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="冻结手续费"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/checkout_line" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="手续费"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/checkout_line" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="调期盈亏"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/checkout_line" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="调期费"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/checkout_line" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="今日可出资金"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/checkout_line" />
+        </LinearLayout>
 
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/checkout_line" />
 
+        <LinearLayout
+            android:id="@+id/rl_account2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="vertical">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="期初资产"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/checkout_line" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="可用履约资金"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/checkout_line" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="占用履约资金"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/checkout_line" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="冻结履约资金"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/checkout_line" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="浮动盈亏"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/checkout_line" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="当前资产"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/checkout_line" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="实际资产"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dip"
+                android:text="0.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/checkout_line" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

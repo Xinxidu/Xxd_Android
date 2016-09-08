@@ -30,8 +30,6 @@ public class AccountInfoActivity extends AppCompatActivity {
     RelativeLayout ok;
     @BindView(R.id.base_title_layout)
     RelativeLayout baseTitleLayout;
-    @BindView(R.id.ll_frshop_head)
-    LinearLayout llFrshopHead;
     @BindView(R.id.tv111)
     TextView tv111;
     @BindView(R.id.tv222)
@@ -40,10 +38,6 @@ public class AccountInfoActivity extends AppCompatActivity {
     TextView tv333;
     @BindView(R.id.rl_accountdetail)
     RelativeLayout rlAccountdetail;
-    @BindView(R.id.tv1122)
-    TextView tv1122;
-    @BindView(R.id.rl_5555)
-    RelativeLayout rl5555;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
