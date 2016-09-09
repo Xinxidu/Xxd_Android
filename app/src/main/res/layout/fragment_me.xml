@@ -66,11 +66,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/between_line" />
+
             <RelativeLayout
                 android:id="@+id/my_account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:background="@color/white"
                 android:gravity="center_vertical"
                 android:padding="8dp">
@@ -168,7 +172,6 @@
                 android:id="@+id/my_event"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_15"
                 android:background="@color/white"
                 android:gravity="center_vertical"
                 android:padding="8dp">
@@ -307,7 +310,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/space_15"
                 android:background="@color/white"
                 android:gravity="center_vertical"
                 android:padding="8dp">

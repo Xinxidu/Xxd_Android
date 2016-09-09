@@ -1,7 +1,7 @@
 package com.xinxidu.xxd.fragments;
 
 import android.os.Bundle;
-import org.jetbrains.annotations.Nullable;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

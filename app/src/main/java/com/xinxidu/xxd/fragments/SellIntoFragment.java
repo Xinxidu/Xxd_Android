@@ -67,6 +67,7 @@ public class SellIntoFragment extends Fragment {
     public View view;
     int num = 1000;//数量
     int num1 = 10;//数量
+    private BuyIntoFragment buyIntoFragment;
 
     @Nullable
     @Override
@@ -75,6 +76,7 @@ public class SellIntoFragment extends Fragment {
         ButterKnife.bind(this, view);
         relative.setVisibility(View.GONE);
         tvTvTradePuySell.setText("卖出");
+        buyIntoFragment =new BuyIntoFragment();
         tvPriceNum.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
         tvPriceNum.setText(String.valueOf(num));
         tvPriceNum1.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
@@ -94,15 +96,19 @@ public class SellIntoFragment extends Fragment {
                 break;
             case R.id.bt_jian:
                 jian();
+//                buyIntoFragment.jian();
                 break;
             case R.id.bt_jia:
                 jia();
+//                buyIntoFragment.jia();
                 break;
             case R.id.bt_jian1:
                 jian1();
+//                buyIntoFragment.jian1();
                 break;
             case R.id.bt_jia1:
                 jia1();
+//                buyIntoFragment.jia1();
                 break;
             case R.id.tv_tv_trade_puy_sell:
 //                buyDialog();

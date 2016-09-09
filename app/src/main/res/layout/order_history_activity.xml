@@ -1,18 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/title" />
+    <include layout="@layout/title"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/include"
-        android:background="@color/dan_back" />
+    <include layout="@layout/base_time"/>
 
     <include layout="@layout/base_today_decide_liat"/>
 

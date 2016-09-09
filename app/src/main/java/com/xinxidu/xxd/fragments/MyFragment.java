@@ -1,5 +1,8 @@
 package com.xinxidu.xxd.fragments;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,6 +19,7 @@ import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.activity.AboutXiDuActivity;
 
 import com.xinxidu.xxd.activity.MyShiPanAccountActivity;
+import com.xinxidu.xxd.utils.CustomDialog;
 import com.xinxidu.xxd.view.CircleImageView;
 
 import butterknife.BindView;
@@ -86,6 +90,7 @@ public class MyFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_me, container, false);
         ButterKnife.bind(this, view);
         tvTitle.setText("我的");
+        back.setVisibility(View.GONE);
         return view;
     }
 
@@ -118,11 +123,35 @@ public class MyFragment extends Fragment {
                 AboutXiDuActivity.startAboutXiDuActivity(getActivity());
                 break;
             case R.id.my_contactus:
+                showPhoneDialog();
                 break;
             case R.id.my_help:
                 break;
             case R.id.my_setting:
                 break;
         }
+    }
+    private void showPhoneDialog() {
+        CustomDialog.Builder builder = new CustomDialog.Builder(getActivity());
+        builder.setMessage("400-105-4080");
+        builder.setPositiveButton("拨打", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                Uri data = Uri.parse("tel:" + "400-105-4080");
+                intent.setData(data);
+                startActivity(intent);
+
+            }
+        });
+
+        builder.setNegativeButton("取消",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        builder.create().show();
+
     }
 }

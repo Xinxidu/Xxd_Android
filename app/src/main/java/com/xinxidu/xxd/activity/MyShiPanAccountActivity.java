@@ -75,8 +75,10 @@ public class MyShiPanAccountActivity extends AppCompatActivity {
                 TodayAdjustListActivity.startTodayAdjustListActivity(this);
                 break;
             case R.id.rl_historydinglidan:
+                OrderHistoryActivity.startOrderHistoryActivity(this);
                 break;
             case R.id.rl_historytiaoqidan:
+                OrderHistoryAdjustActivity.startOrderHistoryAdjustActivity(this);
                 break;
         }
     }

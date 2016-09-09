@@ -94,7 +94,7 @@
     <color name="color_4e4f57">#ff4e4f57</color>
     <color name="color_54per">#89000000</color>
     <color name="color_5c6566">#ff5c6566</color>
-    <color name="color_5cadff">#ff5cadff</color>
+    <color name="color_cadff">#ff5cadff</color>
     <color name="color_665a33">#ff665a33</color>
     <color name="color_666666">#ff666666</color>
     <color name="color_87per">#de000000</color>
@@ -129,7 +129,7 @@
     <color name="common_color_one_999999">#ff999999</color>
     <color name="common_color_seven_fbaela">#fffbae1a</color>
     <color name="common_color_sex_EDEDED">#ffededed</color>
-    <color name="common_color_ten_4bb7f8">#ff4bb7f8</color>
+    <color name="common_color_ten">#ff4bb7f8</color>
     <color name="common_color_ten_c7a770">#ffc7a770</color>
     <color name="common_dialog_bg">#ff999999</color>
     <color name="coup_child_bg">#fffafafa</color>

@@ -2,7 +2,9 @@ package com.xinxidu.xxd.activity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -10,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.utils.CustomDialog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -74,6 +77,7 @@ public class AboutXiDuActivity extends Activity {
                 AboutXiDuDetailActivity.startAboutXiDuDetailActivity(this);
                 break;
             case R.id.rl_contact:
+
                 break;
         }
     }
