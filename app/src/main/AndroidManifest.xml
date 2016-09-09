@@ -36,7 +36,9 @@
         <activity android:name=".activity.TodayDecideListActivity" />
         <activity android:name=".activity.LiveRoomActivity" />
         <activity android:name=".activity.DayInvestmentActivity" />
-        <activity android:name=".activity.ProfitSkillActivity"></activity>
+        <activity android:name=".activity.ProfitSkillActivity"/>
+        <activity android:name=".activity.OrderHistoryAdjustActivity"/>
+        <activity android:name=".activity.OrderHistoryActivity"/>
     </application>
 
 </manifest>
