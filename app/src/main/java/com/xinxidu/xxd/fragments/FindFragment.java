@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.activity.AtionMessageActivity;
+import com.xinxidu.xxd.activity.LiveRoomActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -82,6 +83,7 @@ public class FindFragment extends Fragment {
                 AtionMessageActivity.startAtionMessageActivity(getActivity());
                 break;
             case R.id.find_online:
+                LiveRoomActivity.startLiveRoomActivity(getActivity());
                 break;
             case R.id.find_investment:
                 break;

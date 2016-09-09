@@ -23,14 +23,18 @@
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.HotTradeActivity" />
         <activity android:name=".activity.HotActivity" />
-        <activity android:name=".activity.BroadcastNewsActivity"/>
-        <activity android:name=".activity.FinanceCalendarActivity"/>
-        <activity android:name=".activity.AboutXiDuActivity"/>
-        <activity android:name=".activity.AboutXiDuDetailActivity"/>
-        <activity android:name=".activity.MyShiPanAccountActivity"/>
-        <activity android:name=".activity.AccountInfoActivity"/>
-        <activity android:name=".activity.HuaTongLoginActivity"/>
-        <activity android:name=".activity.HuaTongRegisterBasicActivity"/>
+        <activity android:name=".activity.BroadcastNewsActivity" />
+        <activity android:name=".activity.FinanceCalendarActivity" />
+        <activity android:name=".activity.AboutXiDuActivity" />
+        <activity android:name=".activity.AboutXiDuDetailActivity" />
+        <activity android:name=".activity.MyShiPanAccountActivity" />
+        <activity android:name=".activity.AccountInfoActivity" />
+        <activity android:name=".activity.HuaTongLoginActivity" />
+        <activity android:name=".activity.HuaTongRegisterBasicActivity" />
+        <activity android:name=".activity.AtionMessageActivity" />
+        <activity android:name=".activity.TodayAdjustListActivity" />
+        <activity android:name=".activity.TodayDecideListActivity" />
+        <activity android:name=".activity.LiveRoomActivity"></activity>
     </application>
 
 </manifest>
