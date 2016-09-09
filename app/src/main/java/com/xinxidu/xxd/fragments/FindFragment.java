@@ -12,7 +12,9 @@ import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.activity.AtionMessageActivity;
+import com.xinxidu.xxd.activity.DayInvestmentActivity;
 import com.xinxidu.xxd.activity.LiveRoomActivity;
+import com.xinxidu.xxd.activity.ProfitSkillActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -64,6 +66,7 @@ public class FindFragment extends Fragment {
         View view = inflater.inflate(R.layout.find_fragment, container, false);
         ButterKnife.bind(this, view);
         tvTitle.setText("发现");
+        back.setVisibility(View.GONE);
         return view;
     }
 
@@ -86,8 +89,10 @@ public class FindFragment extends Fragment {
                 LiveRoomActivity.startLiveRoomActivity(getActivity());
                 break;
             case R.id.find_investment:
+                DayInvestmentActivity.startDayInvestmentActivity(getActivity());
                 break;
             case R.id.find_profit:
+                ProfitSkillActivity.startProfitSkillActivity(getActivity());
                 break;
             case R.id.find_teacherteam:
                 break;

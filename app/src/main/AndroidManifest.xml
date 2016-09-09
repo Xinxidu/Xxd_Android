@@ -34,7 +34,9 @@
         <activity android:name=".activity.AtionMessageActivity" />
         <activity android:name=".activity.TodayAdjustListActivity" />
         <activity android:name=".activity.TodayDecideListActivity" />
-        <activity android:name=".activity.LiveRoomActivity"></activity>
+        <activity android:name=".activity.LiveRoomActivity" />
+        <activity android:name=".activity.DayInvestmentActivity" />
+        <activity android:name=".activity.ProfitSkillActivity"></activity>
     </application>
 
 </manifest>

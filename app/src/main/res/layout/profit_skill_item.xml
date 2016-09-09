@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+    <RelativeLayout
+        android:id="@+id/rl_live1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/includelive">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/imageView"
+            android:text="[盈利技巧] 2016-9-9"
+            android:textSize="16sp"
+            android:textColor="@color/trip_main_red_color" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView10"
+            android:layout_below="@+id/textView10"
+            android:layout_marginTop="5dp"
+            android:maxLines="4"
+            android:maxWidth="160dp"
+            android:text="在原油投资中掌握这些数据想不赚钱都不行"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView10"
+            android:layout_below="@+id/textView11"
+            android:layout_marginTop="5dp"
+            android:maxLines="4"
+            android:maxWidth="160dp"
+            android:text="关键词:  原油，资中，掌握，这些，数据，想不，赚钱，不"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dan_back"/>
+</LinearLayout>
