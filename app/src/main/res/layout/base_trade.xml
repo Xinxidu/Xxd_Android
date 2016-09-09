@@ -16,7 +16,8 @@
             android:layout_margin="10dp"
             android:background="@drawable/frame"
             android:text="白银升贴水1000"
-            android:textColor="@color/black" />
+            android:textSize="16dp"
+            android:textColor="@color/wait_result_gray" />
 
         <TextView
             android:id="@+id/textView"
@@ -25,7 +26,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:text="档位"
-            android:textColor="@color/black" />
+            android:textColor="@color/wait_result_gray" />
 
         <TextView
             android:id="@+id/textView2"
@@ -35,7 +36,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:text="卖1"
-            android:textColor="@color/black" />
+            android:textColor="@color/wait_result_gray" />
 
         <TextView
             android:id="@+id/textView1"
@@ -45,7 +46,7 @@
             android:layout_marginLeft="30dp"
             android:layout_toRightOf="@+id/textView"
             android:text="价格"
-            android:textColor="@color/black" />
+            android:textColor="@color/wait_result_gray" />
 
         <TextView
             android:id="@+id/tv_price"
@@ -66,7 +67,7 @@
             android:layout_alignTop="@+id/textView"
             android:layout_marginRight="20dp"
             android:text="数量"
-            android:textColor="@color/black" />
+            android:textColor="@color/wait_result_gray" />
 
         <TextView
             android:id="@+id/tv_num"
@@ -126,10 +127,11 @@
 
             <TextView
                 android:id="@+id/bt_jian"
-                android:layout_width="45dp"
+                android:layout_width="40dp"
                 android:layout_height="50dp"
-                android:text="—"
+                android:gravity="center"
                 android:textColor="@color/coupon_price"
+                android:text="—"
                 android:textSize="40dp"
                 android:textStyle="bold" />
 
@@ -139,16 +141,15 @@
                 android:layout_toRightOf="@+id/bt_jian"
                 android:background="@color/dan_back" />
 
-            <Button
+            <TextView
                 android:id="@+id/tv_price_num"
-                android:layout_width="50dp"
+                android:layout_width="60dp"
                 android:layout_height="50dp"
-                android:layout_centerVertical="true"
+                android:gravity="center"
                 android:layout_toRightOf="@+id/bt_jian"
                 android:background="@null"
                 android:text="1006.0"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:textColor="@color/black"/>
 
             <View
                 android:layout_width="1dp"
@@ -158,15 +159,14 @@
 
             <TextView
                 android:id="@+id/bt_jia"
-                android:layout_width="45dp"
+                android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:layout_toRightOf="@+id/tv_price_num"
                 android:background="@null"
                 android:gravity="center"
                 android:text="+"
                 android:textColor="@color/coupon_price"
-                android:textSize="40dp"
-                android:textStyle="bold" />
+                android:textSize="40dp"/>
         </RelativeLayout>
 
         <TextView
@@ -176,7 +176,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:text="买1"
-            android:textColor="@color/black" />
+            android:textColor="@color/wait_result_gray" />
 
         <TextView
             android:id="@+id/tv_price_sell"
@@ -210,26 +210,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="最低 "
-            android:textColor="@color/black" />
+            android:textColor="@color/wait_result_gray" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1004.0"
-            android:textColor="@color/black" />
+            android:textColor="@color/wait_result_gray" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="最高 "
-            android:textColor="@color/black" />
+            android:textColor="@color/wait_result_gray" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1015.0"
-            android:textColor="@color/black" />
+            android:textColor="@color/wait_result_gray" />
     </LinearLayout>
 
     <RelativeLayout
@@ -241,7 +241,7 @@
 
         <TextView
             android:id="@+id/bt_jian1"
-            android:layout_width="45dp"
+            android:layout_width="40dp"
             android:layout_height="50dp"
             android:gravity="center"
             android:text="—"
@@ -255,16 +255,15 @@
             android:layout_toRightOf="@+id/bt_jian1"
             android:background="@color/dan_back" />
 
-        <Button
+        <TextView
             android:id="@+id/tv_price_num1"
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="50dp"
-            android:layout_centerVertical="true"
+            android:gravity="center"
             android:layout_toRightOf="@+id/bt_jian1"
             android:background="@null"
-            android:text="0"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:text="1"
+            android:textColor="@color/black"/>
 
         <View
             android:layout_width="1dp"
@@ -274,7 +273,7 @@
 
         <TextView
             android:id="@+id/bt_jia1"
-            android:layout_width="45dp"
+            android:layout_width="40dp"
             android:layout_height="50dp"
             android:layout_toRightOf="@+id/tv_price_num1"
             android:gravity="center"
