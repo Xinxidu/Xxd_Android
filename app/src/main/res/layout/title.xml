@@ -15,7 +15,8 @@
             android:id="@+id/back"
             android:layout_width="66dip"
             android:layout_height="fill_parent"
-            android:layout_alignParentLeft="true">
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/button_commit">
 
             <ImageView
                 android:layout_width="wrap_content"

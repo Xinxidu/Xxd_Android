@@ -31,7 +31,7 @@
             android:id="@+id/rl_accountdetail"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="@color/white">
+            android:background="@drawable/ripple_bg">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
             android:id="@+id/rl_todaydinglidan"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="@color/white">
+            android:background="@drawable/ripple_bg">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -97,7 +97,7 @@
             android:id="@+id/rl_todaytiaoqidan"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="@color/white">
+            android:background="@drawable/ripple_bg">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -132,7 +132,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="1dp"
-            android:background="@color/white">
+            android:background="@drawable/ripple_bg">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -163,7 +163,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="1dp"
-            android:background="@color/white">
+            android:background="@drawable/ripple_bg">
 
             <TextView
                 android:layout_width="wrap_content"

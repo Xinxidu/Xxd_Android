@@ -18,7 +18,9 @@ import android.widget.TextView;
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.activity.AboutXiDuActivity;
 
+import com.xinxidu.xxd.activity.LoginActivity;
 import com.xinxidu.xxd.activity.MyShiPanAccountActivity;
+import com.xinxidu.xxd.activity.RegisterBasicActivity;
 import com.xinxidu.xxd.utils.CustomDialog;
 import com.xinxidu.xxd.view.CircleImageView;
 
@@ -107,10 +109,10 @@ public class MyFragment extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_my_login:
-                Log.e("","点击登录了");
+                LoginActivity.startLoginActivity(getActivity());
                 break;
             case R.id.btn_my_register:
-                Log.v("","点击注册了");
+                RegisterBasicActivity.startRegisterBasicActivity(getActivity());
                 break;
             case R.id.my_account:
                 MyShiPanAccountActivity.startMyShiPanAccountActivity(getActivity());

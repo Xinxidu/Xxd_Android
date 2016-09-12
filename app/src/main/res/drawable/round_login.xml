@@ -2,11 +2,11 @@
 <!-- 登录按钮未选中状态 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <solid android:color="@color/coupon_price" />
+    <solid android:color="@color/common_color_seven_fbaela" />
 
     <stroke
         android:width="0dip"
-        android:color="@color/coupon_price" />
+        android:color="@color/common_color_seven_fbaela" />
     <corners android:radius="6dp" />
 
 </shape>

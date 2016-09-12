@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white">
+    android:background="@drawable/ripple_bg"
+    android:orientation="vertical">
+
     <RelativeLayout
         android:id="@+id/rl_live1"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_below="@+id/includelive">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/includelive"
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/imageView"
@@ -27,8 +29,8 @@
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/imageView"
             android:text="美指绝地反击，原油遇阻回落"
-            android:textSize="21sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="21sp" />
 
         <TextView
             android:id="@+id/textView11"
@@ -43,9 +45,10 @@
             android:textColor="@color/black" />
 
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/dan_back"/>
+        android:background="@color/dan_back" />
 
 </LinearLayout>

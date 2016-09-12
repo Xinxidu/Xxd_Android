@@ -43,7 +43,7 @@
                 <android.support.design.widget.TabLayout
                     android:id="@+id/tabs"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="wrap_content"
                     app:tabBackground="@color/not_enough_business_consumer_"
                     app:tabIndicatorColor="@color/flight_title_orange"
                     app:tabSelectedTextColor="@color/flight_title_orange"

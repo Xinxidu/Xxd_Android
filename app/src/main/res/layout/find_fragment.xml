@@ -7,15 +7,17 @@
     android:weightSum="1">
 
     <include layout="@layout/title" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="15dp"
         android:background="@color/between_line" />
+
     <RelativeLayout
         android:id="@+id/find_eventnews"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@drawable/ripple_bg"
         android:gravity="center_vertical"
         android:padding="8dp">
 
@@ -69,7 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_15"
-        android:background="@color/white"
+        android:background="@drawable/ripple_bg"
         android:gravity="center_vertical"
         android:padding="8dp">
 
@@ -114,7 +116,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_1"
-        android:background="@color/white"
+        android:background="@drawable/ripple_bg"
         android:gravity="center_vertical"
         android:padding="8dp">
 
@@ -163,7 +165,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_1"
-        android:background="@color/white"
+        android:background="@drawable/ripple_bg"
         android:gravity="center_vertical"
         android:padding="8dp">
 
@@ -208,7 +210,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="@color/white"
+        android:background="@drawable/ripple_bg"
         android:gravity="center_vertical"
         android:padding="8dp">
 
@@ -256,7 +258,7 @@
         android:id="@+id/find_trade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@drawable/ripple_bg"
         android:gravity="center_vertical"
         android:padding="8dp">
 
@@ -289,6 +291,7 @@
             android:scaleType="fitXY"
             android:src="@mipmap/arrow_right" />
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"

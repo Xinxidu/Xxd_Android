@@ -21,7 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/ripple_bg">
 
             <ImageView
                 android:id="@+id/bt_trade1"
@@ -46,7 +47,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/ripple_bg">
 
             <ImageView
                 android:id="@+id/bt_activity1"
@@ -71,7 +73,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/ripple_bg">
 
             <ImageView
                 android:id="@+id/bt_news1"
@@ -96,7 +99,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/ripple_bg">
 
             <ImageView
                 android:id="@+id/bt_calendar1"
@@ -125,7 +129,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_bg">
 
         <TextView
             android:id="@+id/textView"

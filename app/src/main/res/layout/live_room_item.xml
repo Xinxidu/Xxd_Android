@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white">
+    android:background="@drawable/ripple_bg">
 
 
     <RelativeLayout
@@ -49,7 +49,7 @@
             android:layout_alignLeft="@+id/textView10"
             android:layout_below="@+id/textView10"
             android:layout_marginTop="5dp"
-            android:maxLines="4"
+            android:maxLines="2"
             android:maxWidth="160dp"
             android:text="特点：抢反弹一马当先抓涨停十拿九稳"
             android:textColor="@color/black" />
@@ -66,6 +66,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:ellipsize="end"
             android:text="名师推荐：西都金融研究院每周不定时推荐一道两支股"
             android:textColor="@color/black" />
 

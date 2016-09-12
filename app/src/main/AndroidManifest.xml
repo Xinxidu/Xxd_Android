@@ -29,8 +29,8 @@
         <activity android:name=".activity.AboutXiDuDetailActivity" />
         <activity android:name=".activity.MyShiPanAccountActivity" />
         <activity android:name=".activity.AccountInfoActivity" />
-        <activity android:name=".activity.HuaTongLoginActivity" />
-        <activity android:name=".activity.HuaTongRegisterBasicActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.RegisterBasicActivity" />
         <activity android:name=".activity.AtionMessageActivity" />
         <activity android:name=".activity.TodayAdjustListActivity" />
         <activity android:name=".activity.TodayDecideListActivity" />
