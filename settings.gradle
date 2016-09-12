@@ -1,1 +1,2 @@
 include ':app', ':BaseKit', ':Bannerlibrary'
+include ':slidingmenu_library'

@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.activity.ElectricTradeActivity;
 
 /**
  * Created by limingquan on 2016/9/1.
@@ -36,10 +37,17 @@ public class MarketFragment extends Fragment {
         RelativeLayout back= (RelativeLayout) view.findViewById(R.id.back);
         TextView tv_title= (TextView) view.findViewById(R.id.tv_title);
         tv_title.setText("行情");
-        back.setVisibility(View.GONE);
+//        back.setVisibility(View.GONE);
+        back.setBackgroundResource(R.drawable.bt_menu_order_select);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getActivity().getSupportFragmentManager());//getSupportFragmentManager()
         mContainer.setAdapter(mSectionsPagerAdapter);
         mTabs.setupWithViewPager(mContainer);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ElectricTradeActivity.startElectricTradeActivity(getActivity());
+            }
+        });
         return view;
     }
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
