@@ -24,7 +24,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="5dp"
-                android:background="@color/white"
                 app:banner_pointGravity="bottom|right"
                 app:banner_transitionEffect="depth" />
 

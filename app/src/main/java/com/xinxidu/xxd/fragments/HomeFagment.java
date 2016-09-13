@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,8 +86,6 @@ public class HomeFagment extends Fragment {
     TextView textView5;
     @BindView(R.id.bt_now_open)
     Button btNowOpen;
-    @BindView(R.id.imageView)
-    ImageView imageView;
     @BindView(R.id.textView10)
     TextView textView10;
     @BindView(R.id.bt_live_telecast)
@@ -153,7 +152,7 @@ public class HomeFagment extends Fragment {
                 break;
         }
     }
-    //TabLayout+个fragment
+    //TabLayout+2个fragment实时快讯+金银牛评
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -189,10 +188,11 @@ public class HomeFagment extends Fragment {
 
         // BannerModel bannerModel = new BannerModel();
         List<String> imgs = new ArrayList<String>();
-        imgs.add("http://120.25.164.72/resources/index_banner.png");
-        imgs.add("http://120.25.164.72/resources/index_banner.png");
-        imgs.add("http://120.25.164.72/resources/index_banner.png");
-        imgs.add("http://120.25.164.72/resources/index_banner.png");
+        imgs.add("http://www.tooopen.com/view/802192.html");
+        imgs.add("http://www.tooopen.com/view/802192.html");
+        imgs.add("http://www.tooopen.com/view/802192.html");
+        imgs.add("http://www.tooopen.com/view/802192.html");
+        Log.d("imgs","sdfsdfsd");
 
         List<String> tips = new ArrayList<String>();
         tips.add("西都");

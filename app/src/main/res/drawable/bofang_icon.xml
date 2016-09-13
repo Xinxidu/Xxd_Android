@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 登录按钮选中状态 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="@color/salmon" />
+
+    <stroke
+        android:width="0dip"
+        android:color="@color/salmon" />
+    <corners android:radius="6dp" />
+
+</shape>
