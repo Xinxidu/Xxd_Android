@@ -119,7 +119,7 @@ public class CycBuyFragment extends Fragment {
         builder.setAccount("7");
         builder.setPrice("6688");
         builder.setTradeName("银宝");
-        builder.setNumber(num1);
+        builder.setNumber(10+"");
         builder.setPositiveButton("确定买入", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(getActivity(), "买入成功", Toast.LENGTH_SHORT).show();
@@ -165,7 +165,7 @@ public class CycBuyFragment extends Fragment {
 
     public void jia() {
         if (btJia.getTag().equals("-")) {
-            if (++num < 1) {  //先加，再判断
+            if (++num <= 1) {  //先加，再判断
                 num--;
                 Toast.makeText(getActivity(), "不能小于0", Toast.LENGTH_SHORT).show();
             } else {
@@ -189,7 +189,7 @@ public class CycBuyFragment extends Fragment {
 
     public void jia1() {
         if (btJia1.getTag().equals("-")) {
-            if (++num1 < 1) {  //先加，再判断
+            if (++num1 <= 1) {  //先加，再判断
                 num1--;
                 Toast.makeText(getActivity(), "不能小于0", Toast.LENGTH_SHORT).show();
             } else {

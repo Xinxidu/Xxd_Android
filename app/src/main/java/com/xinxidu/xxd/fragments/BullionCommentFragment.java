@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.adapter.BullionCommentAdapter;
-import com.xinxidu.xxd.bean.BullionCommentEvent;
+import com.xinxidu.xxd.event.BullionCommentEvent;
 
 import java.util.ArrayList;
 

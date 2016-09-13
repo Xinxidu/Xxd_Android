@@ -28,7 +28,7 @@ public class BuyConfirmDialog extends Dialog {
 		private String title;
 		private String tv_account;
 		private String tv_tradename;
-		private int tv_number;
+		private String tv_number;
 		private String tv_price;
 		private String positiveButtonText;
 		private String negativeButtonText;
@@ -49,7 +49,7 @@ public class BuyConfirmDialog extends Dialog {
 			this.tv_account = message;
 			return this;
 		}
-		public Builder setNumber(int message) {
+		public Builder setNumber(String message) {
 			this.tv_number = message;
 			return this;
 		}

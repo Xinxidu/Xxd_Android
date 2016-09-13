@@ -11,9 +11,7 @@ import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.adapter.DayInvestmentAdapter;
-import com.xinxidu.xxd.adapter.LiveRoomAdapter;
-import com.xinxidu.xxd.bean.DayInvestmentEvent;
-import com.xinxidu.xxd.bean.LiveRoomEvent;
+import com.xinxidu.xxd.event.DayInvestmentEvent;
 
 import java.util.ArrayList;
 

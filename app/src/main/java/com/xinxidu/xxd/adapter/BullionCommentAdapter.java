@@ -10,8 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.bean.BullionCommentEvent;
-import com.xinxidu.xxd.bean.TimeNewsEvent;
+import com.xinxidu.xxd.event.BullionCommentEvent;
 
 import java.util.ArrayList;
 import java.util.List;

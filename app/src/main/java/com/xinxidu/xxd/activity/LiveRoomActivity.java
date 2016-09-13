@@ -11,10 +11,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.adapter.HotActivityAdapter;
 import com.xinxidu.xxd.adapter.LiveRoomAdapter;
-import com.xinxidu.xxd.bean.HotActivityEvent;
-import com.xinxidu.xxd.bean.LiveRoomEvent;
+import com.xinxidu.xxd.event.LiveRoomEvent;
 
 import java.util.ArrayList;
 

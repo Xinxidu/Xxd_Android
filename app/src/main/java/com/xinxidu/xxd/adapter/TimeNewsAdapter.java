@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.bean.TimeNewsEvent;
+import com.xinxidu.xxd.event.TimeNewsEvent;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -6,11 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.bean.HotActivityEvent;
+import com.xinxidu.xxd.event.HotActivityEvent;
 
 import java.util.ArrayList;
 import java.util.List;

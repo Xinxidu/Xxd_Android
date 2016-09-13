@@ -11,9 +11,7 @@ import android.view.ViewGroup;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.adapter.BroadcastNewsItemAdapter;
-import com.xinxidu.xxd.adapter.MarketItemAdapter;
-import com.xinxidu.xxd.bean.BroadcastNewsItemEvent;
-import com.xinxidu.xxd.bean.MarketItemEvent;
+import com.xinxidu.xxd.event.BroadcastNewsItemEvent;
 
 import java.util.ArrayList;
 

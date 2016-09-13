@@ -5,19 +5,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.bean.DayInvestmentEvent;
-import com.xinxidu.xxd.bean.LiveRoomEvent;
+import com.xinxidu.xxd.event.DayInvestmentEvent;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**

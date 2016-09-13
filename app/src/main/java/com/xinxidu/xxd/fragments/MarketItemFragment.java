@@ -1,7 +1,6 @@
 package com.xinxidu.xxd.fragments;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,10 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.adapter.HotActivityAdapter;
 import com.xinxidu.xxd.adapter.MarketItemAdapter;
-import com.xinxidu.xxd.bean.HotActivityEvent;
-import com.xinxidu.xxd.bean.MarketItemEvent;
+import com.xinxidu.xxd.event.MarketItemEvent;
 
 import java.util.ArrayList;
 

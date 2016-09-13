@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.bean.BroadcastNewsItemEvent;
+import com.xinxidu.xxd.event.BroadcastNewsItemEvent;
 
 import java.util.ArrayList;
 import java.util.List;

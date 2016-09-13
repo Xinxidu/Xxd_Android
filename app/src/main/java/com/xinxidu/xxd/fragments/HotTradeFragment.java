@@ -10,10 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.adapter.BullionCommentAdapter;
 import com.xinxidu.xxd.adapter.HotTradeAdapter;
-import com.xinxidu.xxd.bean.BullionCommentEvent;
-import com.xinxidu.xxd.bean.HotTradeEvent;
+import com.xinxidu.xxd.event.HotTradeEvent;
 
 import java.util.ArrayList;
 

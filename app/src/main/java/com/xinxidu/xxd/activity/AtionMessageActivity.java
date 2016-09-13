@@ -12,9 +12,7 @@ import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.adapter.ActionMessageAdapter;
-import com.xinxidu.xxd.adapter.ProfitSkillAdapter;
-import com.xinxidu.xxd.bean.ActionMessageEvent;
-import com.xinxidu.xxd.bean.ProfitSkillEvent;
+import com.xinxidu.xxd.event.ActionMessageEvent;
 
 import java.util.ArrayList;
 

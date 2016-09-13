@@ -11,9 +11,7 @@ import android.view.ViewGroup;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.adapter.HotActivityAdapter;
-import com.xinxidu.xxd.adapter.HotTradeAdapter;
-import com.xinxidu.xxd.bean.HotActivityEvent;
-import com.xinxidu.xxd.bean.HotTradeEvent;
+import com.xinxidu.xxd.event.HotActivityEvent;
 
 import java.util.ArrayList;
 

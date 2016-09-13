@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.bean.LiveRoomEvent;
+import com.xinxidu.xxd.event.LiveRoomEvent;
 
 import java.util.ArrayList;
 import java.util.List;

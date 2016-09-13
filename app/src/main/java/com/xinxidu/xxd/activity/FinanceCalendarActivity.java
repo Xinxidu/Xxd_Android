@@ -27,11 +27,9 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.adapter.BullionCommentAdapter;
 import com.xinxidu.xxd.adapter.DateAdapter;
 import com.xinxidu.xxd.adapter.FinanceCalendarAdapter;
-import com.xinxidu.xxd.bean.BullionCommentEvent;
-import com.xinxidu.xxd.bean.FinanceCalendarEvent;
+import com.xinxidu.xxd.event.FinanceCalendarEvent;
 import com.xinxidu.xxd.utils.SpecialCalendar;
 
 import java.text.SimpleDateFormat;

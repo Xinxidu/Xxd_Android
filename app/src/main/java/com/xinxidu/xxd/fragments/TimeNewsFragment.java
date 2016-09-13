@@ -12,12 +12,9 @@ import android.view.ViewGroup;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.adapter.TimeNewsAdapter;
-import com.xinxidu.xxd.bean.TimeNewsEvent;
+import com.xinxidu.xxd.event.TimeNewsEvent;
 
 import java.util.ArrayList;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 
 /**

@@ -10,10 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.adapter.DayInvestmentAdapter;
 import com.xinxidu.xxd.adapter.ProfitSkillAdapter;
-import com.xinxidu.xxd.bean.DayInvestmentEvent;
-import com.xinxidu.xxd.bean.ProfitSkillEvent;
+import com.xinxidu.xxd.event.ProfitSkillEvent;
 
 import java.util.ArrayList;
 

@@ -124,7 +124,7 @@ public class SellIntoFragment extends Fragment {
         builder.setAccount("66666");
         builder.setPrice("6");
         builder.setTradeName("银宝");
-        builder.setNumber(num1);
+        builder.setNumber(10+"");
         builder.setPositiveButton("确定卖出", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(getActivity(), "卖出成功", Toast.LENGTH_SHORT).show();
@@ -170,7 +170,7 @@ public class SellIntoFragment extends Fragment {
 
     public void jia() {
         if (btJia.getTag().equals("-")) {
-            if (++num < 1) {  //先加，再判断
+            if (++num <= 1) {  //先加，再判断
                 num--;
                 Toast.makeText(getActivity(), "不能小于0", Toast.LENGTH_SHORT).show();
             } else {
@@ -194,7 +194,7 @@ public class SellIntoFragment extends Fragment {
 
     public void jia1() {
         if (btJia1.getTag().equals("-")) {
-            if (++num1 < 1) {  //先加，再判断
+            if (++num1 <= 1) {  //先加，再判断
                 num1--;
                 Toast.makeText(getActivity(), "不能小于0", Toast.LENGTH_SHORT).show();
             } else {

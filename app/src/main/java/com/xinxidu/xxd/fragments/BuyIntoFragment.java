@@ -120,7 +120,7 @@ public class BuyIntoFragment extends Fragment {
         builder.setAccount("55555");
         builder.setPrice("5");
         builder.setTradeName("银宝");
-        builder.setNumber(num1);
+        builder.setNumber(10+"");
         builder.setPositiveButton("确定买入", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                Intent intent = new Intent(Intent.ACTION_DIAL);
@@ -156,7 +156,7 @@ public class BuyIntoFragment extends Fragment {
         if (btJian.getTag().equals("+")) {
             if (--num < 1) { //先减，再判断
                 num++;
-                Toast.makeText(getActivity(), "不能小于0",
+                Toast.makeText(getActivity(), "不能小于1",
                         Toast.LENGTH_SHORT).show();
             } else {
                 tvPriceNum.setText(String.valueOf(num));
@@ -167,9 +167,9 @@ public class BuyIntoFragment extends Fragment {
 
     public void jia() {
         if (btJia.getTag().equals("-")) {
-            if (++num < 1) {  //先加，再判断
+            if (++num <= 1) {  //先加，再判断
                 num--;
-                Toast.makeText(getActivity(), "不能小于0", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "不能小于1", Toast.LENGTH_SHORT).show();
             } else {
                 tvPriceNum.setText(String.valueOf(num));
             }
@@ -180,7 +180,7 @@ public class BuyIntoFragment extends Fragment {
         if (btJian1.getTag().equals("+")) {
             if (--num1 < 1) { //先减，再判断
                 num1++;
-                Toast.makeText(getActivity(), "不能小于0",
+                Toast.makeText(getActivity(), "不能小于1",
                         Toast.LENGTH_SHORT).show();
             } else {
                 tvPriceNum1.setText(String.valueOf(num1));
@@ -191,9 +191,9 @@ public class BuyIntoFragment extends Fragment {
 
     public void jia1() {
         if (btJia1.getTag().equals("-")) {
-            if (++num1 < 1) {  //先加，再判断
+            if (++num1 <= 1) {  //先加，再判断
                 num1--;
-                Toast.makeText(getActivity(), "不能小于0", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "不能小于1", Toast.LENGTH_SHORT).show();
             } else {
                 tvPriceNum1.setText(String.valueOf(num1));
             }

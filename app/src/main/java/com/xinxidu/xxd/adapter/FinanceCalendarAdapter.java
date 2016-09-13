@@ -10,7 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.bean.FinanceCalendarEvent;
+import com.xinxidu.xxd.event.FinanceCalendarEvent;
 
 import java.util.ArrayList;
 import java.util.List;

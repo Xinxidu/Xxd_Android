@@ -1,7 +1,7 @@
 package com.xinxidu.xxd.base;
 
 import com.rogers.kit.base.BaseApp;
-import com.xinxidu.xxd.bean.Engine;
+import com.xinxidu.xxd.event.Engine;
 
 import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
@@ -19,7 +19,7 @@ public class App extends BaseApp {
 
         sInstance = this;
         mEngine = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/bingoogolapple/BGABanner-Android/server/api/")
+                .baseUrl("http://www.tooopen.com/view/712724.html")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build().create(Engine.class);
 

@@ -1,4 +1,4 @@
-package com.xinxidu.xxd.bean;
+package com.xinxidu.xxd.event;
 
 /**
  * Created by limingquan on 2016/9/6.

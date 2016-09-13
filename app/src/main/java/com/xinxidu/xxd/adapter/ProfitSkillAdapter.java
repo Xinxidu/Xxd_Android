@@ -7,8 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.bean.DayInvestmentEvent;
-import com.xinxidu.xxd.bean.ProfitSkillEvent;
+import com.xinxidu.xxd.event.ProfitSkillEvent;
 
 import java.util.ArrayList;
 import java.util.List;

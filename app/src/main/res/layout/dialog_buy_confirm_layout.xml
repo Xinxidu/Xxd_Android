@@ -10,25 +10,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="vertical"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:orientation="vertical">
+
         <RelativeLayout
             android:id="@+id/content"
             android:layout_width="fill_parent"
             android:layout_height="60dp"
             android:background="@color/color_price"
-            android:gravity="center" >
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:lineSpacingMultiplier="1.5"
                 android:minHeight="100dip"
-                android:gravity="center"
-                android:textSize="20dp"
                 android:text="委托订立买入确认"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="20dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -41,75 +42,82 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:textSize="20sp"
                 android:text="账        号:"
-                android:textColor="@color/gray"/>
+                android:textColor="@color/gray"
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/tv_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/message1"
-                android:textSize="20sp"
-                android:text="018000000173"
                 android:layout_marginLeft="10dp"
-                android:textColor="@color/gray"/>
+                android:layout_toRightOf="@+id/message1"
+                android:text="018000000173"
+                android:textColor="@color/gray"
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/message2"
-                android:layout_below="@+id/message1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/message1"
                 android:layout_marginLeft="20dp"
-                android:textSize="20sp"
                 android:text="商品名称:"
-                android:textColor="@color/gray"/>
+                android:textColor="@color/gray"
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/tv_tradename"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/message2"
                 android:layout_below="@+id/tv_account"
-                android:textSize="20sp"
                 android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/message2"
                 android:text="银宝"
-                android:textColor="@color/gray"/>
+                android:textColor="@color/gray"
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/message3"
-                android:layout_below="@+id/message2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/message2"
                 android:layout_marginLeft="20dp"
-                android:textSize="20sp"
                 android:text="数        量:"
-                android:textColor="@color/gray"/>
+                android:textColor="@color/gray"
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/tv_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/message3"
                 android:layout_below="@+id/tv_tradename"
-                android:textSize="20sp"
                 android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/message3"
                 android:text="1"
-                android:textColor="@color/gray"/>
+                android:textColor="@color/gray"
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/message4"
-                android:layout_below="@+id/message3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/message3"
                 android:layout_marginLeft="20dp"
-                android:textSize="20sp"
                 android:text="价        格:"
-                android:textColor="@color/gray"/>
+                android:textColor="@color/gray"
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/tv_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/message4"
                 android:layout_below="@+id/tv_number"
-                android:textSize="20sp"
                 android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/message4"
                 android:text="1000"
-                android:textColor="@color/gray"/>
+                android:textColor="@color/gray"
+                android:textSize="20sp" />
         </RelativeLayout>
 
         <View
@@ -122,7 +130,7 @@
             android:layout_height="60.0dip"
             android:layout_gravity="bottom"
             android:gravity="center"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
 
             <Button
@@ -131,9 +139,9 @@
                 android:layout_height="40dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:gravity="center"
                 android:layout_marginRight="50dp"
                 android:background="@drawable/button_commit"
+                android:gravity="center"
                 android:text="确定买入"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
@@ -144,8 +152,8 @@
                 android:layout_height="40dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:gravity="center"
                 android:background="@drawable/round_corner_white_bg"
+                android:gravity="center"
                 android:text="取消"
                 android:textColor="@color/white"
                 android:textSize="16sp" />

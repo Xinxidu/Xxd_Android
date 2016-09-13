@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.bean.MarketItemEvent;
+import com.xinxidu.xxd.event.MarketItemEvent;
 
 import java.util.ArrayList;
 import java.util.List;

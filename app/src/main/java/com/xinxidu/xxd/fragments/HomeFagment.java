@@ -22,9 +22,8 @@ import com.xinxidu.xxd.activity.BroadcastNewsActivity;
 import com.xinxidu.xxd.activity.FinanceCalendarActivity;
 import com.xinxidu.xxd.activity.HotActivity;
 import com.xinxidu.xxd.activity.HotTradeActivity;
-import com.xinxidu.xxd.activity.LoginActivity;
 import com.xinxidu.xxd.base.App;
-import com.xinxidu.xxd.bean.Engine;
+import com.xinxidu.xxd.event.Engine;
 
 import java.util.ArrayList;
 import java.util.List;
