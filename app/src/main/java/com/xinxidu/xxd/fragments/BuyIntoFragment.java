@@ -2,9 +2,12 @@ package com.xinxidu.xxd.fragments;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.utils.BuyConfirmDialog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -105,14 +109,35 @@ public class BuyIntoFragment extends Fragment {
                 jia1();
                 break;
             case R.id.tv_tv_trade_puy_sell:
-//                buyDialog();
+               buyDialog();
                 break;
         }
     }
 
-//    private void buyDialog() {
-//
-//    }
+    private void buyDialog() {
+        BuyConfirmDialog.Builder builder = new BuyConfirmDialog.Builder(getActivity());
+        builder.setTitle("委托订立买入确认");
+        builder.setAccount("55555");
+        builder.setPrice("5");
+        builder.setTradeName("银宝");
+        builder.setNumber(num1);
+        builder.setPositiveButton("确定买入", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+               Intent intent = new Intent(Intent.ACTION_DIAL);
+                Toast.makeText(getActivity(), "买入成功", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNegativeButton("取消",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        builder.create().show();
+    }
 
     private void showDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -129,7 +154,7 @@ public class BuyIntoFragment extends Fragment {
 
     public void jian() {
         if (btJian.getTag().equals("+")) {
-            if (--num < 0) { //先减，再判断
+            if (--num < 1) { //先减，再判断
                 num++;
                 Toast.makeText(getActivity(), "不能小于0",
                         Toast.LENGTH_SHORT).show();
@@ -142,7 +167,7 @@ public class BuyIntoFragment extends Fragment {
 
     public void jia() {
         if (btJia.getTag().equals("-")) {
-            if (++num < 0) {  //先加，再判断
+            if (++num < 1) {  //先加，再判断
                 num--;
                 Toast.makeText(getActivity(), "不能小于0", Toast.LENGTH_SHORT).show();
             } else {
@@ -153,7 +178,7 @@ public class BuyIntoFragment extends Fragment {
 
     public void jian1() {
         if (btJian1.getTag().equals("+")) {
-            if (--num1 < 0) { //先减，再判断
+            if (--num1 < 1) { //先减，再判断
                 num1++;
                 Toast.makeText(getActivity(), "不能小于0",
                         Toast.LENGTH_SHORT).show();
@@ -166,7 +191,7 @@ public class BuyIntoFragment extends Fragment {
 
     public void jia1() {
         if (btJia1.getTag().equals("-")) {
-            if (++num1 < 0) {  //先加，再判断
+            if (++num1 < 1) {  //先加，再判断
                 num1--;
                 Toast.makeText(getActivity(), "不能小于0", Toast.LENGTH_SHORT).show();
             } else {

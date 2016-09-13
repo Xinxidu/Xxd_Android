@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@color/white">
+        <RelativeLayout
+            android:id="@+id/content"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:background="@color/color_price"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.5"
+                android:minHeight="100dip"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="委托订立买入确认"
+                android:textColor="@color/white"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/content1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/message1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:text="账        号:"
+                android:textColor="@color/gray"/>
+            <TextView
+                android:id="@+id/tv_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/message1"
+                android:textSize="20sp"
+                android:text="018000000173"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/gray"/>
+            <TextView
+                android:id="@+id/message2"
+                android:layout_below="@+id/message1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:text="商品名称:"
+                android:textColor="@color/gray"/>
+            <TextView
+                android:id="@+id/tv_tradename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/message2"
+                android:layout_below="@+id/tv_account"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:text="银宝"
+                android:textColor="@color/gray"/>
+            <TextView
+                android:id="@+id/message3"
+                android:layout_below="@+id/message2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:text="数        量:"
+                android:textColor="@color/gray"/>
+            <TextView
+                android:id="@+id/tv_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/message3"
+                android:layout_below="@+id/tv_tradename"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:text="1"
+                android:textColor="@color/gray"/>
+            <TextView
+                android:id="@+id/message4"
+                android:layout_below="@+id/message3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:text="价        格:"
+                android:textColor="@color/gray"/>
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/message4"
+                android:layout_below="@+id/tv_number"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:text="1000"
+                android:textColor="@color/gray"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="@color/dan_back" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60.0dip"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+
+            <Button
+                android:id="@+id/positiveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/button_commit"
+                android:text="确定买入"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/negativeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:background="@drawable/round_corner_white_bg"
+                android:text="取消"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

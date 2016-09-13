@@ -4,11 +4,23 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.webkit.WebView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.webkit.WebViewClient;
+
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
 import com.xinxidu.xxd.R;
+
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,6 +52,49 @@ public class AboutXiDuDetailActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         tvTitle.setText("西都新闻详情");
         init();
+        webrequest();
+    }
+
+    private void webrequest() {
+        //创建okHttpClient对象
+        OkHttpClient mOkHttpClient = new OkHttpClient();
+//创建一个Request
+        final Request request = new Request.Builder()
+                .url("http://175.102.13.51:8080/XDSY/ZhuBan?type=.guanwang&defference=jiaoyi&indexPage=0\n")
+                .build();
+//new call
+        Call call = mOkHttpClient.newCall(request);
+//请求加入调度
+        call.enqueue(new Callback()
+        {
+            @Override
+            public void onFailure(Request request, IOException e)
+            {
+                Log.v("ffffff","5555555");
+            }
+
+            @Override
+            public void onResponse(final Response response) throws IOException
+            {
+                final String res = response.body().string();
+                runOnUiThread(new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        Log.v("sssss",res);
+                    }
+
+                });
+                try {
+                    JSONObject result = new JSONObject(res).getJSONObject("data");
+//
+                }catch (Exception e){
+                    Log.v("ffff",e.toString());
+                }
+
+            }
+        });
     }
 
     @OnClick(R.id.back)
@@ -47,7 +102,7 @@ public class AboutXiDuDetailActivity extends AppCompatActivity {
         finish();
     }
 
-    private void init(){
+    private void init() {
         //WebView加载web资源
         xiduWebView.loadUrl("http://www.baidu.com");
         //覆盖WebView默认使用第三方或系统默认浏览器打开网页的行为，使网页用WebView打开
