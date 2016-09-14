@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.test.suitebuilder.annotation.Suppress;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +19,16 @@ import android.widget.TextView;
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.activity.AboutXiDuActivity;
 
+import com.xinxidu.xxd.activity.HotActivity;
 import com.xinxidu.xxd.activity.LoginActivity;
 import com.xinxidu.xxd.activity.MyShiPanAccountActivity;
 import com.xinxidu.xxd.activity.RegisterBasicActivity;
+import com.xinxidu.xxd.event.UserLoginEvent;
 import com.xinxidu.xxd.utils.CustomDialog;
 import com.xinxidu.xxd.view.CircleImageView;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -120,6 +126,7 @@ public class MyFragment extends Fragment {
             case R.id.my_selection:
                 break;
             case R.id.my_event:
+                HotActivity.startHotActivity(getActivity());
                 break;
             case R.id.my_aboutus:
                 AboutXiDuActivity.startAboutXiDuActivity(getActivity());
@@ -133,6 +140,23 @@ public class MyFragment extends Fragment {
                 break;
         }
     }
+//    @Subscribe
+//    private void onUserLoginEvent(UserLoginEvent event){
+//        tvUserName.setText(event.getUserName());
+//    }
+
+//    @Override
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        EventBus.getDefault().register(this);
+//    }
+
+//    @Override
+//    public void onDestroy() {
+//        super.onDestroy();
+//        EventBus.getDefault().unregister(this);
+//    }
+
     private void showPhoneDialog() {
         CustomDialog.Builder builder = new CustomDialog.Builder(getActivity());
         builder.setMessage("400-105-4080");
@@ -142,18 +166,14 @@ public class MyFragment extends Fragment {
                 Uri data = Uri.parse("tel:" + "400-105-4080");
                 intent.setData(data);
                 startActivity(intent);
-
             }
         });
-
         builder.setNegativeButton("取消",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
                 });
-
         builder.create().show();
-
     }
 }

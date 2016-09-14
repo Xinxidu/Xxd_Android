@@ -13,6 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.event.UserLoginEvent;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -134,10 +137,18 @@ public class LoginActivity extends Activity {
 //            Intent intent = new Intent(LoginActivity.this, HotActivity.class);
 //            startActivity(intent);
             Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-
+            commitEvent();
         } else {
 
             Toast.makeText(LoginActivity.this, "用户名或密码错误，请重新登录", Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void commitEvent() {
+//        UserLoginEvent userLoginEvent = new UserLoginEvent();
+//        userLoginEvent.setUserName(etLoginUser.getText().toString());
+//        userLoginEvent.setUserPass(etLoginPass.getText().toString());
+//        EventBus.getDefault().post(userLoginEvent);
+        this.finish();
     }
 }

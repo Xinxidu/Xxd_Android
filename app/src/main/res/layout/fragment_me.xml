@@ -16,39 +16,39 @@
 
         <com.xinxidu.xxd.view.CircleImageView
             android:id="@+id/iv_avatar"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="28dip"
-            android:layout_marginTop="38dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:contentDescription="@null"
-            android:src="@mipmap/menu6" />
+            android:src="@mipmap/menu6"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
 
         <TextView
             android:id="@+id/tv_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/iv_avatar"
-            android:layout_marginLeft="58dip"
-            android:layout_marginTop="52dip"
             android:text="未登录"
             android:textColor="@color/white"
-            android:textSize="18dip" />
+            android:textSize="18dip"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_avatar"
+            android:layout_marginLeft="10dp"/>
 
         <Button
             android:id="@+id/btn_my_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/iv_avatar"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
             android:background="@color/navi_line_color"
             android:text="登录" />
 
         <Button
             android:id="@+id/btn_my_register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/btn_my_login"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/btn_my_login"
             android:layout_toStartOf="@+id/btn_my_login"

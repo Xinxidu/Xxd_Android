@@ -2,6 +2,7 @@ package com.xinxidu.xxd.fragments;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -85,6 +87,12 @@ public class HomeFagment extends Fragment {
     TextView textView5;
     @BindView(R.id.bt_now_open)
     Button btNowOpen;
+    @BindView(R.id.imageView)
+    ImageView imageView;
+    @BindView(R.id.image)
+    ImageView image;
+    @BindView(R.id.relative)
+    RelativeLayout relative;
     @BindView(R.id.textView10)
     TextView textView10;
     @BindView(R.id.bt_live_telecast)
@@ -97,6 +105,8 @@ public class HomeFagment extends Fragment {
     TabLayout tabs;
     @BindView(R.id.container)
     ViewPager container;
+    @BindView(R.id.scrollView)
+    ScrollView scrollView;
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private BGABanner mDefaultBanner;
@@ -112,8 +122,9 @@ public class HomeFagment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this, view);
         tabTitle = getResources().getStringArray(R.array.tab_task);
@@ -151,6 +162,7 @@ public class HomeFagment extends Fragment {
                 break;
         }
     }
+
     //TabLayout+2个fragment实时快讯+金银牛评
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -191,7 +203,7 @@ public class HomeFagment extends Fragment {
         imgs.add("http://www.tooopen.com/view/802192.html");
         imgs.add("http://www.tooopen.com/view/802192.html");
         imgs.add("http://www.tooopen.com/view/802192.html");
-        Log.d("imgs","sdfsdfsd");
+        Log.d("imgs", "sdfsdfsd");
 
         List<String> tips = new ArrayList<String>();
         tips.add("西都");
