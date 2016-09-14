@@ -17,6 +17,7 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import com.xinxidu.xxd.R;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -39,7 +40,7 @@ public class AboutXiDuDetailActivity extends AppCompatActivity {
     RelativeLayout baseTitleLayout;
     @BindView(R.id.xidu_webView)
     WebView xiduWebView;
-
+    private String URL;
     public static void startAboutXiDuDetailActivity(Context context) {
         Intent intent = new Intent(context, AboutXiDuDetailActivity.class);
         context.startActivity(intent);
@@ -51,8 +52,8 @@ public class AboutXiDuDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_xi_du_detail);
         ButterKnife.bind(this);
         tvTitle.setText("西都新闻详情");
-        init();
         webrequest();
+        initUI();
     }
 
     private void webrequest() {
@@ -60,7 +61,7 @@ public class AboutXiDuDetailActivity extends AppCompatActivity {
         OkHttpClient mOkHttpClient = new OkHttpClient();
 //创建一个Request
         final Request request = new Request.Builder()
-                .url("http://175.102.13.51:8080/XDSY/ZhuBan?type=.guanwang&defference=jiaoyi&indexPage=0\n")
+                .url("http://175.102.13.51:8080/XDSY/ZhuBan?type=.guanwang&defference=gongsi&indexPage=0\n")
                 .build();
 //new call
         Call call = mOkHttpClient.newCall(request);
@@ -82,16 +83,27 @@ public class AboutXiDuDetailActivity extends AppCompatActivity {
                     @Override
                     public void run()
                     {
-                        Log.v("sssss",res);
+                        Log.v("sucess",res);
+
+                        try {
+                            JSONObject jsonObject = new JSONObject(res);
+                            int resultCode=jsonObject.getInt("flag");
+                            if (resultCode==1){
+
+                                JSONObject data=jsonObject.getJSONObject("data");
+                                JSONObject ss=data.getJSONObject("gongsi");
+                                URL=ss.toString();
+                                Log.v("1111",ss.toString());
+
+                            }else {
+                                Log.v("fail","false");
+                            }
+                        }catch (Exception e){
+                            Log.v("exception",e.toString());
+                        }
                     }
 
                 });
-                try {
-                    JSONObject result = new JSONObject(res).getJSONObject("data");
-//
-                }catch (Exception e){
-                    Log.v("ffff",e.toString());
-                }
 
             }
         });
@@ -102,9 +114,11 @@ public class AboutXiDuDetailActivity extends AppCompatActivity {
         finish();
     }
 
-    private void init() {
+    private void initUI() {
+//        Log.v("55555",URL);
         //WebView加载web资源
-        xiduWebView.loadUrl("http://www.baidu.com");
+        //xiduWebView.loadUrl("www.baidu.com");
+        xiduWebView.loadData(URL,"text/html", "UTF-8");
         //覆盖WebView默认使用第三方或系统默认浏览器打开网页的行为，使网页用WebView打开
         xiduWebView.setWebViewClient(new WebViewClient(){
             @Override
