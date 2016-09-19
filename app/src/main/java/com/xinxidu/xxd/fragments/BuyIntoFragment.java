@@ -118,9 +118,9 @@ public class BuyIntoFragment extends Fragment {
         BuyConfirmDialog.Builder builder = new BuyConfirmDialog.Builder(getActivity());
         builder.setTitle("委托订立买入确认");
         builder.setAccount("55555");
-        builder.setPrice("5");
         builder.setTradeName("银宝");
-        builder.setNumber(10+"");
+        builder.setNumber(1000+"");
+        builder.setPrice("5");
         builder.setPositiveButton("确定买入", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                Intent intent = new Intent(Intent.ACTION_DIAL);

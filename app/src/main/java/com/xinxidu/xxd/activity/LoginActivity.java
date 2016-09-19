@@ -145,10 +145,10 @@ public class LoginActivity extends Activity {
     }
 
     private void commitEvent() {
-//        UserLoginEvent userLoginEvent = new UserLoginEvent();
-//        userLoginEvent.setUserName(etLoginUser.getText().toString());
-//        userLoginEvent.setUserPass(etLoginPass.getText().toString());
-//        EventBus.getDefault().post(userLoginEvent);
-        this.finish();
+        UserLoginEvent userLoginEvent = new UserLoginEvent();
+        userLoginEvent.setUserName(etLoginUser.getText().toString());
+        userLoginEvent.setUserPass(etLoginPass.getText().toString());
+        EventBus.getDefault().post(userLoginEvent);
+        LoginActivity.this.finish();
     }
 }

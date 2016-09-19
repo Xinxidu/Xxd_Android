@@ -140,22 +140,23 @@ public class MyFragment extends Fragment {
                 break;
         }
     }
-//    @Subscribe
-//    private void onUserLoginEvent(UserLoginEvent event){
-//        tvUserName.setText(event.getUserName());
-//    }
 
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        EventBus.getDefault().register(this);
-//    }
+    @Subscribe
+    public void onUserLoginEvent(UserLoginEvent event){
+        tvUserName.setText(event.getUserName());
+    }
 
-//    @Override
-//    public void onDestroy() {
-//        super.onDestroy();
-//        EventBus.getDefault().unregister(this);
-//    }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
+    }
+
+        @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
 
     private void showPhoneDialog() {
         CustomDialog.Builder builder = new CustomDialog.Builder(getActivity());
