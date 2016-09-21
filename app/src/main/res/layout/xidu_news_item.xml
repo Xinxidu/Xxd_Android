@@ -9,6 +9,7 @@
         android:id="@+id/rl_live1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/includelive"
         android:padding="10dp">
 
         <TextView
@@ -19,7 +20,19 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/imageView"
-            android:text="[盈利技巧] 2016-9-9"
+            android:text="[西都新闻]"
+            android:textColor="@color/trip_main_red_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/textView10"
+            android:text="2016-06-07 15:08:08"
             android:textColor="@color/trip_main_red_color"
             android:textSize="16sp" />
 
@@ -32,7 +45,7 @@
             android:layout_marginTop="5dp"
             android:maxLines="4"
             android:maxWidth="160dp"
-            android:text="在原油投资中掌握这些数据想不赚钱都不行"
+            android:text="关于端午节正常开始通知"
             android:textColor="@color/black"
             android:textSize="18sp" />
 
@@ -45,7 +58,7 @@
             android:layout_marginTop="5dp"
             android:maxLines="4"
             android:maxWidth="160dp"
-            android:text="关键词:  原油，资中，掌握，这些，数据，想不，赚钱，不"
+            android:text="关键词:  原油，资中，掌握，这些，数据，想不，赚钱"
             android:textColor="@color/black" />
 
     </RelativeLayout>

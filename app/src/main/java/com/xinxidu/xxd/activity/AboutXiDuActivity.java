@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -52,13 +53,15 @@ public class AboutXiDuActivity extends Activity {
     RelativeLayout rlNews;
     @BindView(R.id.rl_contact)
     RelativeLayout rlContact;
-
+    private SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_xidu);
         ButterKnife.bind(this);
         tvTitle.setText("关于西都石油");
+        sp=this.getSharedPreferences("xiduInfo",0);
+
     }
 
     @OnClick({R.id.back,  R.id.rl_exchange,R.id.rl_xidu, R.id.rl_news, R.id.rl_contact})
@@ -68,16 +71,16 @@ public class AboutXiDuActivity extends Activity {
                 finish();
                 break;
             case R.id.rl_exchange:
-                AboutXiDuDetailActivity.startAboutXiDuDetailActivity(this);
+                ExchangeInfoActivity.startExchangeInfoActivity(this);
                 break;
             case R.id.rl_xidu:
                 AboutXiDuDetailActivity.startAboutXiDuDetailActivity(this);
                 break;
             case R.id.rl_news:
-                AboutXiDuDetailActivity.startAboutXiDuDetailActivity(this);
+                XiduNewsActivity.startProfitSkillActivity(this);
                 break;
             case R.id.rl_contact:
-
+                ContactUsInfoActivity.startyContactUsInfoActivity(this);
                 break;
         }
     }

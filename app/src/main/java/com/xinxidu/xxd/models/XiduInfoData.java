@@ -1,9 +1,9 @@
 package com.xinxidu.xxd.models;
 
-public class JsonData {
+public class XiduInfoData {
 
     private int flag;
-    private DataBean data;
+    private DataBeans data;
     private String msg;
 
     public int getFlag() {
@@ -14,11 +14,11 @@ public class JsonData {
         this.flag = flag;
     }
 
-    public DataBean getData() {
+    public DataBeans getData() {
         return data;
     }
 
-    public void setData(DataBean data) {
+    public void setData(DataBeans data) {
         this.data = data;
     }
 
@@ -30,17 +30,15 @@ public class JsonData {
         this.msg = msg;
     }
 
-    public static class DataBean {
-        private String jiaoyi;
+    public static class DataBeans {
+        private  String gongsi;
 
-        public String getJiaoyi() {
-            return jiaoyi;
+        public String getGongsi(){
+            return gongsi;
         }
-
-        public void setJiaoyi(String jiaoyi) {
-            this.jiaoyi = jiaoyi;
+        public void setGongsi(String gongsi) {
+            this.gongsi = gongsi;
         }
-
     }
 
 
