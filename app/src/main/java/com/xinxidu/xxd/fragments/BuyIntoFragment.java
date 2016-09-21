@@ -1,6 +1,7 @@
 package com.xinxidu.xxd.fragments;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -12,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -71,6 +74,7 @@ public class BuyIntoFragment extends Fragment {
     public View view;
     int num = 1000;//数量
     int num1 = 10;//数量
+    private Context conext;
 
     @Nullable
     @Override
@@ -115,12 +119,13 @@ public class BuyIntoFragment extends Fragment {
     }
 
     private void buyDialog() {
+
         BuyConfirmDialog.Builder builder = new BuyConfirmDialog.Builder(getActivity());
         builder.setTitle("委托订立买入确认");
         builder.setAccount("55555");
-        builder.setTradeName("银宝");
-        builder.setNumber(1000+"");
-        builder.setPrice("5");
+        builder.setTradeName(btName.getText().toString());
+        builder.setNumber(tvPriceNum.getText().toString());
+        builder.setPrice(tvPriceNum1.getText().toString());
         builder.setPositiveButton("确定买入", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                Intent intent = new Intent(Intent.ACTION_DIAL);

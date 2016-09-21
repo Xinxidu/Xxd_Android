@@ -206,11 +206,11 @@ public class HomeFagment extends Fragment {
         Log.d("imgs", "sdfsdfsd");
 
         List<String> tips = new ArrayList<String>();
-        tips.add("西都");
-        tips.add("西都");
-        tips.add("西都");
-        tips.add("西都");
-        tips.add("西都");
+        tips.add("");
+        tips.add("");
+        tips.add("");
+        tips.add("");
+        tips.add("");
 
         SimpleDraweeView simpleDraweeView;
         for (int i = 0; i < mDefaultViews.size(); i++) {

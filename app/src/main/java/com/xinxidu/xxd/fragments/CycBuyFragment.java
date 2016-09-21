@@ -76,7 +76,7 @@ public class CycBuyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.base_trade, container, false);
         ButterKnife.bind(this, view);
-        relative1.setVisibility(View.GONE);
+        relative.setVisibility(View.VISIBLE);
         tvTvTradePuySell.setText("周期买");
         tvPriceNum.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
         tvPriceNum.setText(String.valueOf(num));
@@ -117,9 +117,9 @@ public class CycBuyFragment extends Fragment {
         BuyConfirmDialog.Builder builder = new BuyConfirmDialog.Builder(getActivity());
         builder.setTitle("委托调期买入确认");
         builder.setAccount("7");
-        builder.setPrice("6688");
-        builder.setTradeName("银宝");
-        builder.setNumber(10+"");
+        builder.setTradeName(btName.getText().toString());
+        builder.setNumber(tvPriceNum.getText().toString());
+        builder.setPrice(tvPriceNum1.getText().toString());
         builder.setPositiveButton("确定买入", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(getActivity(), "买入成功", Toast.LENGTH_SHORT).show();

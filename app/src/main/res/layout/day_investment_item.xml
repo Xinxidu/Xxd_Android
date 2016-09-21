@@ -25,47 +25,44 @@
                 android:layout_marginTop="5dp"
                 android:background="@drawable/bofang_icon"
                 android:textSize="12dp" />
-
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/bofang" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/image"
-                android:text="股赢天下" />
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/relative"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
+            android:maxLines="1"
             android:layout_toRightOf="@+id/relative"
             android:text="美指绝地反击，原油遇阻回落"
             android:textColor="@color/black"
-            android:textSize="21sp" />
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/tv_body"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView10"
-            android:layout_below="@+id/textView10"
+            android:layout_alignLeft="@+id/tv_title"
+            android:layout_below="@+id/tv_title"
             android:layout_marginTop="5dp"
-            android:maxLines="4"
+            android:maxLines="3"
             android:maxWidth="160dp"
-            android:text="编者语：特朗普称，石油应该是美国能源政策的核心，对此应减少监管，提升产能   [2016-9-9]"
+            android:text="编者语：特朗普称，石油应该石油应该石油应该石油应该石油应该石油应该石油应该石油应该石油应该石油应该石油应该石油应该石油应该石油应该是美国能源政策的核心，对此应减少监管，提升产能"
             android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:maxWidth="160dp"
+            android:text="2016:12:03"
+            android:textColor="@color/black"
+            android:layout_below="@+id/tv_body"
+            android:layout_alignRight="@+id/tv_body"
+            android:layout_marginTop="5dp"/>
 
     </RelativeLayout>
 

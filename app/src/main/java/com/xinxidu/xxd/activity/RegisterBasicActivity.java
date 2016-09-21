@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ public class RegisterBasicActivity extends Activity {
     TextView textView1;
     @BindView(R.id.tv_next)
     TextView tvNext;
+    private TimeCount time;
 
     public static void startRegisterBasicActivity(Context context) {
         Intent intent = new Intent(context, RegisterBasicActivity.class);
@@ -50,6 +52,7 @@ public class RegisterBasicActivity extends Activity {
         setContentView(R.layout.register_basic_activity);
         ButterKnife.bind(this);
         tvTitle.setText("基本信息");
+        time = new TimeCount(60000, 1000);
     }
 
     @OnClick({R.id.back, R.id.tv_send, R.id.tv_next})
@@ -59,9 +62,29 @@ public class RegisterBasicActivity extends Activity {
                 finish();
                 break;
             case R.id.tv_send:
+                //点击发送验证码倒计时
+                time.start();
                 break;
             case R.id.tv_next:
                 break;
+        }
+    }
+
+    class TimeCount extends CountDownTimer {
+        public TimeCount(long millisInFuture, long countDownInterval) {
+            super(millisInFuture, countDownInterval);//参数依次为总时长,和计时的时间间隔
+        }
+
+        @Override
+        public void onFinish() {//计时完毕时触发
+            tvSend.setText("重新获取");
+            tvSend.setClickable(true);
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished) {//计时过程显示
+            tvSend.setClickable(false);
+            tvSend.setText(millisUntilFinished / 1000 + "秒");
         }
     }
 }

@@ -103,4 +103,10 @@
         <item name="android:windowIsFloating">true</item>
     </style>
 
+    <!--tablayout字体大小-->
+    <style name="MyTabLayoutTextAppearanceInverse" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

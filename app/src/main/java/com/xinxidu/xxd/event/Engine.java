@@ -3,11 +3,6 @@ package com.xinxidu.xxd.event;
 import retrofit.Call;
 import retrofit.http.GET;
 
-/**
- * 作者:王浩 邮件:bingoogolapple@gmail.com
- * 创建时间:15/9/17 下午12:44
- * 描述:
- */
 public interface Engine {
 
     @GET("3item.json")

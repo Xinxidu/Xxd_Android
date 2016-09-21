@@ -122,9 +122,9 @@ public class SellIntoFragment extends Fragment {
         BuyConfirmDialog.Builder builder = new BuyConfirmDialog.Builder(getActivity());
         builder.setTitle("委托订立卖出确认");
         builder.setAccount("66666");
-        builder.setPrice("6");
-        builder.setTradeName("银宝");
-        builder.setNumber(10+"");
+        builder.setTradeName(btName.getText().toString());
+        builder.setNumber(tvPriceNum.getText().toString());
+        builder.setPrice(tvPriceNum1.getText().toString());
         builder.setPositiveButton("确定卖出", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(getActivity(), "卖出成功", Toast.LENGTH_SHORT).show();
