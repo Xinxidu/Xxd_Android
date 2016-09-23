@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.event.ProfitSkillEvent;
@@ -12,6 +13,7 @@ import com.xinxidu.xxd.event.ProfitSkillEvent;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -19,22 +21,13 @@ import butterknife.ButterKnife;
  */
 public class ProfitSkillAdapter extends RecyclerView.Adapter<ProfitSkillAdapter.ViewHolder> {
     private final Context mContext;
+    private final List<ProfitSkillEvent> mItemList;
+    private XiduNewsAdapter.OnItemClickListener mOnItemClickListener;
 
 
-    private List<ProfitSkillEvent> mItemList = new ArrayList<ProfitSkillEvent>();
-
-    public ProfitSkillAdapter(Context mContext, List<ProfitSkillEvent> itemList, Context context) {
-        mItemList = itemList;
-        this.mContext = context;
-    }
-
-    public void setData(ArrayList<ProfitSkillEvent> timeList) {
-        //mItemList.clear();
-        mItemList.addAll(timeList);
-    }
-
-    public ProfitSkillAdapter(Context context) {
-        mContext = context;
+    public ProfitSkillAdapter(Context mContext, List<ProfitSkillEvent> itemList) {
+        this.mItemList = itemList;
+        this.mContext = mContext;
     }
 
     @Override
@@ -45,23 +38,32 @@ public class ProfitSkillAdapter extends RecyclerView.Adapter<ProfitSkillAdapter.
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
+        holder.tvTitle.setText(mItemList.get(position).getTitle());
+        holder.tvKeywords.setText(mItemList.get(position).getKeywords());
+        holder.tvSenddate.setText(mItemList.get(position).getSenddate());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                TaskDetailsActivity.startTaskDetailsActivity(mContext);
+                mOnItemClickListener.onItemClick(holder.itemView, holder.getLayoutPosition());
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return mItemList.size() == 0 ? 0 : mItemList.size();
     }
 
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
+        @BindView(R.id.tv_title)
+        TextView tvTitle;
+        @BindView(R.id.tv_keywords)
+        TextView tvKeywords;
+        @BindView(R.id.tv_senddate)
+        TextView tvSenddate;
         View itemView;
 
         ViewHolder(View view) {
@@ -70,4 +72,13 @@ public class ProfitSkillAdapter extends RecyclerView.Adapter<ProfitSkillAdapter.
             ButterKnife.bind(this, view);
         }
     }
+
+    public void setOnItemClickListener(XiduNewsAdapter.OnItemClickListener onItemClickListener) {
+        this.mOnItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
+
 }

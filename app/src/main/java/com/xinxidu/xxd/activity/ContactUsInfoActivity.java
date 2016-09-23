@@ -2,52 +2,40 @@ package com.xinxidu.xxd.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.models.XiduInfoData;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class ContactUsInfoActivity extends Fragment {
-    @BindView(R.id.back)
-    RelativeLayout back;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
-    @BindView(R.id.tv_title_ok)
-    TextView tvTitleOk;
-    @BindView(R.id.ok)
-    RelativeLayout ok;
-    @BindView(R.id.base_title_layout)
-    RelativeLayout baseTitleLayout;
+
+    protected static final String HOST = "http://175.102.13.51:8080/XDSY/ZhuBan?type=.guanwang&defference=lianxi&indexPage=0";
     @BindView(R.id.textView11)
     TextView textView11;
     @BindView(R.id.CompanyTel)
@@ -68,7 +56,9 @@ public class ContactUsInfoActivity extends Fragment {
     TextView textView55;
     @BindView(R.id.CompanyAddress)
     TextView CompanyAddress;
-    protected static final String HOST = "http://175.102.13.51:8080/XDSY/ZhuBan?type=.guanwang&defference=lianxi&indexPage=0";
+    @BindView(R.id.iv_address)
+    ImageView ivAddress;
+
     public static void startyContactUsInfoActivity(Context context) {
         Intent intent = new Intent(context, ContactUsInfoActivity.class);
         context.startActivity(intent);
@@ -77,8 +67,9 @@ public class ContactUsInfoActivity extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.activity_contact_us_info,container,false);
+        View view = inflater.inflate(R.layout.activity_contact_us_info, container, false);
         webRequest();
+        ButterKnife.bind(this, view);
         return view;
     }
 
@@ -105,23 +96,30 @@ public class ContactUsInfoActivity extends Fragment {
                     @Override
                     public void run() {
                         Log.v("sucessuser", res);
-                                try {
-                                    JSONObject json=new JSONObject(res);
-                                    int flag=json.getInt("flag");
-                                    String msg=json.getString("msg");
-                                    if (flag==1){
-                                        JSONArray dataArr=json.getJSONArray("data");
-                                        JSONObject data=(JSONObject)dataArr.opt(0);
-//                                         CompanyTel.setText(data.getString("CompanyTel"));
-//                                         CustomerHotline.setText(data.getString("CustomerHotline"));
-//                                         JoinHotline.setText(data.getString("JoinHotline"));
-//                                         CompanyAddress.setText(data.getString("CompanyAddress"));
-//                                         ComplaintsTel.setText(data.getString("ComplaintsTel"));
-                                      //  String HeadquartersAddress=data.getString("HeadquartersAddress");
-                                    }
-                                }catch (JSONException e){
-                                    throw new RuntimeException(e);
-                                }
+                        try {
+                            JSONObject json = new JSONObject(res);
+                            int flag = json.getInt("flag");
+                            String msg = json.getString("msg");
+                            if (flag == 1) {
+                                JSONArray dataArr = json.getJSONArray("data");
+                                JSONObject data = (JSONObject) dataArr.opt(0);
+                                Log.v("CompanyTel", data.getString("CompanyTel"));
+                                CompanyTel.setText(data.getString("CompanyTel"));
+                                CustomerHotline.setText(data.getString("CustomerHotline"));
+                                JoinHotline.setText(data.getString("JoinHotline"));
+                                CompanyAddress.setText(data.getString("CompanyAddress"));
+                                ComplaintsTel.setText(data.getString("ComplaintsTel"));
+                               // String HeadquartersAddress=data.getString("HeadquartersAddress");
+                               // Log.v("HeadquartersAddress",HeadquartersAddress);
+                                String url="http://www.xiduoil.com/uploads/150310/1-150310103006241.png";
+                                //得到可用的图片
+                                Bitmap bitmap = getHttpBitmap(url);
+                                ivAddress.setImageBitmap(bitmap);
+
+                            }
+                        } catch (JSONException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
 
                 });
@@ -129,4 +127,33 @@ public class ContactUsInfoActivity extends Fragment {
             }
         });
     }
+
+    public static Bitmap getHttpBitmap(String url) {
+        URL myFileURL;
+        Bitmap bitmap=null;
+        try{
+            myFileURL = new URL(url);
+            //获得连接
+            HttpURLConnection conn=(HttpURLConnection)myFileURL.openConnection();
+            //设置超时时间为6000毫秒，conn.setConnectionTiem(0);表示没有时间限制
+            conn.setConnectTimeout(6000);
+            //连接设置获得数据流
+            conn.setDoInput(true);
+            //不使用缓存
+            conn.setUseCaches(false);
+            //这句可有可无，没有影响
+            conn.connect();
+            //得到数据流
+            InputStream is = conn.getInputStream();
+            //解析得到图片
+            bitmap = BitmapFactory.decodeStream(is);
+            //关闭数据流
+            is.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return bitmap;
+    }
+
 }
+

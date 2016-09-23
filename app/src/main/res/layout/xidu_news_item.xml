@@ -38,7 +38,7 @@
             android:layout_marginTop="5dp"
             android:layout_below="@+id/keywords"
             android:text="2016-06-07 15:08:08"
-            android:textColor="@color/lightgray"
+            android:textColor="@color/dan_back"
             android:textSize="16sp" />
 
     </RelativeLayout>
