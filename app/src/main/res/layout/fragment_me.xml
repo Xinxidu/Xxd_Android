@@ -16,8 +16,8 @@
 
         <com.xinxidu.xxd.view.CircleImageView
             android:id="@+id/iv_avatar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:contentDescription="@null"
@@ -36,7 +36,7 @@
 
         <Button
             android:id="@+id/btn_my_login"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
@@ -46,7 +46,7 @@
 
         <Button
             android:id="@+id/btn_back_login"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
@@ -57,7 +57,7 @@
 
         <Button
             android:id="@+id/btn_my_register"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
