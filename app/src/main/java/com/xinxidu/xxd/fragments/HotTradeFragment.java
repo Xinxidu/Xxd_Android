@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
@@ -20,6 +22,7 @@ import com.xinxidu.xxd.adapter.HotTradeAdapter;
 import com.xinxidu.xxd.event.HotTradeEvent;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,9 +35,11 @@ public class HotTradeFragment extends Fragment {
 
     HotTradeAdapter mHotTradeAdapter;
     @BindView(R.id.tv_down_up)
-    TextView tvDownUp;
+    Spinner tvDownUp;
     @BindView(R.id.tv_volume)
-    TextView tvVolume;
+    Spinner tvVolume;
+    private List<String> data_list;
+    private ArrayAdapter<String> arr_adapter;
 
     private ArrayList<HotTradeEvent> mItem;
     private RecyclerView mRecyclerView;
@@ -52,50 +57,32 @@ public class HotTradeFragment extends Fragment {
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mItem = new ArrayList<HotTradeEvent>();
         mItem.add(null);
-//        if (mItem != null && mItem.size() > 0) {
 
         mHotTradeAdapter = new HotTradeAdapter(getActivity());
         mRecyclerView.setAdapter(mHotTradeAdapter);
         mHotTradeAdapter.setData(mItem);
         mHotTradeAdapter.notifyDataSetChanged();
-//        }
         ButterKnife.bind(this, view);
+        spinner1();
+        spinner2();
         return view;
     }
 
-    @OnClick({R.id.tv_down_up, R.id.tv_volume})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.tv_down_up:
-                showDialog();
-                break;
-            case R.id.tv_volume:
-                showDialog1();
-                break;
-        }
+    private void spinner1() {
+        final String[] data_list = {"涨跌幅", "振幅"};
+        arr_adapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner1_trade, data_list);
+        //设置样式
+        arr_adapter.setDropDownViewResource(R.layout.spinner_trade);
+        //加载适配器
+        tvDownUp.setAdapter(arr_adapter);
     }
 
-    private void showDialog1() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        final String[] cities = {"最高", "最低", "开盘", "昨收", "昨结", "现量", "持货量", "成交额", "成交量"};
-        builder.setItems(cities, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                tvVolume.setText(" " + cities[which]);
-            }
-        });
-        builder.show();
-    }
-
-    private void showDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        final String[] cities = {"涨跌幅", "振幅"};
-        builder.setItems(cities, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                tvDownUp.setText(" " + cities[which]);
-            }
-        });
-        builder.show();
+    private void spinner2() {
+        final String[] data_list = {"最高", "最低", "开盘", "昨收", "昨结", "现量", "持货量", "成交额", "成交量"};
+        arr_adapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner1_trade, data_list);
+        //设置样式
+        arr_adapter.setDropDownViewResource(R.layout.spinner_trade);
+        //加载适配器
+        tvVolume.setAdapter(arr_adapter);
     }
 }

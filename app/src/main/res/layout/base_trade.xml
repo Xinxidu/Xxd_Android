@@ -9,6 +9,17 @@
         android:layout_width="match_parent"
         android:layout_height="70dp">
 
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_toLeftOf="@+id/textView"
+            android:background="@drawable/frame"
+            android:dropDownVerticalOffset="51dp" />
+
         <Button
             android:id="@+id/bt_name"
             android:layout_width="wrap_content"
@@ -19,13 +30,14 @@
             android:background="@drawable/frame"
             android:text="白银升贴水1000"
             android:textColor="@color/white"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/bt_name"
+            android:layout_alignTop="@+id/spinner1"
             android:layout_marginRight="20dp"
             android:layout_toLeftOf="@+id/textView1"
             android:text="档位"
@@ -41,13 +53,6 @@
             android:text="卖1"
             android:textColor="@color/wait_result_gray" />
 
-        <!--<View-->
-        <!--android:layout_width="1dp"-->
-        <!--android:layout_height="90dp"-->
-        <!--android:background="@color/dan_back"-->
-        <!--android:layout_toRightOf="@+id/textView2"-->
-        <!--android:layout_toEndOf="@+id/textView2" -->
-        <!--android:layout_marginLeft="5dp"/>-->
 
         <TextView
             android:id="@+id/textView1"
@@ -71,12 +76,6 @@
             android:text="1006.0"
             android:textColor="@color/black" />
 
-        <!--<View-->
-        <!--android:layout_width="1dp"-->
-        <!--android:layout_height="90dp"-->
-        <!--android:background="@color/dan_back"-->
-        <!--android:layout_alignRight="@+id/tv_price"-->
-        <!--android:layout_marginLeft="7dp"/>-->
 
         <TextView
             android:id="@+id/textView3"
@@ -119,11 +118,11 @@
 
             <RelativeLayout
                 android:id="@+id/relative"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginTop="10dp">
 
                 <Button
                     android:id="@+id/bt_collect"
@@ -135,12 +134,13 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:background="@drawable/frame"
-                    android:text="按明细"
-                    android:textColor="@color/black"
                     android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toEndOf="@+id/bt_collect"
                     android:layout_toRightOf="@+id/bt_collect"
-                    android:layout_toEndOf="@+id/bt_collect" />
+                    android:background="@drawable/hui"
+                    android:text="按明细"
+                    android:textColor="@color/white" />
 
             </RelativeLayout>
 
@@ -222,16 +222,16 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/relativeLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/frame1"
-                    android:layout_below="@+id/relative1"
-                    android:layout_alignLeft="@+id/relative1"
-                    android:layout_alignStart="@+id/relative1"
-                    android:layout_alignRight="@+id/relative1"
                     android:layout_alignEnd="@+id/relative1"
+                    android:layout_alignLeft="@+id/relative1"
+                    android:layout_alignRight="@+id/relative1"
+                    android:layout_alignStart="@+id/relative1"
+                    android:layout_below="@+id/relative1"
                     android:layout_marginTop="10dp"
-                    android:id="@+id/relativeLayout">
+                    android:background="@drawable/frame1">
 
                     <TextView
                         android:id="@+id/bt_jian1"
@@ -269,16 +269,16 @@
                     android:id="@+id/tv_tv_trade_puy_sell"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
+                    android:layout_alignEnd="@+id/relativeLayout"
+                    android:layout_alignLeft="@+id/relativeLayout"
+                    android:layout_alignRight="@+id/relativeLayout"
+                    android:layout_alignStart="@+id/relativeLayout"
+                    android:layout_below="@+id/relativeLayout"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/button_commit"
                     android:gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:layout_below="@+id/relativeLayout"
-                    android:layout_alignLeft="@+id/relativeLayout"
-                    android:layout_alignStart="@+id/relativeLayout"
-                    android:layout_alignRight="@+id/relativeLayout"
-                    android:layout_alignEnd="@+id/relativeLayout"
-                    android:layout_marginTop="10dp"/>
+                    android:textSize="20sp" />
 
             </RelativeLayout>
 
@@ -286,6 +286,6 @@
 
     </RelativeLayout>
 
-    <include layout="@layout/base_trade_foot"/>
+    <include layout="@layout/base_trade_foot" />
 
 </LinearLayout>

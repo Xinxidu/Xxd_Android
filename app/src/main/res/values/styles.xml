@@ -114,15 +114,7 @@
         <item name="android:layout_height">1dp</item>
         <item name="android:background">@color/hui_color</item>
     </style>
-    <!--我的实盘账户TextView
-    android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:background="@drawable/ripple_bg"
-            android:drawableRight="@mipmap/arrow_right"
-            android:padding="16dp"
-            android:textColor="@color/shortlease_main_text_blue"
-            android:textSize="18dp" -->
+
     <style name="MyTextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -133,4 +125,5 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">18dp</item>
     </style>
+
 </resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="languages">
+            <item>白银升贴水1000</item>
+            <item>龙天勇银 </item>
+            <item>白银现货排期</item>
+            <item>白银基差1000</item>
+    </string-array>
+</resources>
