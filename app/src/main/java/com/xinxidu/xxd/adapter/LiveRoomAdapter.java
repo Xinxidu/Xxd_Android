@@ -24,8 +24,6 @@ import butterknife.ButterKnife;
  */
 public class LiveRoomAdapter extends RecyclerView.Adapter<LiveRoomAdapter.ViewHolder> {
     private final Context mContext;
-
-
     private List<LiveRoomEvent> mItemList = new ArrayList<LiveRoomEvent>();
 
     public LiveRoomAdapter(Context mContext, List<LiveRoomEvent> itemList, Context context) {
@@ -66,21 +64,22 @@ public class LiveRoomAdapter extends RecyclerView.Adapter<LiveRoomAdapter.ViewHo
 
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-
         @BindView(R.id.imageView)
         ImageView imageView;
+        @BindView(R.id.image)
+        ImageView image;
+        @BindView(R.id.relative)
+        RelativeLayout relative;
         @BindView(R.id.textView10)
         TextView textView10;
         @BindView(R.id.bt_live_telecast)
         Button btLiveTelecast;
         @BindView(R.id.textView11)
         TextView textView11;
-        @BindView(R.id.rl_live1)
-        RelativeLayout rlLive1;
+        @BindView(R.id.textView13)
+        TextView textView13;
         @BindView(R.id.iv_more)
         ImageView ivMore;
-        @BindView(R.id.rl_boom1)
-        RelativeLayout rlBoom1;
 
         View itemView;
 

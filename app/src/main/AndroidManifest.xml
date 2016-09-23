@@ -25,8 +25,6 @@
         <activity android:name=".activity.HotActivity" />
         <activity android:name=".activity.BroadcastNewsActivity" />
         <activity android:name=".activity.FinanceCalendarActivity" />
-        <activity android:name=".activity.AboutXiDuActivity" />
-        <activity android:name=".activity.AboutXiDuDetailActivity" />
         <activity android:name=".activity.MyShiPanAccountActivity" />
         <activity android:name=".activity.AccountInfoActivity" />
         <activity android:name=".activity.LoginActivity" />
@@ -36,13 +34,16 @@
         <activity android:name=".activity.TodayDecideListActivity" />
         <activity android:name=".activity.LiveRoomActivity" />
         <activity android:name=".activity.DayInvestmentActivity" />
-        <activity android:name=".activity.ProfitSkillActivity"/>
-        <activity android:name=".activity.OrderHistoryAdjustActivity"/>
-        <activity android:name=".activity.OrderHistoryActivity"/>
-        <activity android:name=".activity.ElectricTradeActivity"/>
-        <activity android:name=".activity.TeacherTeamActivity"/>
-        <activity android:name=".activity.XiduNewsActivity"/>
-        <activity android:name=".activity.DayInvestmentDetailActivity"/>
+        <activity android:name=".activity.ProfitSkillActivity" />
+        <activity android:name=".activity.OrderHistoryAdjustActivity" />
+        <activity android:name=".activity.OrderHistoryActivity" />
+        <activity android:name=".activity.ElectricTradeActivity" />
+        <activity android:name=".activity.TeacherTeamActivity" />
+        <activity android:name=".activity.DayInvestmentDetailActivity" />
+        <activity android:name=".activity.HuaTongLoginActivity" />
+        <activity android:name=".activity.HuaTongRegisterBasicActivity" />
+        <activity android:name=".activity.AboutXXiDuActivity"/>
+        <activity android:name=".activity.XiduNewsDetailActivity"/>
     </application>
 
 </manifest>

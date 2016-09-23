@@ -13,53 +13,33 @@
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imageView"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/imageView"
-            android:text="[西都新闻]"
-            android:textColor="@color/trip_main_red_color"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/t"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imageView"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/textView10"
-            android:text="2016-06-07 15:08:08"
-            android:textColor="@color/trip_main_red_color"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView10"
-            android:layout_below="@+id/textView10"
-            android:layout_marginTop="5dp"
-            android:maxLines="4"
-            android:maxWidth="160dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="3dp"
             android:text="关于端午节正常开始通知"
-            android:textColor="@color/black"
+            android:textColor="@color/trip_detail_btn_frame"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/keywords"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView10"
-            android:layout_below="@+id/textView11"
-            android:layout_marginTop="5dp"
-            android:maxLines="4"
-            android:maxWidth="160dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/title"
             android:text="关键词:  原油，资中，掌握，这些，数据，想不，赚钱"
-            android:textColor="@color/black" />
+            android:textColor="@color/trip_detail_btn_frame"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/senddate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/keywords"
+            android:text="2016-06-07 15:08:08"
+            android:textColor="@color/lightgray"
+            android:textSize="16sp" />
 
     </RelativeLayout>
 

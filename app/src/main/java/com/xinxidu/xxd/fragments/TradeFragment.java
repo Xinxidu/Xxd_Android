@@ -79,7 +79,7 @@ public class TradeFragment extends Fragment {
                 case 5:
                     return new HoldGoodsGragment();
                 default:
-                    return new HoldGoodsGragment();
+                    return new QueryFragment();
             }
         }
 

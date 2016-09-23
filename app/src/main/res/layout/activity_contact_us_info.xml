@@ -3,109 +3,109 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
-    <include layout="@layout/title"
-        android:id="@+id/title"/>
+
     <TextView
+        android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title"
         android:text="公司电话:"
-        android:textColor="@color/black"
-        android:id="@+id/textView11" />
+        android:textColor="@color/black" />
 
     <TextView
+        android:id="@+id/CompanyTel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1314"
-        android:textColor="@color/black"
-        android:id="@+id/CompanyTel"
+        android:layout_below="@+id/title"
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@+id/textView11"
-        android:layout_below="@+id/title"/>
+        android:text="1314"
+        android:textColor="@color/black" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="客服热线:"
-        android:textColor="@color/black"
         android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/textView11"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="30dp"
+        android:text="客服热线:"
+        android:textColor="@color/black" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="7788"
-        android:textColor="@color/black"
         android:id="@+id/CustomerHotline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CompanyTel"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
         android:layout_toRightOf="@+id/textView22"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/CompanyTel"/>
+        android:text="7788"
+        android:textColor="@color/black" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="加盟热线:"
-        android:textColor="@color/black"
         android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/textView22"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="30dp"
+        android:text="加盟热线:"
+        android:textColor="@color/black" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="778899"
-        android:textColor="@color/black"
         android:id="@+id/JoinHotline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CustomerHotline"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
         android:layout_toRightOf="@+id/textView33"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/CustomerHotline"/>
+        android:text="778899"
+        android:textColor="@color/black" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="投诉电话:"
-        android:textColor="@color/black"
         android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/textView33"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="30dp"
+        android:text="投诉电话:"
+        android:textColor="@color/black" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="44455"
-        android:textColor="@color/black"
         android:id="@+id/ComplaintsTel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/JoinHotline"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
         android:layout_toRightOf="@+id/textView44"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/JoinHotline"/>
+        android:text="44455"
+        android:textColor="@color/black" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="公司地址:"
-        android:textColor="@color/black"
         android:id="@+id/textView55"
-        android:layout_below="@+id/textView44"
-        android:layout_marginTop="30dp" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="上海"
-        android:textColor="@color/black"
-        android:id="@+id/CompanyAddress"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@+id/textView55"
+        android:layout_below="@+id/textView44"
         android:layout_marginTop="30dp"
-        android:layout_below="@+id/ComplaintsTel"/>
+        android:text="公司地址:"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/CompanyAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ComplaintsTel"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@+id/textView55"
+        android:text="上海"
+        android:textColor="@color/black" />
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView55"/>
+        android:layout_below="@+id/textView55" />
 
 
 </RelativeLayout>

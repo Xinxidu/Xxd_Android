@@ -8,292 +8,73 @@
 
     <include layout="@layout/title" />
 
-    <View
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:background="@color/between_line" />
+        android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/find_eventnews"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ripple_bg"
-        android:gravity="center_vertical"
-        android:padding="8dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/title_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/imageView5"
-            android:contentDescription="@string/app_name"
-            android:padding="5dp"
-            android:scaleType="fitXY"
-            android:src="@mipmap/address" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/color_e4ebf4" />
 
-        <TextView
-            android:id="@+id/title_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/title_back"
-            android:gravity="center"
-            android:text="活动消息"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
+            <TextView
+                android:id="@+id/title_name"
+                style="@style/MyTextView"
+                android:drawableLeft="@mipmap/address"
+                android:text="活动消息" />
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="0dip"
-            android:contentDescription="@string/app_name"
-            android:scaleType="fitXY"
-            android:src="@mipmap/arrow_right" />
-    </RelativeLayout>
+            <View style="@style/MyView" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/between_line" />
+            <TextView
+                android:id="@+id/find_online"
+                style="@style/MyTextView"
+                android:drawableLeft="@mipmap/address"
+                android:text="在线直播" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:background="@color/between_line" />
 
-    <RelativeLayout
-        android:id="@+id/find_online"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_15"
-        android:background="@drawable/ripple_bg"
-        android:gravity="center_vertical"
-        android:padding="8dp">
+            <View style="@style/MyView" />
 
-        <ImageView
-            android:id="@+id/title_more"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:padding="5dp"
-            android:scaleType="fitXY"
-            android:src="@mipmap/more" />
+            <TextView
+                android:id="@+id/find_investment"
+                style="@style/MyTextView"
+                android:drawableLeft="@mipmap/address"
+                android:text="投资策略" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/title_more"
-            android:gravity="center"
-            android:text="在线直播"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
+            <View style="@style/MyView" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="0dip"
-            android:contentDescription="@string/app_name"
-            android:scaleType="fitXY"
-            android:src="@mipmap/arrow_right" />
+            <TextView
+                android:id="@+id/find_profit"
+                style="@style/MyTextView"
+                android:drawableLeft="@mipmap/address"
+                android:text="盈利技巧" />
 
-    </RelativeLayout>
+            <View style="@style/MyView" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/between_line" />
+            <TextView
+                android:id="@+id/find_teacherteam"
+                style="@style/MyTextView"
+                android:drawableLeft="@mipmap/address"
+                android:text="名师团队" />
 
-    <RelativeLayout
-        android:id="@+id/find_investment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_1"
-        android:background="@drawable/ripple_bg"
-        android:gravity="center_vertical"
-        android:padding="8dp">
+            <View style="@style/MyView" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:padding="5dp"
-            android:scaleType="fitXY"
-            android:src="@mipmap/address" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/color_e4ebf4" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/imageView"
-            android:gravity="center"
-            android:text="投资策略"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
+            <TextView
+                android:id="@+id/find_trade"
+                style="@style/MyTextView"
+                android:drawableLeft="@mipmap/address"
+                android:text="模拟盘交易" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="0dip"
-            android:contentDescription="@string/app_name"
-            android:scaleType="fitXY"
-            android:src="@mipmap/arrow_right" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/between_line" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:background="@color/between_line" />
-
-    <RelativeLayout
-        android:id="@+id/find_profit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_1"
-        android:background="@drawable/ripple_bg"
-        android:gravity="center_vertical"
-        android:padding="8dp">
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:padding="5dp"
-            android:scaleType="fitXY"
-            android:src="@mipmap/more" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="@dimen/space_15"
-            android:layout_toRightOf="@+id/imageView2"
-            android:gravity="center"
-            android:text="盈利技巧"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="0dip"
-            android:contentDescription="@string/app_name"
-            android:scaleType="fitXY"
-            android:src="@mipmap/arrow_right" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/between_line" />
-
-    <RelativeLayout
-        android:id="@+id/find_teacherteam"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/ripple_bg"
-        android:gravity="center_vertical"
-        android:padding="8dp">
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:padding="5dp"
-            android:scaleType="fitXY"
-            android:src="@mipmap/more" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/imageView3"
-            android:gravity="center"
-            android:text="名师团队"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="0dip"
-            android:contentDescription="@string/app_name"
-            android:scaleType="fitXY"
-            android:src="@mipmap/arrow_right" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/between_line" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:background="@color/between_line" />
-
-    <RelativeLayout
-        android:id="@+id/find_trade"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ripple_bg"
-        android:gravity="center_vertical"
-        android:padding="8dp">
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:padding="5dp"
-            android:scaleType="fitXY"
-            android:src="@mipmap/collection" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/imageView4"
-            android:gravity="center"
-            android:text="模拟盘交易"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="0dip"
-            android:contentDescription="@string/app_name"
-            android:scaleType="fitXY"
-            android:src="@mipmap/arrow_right" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/between_line" />
+            <View style="@style/MyView" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

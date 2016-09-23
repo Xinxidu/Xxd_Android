@@ -3,9 +3,14 @@ package com.xinxidu.xxd.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -27,17 +32,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class AboutXiDuDetailActivity extends AppCompatActivity {
-    @BindView(R.id.back)
-    RelativeLayout back;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
-    @BindView(R.id.tv_title_ok)
-    TextView tvTitleOk;
-    @BindView(R.id.ok)
-    RelativeLayout ok;
-    @BindView(R.id.base_title_layout)
-    RelativeLayout baseTitleLayout;
+public class AboutXiDuDetailActivity extends Fragment {
     @BindView(R.id.xidu_webView)
     WebView xiduWebView;
     protected static final String URL = "http://175.102.13.51:8080/XDSY/ZhuBan?type=.guanwang&defference=gongsi&indexPage=0";
@@ -46,13 +41,13 @@ public class AboutXiDuDetailActivity extends AppCompatActivity {
         context.startActivity(intent);
     }
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_xi_du_detail);
-        ButterKnife.bind(this);
-        tvTitle.setText("西都简介");
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_about_xi_du_detail, container, false);
+        ButterKnife.bind(this, view);
         webRequest();
+        return view;
     }
 
     private void webRequest(){
@@ -74,7 +69,7 @@ public class AboutXiDuDetailActivity extends AppCompatActivity {
             @Override
             public void onResponse(final Response response) throws IOException {
                 final String res = response.body().string();
-                runOnUiThread(new Runnable() {
+                getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         Log.v("sucess2", res);
@@ -103,9 +98,5 @@ public class AboutXiDuDetailActivity extends AppCompatActivity {
 
             }
         });
-    }
-    @OnClick(R.id.back)
-    public void onClick() {
-        finish();
     }
 }

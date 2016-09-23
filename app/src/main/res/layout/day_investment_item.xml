@@ -47,9 +47,10 @@
             android:layout_alignLeft="@+id/tv_title"
             android:layout_below="@+id/tv_title"
             android:layout_marginTop="5dp"
-            android:maxLines="3"
-            android:maxWidth="160dp"
-            android:text="编者语：特朗普称，石油应该石油应该石油应该石油应该石油应该石油应该石油应该石油应该石油应该石油应该石油应该石油应该石油应该石油应该是美国能源政策的核心，对此应减少监管，提升产能"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:text="的核心，对此应减少监管，提升产能提升产能"
             android:textColor="@color/black" />
 
         <TextView
@@ -61,7 +62,7 @@
             android:text="2016:12:03"
             android:textColor="@color/black"
             android:layout_below="@+id/tv_body"
-            android:layout_alignRight="@+id/tv_body"
+            android:layout_alignLeft="@+id/tv_body"
             android:layout_marginTop="5dp"/>
 
     </RelativeLayout>

@@ -11,20 +11,23 @@
 
         <Button
             android:id="@+id/bt_name"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
             android:layout_margin="10dp"
+            android:layout_toLeftOf="@+id/textView"
             android:background="@drawable/frame"
             android:text="白银升贴水1000"
-            android:textColor="@color/wait_result_gray"
+            android:textColor="@color/white"
             android:textSize="16dp" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
+            android:layout_alignTop="@+id/bt_name"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/textView1"
             android:text="档位"
             android:textColor="@color/wait_result_gray" />
 
@@ -32,19 +35,28 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
+            android:layout_alignEnd="@+id/textView"
+            android:layout_alignRight="@+id/textView"
+            android:layout_alignTop="@+id/tv_price"
             android:text="卖1"
             android:textColor="@color/wait_result_gray" />
+
+        <!--<View-->
+        <!--android:layout_width="1dp"-->
+        <!--android:layout_height="90dp"-->
+        <!--android:background="@color/dan_back"-->
+        <!--android:layout_toRightOf="@+id/textView2"-->
+        <!--android:layout_toEndOf="@+id/textView2" -->
+        <!--android:layout_marginLeft="5dp"/>-->
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/textView"
-            android:layout_marginLeft="30dp"
-            android:layout_toRightOf="@+id/textView"
+            android:layout_marginRight="30dp"
+            android:layout_toLeftOf="@+id/textView3"
+            android:layout_toStartOf="@+id/textView3"
             android:text="价格"
             android:textColor="@color/wait_result_gray" />
 
@@ -52,12 +64,19 @@
             android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView1"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@+id/textView2"
+            android:layout_alignTop="@+id/tv_num"
+            android:layout_marginRight="30dp"
+            android:layout_toLeftOf="@+id/tv_num"
+            android:layout_toStartOf="@+id/tv_num"
             android:text="1006.0"
             android:textColor="@color/black" />
+
+        <!--<View-->
+        <!--android:layout_width="1dp"-->
+        <!--android:layout_height="90dp"-->
+        <!--android:background="@color/dan_back"-->
+        <!--android:layout_alignRight="@+id/tv_price"-->
+        <!--android:layout_marginLeft="7dp"/>-->
 
         <TextView
             android:id="@+id/textView3"
@@ -91,8 +110,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:layout_marginTop="10dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -101,206 +119,173 @@
 
             <RelativeLayout
                 android:id="@+id/relative"
-                android:layout_width="130dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:visibility="gone">
+                android:layout_marginBottom="10dp">
 
                 <Button
                     android:id="@+id/bt_collect"
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:background="@drawable/round_login"
                     android:text="按汇总" />
 
                 <Button
-                    android:layout_width="60dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:layout_alignParentRight="true"
                     android:background="@drawable/frame"
                     android:text="按明细"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/bt_collect"
+                    android:layout_toEndOf="@+id/bt_collect" />
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/relative1"
-                android:layout_width="130dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/frame">
+                android:layout_marginBottom="20dp">
 
                 <TextView
-                    android:id="@+id/bt_jian"
-                    android:layout_width="40dp"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:text="—"
-                    android:textColor="@color/coupon_price"
-                    android:textSize="40dp"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@+id/bt_jian"
-                    android:background="@color/dan_back" />
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toLeftOf="@+id/tv_price_sell"
+                    android:text="买1"
+                    android:textColor="@color/wait_result_gray" />
 
                 <TextView
-                    android:id="@+id/tv_price_num"
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@+id/bt_jian"
-                    android:background="@null"
-                    android:gravity="center"
+                    android:id="@+id/tv_price_sell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toLeftOf="@+id/tv_num_sell"
+                    android:text="1005.0"
                     android:textColor="@color/black" />
 
-                <View
-                    android:layout_width="1dp"
+                <TextView
+                    android:id="@+id/tv_num_sell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="220"
+                    android:textColor="@color/black" />
+
+
+                <RelativeLayout
+                    android:id="@+id/relative1"
+                    android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:layout_toRightOf="@+id/tv_price_num"
-                    android:background="@color/dan_back" />
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/textView4"
+                    android:layout_toStartOf="@+id/textView4"
+                    android:background="@drawable/frame1">
+
+                    <TextView
+                        android:id="@+id/bt_jian"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/yuan"
+                        android:gravity="center"
+                        android:text="—"
+                        android:textColor="@color/white"
+                        android:textSize="40dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_price_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/bt_jia"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/yuan"
+                        android:gravity="center"
+                        android:text="+"
+                        android:textColor="@color/white"
+                        android:textSize="40dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/frame1"
+                    android:layout_below="@+id/relative1"
+                    android:layout_alignLeft="@+id/relative1"
+                    android:layout_alignStart="@+id/relative1"
+                    android:layout_alignRight="@+id/relative1"
+                    android:layout_alignEnd="@+id/relative1"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/relativeLayout">
+
+                    <TextView
+                        android:id="@+id/bt_jian1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/yuan"
+                        android:gravity="center"
+                        android:text="—"
+                        android:textColor="@color/white"
+                        android:textSize="40dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_price_num1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/bt_jia1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/yuan"
+                        android:gravity="center"
+                        android:text="+"
+                        android:textColor="@color/white"
+                        android:textSize="40dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/bt_jia"
-                    android:layout_width="40dp"
+                    android:id="@+id/tv_tv_trade_puy_sell"
+                    android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:layout_toRightOf="@+id/tv_price_num"
-                    android:background="@null"
+                    android:background="@drawable/button_commit"
                     android:gravity="center"
-                    android:text="+"
-                    android:textColor="@color/coupon_price"
-                    android:textSize="40dp" />
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:layout_below="@+id/relativeLayout"
+                    android:layout_alignLeft="@+id/relativeLayout"
+                    android:layout_alignStart="@+id/relativeLayout"
+                    android:layout_alignRight="@+id/relativeLayout"
+                    android:layout_alignEnd="@+id/relativeLayout"
+                    android:layout_marginTop="10dp"/>
+
             </RelativeLayout>
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:text="买1"
-            android:textColor="@color/wait_result_gray" />
-
-        <TextView
-            android:id="@+id/tv_price_sell"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@+id/textView4"
-            android:text="1005.0"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/tv_num_sell"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="15dp"
-            android:text="220"
-            android:textColor="@color/black" />
-
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="最低 "
-            android:textColor="@color/wait_result_gray" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1004.0"
-            android:textColor="@color/wait_result_gray" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="最高 "
-            android:textColor="@color/wait_result_gray" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1015.0"
-            android:textColor="@color/wait_result_gray" />
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/frame">
-
-        <TextView
-            android:id="@+id/bt_jian1"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:text="—"
-            android:textColor="@color/coupon_price"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="50dp"
-            android:layout_toRightOf="@+id/bt_jian1"
-            android:background="@color/dan_back" />
-
-        <TextView
-            android:id="@+id/tv_price_num1"
-            android:layout_width="60dp"
-            android:layout_height="50dp"
-            android:layout_toRightOf="@+id/bt_jian1"
-            android:background="@null"
-            android:gravity="center"
-            android:textColor="@color/black" />
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="50dp"
-            android:layout_toRightOf="@+id/tv_price_num1"
-            android:background="@color/dan_back" />
-
-        <TextView
-            android:id="@+id/bt_jia1"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:layout_toRightOf="@+id/tv_price_num1"
-            android:gravity="center"
-            android:text="+"
-            android:textColor="@color/coupon_price"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <TextView
-        android:id="@+id/tv_tv_trade_puy_sell"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/button_commit"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
-
-    <include layout="@layout/base_trade_foot" />
+    <include layout="@layout/base_trade_foot"/>
 
 </LinearLayout>

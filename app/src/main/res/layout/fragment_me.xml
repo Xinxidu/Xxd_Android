@@ -11,51 +11,67 @@
         android:id="@+id/rl_user_center"
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:background="@color/grayslate"
+        android:background="@color/book_order_detail_sel_btn"
         android:clickable="true">
 
         <com.xinxidu.xxd.view.CircleImageView
             android:id="@+id/iv_avatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@null"
-            android:src="@mipmap/menu6"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp"
+            android:contentDescription="@null"
+            android:src="@mipmap/menu6" />
 
         <TextView
             android:id="@+id/tv_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="未登录"
-            android:textColor="@color/white"
-            android:textSize="18dip"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/iv_avatar"
-            android:layout_marginLeft="10dp"/>
+            android:text="未登录"
+            android:textColor="@color/black"
+            android:textSize="20dip" />
 
         <Button
             android:id="@+id/btn_my_login"
-            android:layout_width="60dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
             android:layout_centerVertical="true"
-            android:background="@color/navi_line_color"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/my_login_button"
             android:text="登录" />
 
         <Button
+            android:id="@+id/btn_back_login"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/my_login_button"
+            android:text="退出登录"
+            android:visibility="gone"/>
+
+        <Button
             android:id="@+id/btn_my_register"
-            android:layout_width="60dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/btn_my_login"
             android:layout_toStartOf="@+id/btn_my_login"
-            android:background="@color/myuser_bank_disable"
+            android:background="@drawable/my_register_button"
             android:text="注册" />
 
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/shortlease_main_text_blue" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -66,327 +82,71 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:background="@color/between_line" />
+            <View style="@style/MyView" />
 
-            <RelativeLayout
+            <TextView
                 android:id="@+id/my_account"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ripple_bg"
-                android:gravity="center_vertical"
-                android:padding="8dp">
+                style="@style/MyTextView"
+                android:drawableLeft="@mipmap/address"
+                android:text="我的实盘账户" />
 
-                <ImageView
-                    android:id="@+id/title_back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignTop="@+id/imageView5"
-                    android:contentDescription="@string/app_name"
-                    android:padding="5dp"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/address" />
+            <View style="@style/MyView" />
 
-                <TextView
-                    android:id="@+id/title_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/title_back"
-                    android:gravity="center"
-                    android:text="我的实盘账户"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_16" />
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="0dip"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/arrow_right" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/between_line" />
-
-            <RelativeLayout
+            <TextView
                 android:id="@+id/my_selection"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ripple_bg"
-                android:foreground="?attr/selectableItemBackground"
-                android:gravity="center_vertical"
-                android:padding="8dp">
+                style="@style/MyTextView"
+                android:drawableLeft="@mipmap/address"
+                android:text="我的自选" />
 
-                <ImageView
-                    android:id="@+id/my_collect"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:padding="5dp"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/collection" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/my_collect"
-                    android:gravity="center"
-                    android:text="我的自选"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_16" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="0dip"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/arrow_right" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/between_line" />
+            <View style="@style/MyView" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="15dp"
-                android:background="@color/between_line" />
+                android:background="@color/color_e4ebf4" />
 
-            <RelativeLayout
+            <TextView
                 android:id="@+id/my_event"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ripple_bg"
-                android:gravity="center_vertical"
-                android:padding="8dp">
+                style="@style/MyTextView"
+                android:drawableLeft="@mipmap/address"
+                android:text="我的活动" />
 
-                <ImageView
-                    android:id="@+id/title_more"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:padding="5dp"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/more" />
+            <View style="@style/MyView" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/title_more"
-                    android:gravity="center"
-                    android:text="我的活动"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_16" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="0dip"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/arrow_right" />
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/between_line" />
-
-            <RelativeLayout
+            <TextView
                 android:id="@+id/my_aboutus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_1"
-                android:background="@drawable/ripple_bg"
-                android:gravity="center_vertical"
-                android:padding="8dp">
+                style="@style/MyTextView"
+                android:drawableLeft="@mipmap/address"
+                android:text="关于我们" />
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:padding="5dp"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/address" />
+            <View style="@style/MyView" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/imageView"
-                    android:gravity="center"
-                    android:text="关于我们"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_16" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="0dip"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/arrow_right" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/between_line" />
-
-            <RelativeLayout
+            <TextView
                 android:id="@+id/my_contactus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_1"
-                android:background="@drawable/ripple_bg"
-                android:gravity="center_vertical"
-                android:padding="8dp">
+                style="@style/MyTextView"
+                android:drawableLeft="@mipmap/address"
+                android:text="联系我们" />
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:padding="5dp"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/more" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/imageView2"
-                    android:gravity="center"
-                    android:text="联系我们"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_16" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="0dip"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/arrow_right" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/between_line" />
+            <View style="@style/MyView" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="15dp"
-                android:background="@color/between_line" />
+                android:background="@color/color_e4ebf4" />
 
-            <RelativeLayout
+            <TextView
                 android:id="@+id/my_help"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/ripple_bg"
-                android:gravity="center_vertical"
-                android:padding="8dp">
+                style="@style/MyTextView"
+                android:drawableLeft="@mipmap/address"
+                android:text="使用帮助" />
 
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:padding="5dp"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/more" />
+            <View style="@style/MyView" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/imageView3"
-                    android:gravity="center"
-                    android:text="使用帮助"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_16" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="0dip"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/arrow_right" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/between_line" />
-
-            <RelativeLayout
+            <TextView
                 android:id="@+id/my_setting"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_1"
-                android:background="@drawable/ripple_bg"
-                android:gravity="center_vertical"
-                android:padding="8dp">
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:padding="5dp"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/collection" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/imageView4"
-                    android:gravity="center"
-                    android:text="设置"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_16" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="0dip"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/arrow_right" />
-            </RelativeLayout>
+                style="@style/MyTextView"
+                android:drawableLeft="@mipmap/address"
+                android:text="设置" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

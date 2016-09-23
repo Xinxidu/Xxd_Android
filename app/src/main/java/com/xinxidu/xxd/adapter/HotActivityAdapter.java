@@ -5,7 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
@@ -65,16 +66,17 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
     static class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.textView)
         TextView textView;
-        @BindView(R.id.iv_activity_icon)
-        ImageView ivActivityIcon;
-        @BindView(R.id.textView1)
-        TextView textView1;
-        @BindView(R.id.tv_activity_start_time)
-        TextView tvActivityStartTime;
-        @BindView(R.id.tv_start_end_time)
-        TextView tvStartEndTime;
-        @BindView(R.id.tv_state)
-        TextView tvState;
+        @BindView(R.id.relative)
+        RelativeLayout relative;
+        @BindView(R.id.tv_activity_state)
+        TextView tvActivityState;
+        @BindView(R.id.tv_time_start)
+        TextView tvTimeStart;
+        @BindView(R.id.tv_time_end)
+        TextView tvTimeEnd;
+        @BindView(R.id.linear)
+        LinearLayout linear;
+
         View itemView;
 
         ViewHolder(View view) {

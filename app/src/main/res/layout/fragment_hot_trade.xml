@@ -13,49 +13,53 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/dan_back">
+        android:background="@color/navi_tab_mark">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:text="商品"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:text="最新"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:text="买1/卖1"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_down_up"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:text="涨跌值"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:drawableRight="@drawable/down"/>
 
         <TextView
+            android:id="@+id/tv_volume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
             android:text="成交量"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:drawableRight="@drawable/down"/>
+
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
@@ -64,6 +68,6 @@
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@color/white"/>
+        android:background="@color/white" />
 
 </LinearLayout>

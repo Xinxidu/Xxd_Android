@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -22,6 +21,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class FindFragment extends Fragment {
+
     @BindView(R.id.back)
     RelativeLayout back;
     @BindView(R.id.tv_title)
@@ -32,34 +32,18 @@ public class FindFragment extends Fragment {
     RelativeLayout ok;
     @BindView(R.id.base_title_layout)
     RelativeLayout baseTitleLayout;
-    @BindView(R.id.title_back)
-    ImageView titleBack;
     @BindView(R.id.title_name)
     TextView titleName;
-    @BindView(R.id.imageView5)
-    ImageView imageView5;
-    @BindView(R.id.find_eventnews)
-    RelativeLayout findEventnews;
-    @BindView(R.id.title_more)
-    ImageView titleMore;
     @BindView(R.id.find_online)
-    RelativeLayout findOnline;
-    @BindView(R.id.imageView)
-    ImageView imageView;
+    TextView findOnline;
     @BindView(R.id.find_investment)
-    RelativeLayout findInvestment;
-    @BindView(R.id.imageView2)
-    ImageView imageView2;
+    TextView findInvestment;
     @BindView(R.id.find_profit)
-    RelativeLayout findProfit;
-    @BindView(R.id.imageView3)
-    ImageView imageView3;
+    TextView findProfit;
     @BindView(R.id.find_teacherteam)
-    RelativeLayout findTeacherteam;
-    @BindView(R.id.imageView4)
-    ImageView imageView4;
+    TextView findTeacherteam;
     @BindView(R.id.find_trade)
-    RelativeLayout findTrade;
+    TextView findTrade;
 
     @Nullable
     @Override
@@ -80,10 +64,10 @@ public class FindFragment extends Fragment {
         }
     }
 
-    @OnClick({R.id.find_eventnews, R.id.find_online, R.id.find_investment, R.id.find_profit, R.id.find_teacherteam, R.id.find_trade})
+    @OnClick({R.id.title_name, R.id.find_online, R.id.find_investment, R.id.find_profit, R.id.find_teacherteam, R.id.find_trade})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.find_eventnews:
+            case R.id.title_name:
                 AtionMessageActivity.startAtionMessageActivity(getActivity());
                 break;
             case R.id.find_online:

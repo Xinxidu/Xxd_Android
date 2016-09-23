@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/color_e4ebf4" />
+
+    <TextView
+        android:id="@+id/account_information"
+        style="@style/MyTextView"
+        android:text="账户信息" />
+
+    <View style="@style/MyView" />
+
+    <TextView
+        android:id="@+id/day_single"
+        style="@style/MyTextView"
+        android:text="当日订立单" />
+
+
+    <View style="@style/MyView" />
+
+    <TextView
+        android:id="@+id/single_swap"
+        style="@style/MyTextView"
+        android:text="当日调期单" />
+
+    <View style="@style/MyView" />
+
+    <TextView
+        android:id="@+id/history_single"
+        style="@style/MyTextView"
+        android:text="历史订立单" />
+
+    <View style="@style/MyView" />
+
+    <TextView
+        android:id="@+id/history_swap"
+        style="@style/MyTextView"
+        android:text="历史调期单" />
+
+    <View style="@style/MyView" />
+</LinearLayout>

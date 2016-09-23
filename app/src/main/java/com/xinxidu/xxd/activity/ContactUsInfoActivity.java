@@ -4,9 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -32,7 +37,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ContactUsInfoActivity extends AppCompatActivity {
+public class ContactUsInfoActivity extends Fragment {
     @BindView(R.id.back)
     RelativeLayout back;
     @BindView(R.id.tv_title)
@@ -69,13 +74,12 @@ public class ContactUsInfoActivity extends AppCompatActivity {
         context.startActivity(intent);
     }
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact_us_info);
-        ButterKnife.bind(this);
-        tvTitle.setText("联系我们");
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view=inflater.inflate(R.layout.activity_contact_us_info,container,false);
         webRequest();
+        return view;
     }
 
     private void webRequest() {
@@ -97,7 +101,7 @@ public class ContactUsInfoActivity extends AppCompatActivity {
             @Override
             public void onResponse(final Response response) throws IOException {
                 final String res = response.body().string();
-                runOnUiThread(new Runnable() {
+                getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         Log.v("sucessuser", res);
@@ -108,11 +112,11 @@ public class ContactUsInfoActivity extends AppCompatActivity {
                                     if (flag==1){
                                         JSONArray dataArr=json.getJSONArray("data");
                                         JSONObject data=(JSONObject)dataArr.opt(0);
-                                         CompanyTel.setText(data.getString("CompanyTel"));
-                                         CustomerHotline.setText(data.getString("CustomerHotline"));
-                                         JoinHotline.setText(data.getString("JoinHotline"));
-                                         CompanyAddress.setText(data.getString("CompanyAddress"));
-                                         ComplaintsTel.setText(data.getString("ComplaintsTel"));
+//                                         CompanyTel.setText(data.getString("CompanyTel"));
+//                                         CustomerHotline.setText(data.getString("CustomerHotline"));
+//                                         JoinHotline.setText(data.getString("JoinHotline"));
+//                                         CompanyAddress.setText(data.getString("CompanyAddress"));
+//                                         ComplaintsTel.setText(data.getString("ComplaintsTel"));
                                       //  String HeadquartersAddress=data.getString("HeadquartersAddress");
                                     }
                                 }catch (JSONException e){
@@ -124,10 +128,5 @@ public class ContactUsInfoActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    @OnClick(R.id.back)
-    public void onClick() {
-        finish();
     }
 }

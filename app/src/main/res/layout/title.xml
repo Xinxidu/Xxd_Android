@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="50dip"
-    android:background="@color/common_color_seven_fbaela"
+    android:background="@color/shortlease_main_text_blue"
     android:orientation="horizontal">
 
     <RelativeLayout
@@ -16,7 +16,7 @@
             android:layout_width="66dip"
             android:layout_height="fill_parent"
             android:layout_alignParentLeft="true"
-            android:background="@drawable/button_commit">
+            android:background="@drawable/button_back">
 
             <ImageView
                 android:layout_width="wrap_content"

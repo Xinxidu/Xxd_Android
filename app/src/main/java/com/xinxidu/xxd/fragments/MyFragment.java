@@ -6,23 +6,19 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.test.suitebuilder.annotation.Suppress;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.activity.AboutXiDuActivity;
-
 import com.xinxidu.xxd.activity.HotActivity;
 import com.xinxidu.xxd.activity.LoginActivity;
 import com.xinxidu.xxd.activity.MyShiPanAccountActivity;
 import com.xinxidu.xxd.activity.RegisterBasicActivity;
+import com.xinxidu.xxd.activity.AboutXXiDuActivity;
 import com.xinxidu.xxd.event.UserLoginEvent;
 import com.xinxidu.xxd.utils.CustomDialog;
 import com.xinxidu.xxd.view.CircleImageView;
@@ -39,6 +35,8 @@ import butterknife.OnClick;
  */
 
 public class MyFragment extends Fragment {
+    @BindView(R.id.tv_username)
+    TextView tvUserName;
     @BindView(R.id.back)
     RelativeLayout back;
     @BindView(R.id.tv_title)
@@ -51,46 +49,28 @@ public class MyFragment extends Fragment {
     RelativeLayout baseTitleLayout;
     @BindView(R.id.iv_avatar)
     CircleImageView ivAvatar;
-    @BindView(R.id.tv_username)
-    TextView tvUserName;
     @BindView(R.id.btn_my_login)
-    Button btnLogin;
+    Button btnMyLogin;
     @BindView(R.id.btn_my_register)
-    Button btnRegister;
+    Button btnMyRegister;
+    @BindView(R.id.btn_back_login)
+    Button btnBackLogin;
     @BindView(R.id.rl_user_center)
     RelativeLayout rlUserCenter;
-    @BindView(R.id.title_back)
-    ImageView titleBack;
-    @BindView(R.id.title_name)
-    TextView titleName;
-    @BindView(R.id.imageView5)
-    ImageView imageView5;
-    @BindView(R.id.my_collect)
-    ImageView myCollect;
-    @BindView(R.id.title_more)
-    ImageView titleMore;
-    @BindView(R.id.imageView)
-    ImageView imageView;
-    @BindView(R.id.imageView2)
-    ImageView imageView2;
-    @BindView(R.id.imageView3)
-    ImageView imageView3;
-    @BindView(R.id.imageView4)
-    ImageView imageView4;
     @BindView(R.id.my_account)
-    RelativeLayout myAccount;
+    TextView myAccount;
     @BindView(R.id.my_selection)
-    RelativeLayout mySelection;
+    TextView mySelection;
     @BindView(R.id.my_event)
-    RelativeLayout myEvent;
+    TextView myEvent;
     @BindView(R.id.my_aboutus)
-    RelativeLayout myAboutus;
+    TextView myAboutus;
     @BindView(R.id.my_contactus)
-    RelativeLayout myContactus;
+    TextView myContactus;
     @BindView(R.id.my_help)
-    RelativeLayout myHelp;
+    TextView myHelp;
     @BindView(R.id.my_setting)
-    RelativeLayout mySetting;
+    TextView mySetting;
 
     @Nullable
     @Override
@@ -111,7 +91,7 @@ public class MyFragment extends Fragment {
         }
     }
 
-    @OnClick({R.id.btn_my_login, R.id.btn_my_register, R.id.my_account, R.id.my_selection, R.id.my_event, R.id.my_aboutus, R.id.my_contactus, R.id.my_help, R.id.my_setting})
+    @OnClick({R.id.btn_my_login, R.id.btn_my_register, R.id.btn_back_login, R.id.my_account, R.id.my_selection, R.id.my_event, R.id.my_aboutus, R.id.my_contactus, R.id.my_help, R.id.my_setting})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_my_login:
@@ -125,11 +105,18 @@ public class MyFragment extends Fragment {
                 break;
             case R.id.my_selection:
                 break;
+            case R.id.btn_back_login:
+//                LoginActivity.startLoginActivity(getActivity());
+                tvUserName.setText("未登录");
+                btnMyRegister.setVisibility(View.VISIBLE);
+                btnMyLogin.setVisibility(View.VISIBLE);
+                btnBackLogin.setVisibility(View.GONE);
+                break;
             case R.id.my_event:
                 HotActivity.startHotActivity(getActivity());
                 break;
             case R.id.my_aboutus:
-                AboutXiDuActivity.startAboutXiDuActivity(getActivity());
+                AboutXXiDuActivity.startAboutXXiDuActivity(getActivity());
                 break;
             case R.id.my_contactus:
                 showPhoneDialog();
@@ -142,8 +129,22 @@ public class MyFragment extends Fragment {
     }
 
     @Subscribe
-    public void onUserLoginEvent(UserLoginEvent event){
-        tvUserName.setText(event.getUserName());
+    public void onUserLoginEvent(UserLoginEvent event) {
+//            tvUserName.setText(event.getUserName());
+        boolean name = true;
+
+        if (name) {
+            tvUserName.setText("已登录");
+            btnMyRegister.setVisibility(View.GONE);
+            btnMyLogin.setVisibility(View.GONE);
+            btnBackLogin.setVisibility(View.VISIBLE);
+        } else {
+            tvUserName.setText("未登录");
+            btnMyRegister.setVisibility(View.VISIBLE);
+            btnMyLogin.setVisibility(View.VISIBLE);
+            btnBackLogin.setVisibility(View.GONE);
+        }
+
     }
 
     @Override
@@ -152,7 +153,7 @@ public class MyFragment extends Fragment {
         EventBus.getDefault().register(this);
     }
 
-        @Override
+    @Override
     public void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);

@@ -104,10 +104,26 @@
 
     </string-array>
 
+    <!--关于西都是有-->
+    <string name="jysjj">交易所简介</string>
+    <string name="xxdjj">鑫西都简介</string>
+    <string name="xxdxw">鑫西都新闻</string>
+    <string name="lxwm">联系我们</string>
+
+
+    <string-array name="tab_xidu">
+        <item>@string/jysjj</item>
+        <item>@string/xxdjj</item>
+        <item>@string/xxdxw</item>
+        <item>@string/lxwm</item>
+
+    </string-array>
+
     <string name="title_activity_hot_trade11111">HotTradeActivity11111</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_activityot">Activityot</string>
     <string name="title_activity_hot">HotActivity</string>
     <string name="title_activity_broadcast_news">BroadcastNewsActivity</string>
+    <string name="title_activity_about_xxi_du">AboutXXiDuActivity</string>
 
 </resources>

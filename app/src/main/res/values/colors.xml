@@ -15,6 +15,7 @@
     <!-- 分隔线 -->
     <color name="between_line">#CCCCCC</color>
     <color name="font_gray">#666666</color>
+    <color name="danback">#666666</color>
     <color name="font_red">#FF0000</color>
     <color name="gray_text">#9c9c9c</color>
 

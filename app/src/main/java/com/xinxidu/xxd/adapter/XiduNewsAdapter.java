@@ -5,13 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.event.XiduNewsEvent;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -19,22 +20,12 @@ import butterknife.ButterKnife;
  */
 public class XiduNewsAdapter extends RecyclerView.Adapter<XiduNewsAdapter.ViewHolder> {
     private final Context mContext;
+    private final List<XiduNewsEvent> mItemList;
+    private OnItemClickListener mOnItemClickListener;
 
-
-    private List<XiduNewsEvent> mItemList = new ArrayList<XiduNewsEvent>();
-
-    public XiduNewsAdapter(Context mContext, List<XiduNewsEvent> itemList, Context context) {
-        mItemList = itemList;
-        this.mContext = context;
-    }
-
-    public void setData(ArrayList<XiduNewsEvent> timeList) {
-        //mItemList.clear();
-        mItemList.addAll(timeList);
-    }
-
-    public XiduNewsAdapter(Context context) {
-        mContext = context;
+    public XiduNewsAdapter(Context mContext, List<XiduNewsEvent> itemList) {
+        this.mItemList = itemList;
+        this.mContext = mContext;
     }
 
     @Override
@@ -45,23 +36,33 @@ public class XiduNewsAdapter extends RecyclerView.Adapter<XiduNewsAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
+        //
+        holder.title.setText(mItemList.get(position).getTitle());
+        holder.keywords.setText("关键词 :"+mItemList.get(position).getKeywords());
+        holder.senddate.setText(mItemList.get(position).getSenddate());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                TaskDetailsActivity.startTaskDetailsActivity(mContext);
+                mOnItemClickListener.onItemClick(holder.itemView, holder.getLayoutPosition());
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return mItemList.size() == 0 ? 0 : mItemList.size();
     }
 
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
+        @BindView(R.id.title)
+        TextView title;
+        @BindView(R.id.keywords)
+        TextView keywords;
+        @BindView(R.id.senddate)
+        TextView senddate;
         View itemView;
 
         ViewHolder(View view) {
@@ -70,4 +71,13 @@ public class XiduNewsAdapter extends RecyclerView.Adapter<XiduNewsAdapter.ViewHo
             ButterKnife.bind(this, view);
         }
     }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.mOnItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
+
 }

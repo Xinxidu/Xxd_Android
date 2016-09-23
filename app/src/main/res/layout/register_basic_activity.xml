@@ -38,7 +38,7 @@
             android:id="@+id/tv_send"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:background="@drawable/button_commit"
+            android:background="@drawable/my_register_button1"
             android:gravity="center"
             android:text="获取验证码"
             android:layout_centerVertical="true"

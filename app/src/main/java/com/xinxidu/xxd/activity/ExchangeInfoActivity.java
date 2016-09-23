@@ -3,9 +3,14 @@ package com.xinxidu.xxd.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -27,32 +32,24 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ExchangeInfoActivity extends AppCompatActivity {
+public class ExchangeInfoActivity extends Fragment {
 
-    @BindView(R.id.back)
-    RelativeLayout back;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
-    @BindView(R.id.tv_title_ok)
-    TextView tvTitleOk;
-    @BindView(R.id.ok)
-    RelativeLayout ok;
-    @BindView(R.id.base_title_layout)
-    RelativeLayout baseTitleLayout;
     @BindView(R.id.exchange_webView)
     WebView exchangeWebView;
     protected static final String HOST = "http://175.102.13.51:8080/XDSY/ZhuBan?type=.guanwang&defference=jiaoyi&indexPage=0";
+
     public static void startExchangeInfoActivity(Context context) {
         Intent intent = new Intent(context, ExchangeInfoActivity.class);
         context.startActivity(intent);
     }
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exchange_info);
-        ButterKnife.bind(this);
-        tvTitle.setText("交易所简介");
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_exchange_info, container, false);
+        ButterKnife.bind(this, view);
         jiaoyiwebRequest();
+        return view;
     }
 
     private void jiaoyiwebRequest() {
@@ -74,24 +71,23 @@ public class ExchangeInfoActivity extends AppCompatActivity {
             @Override
             public void onResponse(final Response response) throws IOException {
                 final String res = response.body().string();
-                runOnUiThread(new Runnable() {
+                getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         Log.v("sucess", res);
 
                         try {
-                            JsonData dataBean = new Gson().fromJson(res,JsonData.class);
-                            if (!TextUtils.isEmpty(dataBean.getData().getJiaoyi())){
+                            JsonData dataBean = new Gson().fromJson(res, JsonData.class);
+                            if (!TextUtils.isEmpty(dataBean.getData().getJiaoyi())) {
                                 String string = null;
                                 try {
-                                    string = URLDecoder.decode(dataBean.getData().getJiaoyi(),"utf-8");
+                                    string = URLDecoder.decode(dataBean.getData().getJiaoyi(), "utf-8");
                                 } catch (UnsupportedEncodingException e) {
                                     e.printStackTrace();
                                 }
-                                exchangeWebView.loadDataWithBaseURL(null,dataBean.getData().getJiaoyi(),"text/html","utf-8",null);
-                                Log.v("jiaoyiUrl",dataBean.getData().getJiaoyi());
-                            }
-                            else {
+                                exchangeWebView.loadDataWithBaseURL(null, dataBean.getData().getJiaoyi(), "text/html", "utf-8", null);
+                                Log.v("jiaoyiUrl", dataBean.getData().getJiaoyi());
+                            } else {
                                 Log.v("fail", "false");
                             }
                         } catch (Exception e) {
@@ -104,11 +100,6 @@ public class ExchangeInfoActivity extends AppCompatActivity {
 
             }
         });
-
-    }
-    @OnClick(R.id.back)
-    public void onClick() {
-        finish();
     }
 }
 

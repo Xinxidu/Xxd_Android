@@ -2,26 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:background="@drawable/ripple_bg">
 
         <ImageView
             android:id="@+id/iv_message"
-            android:layout_width="70dp"
-            android:layout_height="80dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:src="@mipmap/menu_3" />
+            android:background="@drawable/image"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/iv_message"
+            android:text="8月21日"
+            android:textColor="@color/danback" />
 
         <TextView
             android:id="@+id/tv_title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_date"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/iv_message"
             android:text="教你如何炒股"
@@ -29,36 +42,32 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/tv_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/button2"
-            android:layout_marginTop="5dp"
-            android:text="8月21日"
-            android:textColor="@color/myself_blue" />
-
-        <TextView
             android:id="@+id/tv_title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/tv_title1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/iv_message"
-            android:text="名师推荐:西都金融研究院"
-            android:textColor="@color/black" />
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="名师推荐:西都金融研究院西都金融研究院西都金融研究院"
+            android:textColor="@color/danback" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/bt_activity_state"
             android:layout_width="50dp"
             android:layout_height="20dp"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="10dp"
-            android:background="@color/orange"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/red"
             android:text="活动中" />
 
         <View
+            android:id="@+id/view3"
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:background="@color/between_line" />
@@ -66,6 +75,6 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/dan_back" />
+        android:layout_height="1dp"
+        android:background="@color/between_line" />
 </LinearLayout>
