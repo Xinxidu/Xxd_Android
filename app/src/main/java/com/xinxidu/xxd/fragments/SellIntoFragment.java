@@ -4,6 +4,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +20,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.adapter.EntrustItemAdapter;
+import com.xinxidu.xxd.event.EntrustItemEvent;
 import com.xinxidu.xxd.utils.BuyConfirmDialog;
+import com.xinxidu.xxd.utils.FullyLinearLayoutManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,6 +89,10 @@ public class SellIntoFragment extends Fragment {
     int num1 = 10;//数量
     private List<String> data_list;
     private ArrayAdapter<String> arr_adapter;
+    EntrustItemAdapter mEntrustItemAdapter;
+
+    private ArrayList<EntrustItemEvent> mItem;
+    private RecyclerView mRecyclerView;
 
     @Nullable
     @Override
@@ -101,7 +111,27 @@ public class SellIntoFragment extends Fragment {
         btJian1.setTag("+");
         btJia1.setTag("-");
         spinner();
+        initRecycler();
         return view;
+    }
+
+    private void initRecycler() {
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mItem = new ArrayList<EntrustItemEvent>();
+        mItem.add(null);
+
+        mEntrustItemAdapter = new EntrustItemAdapter(getActivity());
+        mRecyclerView.setAdapter(mEntrustItemAdapter);
+        mEntrustItemAdapter.setData(mItem);
+        mEntrustItemAdapter.notifyDataSetChanged();
+        //滑动停顿
+        FullyLinearLayoutManager linearLayoutManager = new FullyLinearLayoutManager(getActivity());
+        mRecyclerView.setNestedScrollingEnabled(false);
+        //设置布局管理器
+        mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRecyclerView.setNestedScrollingEnabled(false);
     }
 
     @OnClick({R.id.bt_jian, R.id.bt_jia, R.id.bt_jian1, R.id.bt_jia1, R.id.tv_tv_trade_puy_sell})

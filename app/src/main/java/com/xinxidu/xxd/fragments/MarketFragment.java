@@ -35,14 +35,15 @@ public class MarketFragment extends Fragment {
         mTabs= (TabLayout) view.findViewById(R.id.market_tabs);
         mContainer= (ViewPager) view.findViewById(R.id.market_container);
         RelativeLayout back= (RelativeLayout) view.findViewById(R.id.back);
+        RelativeLayout back1= (RelativeLayout) view.findViewById(R.id.back1);
         TextView tv_title= (TextView) view.findViewById(R.id.tv_title);
         tv_title.setText("行情");
-//        back.setVisibility(View.GONE);
-        back.setBackgroundResource(R.drawable.bt_menu_order_select);
+        back.setVisibility(View.GONE);
+        back1.setVisibility(View.VISIBLE);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getActivity().getSupportFragmentManager());//getSupportFragmentManager()
         mContainer.setAdapter(mSectionsPagerAdapter);
         mTabs.setupWithViewPager(mContainer);
-        back.setOnClickListener(new View.OnClickListener() {
+        back1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ElectricTradeActivity.startElectricTradeActivity(getActivity());

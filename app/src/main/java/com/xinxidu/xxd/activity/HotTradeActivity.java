@@ -23,6 +23,8 @@ public class HotTradeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hot_trade);
         RelativeLayout back= (RelativeLayout) findViewById(R.id.back);
         TextView tv_title= (TextView) findViewById(R.id.tv_title);
+        TextView tv_title_ok = (TextView) findViewById(R.id.tv_title_ok);
+        tv_title_ok.setBackgroundResource(R.drawable.refresh);
         tv_title.setText("热门交易");
         back.setOnClickListener(new View.OnClickListener() {
             @Override

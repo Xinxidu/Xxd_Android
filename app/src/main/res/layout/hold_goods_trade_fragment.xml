@@ -116,6 +116,7 @@
                 android:layout_marginTop="5dp"
                 android:background="@color/dan_back" />
         </LinearLayout>
+
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -176,6 +177,21 @@
         </LinearLayout>
 
     </LinearLayout>
-    <include layout="@layout/base_trade_foot"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/base_trade_foot" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/white" />
+    </LinearLayout>
 
 </LinearLayout>

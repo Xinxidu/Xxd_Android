@@ -51,8 +51,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="16dp"
-                android:contentDescription="@string/app_name"
-                android:src="@mipmap/arrow_right" />
+                android:contentDescription="@string/app_name"/>
         </RelativeLayout>
 
         <View
@@ -86,7 +85,6 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="16dp"
                 android:drawablePadding="6dip"
-                android:drawableRight="@mipmap/arrow_right"
                 android:gravity="center" />
         </RelativeLayout>
 
@@ -121,7 +119,6 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="16dp"
                 android:drawablePadding="6dip"
-                android:drawableRight="@mipmap/arrow_right"
                 android:gravity="center" />
         </RelativeLayout>
 
@@ -155,8 +152,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="16dp"
-                android:contentDescription="@string/app_name"
-                android:src="@mipmap/arrow_right" />
+                android:contentDescription="@string/app_name"/>
         </RelativeLayout>
 
     </LinearLayout>

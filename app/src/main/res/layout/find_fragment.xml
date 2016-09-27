@@ -25,7 +25,7 @@
             <TextView
                 android:id="@+id/title_name"
                 style="@style/MyTextView"
-                android:drawableLeft="@mipmap/address"
+                android:drawableLeft="@drawable/activity_new"
                 android:text="活动消息" />
 
             <View style="@style/MyView" />
@@ -33,7 +33,7 @@
             <TextView
                 android:id="@+id/find_online"
                 style="@style/MyTextView"
-                android:drawableLeft="@mipmap/address"
+                android:drawableLeft="@drawable/nba"
                 android:text="在线直播" />
 
 
@@ -42,7 +42,7 @@
             <TextView
                 android:id="@+id/find_investment"
                 style="@style/MyTextView"
-                android:drawableLeft="@mipmap/address"
+                android:drawableLeft="@drawable/investment_strategy"
                 android:text="投资策略" />
 
             <View style="@style/MyView" />
@@ -50,7 +50,7 @@
             <TextView
                 android:id="@+id/find_profit"
                 style="@style/MyTextView"
-                android:drawableLeft="@mipmap/address"
+                android:drawableLeft="@drawable/earning_skills"
                 android:text="盈利技巧" />
 
             <View style="@style/MyView" />
@@ -58,7 +58,7 @@
             <TextView
                 android:id="@+id/find_teacherteam"
                 style="@style/MyTextView"
-                android:drawableLeft="@mipmap/address"
+                android:drawableLeft="@drawable/teacher"
                 android:text="名师团队" />
 
             <View style="@style/MyView" />
@@ -71,7 +71,7 @@
             <TextView
                 android:id="@+id/find_trade"
                 style="@style/MyTextView"
-                android:drawableLeft="@mipmap/address"
+                android:drawableLeft="@drawable/analog_disk_transaction"
                 android:text="模拟盘交易" />
 
             <View style="@style/MyView" />

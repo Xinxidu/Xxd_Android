@@ -8,10 +8,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/miaobian"
         android:orientation="vertical">
 
@@ -22,12 +22,20 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp">
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/yuan_icon"
+                android:layout_centerVertical="true" />
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/imageView2"
                 android:text="注册送现货投资秘籍+投资入门视频"
                 android:textColor="@color/black"
                 android:textSize="18dp"
@@ -36,8 +44,10 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/dayuhao"
+                android:layout_alignTop="@+id/imageView2"
                 android:layout_alignParentRight="true"
-                android:background="@drawable/dayuhao" />
+                android:layout_alignParentEnd="true" />
 
         </RelativeLayout>
 
@@ -70,9 +80,10 @@
                 android:id="@+id/tv_activity_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:background="@drawable/hot_activity1"
+                android:gravity="center"
                 android:text="进行中"
-                android:textColor="@color/red"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
 
             <TextView
@@ -86,21 +97,37 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_time_end"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="2016.08.08"
-                android:textColor="@color/trip_text_name" />
+                android:layout_marginTop="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="10dp"
-                android:text="2016.08.27"
-                android:textColor="@color/trip_text_name" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/textView17"
+                    android:layout_alignTop="@+id/tv_time_end"
+                    android:drawableLeft="@drawable/zuo"
+                    android:drawableRight="@drawable/you" />
+
+                <TextView
+                    android:id="@+id/tv_time_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="2016.08.08"
+                    android:textColor="@color/trip_text_name" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_time_end"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="2016.08.27"
+                    android:textColor="@color/trip_text_name" />
+            </RelativeLayout>
         </LinearLayout>
     </RelativeLayout>
 

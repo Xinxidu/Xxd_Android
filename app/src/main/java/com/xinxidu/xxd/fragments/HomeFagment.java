@@ -1,5 +1,6 @@
 package com.xinxidu.xxd.fragments;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -100,8 +101,6 @@ public class HomeFagment extends Fragment {
     Button btLiveTelecast;
     @BindView(R.id.textView11)
     TextView textView11;
-    @BindView(R.id.iv_more)
-    ImageView ivMore;
     @BindView(R.id.tabs)
     TabLayout tabs;
     @BindView(R.id.container)
@@ -139,7 +138,7 @@ public class HomeFagment extends Fragment {
         return view;
     }
 
-    @OnClick({R.id.bt_trade, R.id.bt_activity, R.id.bt_news, R.id.bt_calendar, R.id.bt_now_open, R.id.bt_live_telecast, R.id.iv_more})
+    @OnClick({R.id.bt_trade, R.id.bt_activity, R.id.bt_news, R.id.bt_calendar, R.id.bt_now_open, R.id.bt_live_telecast})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_trade:
@@ -158,8 +157,10 @@ public class HomeFagment extends Fragment {
                 HuaTongLoginActivity.startHuaTongLoginActivity(getActivity());
                 break;
             case R.id.bt_live_telecast:
-                break;
-            case R.id.iv_more:
+                String url = "http://win.xxidu.com/";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
                 break;
         }
     }

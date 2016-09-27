@@ -26,6 +26,8 @@ public class BroadcastNewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_broadcast_news);
         RelativeLayout back = (RelativeLayout) findViewById(R.id.back);
         TextView tv_title = (TextView) findViewById(R.id.tv_title);
+        TextView tv_title_ok = (TextView) findViewById(R.id.tv_title_ok);
+        tv_title_ok.setText("收藏");
         tv_title.setText("直播新闻");
         back.setOnClickListener(new View.OnClickListener() {
             @Override

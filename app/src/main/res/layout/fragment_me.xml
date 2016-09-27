@@ -10,18 +10,17 @@
     <RelativeLayout
         android:id="@+id/rl_user_center"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="90dp"
         android:background="@color/book_order_detail_sel_btn"
         android:clickable="true">
 
         <com.xinxidu.xxd.view.CircleImageView
             android:id="@+id/iv_avatar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:contentDescription="@null"
-            android:src="@mipmap/menu6" />
+            android:contentDescription="@null"/>
 
         <TextView
             android:id="@+id/tv_username"
@@ -31,8 +30,8 @@
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/iv_avatar"
             android:text="未登录"
-            android:textColor="@color/black"
-            android:textSize="20dip" />
+            android:textColor="@color/black2"
+            android:textSize="16dp" />
 
         <Button
             android:id="@+id/btn_my_login"
@@ -53,18 +52,18 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/my_login_button"
             android:text="退出登录"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/btn_my_register"
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="19dp"
             android:layout_toLeftOf="@+id/btn_my_login"
             android:layout_toStartOf="@+id/btn_my_login"
             android:background="@drawable/my_register_button"
-            android:text="注册" />
+            android:text="注册"/>
 
     </RelativeLayout>
 
@@ -87,7 +86,7 @@
             <TextView
                 android:id="@+id/my_account"
                 style="@style/MyTextView"
-                android:drawableLeft="@mipmap/address"
+                android:drawableLeft="@drawable/my_account"
                 android:text="我的实盘账户" />
 
             <View style="@style/MyView" />
@@ -95,7 +94,7 @@
             <TextView
                 android:id="@+id/my_selection"
                 style="@style/MyTextView"
-                android:drawableLeft="@mipmap/address"
+                android:drawableLeft="@drawable/my_selection"
                 android:text="我的自选" />
 
             <View style="@style/MyView" />
@@ -108,7 +107,7 @@
             <TextView
                 android:id="@+id/my_event"
                 style="@style/MyTextView"
-                android:drawableLeft="@mipmap/address"
+                android:drawableLeft="@drawable/my_event"
                 android:text="我的活动" />
 
             <View style="@style/MyView" />
@@ -116,7 +115,7 @@
             <TextView
                 android:id="@+id/my_aboutus"
                 style="@style/MyTextView"
-                android:drawableLeft="@mipmap/address"
+                android:drawableLeft="@drawable/about_my"
                 android:text="关于我们" />
 
             <View style="@style/MyView" />
@@ -124,7 +123,7 @@
             <TextView
                 android:id="@+id/my_contactus"
                 style="@style/MyTextView"
-                android:drawableLeft="@mipmap/address"
+                android:drawableLeft="@drawable/my_contactus"
                 android:text="联系我们" />
 
             <View style="@style/MyView" />
@@ -137,7 +136,7 @@
             <TextView
                 android:id="@+id/my_help"
                 style="@style/MyTextView"
-                android:drawableLeft="@mipmap/address"
+                android:drawableLeft="@drawable/my_help"
                 android:text="使用帮助" />
 
             <View style="@style/MyView" />
@@ -145,7 +144,7 @@
             <TextView
                 android:id="@+id/my_setting"
                 style="@style/MyTextView"
-                android:drawableLeft="@mipmap/address"
+                android:drawableLeft="@drawable/my_setting"
                 android:text="设置" />
         </LinearLayout>
     </ScrollView>

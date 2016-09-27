@@ -11,7 +11,7 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="1000dp"
         android:layout_below="@+id/inc">
 
         <LinearLayout
@@ -22,8 +22,7 @@
             <cn.bingoogolapple.bgabanner.BGABanner
                 android:id="@+id/banner_main_default"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="5dp"
+                android:layout_height="110dp"
                 app:banner_pointGravity="bottom|right"
                 app:banner_transitionEffect="depth" />
 

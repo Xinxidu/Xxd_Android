@@ -88,16 +88,6 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-    //第一次启动时，我们让mHomeHomeRb这个radiobutton处于选中状态。
-    // 当然了，在这之前，先要在布局文件中设置其他的某一个radiobutton（只要不是mHomeHomeRb就行）
-    // 的属性为android:checked="true"，才会出发下面的这个check方法切换到mHomeHomeRb
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        mHomeRadioGroup.check(R.id.radio_home);
-//
-//    }
-
     //用adapter来管理三个Fragment界面的变化。注意，我这里用的Fragment都是v4包里面的
     FragmentStatePagerAdapter fragments = new FragmentStatePagerAdapter(getSupportFragmentManager()) {
 

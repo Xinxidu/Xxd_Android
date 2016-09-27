@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tv_time"
@@ -15,25 +15,27 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
+            android:background="@drawable/time_icon"
+            android:gravity="center"
             android:text="13:56"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
         <TextView
             android:layout_width="5dp"
             android:layout_height="5dp"
-            android:background="@drawable/round"
             android:layout_alignTop="@+id/tv_time"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_toRightOf="@+id/tv_time"/>
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/tv_time"
+            android:background="@drawable/round" />
 
         <View
+            android:id="@+id/view2"
             android:layout_width="1dp"
-            android:layout_height="match_parent"
+            android:layout_height="60dp"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/tv_time"
-            android:background="@color/dan_back"
-            android:id="@+id/view2" />
+            android:background="@color/dan_back" />
 
         <TextView
             android:id="@+id/tv_up_where"
@@ -42,8 +44,12 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="22dp"
             android:layout_toRightOf="@+id/tv_time"
-            android:text="我是实时快讯下面的item"
-            android:textColor="@color/black" />
+            android:text="实时快讯下面的面的实时快讯下面的面的实时快讯下面的面的实时快讯下面的面的实时快讯下面的面的"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/back_time"
+            android:textSize="17dp"
+            android:padding="5dp"/>
 
     </RelativeLayout>
 

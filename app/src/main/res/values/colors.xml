@@ -306,7 +306,7 @@
     <color name="shortlease_main_content_color">#ff666666</color>
     <color name="shortlease_main_nor">#ffffffff</color>
     <color name="shortlease_main_sel">#ffeaeadb</color>
-    <color name="shortlease_main_text_blue">#ff339afe</color>
+    <color name="shortlease_main_text_blue">#1086f3</color>
     <color name="shortlease_main_text_color">#ff4d4d4d</color>
     <color name="shortlease_price_yellow">#fffa9b08</color>
     <color name="store_location_city_d">#ffcccccc</color>
@@ -352,6 +352,7 @@
     <color name="use_coupon_color">#ffc1c7d1</color>
     <color name="user_common_update_gray">#ff999999</color>
     <color name="user_common_update_process">#ffe5e5e5</color>
+    <color name="dan_back">#bfbfbf</color>
     <color name="user_common_update_red">#ffff4444</color>
     <color name="user_common_update_yellow">#fffec435</color>
     <color name="user_share_text">#ffe11500</color>
@@ -368,13 +369,15 @@
     <color name="wait_result_overlay_red">#ffff2a00</color>
     <color name="yellow_invitation_button">#ffcfaf78</color>
     <color name="yellow_mileage">#fffea801</color>
+    <color name="back_time">#666666</color>
     <!-- 橘红色 -->
     <color name="orangce_r">#ff4a4a</color>
+    <color name="hui_dan">#dedede</color>
     <!-- 紫色 -->
     <color name="grey1">#eae7de</color>
     <color name="white">#ffffffff</color>
-    <color name="dan_back">#bfbfbf</color>
 
+    <color name="fu_back">#e3f1ff</color>
     <color name="ivory">#fffff0</color> <!-- 象牙色 -->
     <color name="lightyellow">#ffffe0</color> <!-- 亮黄色 -->
     <color name="yellow">#ffff00</color> <!-- 黄色 -->
@@ -520,6 +523,7 @@
     <color name="darkblue">#00008b</color> <!-- 暗蓝色 -->
     <color name="navy">#000080</color> <!-- 海军色 -->
     <color name="black">#000000</color> <!-- 黑色 -->
+    <color name="black2">#333333</color> <!-- 黑色 -->
 
 
 </resources>
