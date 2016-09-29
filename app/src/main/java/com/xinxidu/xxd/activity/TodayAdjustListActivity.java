@@ -4,10 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.adapter.EntrustItemAdapter;
+import com.xinxidu.xxd.event.EntrustItemEvent;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,6 +25,11 @@ public class TodayAdjustListActivity extends AppCompatActivity {
     RelativeLayout back;
     @BindView(R.id.tv_title)
     TextView tvTitle;
+
+    EntrustItemAdapter mEntrustItemAdapter;
+
+    private ArrayList<EntrustItemEvent> mItem;
+    private RecyclerView mRecyclerView;
 
     public static void startTodayAdjustListActivity(Context context) {
         Intent intent = new Intent(context, TodayAdjustListActivity.class);
@@ -30,6 +42,20 @@ public class TodayAdjustListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_today_adjust_list);
         ButterKnife.bind(this);
         tvTitle.setText("当日调期单");
+        initRecycler();
+    }
+
+    private void initRecycler() {
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mItem = new ArrayList<EntrustItemEvent>();
+        mItem.add(null);
+
+        mEntrustItemAdapter = new EntrustItemAdapter(this);
+        mRecyclerView.setAdapter(mEntrustItemAdapter);
+        mEntrustItemAdapter.setData(mItem);
+        mEntrustItemAdapter.notifyDataSetChanged();
     }
 
     @OnClick(R.id.back)

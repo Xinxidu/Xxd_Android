@@ -82,6 +82,7 @@ public class MyShiPanAccountActivity extends AppCompatActivity {
             case R.id.rl_jiaoyi:
                 break;
             case R.id.bt_sign_out:
+                HuaTongLoginActivity.startHuaTongLoginActivity(this);
                 break;
         }
     }

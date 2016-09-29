@@ -16,11 +16,12 @@
 
         <com.xinxidu.xxd.view.CircleImageView
             android:id="@+id/iv_avatar"
-            android:layout_width="43dp"
-            android:layout_height="43dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:contentDescription="@null"/>
+            android:contentDescription="@null"
+            android:background="@drawable/head"/>
 
         <TextView
             android:id="@+id/tv_username"
@@ -33,14 +34,15 @@
             android:textColor="@color/black2"
             android:textSize="16dp" />
 
-        <Button
+        <TextView
             android:id="@+id/btn_my_login"
-            android:layout_width="70dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:gravity="center"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:background="@drawable/my_login_button"
+            android:background="@drawable/btn2"
             android:text="登录" />
 
         <Button
@@ -54,15 +56,15 @@
             android:text="退出登录"
             android:visibility="gone" />
 
-        <Button
+        <TextView
             android:id="@+id/btn_my_register"
-            android:layout_width="70dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
-            android:layout_marginRight="19dp"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/btn_my_login"
-            android:layout_toStartOf="@+id/btn_my_login"
-            android:background="@drawable/my_register_button"
+            android:background="@drawable/btn1"
             android:text="注册"/>
 
     </RelativeLayout>

@@ -27,6 +27,7 @@
                 android:src="@drawable/left_arrow_back" />
 
         </RelativeLayout>
+
         <RelativeLayout
             android:id="@+id/back1"
             android:layout_width="66dip"
@@ -67,7 +68,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="16dip"
                 android:textColor="@color/white"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
         </RelativeLayout>
 
     </RelativeLayout>

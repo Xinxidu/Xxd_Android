@@ -44,6 +44,10 @@
         <activity android:name=".activity.HuaTongRegisterBasicActivity" />
         <activity android:name=".activity.AboutXXiDuActivity"/>
         <activity android:name=".activity.XiduNewsDetailActivity"/>
+        <activity android:name=".activity.RegisterActivity2"/>
+        <activity android:name=".activity.BackPassActivity"/>
+        <activity android:name=".activity.BackPassActivity2"/>
+        <activity android:name=".activity.MyAccountInfoActivity"/>
     </application>
 
 </manifest>

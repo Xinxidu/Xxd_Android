@@ -4,13 +4,25 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.adapter.EntrustItemAdapter;
+import com.xinxidu.xxd.event.EntrustItemEvent;
+import com.xinxidu.xxd.utils.FullyLinearLayoutManager;
 import com.xinxidu.xxd.utils.TimeDialogUtils;
+import com.xinxidu.xxd.view.ChangeDatePopwindow;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,6 +53,10 @@ public class OrderHistoryActivity extends Activity {
     TextView tvEnd;
     @BindView(R.id.ll_decide)
     LinearLayout llDecide;
+    EntrustItemAdapter mEntrustItemAdapter;
+
+    private ArrayList<EntrustItemEvent> mItem;
+    private RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +64,19 @@ public class OrderHistoryActivity extends Activity {
         setContentView(R.layout.order_history_activity);
         ButterKnife.bind(this);
         tvTitle.setText("历史订立单");
+        initRecycler();
+    }
+    private void initRecycler() {
+        mRecyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mItem = new ArrayList<EntrustItemEvent>();
+        mItem.add(null);
+
+        mEntrustItemAdapter = new EntrustItemAdapter(this);
+        mRecyclerView.setAdapter(mEntrustItemAdapter);
+        mEntrustItemAdapter.setData(mItem);
+        mEntrustItemAdapter.notifyDataSetChanged();
     }
 
     @OnClick({R.id.back, R.id.tv_start, R.id.tv_end})
@@ -57,24 +86,30 @@ public class OrderHistoryActivity extends Activity {
                 finish();
                 break;
             case R.id.tv_start:
-                getTime(tvStart);
+                selectDate(tvStart);
                 break;
             case R.id.tv_end:
-                getTime(tvEnd);
+                selectDate(tvEnd);
                 break;
         }
     }
 
-    //开始和结束时间
-    private void getTime(final TextView time) {
-        final TimeDialogUtils dialog = TimeDialogUtils.getInstance();
-        dialog.dateDialog(this, true);
-        dialog.setOnDateClickListener(new View.OnClickListener() {
+    private String[] selectDate(final TextView time) {
+        final String[] str = new String[10];
+        ChangeDatePopwindow mChangeBirthDialog = new ChangeDatePopwindow(this);
+        mChangeBirthDialog.showAtLocation(time, Gravity.BOTTOM, 0, 0);
+        mChangeBirthDialog.setBirthdayListener(new ChangeDatePopwindow.OnBirthListener() {
+
             @Override
-            public void onClick(View arg0) {
-                time.setText(dialog.getCurrDate());
-                dialog.dismiss();
+            public void onClick(String year, String month, String day) {
+                StringBuilder sb = new StringBuilder();
+                sb.append(year.substring(0, year.length() - 1)).append("-").append(month.substring(0, day.length() - 1)).append("-").append(day);
+                str[0] = year + "-" + month + "-" + day;
+                str[1] = sb.toString();
+                time.setText(year + "-" + month + "-" + day);
+
             }
         });
+        return str;
     }
 }

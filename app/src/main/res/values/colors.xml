@@ -376,6 +376,7 @@
     <!-- 紫色 -->
     <color name="grey1">#eae7de</color>
     <color name="white">#ffffffff</color>
+    <color name="color_transparent">#00000000</color>
 
     <color name="fu_back">#e3f1ff</color>
     <color name="ivory">#fffff0</color> <!-- 象牙色 -->

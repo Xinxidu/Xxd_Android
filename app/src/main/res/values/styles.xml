@@ -112,7 +112,7 @@
     <style name="MyView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
-        <item name="android:background">@color/hui_color</item>
+        <item name="android:background">@color/hui_dan</item>
     </style>
 
     <style name="MyTextView">
@@ -120,11 +120,15 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:background">@drawable/ripple_bg</item>
-        <item name="android:drawableRight">@mipmap/arrow_right</item>
+        <item name="android:drawableRight">@drawable/icon3</item>
         <item name="android:padding">16dp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">16dp</item>
         <item name="android:drawablePadding">10dp</item>
     </style>
 
+    <style name="bottomStyle">
+        <item name="android:windowEnterAnimation">@anim/bottom_pup_anim_out</item>
+        <item name="android:windowExitAnimation">@anim/bottom_pup_anim_in</item>
+    </style>
 </resources>

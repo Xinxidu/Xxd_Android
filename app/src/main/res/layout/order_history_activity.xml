@@ -5,10 +5,18 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/title"/>
+    <include layout="@layout/title" />
 
-    <include layout="@layout/base_time"/>
+    <include layout="@layout/base_time" />
 
-    <include layout="@layout/base_today_decide_liat"/>
+    <include layout="@layout/base_today_decide_liat" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/white" />
 
 </LinearLayout>

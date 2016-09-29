@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="700dp"
+    android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical">
 
@@ -38,20 +38,20 @@
                     <RelativeLayout
                         android:id="@+id/relative"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="40dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp">
 
                         <Button
                             android:id="@+id/bt_collect"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
                             android:background="@drawable/round_login"
                             android:text="按汇总" />
 
                         <Button
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
                             android:layout_alignParentRight="true"
                             android:background="@drawable/hui"
                             android:text="按明细"
@@ -70,12 +70,9 @@
                             android:id="@+id/bt_jian"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:background="@drawable/yuan"
+                            android:background="@drawable/jian"
                             android:gravity="center"
-                            android:text="—"
-                            android:textColor="@color/white"
-                            android:textSize="40dp"
-                            android:textStyle="bold" />
+                            android:text="—"/>
 
                         <TextView
                             android:id="@+id/tv_price_num"
@@ -90,11 +87,9 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_alignParentRight="true"
-                            android:background="@drawable/yuan"
+                            android:background="@drawable/jia"
                             android:gravity="center"
-                            android:text="+"
-                            android:textColor="@color/white"
-                            android:textSize="40dp" />
+                            android:text="+" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -108,12 +103,9 @@
                             android:id="@+id/bt_jian1"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:background="@drawable/yuan"
+                            android:background="@drawable/jian"
                             android:gravity="center"
-                            android:text="—"
-                            android:textColor="@color/white"
-                            android:textSize="40dp"
-                            android:textStyle="bold" />
+                            android:text="—"/>
 
                         <TextView
                             android:id="@+id/tv_price_num1"
@@ -128,12 +120,9 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_alignParentRight="true"
-                            android:background="@drawable/yuan"
+                            android:background="@drawable/jia"
                             android:gravity="center"
-                            android:text="+"
-                            android:textColor="@color/white"
-                            android:textSize="40dp"
-                            android:textStyle="bold" />
+                            android:text="+"/>
                     </RelativeLayout>
 
                     <TextView
@@ -189,20 +178,20 @@
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/textView"
                         android:layout_marginTop="10dp"
-                        android:background="@color/dan_back" />
+                        android:background="@color/hui_dan" />
 
                     <View
                         android:layout_width="1dp"
                         android:layout_height="120dp"
                         android:layout_toRightOf="@+id/textView"
-                        android:background="@color/dan_back" />
+                        android:background="@color/hui_dan" />
 
                     <View
                         android:layout_width="1dp"
                         android:layout_height="120dp"
                         android:layout_marginLeft="5dp"
                         android:layout_toRightOf="@+id/tv_price"
-                        android:background="@color/dan_back" />
+                        android:background="@color/hui_dan" />
 
                     <View
                         android:layout_width="match_parent"
@@ -211,7 +200,7 @@
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/tv_num"
                         android:layout_marginTop="10dp"
-                        android:background="@color/dan_back" />
+                        android:background="@color/hui_dan" />
 
                     <TextView
                         android:id="@+id/textView2"
@@ -288,7 +277,7 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_view"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:background="@color/white" />

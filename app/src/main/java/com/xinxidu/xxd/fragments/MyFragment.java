@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.activity.HotActivity;
 import com.xinxidu.xxd.activity.LoginActivity;
+import com.xinxidu.xxd.activity.MyAccountInfoActivity;
 import com.xinxidu.xxd.activity.MyShiPanAccountActivity;
 import com.xinxidu.xxd.activity.RegisterBasicActivity;
 import com.xinxidu.xxd.activity.AboutXXiDuActivity;
@@ -50,9 +51,9 @@ public class MyFragment extends Fragment {
     @BindView(R.id.iv_avatar)
     CircleImageView ivAvatar;
     @BindView(R.id.btn_my_login)
-    Button btnMyLogin;
+    TextView btnMyLogin;
     @BindView(R.id.btn_my_register)
-    Button btnMyRegister;
+    TextView btnMyRegister;
     @BindView(R.id.btn_back_login)
     Button btnBackLogin;
     @BindView(R.id.rl_user_center)
@@ -91,9 +92,13 @@ public class MyFragment extends Fragment {
         }
     }
 
-    @OnClick({R.id.btn_my_login, R.id.btn_my_register, R.id.btn_back_login, R.id.my_account, R.id.my_selection, R.id.my_event, R.id.my_aboutus, R.id.my_contactus, R.id.my_help, R.id.my_setting})
+    @OnClick({R.id.btn_my_login, R.id.btn_my_register, R.id.btn_back_login, R.id.my_account, R.id.my_selection,
+            R.id.my_event, R.id.my_aboutus, R.id.my_contactus, R.id.my_help, R.id.my_setting,R.id.rl_user_center})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.rl_user_center:
+                MyAccountInfoActivity.startMyAccountInfoActivity(getActivity());
+                break;
             case R.id.btn_my_login:
                 LoginActivity.startLoginActivity(getActivity());
                 break;

@@ -126,4 +126,6 @@
     <string name="title_activity_broadcast_news">BroadcastNewsActivity</string>
     <string name="title_activity_about_xxi_du">AboutXXiDuActivity</string>
 
+    <string name="photoPickerNotFoundText">手机中无可用的图片</string>
+
 </resources>

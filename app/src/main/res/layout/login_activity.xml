@@ -4,7 +4,9 @@
     android:layout_height="match_parent"
     android:background="@color/hui_color">
 
-    <include layout="@layout/title" />
+    <include
+        android:id="@+id/include3"
+        layout="@layout/title" />
 
     <View
         android:id="@+id/view"
@@ -12,6 +14,20 @@
         android:layout_height="0dp"
         android:layout_centerVertical="true"
         android:background="@color/black" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_login_body"
+        android:layout_below="@+id/include3">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/head" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/ll_login_body"
@@ -22,16 +38,16 @@
         <EditText
             android:id="@+id/et_login_user"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
             android:background="@drawable/login_miaobian"
             android:digits="1234567890qwertyuiopasdfghjklzxcvbnm"
-            android:drawableLeft="@drawable/user"
-            android:drawablePadding="8dip"
-            android:hint="用户名"
+            android:drawableLeft="@drawable/account_number"
+            android:drawablePadding="10dip"
+            android:hint="请输入账号/手机号"
             android:maxLength="12"
-            android:paddingLeft="12dp"
+            android:paddingLeft="15dp"
             android:textColor="@color/trip_appraise_scores_text"
             android:textColorHint="@color/trip_appraise_scores_text"
             android:textSize="18sp" />
@@ -39,19 +55,19 @@
         <EditText
             android:id="@+id/et_login_pass"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_below="@+id/et_login_user"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/login_miaobian"
             android:digits="1234567890qwertyuiopasdfghjklzxcvbnm"
             android:drawableLeft="@drawable/pass"
-            android:drawablePadding="8dip"
-            android:hint="密码"
+            android:drawablePadding="10dip"
+            android:hint="请输入您的密码"
             android:maxLength="12"
-            android:paddingLeft="14dp"
+            android:paddingLeft="15dp"
             android:textColor="@color/trip_appraise_scores_text"
             android:textColorHint="@color/trip_appraise_scores_text"
             android:textSize="18sp" />
@@ -114,18 +130,18 @@
         android:layout_below="@+id/tv_login_commit"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="找回密码(400-105-4080)"
-        android:textColor="@color/black"
-        android:textSize="18dp"/>
+        android:text="忘记密码 > "
+        android:textColor="@color/shortlease_main_text_blue"
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/tv_open_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_back_pass"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="29dp"
         android:text="沒有账号？注册一个吧>"
         android:textColor="@color/shortlease_main_text_blue"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.xinxidu.xxd.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,8 +19,14 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.activity.BroadcastNewsActivity;
 import com.xinxidu.xxd.activity.FinanceCalendarActivity;
@@ -28,6 +35,9 @@ import com.xinxidu.xxd.activity.HotTradeActivity;
 import com.xinxidu.xxd.activity.HuaTongLoginActivity;
 import com.xinxidu.xxd.base.App;
 import com.xinxidu.xxd.event.Engine;
+import com.xinxidu.xxd.viewpager.bean.ADInfo;
+import com.xinxidu.xxd.viewpager.lib.CycleViewPager;
+import com.xinxidu.xxd.viewpager.utils.ViewFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,8 +59,6 @@ public class HomeFagment extends Fragment {
     RelativeLayout ok;
     @BindView(R.id.base_title_layout)
     RelativeLayout baseTitleLayout;
-    @BindView(R.id.banner_main_default)
-    BGABanner bannerMainDefault;
     @BindView(R.id.bt_trade1)
     ImageView btTrade1;
     @BindView(R.id.bt_trade)
@@ -109,12 +117,18 @@ public class HomeFagment extends Fragment {
     ScrollView scrollView;
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    private BGABanner mDefaultBanner;
-    private List<View> mDefaultViews;
     private Engine mEngine;
-    private TextView news, assess;
     private ViewPager mContainer;
     private String[] tabTitle;
+    private List<ImageView> views = new ArrayList<ImageView>();
+    private List<ADInfo> infos = new ArrayList<ADInfo>();
+    private CycleViewPager cycleViewPager;
+
+
+    private String[] imageUrls = {"http://img.taodiantong.cn/v55183/infoimg/2013-07/130720115322ky.jpg",
+            "http://pic30.nipic.com/20130626/8174275_085522448172_2.jpg",
+            "http://pic18.nipic.com/20111215/577405_080531548148_2.jpg",
+            "http://pic15.nipic.com/20110722/2912365_092519919000_2.jpg"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -132,11 +146,80 @@ public class HomeFagment extends Fragment {
         mSectionsPagerAdapter = new SectionsPagerAdapter(getActivity().getSupportFragmentManager());//getSupportFragmentManager()
         mContainer.setAdapter(mSectionsPagerAdapter);
         tabs.setupWithViewPager(mContainer);
-        initDefault(view);
+        cycleViewPager=new CycleViewPager();
+//        FragmentManager fragmentv=(FragmentManager) view.findViewById(R.id.fragment_cycle_viewpager_content);
         tvTitle.setText("主页");
         back.setVisibility(View.GONE);
+        configImageLoader();
+        initialize();
         return view;
     }
+
+    @SuppressLint("NewApi")
+    private void initialize() {
+        cycleViewPager = (CycleViewPager) getChildFragmentManager().findFragmentById(R.id.fragment_cycle_viewpager_content);
+        for(int i = 0; i < imageUrls.length; i ++){
+            ADInfo info = new ADInfo();
+            info.setUrl(imageUrls[i]);
+            info.setContent("图片-->" + i );
+            infos.add(info);
+        }
+
+        // 将最后一个ImageView添加进来
+        views.add(ViewFactory.getImageView(getActivity(), infos.get(infos.size() - 1).getUrl()));
+        for (int i = 0; i < infos.size(); i++) {
+            views.add(ViewFactory.getImageView(getActivity(), infos.get(i).getUrl()));
+        }
+        // 将第一个ImageView添加进来
+        views.add(ViewFactory.getImageView(getActivity(), infos.get(0).getUrl()));
+
+        // 设置循环，在调用setData方法前调用
+        cycleViewPager.setCycle(true);
+
+        // 在加载数据前设置是否循环
+        cycleViewPager.setData(views, infos, mAdCycleViewListener);
+        //设置轮播
+        cycleViewPager.setWheel(true);
+
+        // 设置轮播时间，默认5000ms
+        cycleViewPager.setTime(2000);
+        //设置圆点指示图标组居中显示，默认靠右
+        cycleViewPager.setIndicatorCenter();
+    }
+
+    private CycleViewPager.ImageCycleViewListener mAdCycleViewListener = new CycleViewPager.ImageCycleViewListener() {
+
+        @Override
+        public void onImageClick(ADInfo info, int position, View imageView) {
+            if (cycleViewPager.isCycle()) {
+                position = position - 1;
+            }
+
+        }
+
+    };
+
+    /**
+     * 配置ImageLoder
+     */
+    private void configImageLoader() {
+        // 初始化ImageLoader
+        @SuppressWarnings("deprecation")
+        DisplayImageOptions options = new DisplayImageOptions.Builder().showStubImage(R.drawable.icon_stub) // 设置图片下载期间显示的图片
+                .showImageForEmptyUri(R.drawable.icon_empty) // 设置图片Uri为空或是错误的时候显示的图片
+                .showImageOnFail(R.drawable.icon_error) // 设置图片加载或解码过程中发生错误显示的图片
+                .cacheInMemory(true) // 设置下载的图片是否缓存在内存中
+                .cacheOnDisc(true) // 设置下载的图片是否缓存在SD卡中
+                // .displayer(new RoundedBitmapDisplayer(20)) // 设置成圆角图片
+                .build(); // 创建配置过得DisplayImageOption对象
+
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getActivity()).defaultDisplayImageOptions(options)
+                .threadPriority(Thread.NORM_PRIORITY - 2).denyCacheImageMultipleSizesInMemory()
+                .discCacheFileNameGenerator(new Md5FileNameGenerator()).tasksProcessingOrder(QueueProcessingType.LIFO).build();
+        ImageLoader.getInstance().init(config);
+    }
+
+
 
     @OnClick({R.id.bt_trade, R.id.bt_activity, R.id.bt_news, R.id.bt_calendar, R.id.bt_now_open, R.id.bt_live_telecast})
     public void onClick(View view) {
@@ -194,52 +277,52 @@ public class HomeFagment extends Fragment {
     }
 
     //viewpager 图片轮播
-    private void initDefault(View view) {
-        mDefaultBanner = (BGABanner) view.findViewById(R.id.banner_main_default);
-        mDefaultViews = getViews(4);
-        mDefaultBanner.setViews(mDefaultViews);
+//    private void initDefault(View view) {
+//        mDefaultBanner = (BGABanner) view.findViewById(R.id.banner_main_default);
+//        mDefaultViews = getViews(4);
+//        mDefaultBanner.setViews(mDefaultViews);
+//
+//        // BannerModel bannerModel = new BannerModel();
+//        List<String> imgs = new ArrayList<String>();
+//        imgs.add("http://www.tooopen.com/view/802192.html");
+//        imgs.add("http://www.tooopen.com/view/802192.html");
+//        imgs.add("http://www.tooopen.com/view/802192.html");
+//        imgs.add("http://www.tooopen.com/view/802192.html");
+//        Log.d("imgs", "sdfsdfsd");
+//
+//        List<String> tips = new ArrayList<String>();
+//        tips.add("");
+//        tips.add("");
+//        tips.add("");
+//        tips.add("");
+//        tips.add("");
+//
+//        SimpleDraweeView simpleDraweeView;
+//        for (int i = 0; i < mDefaultViews.size(); i++) {
+//            simpleDraweeView = (SimpleDraweeView) mDefaultViews.get(i);
+//            simpleDraweeView.setImageURI(Uri.parse(imgs.get(i)));
+//
+//            // 为每一页添加点击事件
+//            final int finalPosition = i;
+//            simpleDraweeView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+////                            Intent intent = new Intent(getActivity(), ProductListActivity.class);
+////                            getActivity().startActivity(intent);
+//                }
+//            });
+//        }
+//        mDefaultBanner.setTips(tips);
+//    }
 
-        // BannerModel bannerModel = new BannerModel();
-        List<String> imgs = new ArrayList<String>();
-        imgs.add("http://www.tooopen.com/view/802192.html");
-        imgs.add("http://www.tooopen.com/view/802192.html");
-        imgs.add("http://www.tooopen.com/view/802192.html");
-        imgs.add("http://www.tooopen.com/view/802192.html");
-        Log.d("imgs", "sdfsdfsd");
-
-        List<String> tips = new ArrayList<String>();
-        tips.add("");
-        tips.add("");
-        tips.add("");
-        tips.add("");
-        tips.add("");
-
-        SimpleDraweeView simpleDraweeView;
-        for (int i = 0; i < mDefaultViews.size(); i++) {
-            simpleDraweeView = (SimpleDraweeView) mDefaultViews.get(i);
-            simpleDraweeView.setImageURI(Uri.parse(imgs.get(i)));
-
-            // 为每一页添加点击事件
-            final int finalPosition = i;
-            simpleDraweeView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-//                            Intent intent = new Intent(getActivity(), ProductListActivity.class);
-//                            getActivity().startActivity(intent);
-                }
-            });
-        }
-        mDefaultBanner.setTips(tips);
-    }
-
-    private List<View> getViews(int count) {
-        List<View> views = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            views.add(getActivity().getLayoutInflater().inflate(R.layout.view_image, null));
-        }
-        return views;
-    }
+//    private List<View> getViews(int count) {
+//        List<View> views = new ArrayList<>();
+//        for (int i = 0; i < count; i++) {
+//            views.add(getActivity().getLayoutInflater().inflate(R.layout.view_image, null));
+//        }
+//        return views;
+//    }
 
     //重写setMenuVisibility方法，不然会出现叠层的现象
     @Override

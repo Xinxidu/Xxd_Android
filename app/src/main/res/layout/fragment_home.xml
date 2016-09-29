@@ -19,12 +19,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <cn.bingoogolapple.bgabanner.BGABanner
-                android:id="@+id/banner_main_default"
+            <fragment
+                android:id="@+id/fragment_cycle_viewpager_content"
+                android:name="com.xinxidu.xxd.viewpager.lib.CycleViewPager"
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
-                app:banner_pointGravity="bottom|right"
-                app:banner_transitionEffect="depth" />
+                android:layout_height="110dp" />
 
             <include layout="@layout/home_fragment1" />
 

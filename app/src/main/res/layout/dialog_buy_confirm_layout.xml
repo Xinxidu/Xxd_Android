@@ -16,7 +16,7 @@
         <RelativeLayout
             android:id="@+id/content"
             android:layout_width="fill_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:background="@color/color_price"
             android:gravity="center">
 
@@ -25,11 +25,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:lineSpacingMultiplier="1.5"
-                android:minHeight="100dip"
                 android:text="委托订立买入确认"
                 android:textColor="@color/white"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:layout_centerVertical="true" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -140,7 +139,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="50dp"
-                android:background="@drawable/button_commit"
+                android:background="@drawable/round_corner_white1_bg"
                 android:gravity="center"
                 android:text="确定买入"
                 android:textColor="@color/white"

@@ -89,7 +89,7 @@ public class LoginActivity extends Activity {
         }
     }
 
-    @OnClick({R.id.back, R.id.tv_login_commit, R.id.tv_open_account, R.id.cb_mima, R.id.cb_auto})
+    @OnClick({R.id.back, R.id.tv_login_commit, R.id.tv_open_account, R.id.cb_mima, R.id.cb_auto,R.id.tv_back_pass})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.back:
@@ -114,6 +114,9 @@ public class LoginActivity extends Activity {
                 } else {
                     sp.edit().putBoolean("AUTO_ISCHECK", false).commit();
                 }
+                break;
+            case R.id.tv_back_pass:
+                BackPassActivity.startBackPassActivity(this);
                 break;
         }
     }

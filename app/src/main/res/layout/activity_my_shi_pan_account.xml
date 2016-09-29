@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:background="@drawable/ripple_bg"
-            android:drawableRight="@mipmap/arrow_right"
+            android:drawableRight="@drawable/right"
             android:padding="16dp"
             android:text="交易"
             android:textColor="@color/shortlease_main_text_blue"
