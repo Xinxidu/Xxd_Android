@@ -13,14 +13,14 @@
             android:id="@+id/bt_trade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@drawable/ripple_bg">
 
             <ImageView
                 android:id="@+id/bt_trade1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/hot_trade" />
 
@@ -32,21 +32,21 @@
                 android:layout_marginTop="5dp"
                 android:text="热门交易"
                 android:textColor="@color/font_gray"
-                android:textSize="16dp" />
+                android:textSize="12dp" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/bt_activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@drawable/ripple_bg">
 
             <ImageView
                 android:id="@+id/bt_activity1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/ht_activity" />
 
@@ -58,21 +58,21 @@
                 android:layout_marginTop="3dp"
                 android:text="热门活动"
                 android:textColor="@color/font_gray"
-                android:textSize="16dp" />
+                android:textSize="12dp" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/bt_news"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@drawable/ripple_bg">
 
             <ImageView
                 android:id="@+id/bt_news1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/news" />
 
@@ -84,21 +84,21 @@
                 android:layout_marginTop="5dp"
                 android:text="直播新闻"
                 android:textColor="@color/font_gray"
-                android:textSize="16dp" />
+                android:textSize="12dp" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/bt_calendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@drawable/ripple_bg">
 
             <ImageView
                 android:id="@+id/bt_calendar1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/calendar" />
 
@@ -110,7 +110,7 @@
                 android:layout_marginTop="5dp"
                 android:text="财经日历"
                 android:textColor="@color/font_gray"
-                android:textSize="16dp" />
+                android:textSize="12dp" />
         </RelativeLayout>
 
     </LinearLayout>
@@ -133,7 +133,7 @@
             android:layout_marginTop="5dp"
             android:text="白银升贴水"
             android:textColor="@color/black"
-            android:textSize="17dp"/>
+            android:textSize="15dp"/>
 
         <TextView
             android:id="@+id/textView2"
@@ -144,7 +144,7 @@
             android:layout_marginTop="5dp"
             android:text="994.0"
             android:textColor="@color/book_order_text"
-            android:textSize="24dp" />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/textView3"
@@ -184,7 +184,7 @@
             android:layout_marginTop="5dp"
             android:text="白银基差1000"
             android:textColor="@color/black"
-            android:textSize="17dp"/>
+            android:textSize="15dp"/>
 
         <TextView
             android:id="@+id/textView7"
@@ -195,7 +195,7 @@
             android:layout_marginTop="5dp"
             android:text="959.0"
             android:textColor="@color/float_price_red"
-            android:textSize="24dp" />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/textView8"
@@ -234,17 +234,19 @@
                 android:layout_marginLeft="20dp"
                 android:text="没有实盘账户，开启财富之旅"
                 android:textColor="@color/font_gray"
-                android:textSize="16dp" />
+                android:textSize="14dp" />
 
             <Button
                 android:id="@+id/bt_now_open"
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
+                android:layout_height="20dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@+id/textView5"
                 android:background="@drawable/button_c"
-                android:text="立即开户>>" />
+                android:text="立即开户>>"
+                android:textSize="14dp"
+                android:textColor="@color/white"/>
 
 
         </RelativeLayout>
@@ -257,7 +259,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="75dp">
 
         <RelativeLayout
             android:id="@+id/relative"
@@ -266,8 +268,8 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="123dp"
-                android:layout_height="83dp"
+                android:layout_width="93dp"
+                android:layout_height="63dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/bofang_icon"
@@ -275,8 +277,8 @@
 
             <ImageView
                 android:id="@+id/image"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="15dp"
                 android:background="@drawable/live_icon" />
@@ -287,7 +289,8 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@+id/image"
-                android:text="股赢天下" />
+                android:text="股赢天下"
+                android:textSize="12dp"/>
         </RelativeLayout>
 
         <TextView
@@ -300,19 +303,20 @@
             android:layout_toRightOf="@+id/relative"
             android:text="股赢天下"
             android:textColor="@color/black"
-            android:textSize="21dip" />
+            android:textSize="16dip" />
 
         <Button
             android:id="@+id/bt_live_telecast"
-            android:layout_width="100dp"
-            android:layout_height="26dp"
+            android:layout_width="75dp"
+            android:layout_height="20dp"
             android:layout_below="@+id/textView11"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/relative"
             android:background="@drawable/button_c"
             android:text="直播中..."
-            android:textSize="16dp"/>
+            android:textSize="12dp"
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/textView11"
@@ -325,13 +329,13 @@
             android:singleLine="true"
             android:text="特点：抢反弹一马当先抓涨停十拿九稳马当先抓涨停十拿九稳"
             android:textColor="@color/font_gray"
-            android:textSize="14dp" />
+            android:textSize="12dp" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="33dp"
+        android:layout_height="25dp"
         android:background="@color/graywhite">
 
         <TextView
@@ -345,7 +349,7 @@
             android:singleLine="true"
             android:text="l名师推荐1:"
             android:textColor="@color/red"
-            android:textSize="14dp" />
+            android:textSize="12dp" />
 
         <TextView
             android:id="@+id/textView14"
@@ -358,7 +362,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:textColor="@color/font_gray"
-            android:textSize="14dp"
+            android:textSize="12dp"
             android:drawableRight="@drawable/down_icon"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/textView13"

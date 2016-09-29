@@ -5,9 +5,9 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,15 +30,16 @@
                     <Spinner
                         android:id="@+id/spinner1"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="40dp"
                         android:layout_margin="10dp"
                         android:background="@drawable/frame"
-                        android:dropDownVerticalOffset="51dp" />
+                        android:dropDownVerticalOffset="31dp"
+                        style="@style/Spinner"/>
 
                     <RelativeLayout
                         android:id="@+id/relative"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
+                        android:layout_height="30dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp">
 
@@ -62,78 +63,87 @@
                     <RelativeLayout
                         android:id="@+id/relative1"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_margin="10dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
                         android:background="@drawable/frame1">
 
                         <TextView
                             android:id="@+id/bt_jian"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:background="@drawable/jian"
                             android:gravity="center"
-                            android:text="—"/>
+                            android:text="—"
+                            android:textColor="@color/color_transparent"/>
 
                         <TextView
                             android:id="@+id/tv_price_num"
                             android:layout_width="wrap_content"
-                            android:layout_height="50dp"
+                            android:layout_height="40dp"
                             android:layout_centerHorizontal="true"
                             android:gravity="center"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/black"
+                            android:textSize="13dp"/>
 
                         <TextView
                             android:id="@+id/bt_jia"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:layout_alignParentRight="true"
                             android:background="@drawable/jia"
                             android:gravity="center"
-                            android:text="+" />
+                            android:text="+"
+                            android:textColor="@color/color_transparent"/>
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:id="@+id/relativeLayout"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:layout_margin="10dp"
                         android:background="@drawable/frame1">
 
                         <TextView
                             android:id="@+id/bt_jian1"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:background="@drawable/jian"
                             android:gravity="center"
-                            android:text="—"/>
+                            android:text="—"
+                            android:textColor="@color/color_transparent"/>
 
                         <TextView
                             android:id="@+id/tv_price_num1"
                             android:layout_width="wrap_content"
-                            android:layout_height="50dp"
+                            android:layout_height="40dp"
                             android:layout_centerHorizontal="true"
                             android:gravity="center"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/black"
+                            android:textSize="13dp"/>
 
                         <TextView
                             android:id="@+id/bt_jia1"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:layout_alignParentRight="true"
                             android:background="@drawable/jia"
                             android:gravity="center"
-                            android:text="+"/>
+                            android:text="+"
+                            android:textColor="@color/color_transparent"/>
                     </RelativeLayout>
 
                     <TextView
                         android:id="@+id/tv_tv_trade_puy_sell"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_margin="10dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
                         android:background="@drawable/button_commit"
                         android:gravity="center"
                         android:textColor="@color/white"
-                        android:textSize="20sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <RelativeLayout
@@ -150,7 +160,8 @@
                         android:layout_marginRight="20dp"
                         android:layout_marginTop="15dp"
                         android:text="档位"
-                        android:textColor="@color/wait_result_gray" />
+                        android:textColor="@color/wait_result_gray"
+                        android:textSize="13dp"/>
 
                     <TextView
                         android:id="@+id/textView1"
@@ -159,7 +170,8 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
                         android:text="价格"
-                        android:textColor="@color/wait_result_gray" />
+                        android:textColor="@color/wait_result_gray"
+                        android:textSize="13dp"/>
 
                     <TextView
                         android:id="@+id/textView3"
@@ -169,7 +181,8 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="15dp"
                         android:text="数量"
-                        android:textColor="@color/wait_result_gray" />
+                        android:textColor="@color/wait_result_gray"
+                        android:textSize="13dp"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -210,7 +223,8 @@
                         android:layout_below="@+id/textView"
                         android:layout_marginTop="20dp"
                         android:text="卖1"
-                        android:textColor="@color/wait_result_gray" />
+                        android:textColor="@color/wait_result_gray"
+                        android:textSize="13dp"/>
 
                     <TextView
                         android:id="@+id/tv_price"
@@ -220,7 +234,8 @@
                         android:layout_alignLeft="@+id/tv_price_sell"
                         android:layout_alignStart="@+id/tv_price_sell"
                         android:text="1006.0"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:textSize="13dp"/>
 
                     <TextView
                         android:id="@+id/tv_num"
@@ -231,7 +246,8 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="20dp"
                         android:text="113"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:textSize="13dp"/>
 
                     <TextView
                         android:id="@+id/textView4"
@@ -242,7 +258,8 @@
                         android:layout_below="@+id/textView2"
                         android:layout_marginTop="20dp"
                         android:text="买1"
-                        android:textColor="@color/wait_result_gray" />
+                        android:textColor="@color/wait_result_gray"
+                        android:textSize="13dp"/>
 
                     <TextView
                         android:id="@+id/tv_price_sell"
@@ -283,5 +300,5 @@
                     android:background="@color/white" />
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
+    <!--</ScrollView>-->
 </LinearLayout>

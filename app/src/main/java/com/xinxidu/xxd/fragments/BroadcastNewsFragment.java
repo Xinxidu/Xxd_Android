@@ -50,10 +50,26 @@ public class BroadcastNewsFragment extends Fragment {
         @Override
         public Fragment getItem(int position) {
             switch (position) {
-//                case 0:
-//                    return new TimeNewsFragment();
-                default:
+                case 0:
                     return new BroadcastNewsItemFragment();
+                case 1:
+                    return new BroadcastNewsBaseFragment();
+                case 2:
+                    return new BroadcastNewsBaseFragment();
+                case 3:
+                    return new BroadcastNewsBase2Fragment();
+                case 4:
+                    return new BroadcastNewsBaseFragment();
+                case 5:
+                    return new BroadcastNewsBaseFragment();
+                case 6:
+                    return new BroadcastNewsBaseFragment();
+                case 7:
+                    return new BroadcastNewsBaseFragment();
+                case 8:
+                    return new BroadcastNewsBase2Fragment();
+                default:
+                    return new BroadcastNewsBaseFragment();
             }
         }
 

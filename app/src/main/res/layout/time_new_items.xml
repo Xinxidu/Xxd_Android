@@ -18,6 +18,7 @@
             android:background="@drawable/time_icon"
             android:gravity="center"
             android:text="13:56"
+            android:textSize="13dp"
             android:textColor="@color/white" />
 
         <TextView
@@ -48,7 +49,7 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:textColor="@color/back_time"
-            android:textSize="17dp"
+            android:textSize="13dp"
             android:padding="5dp"/>
 
     </RelativeLayout>

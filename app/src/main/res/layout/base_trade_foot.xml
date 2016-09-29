@@ -12,49 +12,54 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="38dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:text="持货时间"
-            android:textColor="@color/wait_result_gray" />
+            android:textColor="@color/wait_result_gray"
+            android:textSize="13dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:text="买/卖"
-            android:textColor="@color/wait_result_gray" />
+            android:textColor="@color/wait_result_gray"
+            android:textSize="13dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:text="持货/可调"
-            android:textColor="@color/wait_result_gray" />
+            android:textColor="@color/wait_result_gray"
+            android:textSize="13dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:text="订立/持货"
-            android:textColor="@color/wait_result_gray" />
+            android:textColor="@color/wait_result_gray"
+            android:textSize="13dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:text="亏盈/剩余"
-            android:textColor="@color/wait_result_gray" />
+            android:textColor="@color/wait_result_gray"
+            android:textSize="13dp"/>
     </LinearLayout>
 
     <View

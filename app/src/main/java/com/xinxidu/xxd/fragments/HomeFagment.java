@@ -49,16 +49,6 @@ import cn.bingoogolapple.bgabanner.BGABanner;
 
 public class HomeFagment extends Fragment {
 
-    @BindView(R.id.back)
-    RelativeLayout back;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
-    @BindView(R.id.tv_title_ok)
-    TextView tvTitleOk;
-    @BindView(R.id.ok)
-    RelativeLayout ok;
-    @BindView(R.id.base_title_layout)
-    RelativeLayout baseTitleLayout;
     @BindView(R.id.bt_trade1)
     ImageView btTrade1;
     @BindView(R.id.bt_trade)
@@ -146,10 +136,8 @@ public class HomeFagment extends Fragment {
         mSectionsPagerAdapter = new SectionsPagerAdapter(getActivity().getSupportFragmentManager());//getSupportFragmentManager()
         mContainer.setAdapter(mSectionsPagerAdapter);
         tabs.setupWithViewPager(mContainer);
-        cycleViewPager=new CycleViewPager();
+//        cycleViewPager=new CycleViewPager();
 //        FragmentManager fragmentv=(FragmentManager) view.findViewById(R.id.fragment_cycle_viewpager_content);
-        tvTitle.setText("主页");
-        back.setVisibility(View.GONE);
         configImageLoader();
         initialize();
         return view;
@@ -158,10 +146,10 @@ public class HomeFagment extends Fragment {
     @SuppressLint("NewApi")
     private void initialize() {
         cycleViewPager = (CycleViewPager) getChildFragmentManager().findFragmentById(R.id.fragment_cycle_viewpager_content);
-        for(int i = 0; i < imageUrls.length; i ++){
+        for (int i = 0; i < imageUrls.length; i++) {
             ADInfo info = new ADInfo();
             info.setUrl(imageUrls[i]);
-            info.setContent("图片-->" + i );
+            info.setContent("图片-->" + i);
             infos.add(info);
         }
 
@@ -218,7 +206,6 @@ public class HomeFagment extends Fragment {
                 .discCacheFileNameGenerator(new Md5FileNameGenerator()).tasksProcessingOrder(QueueProcessingType.LIFO).build();
         ImageLoader.getInstance().init(config);
     }
-
 
 
     @OnClick({R.id.bt_trade, R.id.bt_activity, R.id.bt_news, R.id.bt_calendar, R.id.bt_now_open, R.id.bt_live_telecast})

@@ -8,59 +8,60 @@
     <LinearLayout
         android:id="@+id/ll_trade_item"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="wrap_content"
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/tv_time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
             android:layout_weight="1"
             android:text="03-26"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="13dp"/>
 
         <TextView
             android:id="@+id/tv_buy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:maxEms="1"
             android:maxLines="2"
             android:text="1022.0 1023"
-            android:textColor="@color/red" />
+            android:textColor="@color/red"
+            android:textSize="13dp"/>
 
         <TextView
             android:id="@+id/tv_price"
-            android:layout_width="0dp"
+            android:layout_width="10dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:maxEms="1"
             android:maxLines="2"
-            android:text="1022.0 1023"
-            android:textColor="@color/black" />
+            android:text="1022.0    1023"
+            android:textColor="@color/black"
+            android:textSize="13dp"/>
 
         <TextView
             android:id="@+id/tv_deal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
             android:layout_weight="1"
             android:text="34.0"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="13dp"/>
 
         <TextView
             android:id="@+id/tv_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="30dp"
             android:text="63478"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="13dp"/>
     </LinearLayout>
 
     <View

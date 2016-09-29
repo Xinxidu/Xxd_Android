@@ -105,8 +105,7 @@
 
     <!--tablayout字体大小-->
     <style name="MyTabLayoutTextAppearanceInverse" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
-        <item name="android:textSize">20sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
     </style>
     <!--我的实盘账户view-->
     <style name="MyView">
@@ -130,5 +129,14 @@
     <style name="bottomStyle">
         <item name="android:windowEnterAnimation">@anim/bottom_pup_anim_out</item>
         <item name="android:windowExitAnimation">@anim/bottom_pup_anim_in</item>
+    </style>
+
+    <style name="AppTheme1" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/shortlease_main_text_blue</item>
+        <item name="colorPrimaryDark">@color/shortlease_main_text_blue</item>
+    </style>
+
+    <style name="Spinner" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">12sp</item>
     </style>
 </resources>
