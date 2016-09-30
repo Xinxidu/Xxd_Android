@@ -1,17 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/include2">
 
+        <RelativeLayout
+            android:id="@+id/vw_bg"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@color/use_coupon_color">
+        <ImageView
+            android:id="@+id/iv_brief"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/img1"/>
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/iv_brief"
+            android:text="鑫西都"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/iv_brief"
+            android:layout_below="@+id/tv1"
+            android:text="简介"/>
+        </RelativeLayout>
         <WebView
             android:id="@+id/xidu_webView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/vw_bg"
             android:background="@color/white" />
-    </LinearLayout>
-</RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

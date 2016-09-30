@@ -18,9 +18,7 @@
     <color name="danback">#666666</color>
     <color name="font_red">#FF0000</color>
     <color name="gray_text">#9c9c9c</color>
-
     <color name="main_bg">#edeeef</color>
-
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
     <color name="divider_color">#B6B6B6</color>
@@ -72,7 +70,7 @@
     <color name="category_tab_highlight_dark_bg">#fffafafa</color>
     <color name="category_tab_highlight_text_dark">#ffd43d3d</color>
     <color name="category_tab_text_dark">#fffafafa</color>
-    <color name="category_text_nomal">#ff999999</color>
+    <color name="category_text_nomal">#999999</color>
     <color name="checkout_credit_color">#ff626580</color>
     <color name="checkout_line">#ffcccccc</color>
     <color name="clear">#00000000</color>
@@ -352,7 +350,7 @@
     <color name="use_coupon_color">#ffc1c7d1</color>
     <color name="user_common_update_gray">#ff999999</color>
     <color name="user_common_update_process">#ffe5e5e5</color>
-    <color name="dan_back">#bfbfbf</color>
+    <color name="dan_back">#999999</color>
     <color name="user_common_update_red">#ffff4444</color>
     <color name="user_common_update_yellow">#fffec435</color>
     <color name="user_share_text">#ffe11500</color>

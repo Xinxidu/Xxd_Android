@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -25,9 +26,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import butterknife.BindView;
@@ -113,8 +117,10 @@ public class ContactUsInfoActivity extends Fragment {
                                // Log.v("HeadquartersAddress",HeadquartersAddress);
                                 String url="http://www.xiduoil.com/uploads/150310/1-150310103006241.png";
                                 //得到可用的图片
-                                Bitmap bitmap = getHttpBitmap(url);
-                                ivAddress.setImageBitmap(bitmap);
+                                //Bitmap bitmap = getHttpBitmap(url);
+                                //ivAddress.setImageBitmap(bitmap);
+                              // Bitmap bitmap = getLocalBitmap("/Users/aaronlee/Desktop/XXD_Android/app/src/main/res/drawable-hdpi/aaa.png");
+                               // ivAddress.setImageBitmap(bitmap);
 
                             }
                         } catch (JSONException e) {
@@ -128,15 +134,34 @@ public class ContactUsInfoActivity extends Fragment {
         });
     }
 
+    /** 
+     * 加载本地图片 
+     * http://bbs.3gstdy.com * @param url * @return */
+
+    public static Bitmap getLocalBitmap(String url){
+        try {
+            FileInputStream fis = new FileInputStream(url);
+            return BitmapFactory.decodeStream(fis);
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public static Bitmap getHttpBitmap(String url) {
-        URL myFileURL;
+        URL myFileURL = null;
         Bitmap bitmap=null;
         try{
+            //Log.v("url",url);
             myFileURL = new URL(url);
+        }catch(MalformedURLException e){
+            e.printStackTrace();
+        }
+        try {
             //获得连接
             HttpURLConnection conn=(HttpURLConnection)myFileURL.openConnection();
             //设置超时时间为6000毫秒，conn.setConnectionTiem(0);表示没有时间限制
-            conn.setConnectTimeout(6000);
+            conn.setConnectTimeout(3000);
             //连接设置获得数据流
             conn.setDoInput(true);
             //不使用缓存
@@ -149,7 +174,7 @@ public class ContactUsInfoActivity extends Fragment {
             bitmap = BitmapFactory.decodeStream(is);
             //关闭数据流
             is.close();
-        }catch(Exception e){
+        }catch (IOException e){
             e.printStackTrace();
         }
         return bitmap;

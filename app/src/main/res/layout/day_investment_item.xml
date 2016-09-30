@@ -19,12 +19,11 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="123dp"
+                android:layout_width="113dp"
                 android:layout_height="83dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/bofang_icon"
-                android:textSize="12dp" />
+                android:background="@drawable/bofang_icon" />
         </RelativeLayout>
 
         <TextView
@@ -38,7 +37,7 @@
             android:layout_toRightOf="@+id/relative"
             android:text="美指绝地反击，原油遇阻回落"
             android:textColor="@color/danback"
-            android:textSize="17dp" />
+            android:textSize="13dp" />
 
         <TextView
             android:id="@+id/tv_body"
@@ -48,11 +47,10 @@
             android:layout_below="@+id/tv_title"
             android:layout_marginTop="5dp"
             android:maxLines="1"
-            android:singleLine="true"
             android:ellipsize="end"
             android:text="的核心，对此应减少监管，提升产能提升产能"
             android:textColor="@color/danback"
-            android:textSize="15dp"/>
+            android:textSize="11dp"/>
 
         <TextView
             android:id="@+id/tv_time"
@@ -65,7 +63,7 @@
             android:layout_below="@+id/tv_body"
             android:layout_alignLeft="@+id/tv_body"
             android:layout_marginTop="5dp"
-            android:textSize="13dp"/>
+            android:textSize="10dp"/>
 
     </RelativeLayout>
 
