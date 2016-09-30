@@ -33,6 +33,7 @@ import com.xinxidu.xxd.activity.FinanceCalendarActivity;
 import com.xinxidu.xxd.activity.HotActivity;
 import com.xinxidu.xxd.activity.HotTradeActivity;
 import com.xinxidu.xxd.activity.HuaTongLoginActivity;
+import com.xinxidu.xxd.activity.LiveTelecastURLActivity;
 import com.xinxidu.xxd.base.App;
 import com.xinxidu.xxd.event.Engine;
 import com.xinxidu.xxd.viewpager.bean.ADInfo;
@@ -227,6 +228,7 @@ public class HomeFagment extends Fragment {
                 HuaTongLoginActivity.startHuaTongLoginActivity(getActivity());
                 break;
             case R.id.bt_live_telecast:
+//                LiveTelecastURLActivity.startLiveTelecastURLActivityy(getActivity());
                 String url = "http://win.xxidu.com/";
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(url));
@@ -262,54 +264,6 @@ public class HomeFagment extends Fragment {
             return tabTitle[position];
         }
     }
-
-    //viewpager 图片轮播
-//    private void initDefault(View view) {
-//        mDefaultBanner = (BGABanner) view.findViewById(R.id.banner_main_default);
-//        mDefaultViews = getViews(4);
-//        mDefaultBanner.setViews(mDefaultViews);
-//
-//        // BannerModel bannerModel = new BannerModel();
-//        List<String> imgs = new ArrayList<String>();
-//        imgs.add("http://www.tooopen.com/view/802192.html");
-//        imgs.add("http://www.tooopen.com/view/802192.html");
-//        imgs.add("http://www.tooopen.com/view/802192.html");
-//        imgs.add("http://www.tooopen.com/view/802192.html");
-//        Log.d("imgs", "sdfsdfsd");
-//
-//        List<String> tips = new ArrayList<String>();
-//        tips.add("");
-//        tips.add("");
-//        tips.add("");
-//        tips.add("");
-//        tips.add("");
-//
-//        SimpleDraweeView simpleDraweeView;
-//        for (int i = 0; i < mDefaultViews.size(); i++) {
-//            simpleDraweeView = (SimpleDraweeView) mDefaultViews.get(i);
-//            simpleDraweeView.setImageURI(Uri.parse(imgs.get(i)));
-//
-//            // 为每一页添加点击事件
-//            final int finalPosition = i;
-//            simpleDraweeView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-////                            Intent intent = new Intent(getActivity(), ProductListActivity.class);
-////                            getActivity().startActivity(intent);
-//                }
-//            });
-//        }
-//        mDefaultBanner.setTips(tips);
-//    }
-
-//    private List<View> getViews(int count) {
-//        List<View> views = new ArrayList<>();
-//        for (int i = 0; i < count; i++) {
-//            views.add(getActivity().getLayoutInflater().inflate(R.layout.view_image, null));
-//        }
-//        return views;
-//    }
 
     //重写setMenuVisibility方法，不然会出现叠层的现象
     @Override

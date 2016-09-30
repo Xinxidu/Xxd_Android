@@ -1,6 +1,8 @@
 package com.xinxidu.xxd.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +55,10 @@ public class LiveRoomAdapter extends RecyclerView.Adapter<LiveRoomAdapter.ViewHo
             @Override
             public void onClick(View v) {
 //                TaskDetailsActivity.startTaskDetailsActivity(mContext);
+                String url = "http://win.xxidu.com/";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                mContext.startActivity(intent);
             }
         });
     }

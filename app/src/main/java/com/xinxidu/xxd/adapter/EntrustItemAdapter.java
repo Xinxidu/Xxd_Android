@@ -58,7 +58,7 @@ public class EntrustItemAdapter extends RecyclerView.Adapter<EntrustItemAdapter.
 
     @Override
     public int getItemCount() {
-        return 6;
+        return 16;
     }
 
 

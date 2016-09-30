@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/book_tab_nor_text1"
+    android:orientation="vertical">
+
+    <include layout="@layout/title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    style="@style/TeacherHeaderTextview"
+                    android:background="@drawable/hanyun" />
+
+                <TextView
+                    style="@style/TeacherTextview"
+                    android:layout_toRightOf="@+id/imageView1"
+                    android:text="韩云老师--特约评价嘉宾" />
+
+                <TextView
+                    style="@style/TeacherTextview"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageView1"
+                    android:text="擅长：趋势判断，点位预测准确" />
+
+                <ImageView style="@style/TeacherRight" />
+            </RelativeLayout>
+
+            <View style="@style/TeacherView" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    style="@style/TeacherHeaderTextview"
+                    android:background="@drawable/lu" />
+
+                <TextView
+                    style="@style/TeacherTextview"
+                    android:layout_toRightOf="@+id/imageView2"
+                    android:text="李教授--王牌分析师" />
+
+                <TextView
+                    style="@style/TeacherTextview"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageView2"
+
+                    android:text="擅长：通过宏观经济面，基本面，技术角度三位一体发展机会" />
+
+                <ImageView style="@style/TeacherRight" />
+            </RelativeLayout>
+
+            <View style="@style/TeacherView" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    style="@style/TeacherHeaderTextview"
+                    android:background="@drawable/li" />
+
+                <TextView
+                    style="@style/TeacherTextview"
+                    android:layout_toRightOf="@+id/imageView3"
+                    android:text="张教授--金牌分析师" />
+
+                <TextView
+                    style="@style/TeacherTextview"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageView3"
+                    android:text="擅长：通过宏观经济面，基本面，技术角度三位一体发展机会" />
+
+                <ImageView style="@style/TeacherRight" />
+            </RelativeLayout>
+
+            <View style="@style/TeacherView" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    style="@style/TeacherHeaderTextview"
+                    android:background="@drawable/zuda" />
+
+                <TextView
+                    style="@style/TeacherTextview"
+                    android:layout_toRightOf="@+id/imageView4"
+                    android:text="朱达" />
+
+                <TextView
+                    style="@style/TeacherTextview"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageView4"
+                    android:text="擅长：量化模型分析师并综合其他技术指标运用来研判行情" />
+
+                <ImageView style="@style/TeacherRight" />
+            </RelativeLayout>
+
+            <View style="@style/TeacherView" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    style="@style/TeacherHeaderTextview"
+                    android:background="@drawable/liuxiaopeng" />
+
+                <TextView
+                    style="@style/TeacherTextview"
+                    android:layout_toRightOf="@+id/imageView5"
+                    android:text="刘小鹏老师--金牌分析师" />
+
+                <TextView
+                    style="@style/TeacherTextview"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageView5"
+                    android:text="擅长：将中国传统哲学与现代交易理论结合，独创鲜花投资操盘秘籍" />
+
+                <ImageView style="@style/TeacherRight" />
+            </RelativeLayout>
+
+            <View style="@style/TeacherView" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    style="@style/TeacherHeaderTextview"
+                    android:background="@drawable/lu" />
+
+                <TextView
+                    style="@style/TeacherTextview"
+                    android:layout_toRightOf="@+id/imageView6"
+                    android:text="卢成贤老师--金牌分析师" />
+
+                <TextView
+                    style="@style/TeacherTextview"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageView6"
+                    android:text="擅长：解读宏观经济形势，各国货币政策，地缘政治局势等因素主导市场..." />
+
+                <ImageView style="@style/TeacherRight" />
+            </RelativeLayout>
+
+            <View style="@style/TeacherView" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    style="@style/TeacherHeaderTextview"
+                    android:background="@drawable/liuxiaopeng" />
+
+                <TextView
+                    style="@style/TeacherTextview"
+                    android:layout_toRightOf="@+id/imageView7"
+                    android:text="韩云老师--特约评价嘉宾" />
+
+                <TextView
+                    style="@style/TeacherTextview"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageView7"
+                    android:text="擅长：趋势判断，点位预测准确" />
+
+                <ImageView style="@style/TeacherRight" />
+            </RelativeLayout>
+
+            <View style="@style/TeacherView" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

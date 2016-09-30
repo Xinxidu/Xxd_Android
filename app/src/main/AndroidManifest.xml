@@ -48,6 +48,8 @@
         <activity android:name=".activity.BackPassActivity"/>
         <activity android:name=".activity.BackPassActivity2"/>
         <activity android:name=".activity.MyAccountInfoActivity"/>
+        <activity android:name=".activity.LiveTelecastURLActivity"/>
+        <activity android:name=".activity.TeacherTeamActivity1"/>
     </application>
 
 </manifest>

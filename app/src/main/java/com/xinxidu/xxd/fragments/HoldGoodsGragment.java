@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.adapter.EntrustItemAdapter;
 import com.xinxidu.xxd.event.EntrustItemEvent;
+import com.xinxidu.xxd.utils.FullyLinearLayoutManager;
 
 import java.util.ArrayList;
 
@@ -68,5 +69,11 @@ public class HoldGoodsGragment extends Fragment {
         recyclerView.setAdapter(mEntrustItemAdapter);
         mEntrustItemAdapter.setData(mItem);
         mEntrustItemAdapter.notifyDataSetChanged();
+        //滑动停顿
+        FullyLinearLayoutManager linearLayoutManager = new FullyLinearLayoutManager(getActivity());
+        recyclerView.setNestedScrollingEnabled(false);
+        //设置布局管理器
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setNestedScrollingEnabled(false);
     }
 }
