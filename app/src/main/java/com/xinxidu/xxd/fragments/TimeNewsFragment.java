@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.adapter.TimeNewsAdapter;
 import com.xinxidu.xxd.event.TimeNewsEvent;
+import com.xinxidu.xxd.utils.FullyLinearLayoutManager;
 
 import java.util.ArrayList;
 
@@ -34,17 +35,16 @@ public class TimeNewsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.time_news_gragment, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        mRecyclerView.setFocusable(false);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mItem = new ArrayList<TimeNewsEvent>();
         mItem.add(null);
-//        if (mItem != null && mItem.size() > 0) {
 
         mTimeNewsAdapter = new TimeNewsAdapter(getActivity());
         mRecyclerView.setAdapter(mTimeNewsAdapter);
         mTimeNewsAdapter.setData(mItem);
         mTimeNewsAdapter.notifyDataSetChanged();
-//        }
         return view;
     }
 }

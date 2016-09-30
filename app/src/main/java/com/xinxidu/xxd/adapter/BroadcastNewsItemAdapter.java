@@ -21,6 +21,14 @@ import butterknife.ButterKnife;
  */
 public class BroadcastNewsItemAdapter extends RecyclerView.Adapter<BroadcastNewsItemAdapter.ViewHolder> {
     private final Context mContext;
+    @BindView(R.id.tv_time)
+    TextView tvTime;
+    @BindView(R.id.view2)
+    View view2;
+    @BindView(R.id.tv_up_where)
+    TextView tvUpWhere;
+    @BindView(R.id.view)
+    View view;
 
     private List<BroadcastNewsItemEvent> mItemList = new ArrayList<BroadcastNewsItemEvent>();
 
@@ -63,10 +71,6 @@ public class BroadcastNewsItemAdapter extends RecyclerView.Adapter<BroadcastNews
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.tv_time)
-        TextView tvTime;
-        @BindView(R.id.tv_news_test)
-        TextView tvNewsTest;
         View itemView;
 
         ViewHolder(View view) {

@@ -2,16 +2,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="73dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/ripple_bg"
     android:orientation="vertical">
 
-    <ImageView
+    <com.xinxidu.xxd.utils.SelectableRoundedImageView
         android:id="@+id/iv_news_image"
         android:layout_width="93dp"
         android:layout_height="53dp"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="16dp"
-        android:background="@drawable/aaa" />
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/aaa"
+        app:sriv_left_bottom_corner_radius="7dp"
+        app:sriv_left_top_corner_radius="7dp"
+        app:sriv_right_bottom_corner_radius="7dp"
+        app:sriv_right_top_corner_radius="7dp"/>
 
     <TextView
         android:id="@+id/tv_news_test"
@@ -42,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/dan_back" />
+        android:background="@color/hui_dan" />
 
 
 </RelativeLayout>

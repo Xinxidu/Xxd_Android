@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/ripple_bg"
     android:orientation="vertical">
 
@@ -17,13 +18,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <com.xinxidu.xxd.utils.SelectableRoundedImageView
                 android:id="@+id/imageView"
                 android:layout_width="113dp"
                 android:layout_height="83dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/bofang_icon" />
+                android:background="@drawable/bofang_icon"
+                app:sriv_left_bottom_corner_radius="7dp"
+                app:sriv_left_top_corner_radius="7dp"
+                app:sriv_right_bottom_corner_radius="7dp"
+                app:sriv_right_top_corner_radius="7dp"/>
         </RelativeLayout>
 
         <TextView
@@ -70,6 +73,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/dan_back" />
+        android:background="@color/hui_dan" />
 
 </LinearLayout>

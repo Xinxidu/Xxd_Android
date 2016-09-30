@@ -5,7 +5,7 @@
     android:background="@color/grey1"
     android:orientation="vertical">
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,8 +18,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
                 android:background="@color/white">
 
                 <TextView
@@ -29,7 +29,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:text="账户"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/tv_name"
@@ -40,8 +41,7 @@
                     android:layout_toRightOf="@+id/textview"
                     android:text="鑫西都 "
                     android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -59,17 +59,18 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="30dp"
-                    android:background="@drawable/round_login"
+                    android:background="@drawable/btn2"
                     android:gravity="center"
                     android:text="安全 "
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white"
+                    android:textSize="14dp"/>
 
             </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:background="@color/white"
                 android:orientation="horizontal">
 
@@ -84,9 +85,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="7dp"
                         android:text="可用履约资金"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/font_gray"
+                        android:textSize="14dp"/>
 
                     <TextView
                         android:id="@+id/tv_fund"
@@ -95,22 +97,22 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:text="0.00"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black2" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="5dp"
-                        android:background="@color/dan_back" />
+                        android:background="@color/hui_dan" />
 
                     <TextView
                         android:id="@+id/textview2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="7dp"
                         android:text="当前资产"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/font_gray" />
 
                     <TextView
                         android:id="@+id/tv_now_fund"
@@ -119,19 +121,19 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:text="0.00"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black2" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="5dp"
-                        android:background="@color/dan_back" />
+                        android:background="@color/hui_dan" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
-                    android:background="@color/dan_back" />
+                    android:background="@color/hui_dan" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -144,9 +146,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="7dp"
                         android:text="浮动盈利"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/font_gray" />
 
                     <TextView
                         android:id="@+id/tv_profit"
@@ -155,21 +157,21 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:text="0.00"
-                        android:textColor="@color/red" />
+                        android:textColor="@color/black2" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="5dp"
-                        android:background="@color/dan_back" />
+                        android:background="@color/hui_dan" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="7dp"
                         android:text="实际资产"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/font_gray" />
 
                     <TextView
                         android:id="@+id/tv_actual_assets"
@@ -178,13 +180,13 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:text="0.00"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black2" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="5dp"
-                        android:background="@color/dan_back" />
+                        android:background="@color/hui_dan" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -205,5 +207,5 @@
                     android:background="@color/white" />
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

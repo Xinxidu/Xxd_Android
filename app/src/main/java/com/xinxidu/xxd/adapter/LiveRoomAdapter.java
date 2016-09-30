@@ -84,8 +84,8 @@ public class LiveRoomAdapter extends RecyclerView.Adapter<LiveRoomAdapter.ViewHo
         TextView textView11;
         @BindView(R.id.textView13)
         TextView textView13;
-        @BindView(R.id.iv_more)
-        ImageView ivMore;
+//        @BindView(R.id.iv_more)
+//        ImageView ivMore;
 
         View itemView;
 

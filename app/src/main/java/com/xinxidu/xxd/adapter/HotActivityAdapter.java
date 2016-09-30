@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -23,7 +24,6 @@ import butterknife.ButterKnife;
  */
 public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.ViewHolder> {
     private final Context mContext;
-
     private List<HotActivityEvent> mItemList = new ArrayList<HotActivityEvent>();
 
     public HotActivityAdapter(Context mContext, List<HotActivityEvent> itemList, Context context) {
@@ -42,7 +42,7 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.hot_activity_item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.hot_activity_item1, parent, false);
         ViewHolder mViewHolder = new ViewHolder(view);
         return mViewHolder;
     }
@@ -64,6 +64,8 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
 
 
     static class ViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.imageView2)
+        ImageView imageView2;
         @BindView(R.id.textView)
         TextView textView;
         @BindView(R.id.relative)
@@ -74,9 +76,10 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
         TextView tvTimeStart;
         @BindView(R.id.tv_time_end)
         TextView tvTimeEnd;
-        @BindView(R.id.linear)
-        LinearLayout linear;
-
+        @BindView(R.id.textView17)
+        TextView textView17;
+        @BindView(R.id.linearLayout2)
+        LinearLayout linearLayout2;
         View itemView;
 
         ViewHolder(View view) {

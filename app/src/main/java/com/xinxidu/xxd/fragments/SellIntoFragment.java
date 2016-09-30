@@ -117,6 +117,7 @@ public class SellIntoFragment extends Fragment {
 
     private void initRecycler() {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        mRecyclerView.setFocusable(false);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mItem = new ArrayList<EntrustItemEvent>();
@@ -128,7 +129,6 @@ public class SellIntoFragment extends Fragment {
         mEntrustItemAdapter.notifyDataSetChanged();
         //滑动停顿
         FullyLinearLayoutManager linearLayoutManager = new FullyLinearLayoutManager(getActivity());
-        mRecyclerView.setNestedScrollingEnabled(false);
         //设置布局管理器
         mRecyclerView.setLayoutManager(linearLayoutManager);
         mRecyclerView.setNestedScrollingEnabled(false);

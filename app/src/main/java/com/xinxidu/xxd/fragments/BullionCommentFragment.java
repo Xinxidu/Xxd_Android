@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.adapter.BullionCommentAdapter;
 import com.xinxidu.xxd.event.BullionCommentEvent;
+import com.xinxidu.xxd.utils.FullyLinearLayoutManager;
 
 import java.util.ArrayList;
 
@@ -32,17 +33,16 @@ public class BullionCommentFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.bullion_comment_fragment, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        mRecyclerView.setFocusable(false);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mItem = new ArrayList<BullionCommentEvent>();
         mItem.add(null);
-//        if (mItem != null && mItem.size() > 0) {
 
         mBullionCommentAdapter = new BullionCommentAdapter(getActivity());
         mRecyclerView.setAdapter(mBullionCommentAdapter);
         mBullionCommentAdapter.setData(mItem);
         mBullionCommentAdapter.notifyDataSetChanged();
-//        }
         return view;
     }
 }

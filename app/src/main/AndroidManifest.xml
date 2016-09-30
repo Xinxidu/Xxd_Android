@@ -40,7 +40,8 @@
         <activity android:name=".activity.ElectricTradeActivity" />
         <activity android:name=".activity.TeacherTeamActivity" />
         <activity android:name=".activity.DayInvestmentDetailActivity" />
-        <activity android:name=".activity.HuaTongLoginActivity" />
+        <activity android:name=".activity.HuaTongLoginActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
         <activity android:name=".activity.HuaTongRegisterBasicActivity" />
         <activity android:name=".activity.AboutXXiDuActivity"/>
         <activity android:name=".activity.XiduNewsDetailActivity"/>
@@ -50,6 +51,7 @@
         <activity android:name=".activity.MyAccountInfoActivity"/>
         <activity android:name=".activity.LiveTelecastURLActivity"/>
         <activity android:name=".activity.TeacherTeamActivity1"/>
+        <activity android:name=".activity.CollectionActivity"/>
     </application>
 
 </manifest>

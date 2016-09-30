@@ -195,7 +195,7 @@
     <color name="loction_city_flag_color">#ffd2d6dd</color>
     <color name="login_bg">#ffededed</color>
     <color name="login_btn_press">#ff6a2e07</color>
-    <color name="login_button_disable">#ffdedede</color>
+    <color name="login_button_disable">#dedede</color>
     <color name="login_divider">#ffdcdcdc</color>
     <color name="login_text">#dd000000</color>
     <color name="login_text_gray">#89000000</color>

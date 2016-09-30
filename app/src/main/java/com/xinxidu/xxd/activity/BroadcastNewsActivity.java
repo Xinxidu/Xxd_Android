@@ -35,5 +35,11 @@ public class BroadcastNewsActivity extends AppCompatActivity {
                 finish();
             }
         });
+        tv_title_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CollectionActivity.startCollectionActivity(BroadcastNewsActivity.this);
+            }
+        });
     }
 }

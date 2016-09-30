@@ -61,6 +61,7 @@ public class HoldGoodsGragment extends Fragment {
     }
     private void initRecycler() {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setFocusable(false);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         mItem = new ArrayList<EntrustItemEvent>();
         mItem.add(null);
@@ -71,7 +72,6 @@ public class HoldGoodsGragment extends Fragment {
         mEntrustItemAdapter.notifyDataSetChanged();
         //滑动停顿
         FullyLinearLayoutManager linearLayoutManager = new FullyLinearLayoutManager(getActivity());
-        recyclerView.setNestedScrollingEnabled(false);
         //设置布局管理器
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setNestedScrollingEnabled(false);

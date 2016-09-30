@@ -8,7 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="75dp">
 
         <RelativeLayout
             android:id="@+id/relative"
@@ -17,8 +17,8 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="93dp"
+                android:layout_height="63dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/bofang_icon"
@@ -26,11 +26,11 @@
 
             <ImageView
                 android:id="@+id/image"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="15dp"
-                android:background="@drawable/play" />
+                android:background="@drawable/live_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -38,7 +38,8 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@+id/image"
-                android:text="股赢天下" />
+                android:text="股赢天下"
+                android:textSize="12dp"/>
         </RelativeLayout>
 
         <TextView
@@ -50,20 +51,21 @@
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/relative"
             android:text="股赢天下"
-            android:textSize="20dip"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="16dip" />
 
         <Button
             android:id="@+id/bt_live_telecast"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_width="75dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/textView11"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/relative"
             android:background="@drawable/button_c"
             android:text="直播中..."
-            android:layout_below="@+id/textView11"
-            android:layout_toRightOf="@+id/relative"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/common_top"/>
+            android:textSize="12dp"
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/textView11"
@@ -71,52 +73,49 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView10"
             android:layout_below="@+id/textView10"
-            android:layout_marginTop="5dp"
+            android:ellipsize="end"
             android:maxLines="1"
             android:singleLine="true"
-            android:ellipsize="end"
             android:text="特点：抢反弹一马当先抓涨停十拿九稳马当先抓涨停十拿九稳"
-            android:textSize="18dp"
-            android:textColor="@color/font_gray" />
+            android:textColor="@color/font_gray"
+            android:textSize="12dp" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
+        android:layout_height="25dp"
         android:background="@color/graywhite">
 
         <TextView
+            android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="l 名师推荐 1："
-            android:textColor="@color/red"
-            android:layout_centerVertical="true"
+            android:layout_alignTop="@+id/textView14"
             android:layout_marginLeft="5dp"
+            android:ellipsize="end"
             android:maxLines="1"
             android:singleLine="true"
-            android:ellipsize="end"
-            android:id="@+id/textView13"
-            android:textStyle="bold"/>
+            android:text="l名师推荐1:"
+            android:textColor="@color/red"
+            android:textSize="12dp" />
 
         <TextView
+            android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="西都金融研究院每周不定时推荐一道两支股"
-            android:textColor="@color/font_gray"
+            android:ellipsize="end"
             android:maxLines="1"
             android:singleLine="true"
-            android:ellipsize="end"
+            android:text="西都金融研究院每周不定时推荐一道两支股"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/font_gray"
+            android:textSize="12dp"
+            android:drawableRight="@drawable/down_icon"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/textView13"/>
-
-        <ImageView
-            android:id="@+id/iv_more"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/abc_ic_ab" />
+            android:layout_toRightOf="@+id/textView13"
+            android:layout_toEndOf="@+id/textView13" />
 
     </RelativeLayout>
 

@@ -9,57 +9,63 @@
         android:id="@+id/imageView"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="5dp"/>
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/market_icon"/>
 
     <LinearLayout
         android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="38dp"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/imageView">
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_marginLeft="5dp">
 
         <TextView
             android:id="@+id/tv_variety"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="9dp"
             android:layout_weight="1"
             android:text="白银现货排期"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="12dp"/>
 
         <TextView
             android:id="@+id/tv_volume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="9dp"
             android:layout_weight="1"
             android:text="4.15万"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="12dp"/>
 
         <TextView
             android:id="@+id/tv_high"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="9dp"
             android:layout_weight="1"
             android:text="4131"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="12dp"/>
 
         <TextView
             android:id="@+id/tv_down"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="9dp"
             android:layout_weight="1"
             android:text="4089"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="12dp"/>
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/dan_back"
+        android:background="@color/hui_dan"
         android:layout_below="@+id/line"/>
 
 </RelativeLayout>
