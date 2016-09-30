@@ -20,6 +20,7 @@ import com.xinxidu.xxd.activity.MyAccountInfoActivity;
 import com.xinxidu.xxd.activity.MyShiPanAccountActivity;
 import com.xinxidu.xxd.activity.RegisterBasicActivity;
 import com.xinxidu.xxd.activity.AboutXXiDuActivity;
+import com.xinxidu.xxd.activity.SettingActivity;
 import com.xinxidu.xxd.event.UserLoginEvent;
 import com.xinxidu.xxd.utils.CustomDialog;
 import com.xinxidu.xxd.view.CircleImageView;
@@ -129,6 +130,7 @@ public class MyFragment extends Fragment {
             case R.id.my_help:
                 break;
             case R.id.my_setting:
+                SettingActivity.startSettingActivity(getActivity());
                 break;
         }
     }

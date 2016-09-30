@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_user_feedback"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey1"
+    android:orientation="vertical"
+    android:weightSum="1">
+  <include layout="@layout/title"/>
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="106dp"
+            android:padding="10dp"
+            android:background="@color/color_e4ebf4"
+            android:text="感谢您提出宝贵的建议和意见,您留下的每个字都对我们非常重要。如果您有非常紧急的需求和问题,您可以直接拨打我们的客服电话:4001054080 我们将竭诚为您服务!"
+            android:textSize="14dp"
+            android:lineSpacingExtra="5dp"
+            android:autoLink="phone"
+            android:textColor="@color/black2"/>
+    <EditText
+        android:id="@+id/et_info"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:inputType="textMultiLine"
+        android:gravity="top|left"
+        android:hint="请写下您的宝贵意见,我们会及时处理......"
+        android:textColorHint="@color/hui_dan"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:padding="10dp"
+        android:textColor="@color/gray"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/white"
+        android:textSize="12dp"
+        android:inputType="phone"
+        android:hint="请留下您的联系方式"
+        android:textColorHint="@color/hui_dan"
+        android:ems="10" />
+    <TextView
+        android:id="@+id/tv_commit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/et_phone"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_commit"
+        android:gravity="center"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>
