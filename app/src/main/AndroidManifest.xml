@@ -52,6 +52,9 @@
         <activity android:name=".activity.LiveTelecastURLActivity"/>
         <activity android:name=".activity.TeacherTeamActivity1"/>
         <activity android:name=".activity.CollectionActivity"/>
+        <activity android:name=".activity.SettingActivity"/>
+        <activity android:name=".activity.UserFeedbackActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
     </application>
 
 </manifest>
