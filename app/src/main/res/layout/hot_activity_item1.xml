@@ -3,19 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/ripple_bg"
+    android:id="@+id/ll_layout"
     android:orientation="vertical">
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="15dp"
         android:background="@color/graywhite" />
-    <!--<RelativeLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginBottom="20dp"-->
-    <!--android:background="@drawable/miaobian"-->
-    <!--android:orientation="vertical">-->
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/not_enough_business_consumer_" />
     <RelativeLayout
         android:id="@+id/relative"
         android:layout_width="match_parent"
@@ -60,13 +58,14 @@
         android:background="@drawable/miaobian">
 
         <ImageView
+            android:id="@+id/iv_hot_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/linearLayout2"
-            android:background="@drawable/image"
-            android:layout_marginRight="10dp"/>
+            android:background="@drawable/image" />
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -82,14 +81,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/hot_activity1"
                 android:gravity="center"
                 android:text="进行中"
                 android:textColor="@color/white"
                 android:textSize="13dp" />
 
             <TextView
-                android:id="@+id/tv_time_start"
+                android:id="@+id/tv_time_start1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -107,13 +105,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/textView17"
-                    android:layout_alignTop="@+id/tv_time_end"
+                    android:layout_alignBottom="@+id/tv_time_end"
+                    android:layout_alignTop="@+id/tv_time_start"
                     android:drawableLeft="@drawable/zuo"
                     android:drawableRight="@drawable/you" />
 
                 <TextView
-                    android:id="@+id/tv_time_end"
+                    android:id="@+id/tv_time_start"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -122,10 +120,10 @@
                     android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/textView17"
+                    android:id="@+id/tv_time_end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_time_end"
+                    android:layout_below="@+id/tv_time_start"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
                     android:text="2016.08.27"
@@ -136,9 +134,4 @@
         </LinearLayout>
 
     </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="@color/graywhite" />
 </LinearLayout>

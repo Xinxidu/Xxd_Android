@@ -59,6 +59,10 @@ public class LoginActivity extends Activity {
     private String etLoginUserValue;
     private String etLoginPassValue;
 
+    // private String id;
+//    public static final String URL = "http://localhost:8090/app/controller/avtive/detail/json";
+
+
     public static void startLoginActivity(Context context) {
         Intent intent = new Intent(context, LoginActivity.class);
         context.startActivity(intent);
@@ -85,11 +89,17 @@ public class LoginActivity extends Activity {
 //                Intent intent = new Intent(LoginActivity.this, HotActivity.class);
 //                startActivity(intent);
 
+                //intnNet();
             }
+
+//    private void intnNet() {
+//        Map<String, String> map = new HashMap<>();
+//        map.put("id", id);
+//    }
         }
     }
 
-    @OnClick({R.id.back, R.id.tv_login_commit, R.id.tv_open_account, R.id.cb_mima, R.id.cb_auto,R.id.tv_back_pass})
+    @OnClick({R.id.back, R.id.tv_login_commit, R.id.tv_open_account, R.id.cb_mima, R.id.cb_auto, R.id.tv_back_pass})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.back:

@@ -10,8 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.event.HotActivityEvent;
+import com.xinxidu.xxd.netWork.HotActivityBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,14 +25,15 @@ import butterknife.ButterKnife;
  */
 public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.ViewHolder> {
     private final Context mContext;
-    private List<HotActivityEvent> mItemList = new ArrayList<HotActivityEvent>();
+    private List<HotActivityBean> mItemList = new ArrayList<>();
+    private OnItemClickListener mOnItemClickListener;
 
-    public HotActivityAdapter(Context mContext, List<HotActivityEvent> itemList, Context context) {
+    public HotActivityAdapter(Context mContext, List<HotActivityBean> itemList, Context context) {
         mItemList = itemList;
         this.mContext = context;
     }
 
-    public void setData(ArrayList<HotActivityEvent> timeList) {
+    public void setData(ArrayList<HotActivityBean> timeList) {
         //mItemList.clear();
         mItemList.addAll(timeList);
     }
@@ -48,24 +50,46 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
+        holder.textView.setText(mItemList.get(position).getTitle());
+        holder.tvTimeEnd.setText(mItemList.get(position).getCreateDate());
+        holder.tvTimeStart.setText(mItemList.get(position).getActiveTime());
+        if (mItemList.get(position).getType() == 0) {
+            holder.tvActivityState.setText("未开始");
+            holder.tvActivityState.setBackgroundResource(R.drawable.hot_activity1);
+        } else if (mItemList.get(position).getType() == 1) {
+            holder.tvActivityState.setText("已参与");
+            holder.tvActivityState.setBackgroundResource(R.drawable.hot_activity2);
+        } else {
+            holder.tvActivityState.setText("已结束");
+            holder.tvActivityState.setBackgroundResource(R.drawable.hot_activity3);
+        }
+        //获取图片
+        Glide.with(mContext).load(mItemList.get(position).getPicUrl()).into(holder.ivHotIcon);
+//        System.out.println(mItemList.get(position).getPicUrl()).);
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                TaskDetailsActivity.startTaskDetailsActivity(mContext);
+                mOnItemClickListener.onItemClick(holder.itemView, holder.getLayoutPosition());
+//                Intent intent = new Intent(mContext, HotActivity.class);
+//                intent.putExtra("id", mItemList.get(holder.getLayoutPosition()).getId());
+//                mContext.startActivity(intent);
+                //Toast.makeText(mContext, "id=" + , Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return 6;
+        return mItemList.size();
     }
-
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.imageView2)
         ImageView imageView2;
+        @BindView(R.id.iv_hot_icon)
+        ImageView ivHotIcon;
         @BindView(R.id.textView)
         TextView textView;
         @BindView(R.id.relative)
@@ -76,8 +100,6 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
         TextView tvTimeStart;
         @BindView(R.id.tv_time_end)
         TextView tvTimeEnd;
-        @BindView(R.id.textView17)
-        TextView textView17;
         @BindView(R.id.linearLayout2)
         LinearLayout linearLayout2;
         View itemView;
@@ -87,5 +109,13 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
             this.itemView = view;
             ButterKnife.bind(this, view);
         }
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.mOnItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
     }
 }
