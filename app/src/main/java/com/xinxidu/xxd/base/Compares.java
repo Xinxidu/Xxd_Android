@@ -17,4 +17,5 @@ public class Compares {
     public static final String VALIDCODE_URL = URL + "/app/controller/user/validCode/json";
 
     public static final String REG_URL = URL + "/app/controller/user/reg/json";
+    public static final String TEACHER_URL = URL + "/Team";
 }
