@@ -44,8 +44,8 @@
             android:background="@drawable/btn2"
             android:gravity="center"
             android:text="登录"
-            android:textSize="14dp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textSize="14dp" />
 
         <Button
             android:id="@+id/btn_back_login"
@@ -68,8 +68,8 @@
             android:background="@drawable/btn1"
             android:gravity="center"
             android:text="注册"
-            android:textSize="14dp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textSize="14dp" />
 
     </RelativeLayout>
 
@@ -87,10 +87,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:background="@color/color_e4ebf4" />
+            <View style="@style/MyAndFind" />
 
             <TextView
                 android:id="@+id/my_account"
@@ -108,10 +105,7 @@
 
             <View style="@style/MyView" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:background="@color/color_e4ebf4" />
+            <View style="@style/MyAndFind" />
 
             <TextView
                 android:id="@+id/my_event"
@@ -137,10 +131,7 @@
 
             <View style="@style/MyView" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:background="@color/color_e4ebf4" />
+            <View style="@style/MyAndFind" />
 
             <TextView
                 android:id="@+id/my_help"
@@ -155,6 +146,7 @@
                 style="@style/MyTextView"
                 android:drawableLeft="@drawable/my_setting"
                 android:text="设置" />
+
             <View style="@style/MyView" />
         </LinearLayout>
     </ScrollView>

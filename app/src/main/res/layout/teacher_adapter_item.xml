@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/book_tab_nor_text1"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_margin="12dp"/>
+
+        <TextView
+            android:id="@+id/tv_synopsis"
+            style="@style/TeacherTextview"
+            android:layout_toRightOf="@+id/iv_icon"
+            android:text="韩云老师--特约评价嘉宾" />
+
+        <TextView
+            android:id="@+id/tv_explain"
+            style="@style/TeacherTextview"
+            android:text="擅长：趋势判断，点位预测准确"
+            android:layout_below="@+id/tv_synopsis"
+            android:layout_toRightOf="@+id/iv_icon"
+            android:layout_toEndOf="@+id/iv_icon"/>
+
+        <ImageView style="@style/TeacherRight" />
+    </RelativeLayout>
+
+    <View style="@style/TeacherView" />
+
+</LinearLayout>

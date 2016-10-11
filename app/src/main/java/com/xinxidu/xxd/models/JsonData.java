@@ -1,6 +1,6 @@
 package com.xinxidu.xxd.models;
 
-public class JsonData {
+public class   JsonData {
 
     private int flag;
     private DataBean data;

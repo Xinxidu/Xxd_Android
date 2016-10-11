@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.base.Compares;
 import com.xinxidu.xxd.netWork.HotActivityBean;
 
 import java.util.ArrayList;
@@ -54,20 +55,19 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
         holder.textView.setText(mItemList.get(position).getTitle());
         holder.tvTimeEnd.setText(mItemList.get(position).getCreateDate());
         holder.tvTimeStart.setText(mItemList.get(position).getActiveTime());
-        if (mItemList.get(position).getType() == 0) {
-            holder.tvActivityState.setText("未开始");
+        if (mItemList.get(position).getType() == 2) {
+            holder.tvActivityState.setText("进行中");
             holder.tvActivityState.setBackgroundResource(R.drawable.hot_activity1);
         } else if (mItemList.get(position).getType() == 1) {
             holder.tvActivityState.setText("已参与");
             holder.tvActivityState.setBackgroundResource(R.drawable.hot_activity2);
-        } else {
+        } else if (mItemList.get(position).getType() == 0){
             holder.tvActivityState.setText("已结束");
             holder.tvActivityState.setBackgroundResource(R.drawable.hot_activity3);
         }
         //获取图片
-        Glide.with(mContext).load(mItemList.get(position).getPicUrl()).into(holder.ivHotIcon);
-//        System.out.println(mItemList.get(position).getPicUrl()).);
-
+        Glide.with(mContext).load(Compares.URL+mItemList.get(position).getPicUrl()).into(holder.ivHotIcon);
+        System.out.println("abcd"+mItemList.get(position).getPicUrl());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

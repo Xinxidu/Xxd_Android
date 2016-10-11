@@ -55,6 +55,7 @@
         <activity android:name=".activity.SettingActivity"/>
         <activity android:name=".activity.UserFeedbackActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity android:name=".activity.TeacherDetailsActivity"/>
     </application>
 
 </manifest>

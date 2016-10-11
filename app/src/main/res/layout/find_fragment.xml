@@ -17,20 +17,16 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:background="@color/color_e4ebf4" />
+            <View style="@style/MyAndFind" />
 
             <TextView
                 android:id="@+id/title_name"
                 style="@style/MyTextView"
                 android:drawableLeft="@drawable/activity_new"
                 android:text="活动消息" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:background="@color/color_e4ebf4" />
+
+            <View style="@style/MyAndFind" />
+
             <View style="@style/MyView" />
 
             <TextView
@@ -47,10 +43,9 @@
                 style="@style/MyTextView"
                 android:drawableLeft="@drawable/investment_strategy"
                 android:text="投资策略" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:background="@color/color_e4ebf4" />
+
+            <View style="@style/MyAndFind" />
+
             <View style="@style/MyView" />
 
             <TextView
@@ -69,10 +64,7 @@
 
             <View style="@style/MyView" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:background="@color/color_e4ebf4" />
+            <View style="@style/MyAndFind" />
 
             <TextView
                 android:id="@+id/find_trade"

@@ -105,13 +105,20 @@
 
     <!--tablayout字体大小-->
     <style name="MyTabLayoutTextAppearanceInverse" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
     </style>
     <!--我的实盘账户view-->
     <style name="MyView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
-        <item name="android:background">@color/hui_dan</item>
+        <item name="android:background">@color/trip_detail_fee_jisuangongshi</item>
+    </style>
+    <!--我的   发现 view-->
+    <style name="MyAndFind">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">10dp</item>
+        <item name="android:background">@color/trip_detail_fee_jisuangongshi</item>
     </style>
 
     <style name="MyTextView">
@@ -120,8 +127,8 @@
         <item name="android:layout_centerVertical">true</item>
         <item name="android:background">@drawable/ripple_bg</item>
         <item name="android:drawableRight">@drawable/icon3</item>
-        <item name="android:padding">15dp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/black2</item>
         <item name="android:textSize">16dp</item>
         <item name="android:drawablePadding">10dp</item>
     </style>
@@ -147,11 +154,13 @@
         <item name="android:layout_marginRight">30dp</item>
         <item name="android:textSize">13dp</item>
     </style>
+
     <style name="TeacherHeaderTextview">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">57dp</item>
+        <item name="android:layout_height">57dp</item>
         <item name="android:layout_margin">10dp</item>
     </style>
+
     <style name="TeacherRight">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -160,6 +169,7 @@
         <item name="android:layout_centerVertical">true</item>
         <item name="android:background">@drawable/icon3</item>
     </style>
+
     <style name="TeacherView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">10dp</item>

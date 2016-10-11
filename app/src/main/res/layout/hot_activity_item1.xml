@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/ripple_bg"
-    android:id="@+id/ll_layout"
     android:orientation="vertical">
 
     <View
         android:layout_width="match_parent"
         android:layout_height="15dp"
         android:background="@color/graywhite" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/not_enough_business_consumer_" />
+
     <RelativeLayout
         android:id="@+id/relative"
         android:layout_width="match_parent"
@@ -59,17 +61,16 @@
 
         <ImageView
             android:id="@+id/iv_hot_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginRight="10dp"
-            android:layout_toLeftOf="@+id/linearLayout2"
-            android:background="@drawable/image" />
+            android:layout_toLeftOf="@+id/linearLayout2"/>
 
         <LinearLayout
             android:id="@+id/linearLayout2"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginLeft="10dp"
