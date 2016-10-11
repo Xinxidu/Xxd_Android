@@ -26,9 +26,11 @@ import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.adapter.DayInvestmentAdapter;
 import com.xinxidu.xxd.adapter.ProfitSkillAdapter;
 import com.xinxidu.xxd.adapter.XiduNewsAdapter;
+import com.xinxidu.xxd.base.Compares;
 import com.xinxidu.xxd.event.ProfitSkillEvent;
 import com.xinxidu.xxd.event.XiduNewsEvent;
 import com.xinxidu.xxd.models.XiduInfoData;
+import com.xinxidu.xxd.netWork.XiduNewsBean;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -49,10 +51,9 @@ import butterknife.OnClick;
 
 public class XiduNewsActivity extends Fragment {
     XiduNewsAdapter mXiduNewsAdapter;
-    private ArrayList<XiduNewsEvent> mItem=new ArrayList<>();
+    private ArrayList<XiduNewsBean> mItem = new ArrayList<>();
     private RecyclerView mRecyclerView;
-    protected static final String URL = "http://175.102.13.51:8080/XDSY/ZhuBan";
-    private XiduNewsEvent event;
+
     public static void startProfitSkillActivity(Context context) {
         Intent intent = new Intent(context, XiduNewsActivity.class);
         context.startActivity(intent);
@@ -61,21 +62,22 @@ public class XiduNewsActivity extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.activity_xidu_news,container,false);
-        ButterKnife.bind(this,view);
+        View view = inflater.inflate(R.layout.activity_xidu_news, container, false);
+        ButterKnife.bind(this, view);
         webRequest();
-        mRecyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         return view;
     }
 
     private void webRequest() {
-        Map<String,String> map=new HashMap<>();
-        map.put("type",".guanwang");
-        map.put("defference","gonggao");
-        map.put("indexPage","1");
-        OkHttpUtils.get().url(URL).params(map).build().execute(new StringCallback() {
+        Map<String, String> map = new HashMap<>();
+        map.put("type", ".guanwang");
+        map.put("defference", "gonggao");
+        map.put("indexPage", "1");
+        map.put("pageRows","10");
+        OkHttpUtils.get().url(Compares.ZHUBAN_URL).params(map).build().execute(new StringCallback() {
 
             @Override
             public void onBefore(okhttp3.Request request) {
@@ -86,38 +88,37 @@ public class XiduNewsActivity extends Fragment {
 
             @Override
             public void onError(okhttp3.Call call, Exception e) {
-                System.out.println("e=" +e.toString());
+                System.out.println("e=" + e.toString());
             }
 
             @Override
             public void onResponse(String response) {
-                 parseData(response);
+                parseData(response);
             }
         });
 
     }
 
     private void parseData(String response) {
-        if (!TextUtils.isEmpty(response)){
+        if (!TextUtils.isEmpty(response)) {
             try {
-                JSONObject object=new JSONObject(response);
-                if (object.getInt("flag")==1){
+                JSONObject object = new JSONObject(response);
+                if (object.getInt("flag") == 1) {
                     System.out.println("请求成功");
-                    JSONArray data=object.getJSONArray("data");
-                    for (int i=0;i<data.length();i++){
-                      String json=data.getString(i);
-                      System.out.println("json=" + json.toString());
-                        Gson gson=new Gson();
-                        event=gson.fromJson(json, XiduNewsEvent.class);
-                        mItem.add(event);
+                    JSONArray data = object.getJSONArray("data");
+                    for (int i = 0; i < data.length(); i++) {
+                        String json = data.getString(i);
+                        System.out.println("json=" + json.toString());
+                        XiduNewsBean bean = new Gson().fromJson(json, XiduNewsBean.class);
+                        mItem.add(bean);
                     }
-                }else {
-                    Log.v("fail","fail");
+                } else {
+                    Log.v("fail", "fail");
                 }
-                mXiduNewsAdapter = new XiduNewsAdapter(getActivity(),mItem);
+                mXiduNewsAdapter = new XiduNewsAdapter(getActivity(), mItem);
                 mRecyclerView.setAdapter(mXiduNewsAdapter);
                 mXiduNewsAdapter.setOnItemClickListener(mOnItemClickListener);
-            }catch (JSONException e){
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
@@ -126,7 +127,7 @@ public class XiduNewsActivity extends Fragment {
     XiduNewsAdapter.OnItemClickListener mOnItemClickListener = new XiduNewsAdapter.OnItemClickListener() {
         @Override
         public void onItemClick(View view, int position) {
-           Intent intent = new Intent(getActivity(), XiduNewsDetailActivity.class);
+            Intent intent = new Intent(getActivity(), XiduNewsDetailActivity.class);
             intent.putExtra("Id", mItem.get(position).getId());
             startActivity(intent);
         }

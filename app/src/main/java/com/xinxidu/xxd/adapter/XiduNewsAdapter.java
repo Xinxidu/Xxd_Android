@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.event.XiduNewsEvent;
+import com.xinxidu.xxd.netWork.XiduNewsBean;
 
 import java.util.List;
 
@@ -20,10 +21,10 @@ import butterknife.ButterKnife;
  */
 public class XiduNewsAdapter extends RecyclerView.Adapter<XiduNewsAdapter.ViewHolder> {
     private final Context mContext;
-    private final List<XiduNewsEvent> mItemList;
+    private final List<XiduNewsBean> mItemList;
     private OnItemClickListener mOnItemClickListener;
 
-    public XiduNewsAdapter(Context mContext, List<XiduNewsEvent> itemList) {
+    public XiduNewsAdapter(Context mContext, List<XiduNewsBean> itemList) {
         this.mItemList = itemList;
         this.mContext = mContext;
     }

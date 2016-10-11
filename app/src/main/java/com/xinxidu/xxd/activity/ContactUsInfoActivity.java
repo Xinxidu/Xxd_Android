@@ -39,7 +39,7 @@ import butterknife.ButterKnife;
 
 public class ContactUsInfoActivity extends Fragment {
 
-    protected static final String HOST = "http://175.102.13.51:8080/XDSY/ZhuBan?type=.guanwang&defference=lianxi&indexPage=0";
+    protected static final String HOST = "http://app.service.xiduoil.com/ZhuBan?type=.guanwang&defference=lianxi";
     @BindView(R.id.textView11)
     TextView textView11;
     @BindView(R.id.CompanyTel)

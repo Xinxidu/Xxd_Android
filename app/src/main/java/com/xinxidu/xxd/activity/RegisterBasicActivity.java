@@ -3,9 +3,11 @@ package com.xinxidu.xxd.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -13,10 +15,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.base.Compares;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.Call;
 
 /**
  * Created by limingquan on 2016/9/8.
@@ -48,7 +60,9 @@ public class RegisterBasicActivity extends Activity {
     EditText etEse;
     private TimeCount time;
     private boolean validInput;
-
+    private String etPhoneValue;
+    private String etEseValue;
+    private SharedPreferences sp;
     public static void startRegisterBasicActivity(Context context) {
         Intent intent = new Intent(context, RegisterBasicActivity.class);
         context.startActivity(intent);
@@ -60,6 +74,7 @@ public class RegisterBasicActivity extends Activity {
         setContentView(R.layout.register_basic_activity);
         ButterKnife.bind(this);
         tvTitle.setText("注册");
+        sp = this.getSharedPreferences("times",8);
         time = new TimeCount(60000, 1000);
     }
 
@@ -70,21 +85,101 @@ public class RegisterBasicActivity extends Activity {
                 finish();
                 break;
             case R.id.tv_send:
-
                 String phoneNums = etPhone.getText().toString();
                 if (judgePhoneNums(phoneNums)) {
                     //点击发送验证码倒计时
                     time.start();
                 }
+                getCodeRequest();
                 break;
             case R.id.tv_next:
-                if (isValidInput()) {
-                    RegisterActivity2.startRegisterActivity2(this);
-                }
+                validCodeRequst();
+//                if (isValidInput()) {
+//                    RegisterActivity2.startRegisterActivity2(this);
+//                }
                 break;
         }
     }
 
+    private void getCodeRequest(){
+        etPhoneValue = etPhone.getText().toString();
+        Map<String,String> map = new HashMap<>();
+        map.put("type","appSMS");
+        map.put("mob",etPhoneValue);
+        map.put("source","0");
+        OkHttpUtils.get().url(Compares.GETCODE_URL).params(map).build().execute(new StringCallback() {
+            @Override
+            public void onBefore(okhttp3.Request request) {
+                System.out.println("request=" + request.toString());
+                super.onBefore(request);
+            }
+            @Override
+            public void onError(Call call, Exception e) {
+                System.out.println("e=" + e.toString());
+            }
+
+            @Override
+            public void onResponse(String response) {
+                parseData(response);
+            }
+        });
+    }
+    private void parseData(String response) {
+        if (!TextUtils.isEmpty(response)) {
+            try {
+                JSONObject object = new JSONObject(response);
+                if (object.getInt("k") == 1) {
+                    Log.v("getcode_sucess", "sucess");
+                    }else {
+                    Log.v("getcode_fail","fail");
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    private void validCodeRequst(){
+        etPhoneValue = etPhone.getText().toString();
+        etEseValue = etEse.getText().toString();
+        Map<String,String> map = new HashMap<>();
+        map.put("type","appSMS");
+        map.put("mob",etPhoneValue);
+        map.put("code",etEseValue);
+        OkHttpUtils.get().url(Compares.VALIDCODE_URL).params(map).build().execute(new StringCallback() {
+            @Override
+            public void onBefore(okhttp3.Request request) {
+                System.out.println("request=" + request.toString());
+                super.onBefore(request);
+            }
+            @Override
+            public void onError(Call call, Exception e) {
+                System.out.println("e=" + e.toString());
+            }
+
+            @Override
+            public void onResponse(String response) {
+                parseData2(response);
+            }
+        });
+    }
+    private void parseData2(String response) {
+        if (!TextUtils.isEmpty(response)) {
+            try {
+                JSONObject object = new JSONObject(response);
+                if (object.getInt("key") == 1) {
+                    String times = object.getString("times");
+                    sp.edit().putString("times",times).commit();
+                    RegisterActivity2.startRegisterActivity2(this);
+
+                }else {
+                    Toast.makeText(this, "验证失败!", Toast.LENGTH_SHORT).show();
+                    Log.v("validCode_fail","fail");
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     /**
      * 判断手机号码是否合理
      *

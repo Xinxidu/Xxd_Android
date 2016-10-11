@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -13,13 +15,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.base.Compares;
 import com.xinxidu.xxd.event.UserLoginEvent;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import org.greenrobot.eventbus.EventBus;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.Call;
+import okhttp3.Request;
 
 /**
  * Created by limingquan on 2016/9/8.
@@ -54,7 +66,7 @@ public class LoginActivity extends Activity {
     @BindView(R.id.tv_back_pass)
     TextView tvBackPass;
     @BindView(R.id.tv_open_account)
-    TextView tvOpenAccount;
+    RelativeLayout tvOpenAccount;
     private SharedPreferences sp;
     private String etLoginUserValue;
     private String etLoginPassValue;
@@ -106,7 +118,7 @@ public class LoginActivity extends Activity {
                 finish();
                 break;
             case R.id.tv_login_commit:
-                login();
+                loginRequest();
                 break;
             case R.id.tv_open_account:
                 RegisterBasicActivity.startRegisterBasicActivity(this);
@@ -131,29 +143,60 @@ public class LoginActivity extends Activity {
         }
     }
 
-    private void login() {
+    private void loginRequest() {
         etLoginUserValue = etLoginUser.getText().toString();
         etLoginPassValue = etLoginPass.getText().toString();
+        Map<String, String> map = new HashMap<>();
+        map.put("name", etLoginUserValue);
+        map.put("pwd", etLoginPassValue);
+        OkHttpUtils.get().url(Compares.LOGIN_URL).params(map).build().execute(new StringCallback() {
+            @Override
+            public void onBefore(Request request) {
+                System.out.println("request=" + request.toString());
+                super.onBefore(request);
 
-        if (etLoginUserValue.equals("xxd") && etLoginPassValue.equals("123")) {
-
-            //登录成功和记住密码框为选中状态才保存用户信息
-            if (cbMima.isChecked()) {
-                //记住用户名、密码、
-                SharedPreferences.Editor editor = sp.edit();
-                editor.putString("USER_NAME", etLoginUserValue);
-                editor.putString("PASSWORD", etLoginPassValue);
-                editor.commit();
             }
 
-            //跳转界面
+            @Override
+            public void onError(Call call, Exception e) {
+                System.out.println("e=" + e.toString());
+            }
+
+            @Override
+            public void onResponse(String response) {
+                parseData(response);
+            }
+        });
+    }
+
+    private void parseData(String response) {
+        if (!TextUtils.isEmpty(response)) {
+            try {
+                JSONObject object = new JSONObject(response);
+                if (object.getInt("key") == 1) {
+                    //System.out.println("请求成功");
+                    Log.v("login_sucess", "sucess");
+                    //登录成功和记住密码框为选中状态才保存用户信息
+                    if (cbMima.isChecked()) {
+                        //记住用户名、密码、
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putString("USER_NAME", etLoginUserValue);
+                        editor.putString("PASSWORD", etLoginPassValue);
+                        editor.commit();
+                    }
+
+                    //跳转界面
 //            Intent intent = new Intent(LoginActivity.this, HotActivity.class);
 //            startActivity(intent);
-            Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-            commitEvent();
-        } else {
-
-            Toast.makeText(LoginActivity.this, "用户名或密码错误，请重新登录", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                    commitEvent();
+                } else {
+                    //Log.v("fail3","login-fail");
+                    Toast.makeText(LoginActivity.this, "用户名或密码错误，请重新登录", Toast.LENGTH_LONG).show();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
     }
 

@@ -35,7 +35,7 @@ import butterknife.OnClick;
 public class AboutXiDuDetailActivity extends Fragment {
     @BindView(R.id.xidu_webView)
     WebView xiduWebView;
-    protected static final String URL = "http://175.102.13.51:8080/XDSY/ZhuBan?type=.guanwang&defference=gongsi&indexPage=0";
+    protected static final String URL = "http://app.service.xiduoil.com/ZhuBan?type=.guanwang&defference=gongsi";
     public static void startAboutXiDuDetailActivity(Context context) {
         Intent intent = new Intent(context, AboutXiDuDetailActivity.class);
         context.startActivity(intent);

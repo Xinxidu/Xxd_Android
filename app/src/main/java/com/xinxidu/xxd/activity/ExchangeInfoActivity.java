@@ -36,7 +36,7 @@ public class ExchangeInfoActivity extends Fragment {
 
     @BindView(R.id.exchange_webView)
     WebView exchangeWebView;
-    protected static final String HOST = "http://175.102.13.51:8080/XDSY/ZhuBan?type=.guanwang&defference=jiaoyi&indexPage=0";
+    protected static final String HOST = "http://app.service.xiduoil.com/ZhuBan?type=.guanwang&defference=jiaoyi";
 
     public static void startExchangeInfoActivity(Context context) {
         Intent intent = new Intent(context, ExchangeInfoActivity.class);

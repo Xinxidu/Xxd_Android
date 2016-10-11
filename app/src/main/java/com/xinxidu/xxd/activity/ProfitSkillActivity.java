@@ -16,8 +16,10 @@ import com.google.gson.Gson;
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.adapter.ProfitSkillAdapter;
 import com.xinxidu.xxd.adapter.XiduNewsAdapter;
+import com.xinxidu.xxd.base.Compares;
 import com.xinxidu.xxd.event.ProfitSkillEvent;
 import com.xinxidu.xxd.event.XiduNewsEvent;
+import com.xinxidu.xxd.netWork.ProfitSkillBean;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -37,10 +39,8 @@ public class ProfitSkillActivity extends AppCompatActivity {
     ProfitSkillAdapter mProfitSkillAdapter;
     @BindView(R.id.tv_title)
     TextView tvTitle;
-    private ArrayList<ProfitSkillEvent> mItem=new ArrayList<>();
+    private ArrayList<ProfitSkillBean> mItem = new ArrayList<>();
     private RecyclerView mRecyclerView;
-    protected  static final String URL = "http://175.102.13.51:8080/XDSY/ZhuBan";
-    private ProfitSkillEvent event;
 
     public static void startProfitSkillActivity(Context context) {
         Intent intent = new Intent(context, ProfitSkillActivity.class);
@@ -54,7 +54,7 @@ public class ProfitSkillActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         tvTitle.setText("盈利技巧");
         webRequest();
-        mRecyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         //设置布局管理器
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         //设置Item增加、移除动画
@@ -63,11 +63,12 @@ public class ProfitSkillActivity extends AppCompatActivity {
     }
 
     private void webRequest() {
-        Map<String,String> map=new HashMap<>();
-        map.put("type",".guanwang");
-        map.put("defference","touzi");
-        map.put("indexPage","1");
-        OkHttpUtils.get().url(URL).params(map).build().execute(new StringCallback() {
+        Map<String, String> map = new HashMap<>();
+        map.put("type", ".guanwang");
+        map.put("defference", "touzi");
+        map.put("indexPage", "1");
+        map.put("pageRows", "10");
+        OkHttpUtils.get().url(Compares.ZHUBAN_URL).params(map).build().execute(new StringCallback() {
 
             @Override
             public void onBefore(okhttp3.Request request) {
@@ -78,7 +79,7 @@ public class ProfitSkillActivity extends AppCompatActivity {
 
             @Override
             public void onError(okhttp3.Call call, Exception e) {
-                System.out.println("e=" +e.toString());
+                System.out.println("e=" + e.toString());
             }
 
             @Override
@@ -89,26 +90,25 @@ public class ProfitSkillActivity extends AppCompatActivity {
     }
 
     private void parseData(String response) {
-        if (!TextUtils.isEmpty(response)){
+        if (!TextUtils.isEmpty(response)) {
             try {
-                JSONObject object=new JSONObject(response);
-                if (object.getInt("flag")==1){
+                JSONObject object = new JSONObject(response);
+                if (object.getInt("flag") == 1) {
                     System.out.println("请求成功");
-                    JSONArray data=object.getJSONArray("data");
-                    for (int i=0;i<data.length();i++){
-                        String json=data.getString(i);
+                    JSONArray data = object.getJSONArray("data");
+                    for (int i = 0; i < data.length(); i++) {
+                        String json = data.getString(i);
                         System.out.println("json=" + json.toString());
-                        Gson gson=new Gson();
-                        event=gson.fromJson(json, ProfitSkillEvent.class);
-                        mItem.add(event);
+                        ProfitSkillBean bean = new Gson().fromJson(json, ProfitSkillBean.class);
+                        mItem.add(bean);
                     }
-                }else {
-                    Log.v("fail","fail");
+                } else {
+                    Log.v("fail", "fail");
                 }
-                mProfitSkillAdapter = new ProfitSkillAdapter(this,mItem);
+                mProfitSkillAdapter = new ProfitSkillAdapter(this, mItem);
                 mRecyclerView.setAdapter(mProfitSkillAdapter);
                 mProfitSkillAdapter.setOnItemClickListener(mOnItemClickListener);
-            }catch (JSONException e){
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
@@ -117,9 +117,9 @@ public class ProfitSkillActivity extends AppCompatActivity {
     XiduNewsAdapter.OnItemClickListener mOnItemClickListener = new XiduNewsAdapter.OnItemClickListener() {
         @Override
         public void onItemClick(View view, int position) {
-           // Intent intent = new Intent(getActivity(), XiduNewsDetailActivity.class);
-            //intent.putExtra("Id", mItem.get(position).getId());
-           // startActivity(intent);
+            Intent intent = new Intent(ProfitSkillActivity.this, XiduNewsDetailActivity.class);
+            intent.putExtra("Id", mItem.get(position).getId());
+            startActivity(intent);
         }
     };
 

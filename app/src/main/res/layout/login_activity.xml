@@ -134,14 +134,37 @@
         android:textColor="@color/shortlease_main_text_blue"
         android:textSize="18dp" />
 
-    <TextView
+    <RelativeLayout
         android:id="@+id/tv_open_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="29dp"
-        android:text="沒有账号？注册一个吧>"
-        android:textColor="@color/shortlease_main_text_blue"
-        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginBottom="29dp">
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="沒有账号？"
+            android:textColor="@color/black2"
+            android:textSize="18dp"
+            android:layout_toLeftOf="@+id/view10"
+            android:layout_toStartOf="@+id/view10" />
+
+        <View
+            android:id="@+id/view10"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/hui_dan" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册一个吧 >"
+            android:textColor="@color/shortlease_main_text_blue"
+            android:textSize="18dp"
+            android:layout_toRightOf="@+id/view10" />
+    </RelativeLayout>
 </RelativeLayout>

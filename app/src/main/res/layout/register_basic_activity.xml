@@ -40,7 +40,7 @@
             android:background="@null"
             android:digits="1234567890"
             android:hint="请输入手机号码"
-            android:maxLength="12"
+            android:maxLength="11"
             android:textColor="@color/trip_appraise_scores_text"
             android:textColorHint="@color/trip_appraise_scores_text" />
     </RelativeLayout>
@@ -77,8 +77,8 @@
             android:layout_toRightOf="@+id/textView18"
             android:background="@null"
             android:digits="1234567890"
-            android:hint="4位短信验证码"
-            android:maxLength="4"
+            android:hint="6位短信验证码"
+            android:maxLength="6"
             android:textColor="@color/trip_appraise_scores_text"
             android:textColorHint="@color/trip_appraise_scores_text" />
 

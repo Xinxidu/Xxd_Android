@@ -60,7 +60,7 @@ public class XiduNewsDetailActivity extends AppCompatActivity {
             try {
                 JSONObject object=new JSONObject(response);
                 if (object.getInt("flag")==1){
-                    System.out.println("成功");
+                    System.out.println("成功========");
                     JSONArray data=object.getJSONArray("data");
                     JSONObject json=data.getJSONObject(0);
                     wvXidunews.loadDataWithBaseURL(null,json.getString("body"),"text/html","utf-8",null);

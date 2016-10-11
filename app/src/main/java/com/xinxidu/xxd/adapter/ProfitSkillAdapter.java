@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.event.ProfitSkillEvent;
+import com.xinxidu.xxd.netWork.ProfitSkillBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,11 +22,14 @@ import butterknife.ButterKnife;
  */
 public class ProfitSkillAdapter extends RecyclerView.Adapter<ProfitSkillAdapter.ViewHolder> {
     private final Context mContext;
-    private final List<ProfitSkillEvent> mItemList;
+    private final List<ProfitSkillBean> mItemList;
     private XiduNewsAdapter.OnItemClickListener mOnItemClickListener;
 
+    public void setData(ArrayList<ProfitSkillBean> List){
+        mItemList.addAll(List);
+    }
 
-    public ProfitSkillAdapter(Context mContext, List<ProfitSkillEvent> itemList) {
+    public ProfitSkillAdapter(Context mContext, List<ProfitSkillBean> itemList) {
         this.mItemList = itemList;
         this.mContext = mContext;
     }
