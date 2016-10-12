@@ -24,6 +24,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.base.SysApplication;
+import com.xinxidu.xxd.event.UserLoginEvent;
 import com.xinxidu.xxd.utils.PhotoUtil;
 
 import java.io.ByteArrayOutputStream;
@@ -37,6 +39,11 @@ import butterknife.OnClick;
  * Created by limingquan on 2016/9/28.
  */
 public class MyAccountInfoActivity extends Activity {
+
+    @BindView(R.id.tv_name)
+    TextView tvName;
+    @BindView(R.id.tv_phone)
+    TextView tvPhone;
 
     public static void startMyAccountInfoActivity(Context context) {
         Intent intent = new Intent(context, MyAccountInfoActivity.class);
@@ -71,8 +78,16 @@ public class MyAccountInfoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_account_info_activity);
+        SysApplication.getInstance().addActivity(this);
         ButterKnife.bind(this);
         tvTitle.setText("我的账户");
+        messageAfferent();
+    }
+
+    private void messageAfferent() {
+        UserLoginEvent userLoginEvent = new UserLoginEvent();
+        tvName.setText(userLoginEvent.getUserName());
+        tvPhone.setText(userLoginEvent.getUserPass());
     }
 
     @OnClick({R.id.back, R.id.iv_head_portrait, R.id.tv_back_login})
@@ -85,7 +100,7 @@ public class MyAccountInfoActivity extends Activity {
                 showPop();
                 break;
             case R.id.tv_back_login:
-
+            SysApplication.getInstance().exit();
                 break;
         }
     }
@@ -213,7 +228,7 @@ public class MyAccountInfoActivity extends Activity {
      * 获取调用相册的Intent
      */
     public static Intent getPhotoPickIntent() {
-        Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         return intent;
     }
 

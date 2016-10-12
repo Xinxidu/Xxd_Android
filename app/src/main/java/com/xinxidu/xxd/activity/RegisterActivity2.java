@@ -15,7 +15,9 @@ import android.widget.Toast;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.base.Compares;
+import com.xinxidu.xxd.base.SysApplication;
 import com.xinxidu.xxd.event.UserLoginEvent;
+import com.xinxidu.xxd.fragments.MyFragment;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -67,6 +69,7 @@ public class RegisterActivity2 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SysApplication.getInstance().addActivity(this);
         setContentView(R.layout.register_activity2);
         ButterKnife.bind(this);
         tvTitle.setText("注册");
@@ -134,8 +137,9 @@ public class RegisterActivity2 extends Activity {
         userLoginEvent.setUserName(etNicknameValue);
         userLoginEvent.setUserPass(etPwdValue);
         EventBus.getDefault().post(userLoginEvent);
-        RegisterActivity2.this.finish();
-        MyAccountInfoActivity.startMyAccountInfoActivity(this);
+        SysApplication.getInstance().exit();
+       // MyAccountInfoActivity.startMyAccountInfoActivity(this);
+
     }
 
 }

@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -48,6 +49,10 @@ public class ExchangeInfoActivity extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_exchange_info, container, false);
         ButterKnife.bind(this, view);
+        WebSettings settings = exchangeWebView.getSettings();
+        settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        settings.setUseWideViewPort(true);
+        settings.setLoadWithOverviewMode(true);
         jiaoyiwebRequest();
         return view;
     }

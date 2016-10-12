@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.base.SysApplication;
 import com.xinxidu.xxd.utils.SystemUpdateDialog;
 
 import butterknife.BindView;
@@ -37,6 +38,7 @@ public class SettingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SysApplication.getInstance().addActivity(this);
         setContentView(R.layout.activity_setting);
         ButterKnife.bind(this);
         tvTitle.setText("设置");

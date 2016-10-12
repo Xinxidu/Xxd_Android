@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.base.Compares;
+import com.xinxidu.xxd.base.SysApplication;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -71,6 +72,7 @@ public class RegisterBasicActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SysApplication.getInstance().addActivity(this);
         setContentView(R.layout.register_basic_activity);
         ButterKnife.bind(this);
         tvTitle.setText("注册");
