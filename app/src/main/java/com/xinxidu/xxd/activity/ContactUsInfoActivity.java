@@ -107,7 +107,7 @@ public class ContactUsInfoActivity extends Fragment {
                             if (flag == 1) {
                                 JSONArray dataArr = json.getJSONArray("data");
                                 JSONObject data = (JSONObject) dataArr.opt(0);
-                                Log.v("CompanyTel", data.getString("CompanyTel"));
+                                Log.v("HeadquartersAddress", data.getString("HeadquartersAddress"));
                                 CompanyTel.setText(data.getString("CompanyTel"));
                                 CustomerHotline.setText(data.getString("CustomerHotline"));
                                 JoinHotline.setText(data.getString("JoinHotline"));

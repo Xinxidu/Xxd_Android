@@ -55,7 +55,7 @@ public class DayInvestmentDetailActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_xi_du_detail);
+        setContentView(R.layout.activity_exchange_info);
         ButterKnife.bind(this);
         tvTitle.setText("投资策略详情");
         webrequest();

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -23,21 +21,20 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import com.xinxidu.xxd.R;
-import com.xinxidu.xxd.models.JsonData;
 import com.xinxidu.xxd.models.XiduInfoData;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class AboutXiDuDetailActivity extends Fragment {
     @BindView(R.id.exchange_webView)
     WebView exchangeWebView;
     protected static final String URL = "http://app.service.xiduoil.com/ZhuBan?type=.guanwang&defference=gongsi";
+    @BindView(R.id.tv_title)
+    TextView tv_title;
+
     public static void startAboutXiDuDetailActivity(Context context) {
         Intent intent = new Intent(context, AboutXiDuDetailActivity.class);
         context.startActivity(intent);
@@ -48,16 +45,16 @@ public class AboutXiDuDetailActivity extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_exchange_info, container, false);//activity_about_xi_du_detail
         ButterKnife.bind(this, view);
+        tv_title.setText("鑫西都");
         WebSettings settings = exchangeWebView.getSettings();
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         settings.setUseWideViewPort(true);
         settings.setLoadWithOverviewMode(true);
-
         webRequest();
         return view;
     }
 
-    private void webRequest(){
+    private void webRequest() {
         OkHttpClient mOkHttpClient = new OkHttpClient();
         //创建一个Request
         final Request request = new Request.Builder()

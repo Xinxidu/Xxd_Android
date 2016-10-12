@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -31,13 +29,14 @@ import java.net.URLDecoder;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class ExchangeInfoActivity extends Fragment {
 
     @BindView(R.id.exchange_webView)
     WebView exchangeWebView;
     protected static final String HOST = "http://app.service.xiduoil.com/ZhuBan?type=.guanwang&defference=jiaoyi";
+    @BindView(R.id.tv_title)
+    TextView tv_title;
 
     public static void startExchangeInfoActivity(Context context) {
         Intent intent = new Intent(context, ExchangeInfoActivity.class);
@@ -49,6 +48,7 @@ public class ExchangeInfoActivity extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_exchange_info, container, false);
         ButterKnife.bind(this, view);
+        tv_title.setText("上海华通铂银交易市场");
         WebSettings settings = exchangeWebView.getSettings();
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         settings.setUseWideViewPort(true);
