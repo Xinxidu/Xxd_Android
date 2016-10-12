@@ -222,7 +222,7 @@
             android:id="@+id/relative12"
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:background="@color/graywhite"
+            android:background="@color/hui_dan"
             android:layout_alignParentBottom="true">
 
             <TextView
@@ -352,7 +352,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:background="@color/graywhite">
+        android:background="@color/hui_dan">
 
         <TextView
             android:id="@+id/textView13"

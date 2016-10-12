@@ -106,6 +106,8 @@ public class HomeFagment extends Fragment {
     ViewPager container;
     @BindView(R.id.scrollView)
     ScrollView scrollView;
+    @BindView(R.id.iv_image_touming)
+    ImageView ivImageTouming;
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private Engine mEngine;
@@ -137,6 +139,7 @@ public class HomeFagment extends Fragment {
         mSectionsPagerAdapter = new SectionsPagerAdapter(getActivity().getSupportFragmentManager());//getSupportFragmentManager()
         mContainer.setAdapter(mSectionsPagerAdapter);
         tabs.setupWithViewPager(mContainer);
+        ivImageTouming.getBackground().setAlpha(110);
 //        cycleViewPager=new CycleViewPager();
 //        FragmentManager fragmentv=(FragmentManager) view.findViewById(R.id.fragment_cycle_viewpager_content);
         configImageLoader();

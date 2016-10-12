@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.base.Compares;
 import com.xinxidu.xxd.event.DayInvestmentEvent;
 
 import java.util.List;
@@ -41,7 +42,7 @@ public class DayInvestmentAdapter extends RecyclerView.Adapter<DayInvestmentAdap
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        Glide.with(mContext).load(mItemList.get(position).getLitpic()).into(holder.imageView);
+        Glide.with(mContext).load(Compares.URL+mItemList.get(position).getLitpic()).into(holder.imageView);
         holder.tvTitle.setText(mItemList.get(position).getTitle());
         holder.tvBody.setText(mItemList.get(position).getBody());
         holder.tvTime.setText(mItemList.get(position).getPubdate());

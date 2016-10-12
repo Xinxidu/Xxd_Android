@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.models.JsonData;
 import com.xinxidu.xxd.models.XiduInfoData;
 
 import java.io.IOException;
@@ -33,8 +35,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class AboutXiDuDetailActivity extends Fragment {
-    @BindView(R.id.xidu_webView)
-    WebView xiduWebView;
+    @BindView(R.id.exchange_webView)
+    WebView exchangeWebView;
     protected static final String URL = "http://app.service.xiduoil.com/ZhuBan?type=.guanwang&defference=gongsi";
     public static void startAboutXiDuDetailActivity(Context context) {
         Intent intent = new Intent(context, AboutXiDuDetailActivity.class);
@@ -44,14 +46,18 @@ public class AboutXiDuDetailActivity extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_about_xi_du_detail, container, false);
+        View view = inflater.inflate(R.layout.activity_exchange_info, container, false);//activity_about_xi_du_detail
         ButterKnife.bind(this, view);
+        WebSettings settings = exchangeWebView.getSettings();
+        settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        settings.setUseWideViewPort(true);
+        settings.setLoadWithOverviewMode(true);
+
         webRequest();
         return view;
     }
 
     private void webRequest(){
-        //创建okHttpClient对象
         OkHttpClient mOkHttpClient = new OkHttpClient();
         //创建一个Request
         final Request request = new Request.Builder()
@@ -72,28 +78,28 @@ public class AboutXiDuDetailActivity extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Log.v("sucess2", res);
+                        Log.v("sucess1", res);
 
                         try {
-                            XiduInfoData dataBeans = new Gson().fromJson(res,XiduInfoData.class);
-                            if (!TextUtils.isEmpty(dataBeans.getData().getGongsi())){
-                                String string = null;
-                                try {
-                                    string = URLDecoder.decode(dataBeans.getData().getGongsi(),"utf-8");
-                                } catch (UnsupportedEncodingException e) {
-                                    e.printStackTrace();
-                                }
-                                xiduWebView.loadDataWithBaseURL(null, dataBeans.getData().getGongsi(),"text/html","utf-8",null);
-                               // Log.v("url",DataBeans.getData().getGongsi());
-                            }
-                            else {
+                            XiduInfoData dataBean = new Gson().fromJson(res, XiduInfoData.class);
+                            if (!TextUtils.isEmpty(dataBean.getData().getGongsi())) {
+//                                String string = null;
+//                                try {
+//                                    string = URLDecoder.decode(dataBean.getData().getGongsi(), "utf-8");
+//                                } catch (UnsupportedEncodingException e) {
+//                                    e.printStackTrace();
+//                                }
+                                exchangeWebView.loadDataWithBaseURL(null, dataBean.getData().getGongsi(), "text/html", "utf-8", null);
+                                Log.v("gongsiUrl", dataBean.getData().getGongsi());
+                            } else {
                                 Log.v("fail", "false");
                             }
                         } catch (Exception e) {
-                            Log.v("exception2", e.toString());
+                            Log.v("exception1", e.toString());
                         }
 
-                   }
+                    }
+
                 });
 
             }

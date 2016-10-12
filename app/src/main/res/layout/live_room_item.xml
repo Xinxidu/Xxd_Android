@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/ripple_bg"
-    android:layout_marginTop="20dp">
+    android:background="@drawable/ripple_bg">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,22 +15,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <com.xinxidu.xxd.utils.SelectableRoundedImageView
                 android:id="@+id/imageView"
                 android:layout_width="93dp"
                 android:layout_height="63dp"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/bofang_icon"
-                android:textSize="12dp" />
+                android:src="@drawable/video"
+                app:sriv_left_bottom_corner_radius="3dp"
+                app:sriv_left_top_corner_radius="3dp"
+                app:sriv_right_bottom_corner_radius="3dp"
+                app:sriv_right_top_corner_radius="3dp"/>
 
             <ImageView
                 android:id="@+id/image"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/live_icon" />
+                android:layout_marginLeft="15dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -38,8 +40,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@+id/image"
-                android:text="股赢天下"
-                android:textSize="12dp"/>
+                android:textSize="12dp" />
         </RelativeLayout>
 
         <TextView
@@ -48,27 +49,41 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/relative"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/relative"
-            android:text="股赢天下"
-            android:textColor="@color/black"
-            android:textSize="16dip" />
-
-        <Button
-            android:id="@+id/bt_live_telecast"
-            android:layout_width="75dp"
-            android:layout_height="20dp"
-            android:layout_below="@+id/textView11"
-            android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/relative"
-            android:background="@drawable/button_c"
-            android:text="直播中..."
-            android:textSize="12dp"
-            android:textColor="@color/white"/>
+            android:text="股赢天下"
+            android:textColor="@color/black2"
+            android:textSize="16dip" />
+
+        <RelativeLayout
+            android:layout_width="75dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/tv_tedian"
+            android:layout_toRightOf="@+id/relative"
+            android:background="@drawable/button_c">
+
+            <ImageView
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:background="@drawable/live"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"/>
+
+            <Button
+                android:id="@+id/bt_live_telecast"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:background="@null"
+                android:text="直播中..."
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+
+        </RelativeLayout>
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/tv_tedian"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView10"
@@ -85,38 +100,44 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:background="@color/graywhite">
+        android:background="@color/hui_dan">
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/textView14"
-            android:layout_marginLeft="5dp"
+            android:layout_alignTop="@+id/tv_tuijian"
+            android:layout_marginLeft="10dp"
             android:ellipsize="end"
             android:maxLines="1"
             android:singleLine="true"
-            android:text="l名师推荐1:"
+            android:text="l 名师推荐 l"
             android:textColor="@color/red"
             android:textSize="12dp" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/tv_tuijian"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toEndOf="@+id/textView13"
+            android:layout_toRightOf="@+id/textView13"
+            android:drawableRight="@drawable/down_icon"
+            android:drawablePadding="10dp"
             android:ellipsize="end"
             android:maxLines="1"
             android:singleLine="true"
             android:text="西都金融研究院每周不定时推荐一道两支股"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:textColor="@color/font_gray"
-            android:textSize="12dp"
-            android:drawableRight="@drawable/down_icon"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/textView13"
-            android:layout_toEndOf="@+id/textView13" />
+            android:textSize="12dp" />
 
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/trip_detail_fee_jisuangongshi" />
 
 </LinearLayout>

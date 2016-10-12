@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.event.LiveRoomEvent;
+import com.xinxidu.xxd.utils.SelectableRoundedImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,22 +72,17 @@ public class LiveRoomAdapter extends RecyclerView.Adapter<LiveRoomAdapter.ViewHo
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.imageView)
-        ImageView imageView;
+        SelectableRoundedImageView imageView;
         @BindView(R.id.image)
         ImageView image;
         @BindView(R.id.relative)
         RelativeLayout relative;
-        @BindView(R.id.textView10)
-        TextView textView10;
         @BindView(R.id.bt_live_telecast)
         Button btLiveTelecast;
-        @BindView(R.id.textView11)
-        TextView textView11;
-        @BindView(R.id.textView13)
-        TextView textView13;
-//        @BindView(R.id.iv_more)
-//        ImageView ivMore;
-
+        @BindView(R.id.tv_tedian)
+        TextView tvTedian;
+        @BindView(R.id.tv_tuijian)
+        TextView tvTuijian;
         View itemView;
 
         ViewHolder(View view) {

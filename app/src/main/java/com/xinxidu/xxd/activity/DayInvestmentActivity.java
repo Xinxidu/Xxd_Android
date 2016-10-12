@@ -40,7 +40,7 @@ public class DayInvestmentActivity extends Activity {
 
     private ArrayList<DayInvestmentEvent> mItem = new ArrayList<>();
     private RecyclerView mRecyclerView;
-    public static final String HOME_URL = "http://175.102.13.51:8080/XDSY/ZhuBan";
+    public static final String HOME_URL = "http://app.service.xiduoil.com/ZhuBan";
     private DayInvestmentEvent event;
 
     public static void startDayInvestmentActivity(Context context) {
@@ -56,12 +56,9 @@ public class DayInvestmentActivity extends Activity {
         tvTitle.setText("每日投资策略");
         initGetNet();
 
-
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-
-
     }
 
     private void initGetNet() {
@@ -70,6 +67,7 @@ public class DayInvestmentActivity extends Activity {
         map.put("type", ".guanwang");
         map.put("defference", "hangqing");
         map.put("indexPage", "1");
+        map.put("pageRows", "10");
         OkHttpUtils.get().url(HOME_URL).params(map).build().execute(new StringCallback() {
 
             @Override
