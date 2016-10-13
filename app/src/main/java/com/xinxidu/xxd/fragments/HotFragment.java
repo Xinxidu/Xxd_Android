@@ -1,6 +1,7 @@
 package com.xinxidu.xxd.fragments;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -40,6 +41,7 @@ public class HotFragment extends Fragment {
 
     private ArrayList<HotActivityBean> mItem = new ArrayList<>();
     private RecyclerView mRecyclerView;
+    private SwipeRefreshLayout swipe_refresh;
 
     public HotFragment() {
     }
@@ -48,14 +50,40 @@ public class HotFragment extends Fragment {
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_hot, container, false);
-        //访问网络
-        initNet();
 
+//        View emptyView = LayoutInflater.from(getActivity()).inflate(R.layout.load_loading_layout, (ViewGroup) mRecyclerView.getParent(), false);
+//        mHotActivityAdapter.setEmptyView(emptyView);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        swipe_refresh = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
+
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        //访问网络
+        initNet();
+        //设置刷新
+        refresh();
 
         return view;
+    }
+
+    private void refresh() {
+        swipe_refresh.setColorSchemeResources(R.color.colorPrimaryDark, R.color.colorAccent, R.color.primary_text);
+        swipe_refresh.measure(0, 0);
+        swipe_refresh.setRefreshing(false);
+        //设置刷新监听
+        swipe_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        swipe_refresh.setRefreshing(false);
+                        initNet();
+                        mItem.clear();
+                    }
+                }, 3000);
+            }
+        });
     }
 
     private void initNet() {

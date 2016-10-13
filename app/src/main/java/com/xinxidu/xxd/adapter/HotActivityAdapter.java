@@ -28,6 +28,7 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
     private final Context mContext;
     private List<HotActivityBean> mItemList = new ArrayList<>();
     private OnItemClickListener mOnItemClickListener;
+//    private View mEmptyView;
 
     public HotActivityAdapter(Context mContext, List<HotActivityBean> itemList, Context context) {
         mItemList = itemList;
@@ -84,6 +85,10 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
     public int getItemCount() {
         return mItemList.size();
     }
+
+//    public void setEmptyView(View emptyView) {
+//        mEmptyView = emptyView;
+//    }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.imageView2)

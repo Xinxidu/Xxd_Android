@@ -18,7 +18,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="133dp">
+                android:layout_height="156dp">
 
                 <fragment
                     android:id="@+id/fragment_cycle_viewpager_content"
@@ -28,14 +28,16 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="44dp"
-                    android:layout_alignParentLeft="true">
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp">
 
                     <ImageView
                         android:id="@+id/iv_image_touming"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/touming"/>
+                        android:background="@drawable/touming"
+                        android:visibility="gone"/>
 
                     <TextView
                         android:layout_width="wrap_content"

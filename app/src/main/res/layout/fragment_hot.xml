@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".fragments.HotFragment"
-    tools:showIn="@layout/activity_hot">
+    tools:showIn="@layout/activity_hot"
+    android:id="@+id/swipe_container">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"

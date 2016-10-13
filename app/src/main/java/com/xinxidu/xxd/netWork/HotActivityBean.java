@@ -21,6 +21,10 @@ public class HotActivityBean {
     private String title;
     private int type;
 
+    public HotActivityBean(String s, String s1, String s2) {
+
+    }
+
 
     public int getCurrentPage() {
         return currentPage;
