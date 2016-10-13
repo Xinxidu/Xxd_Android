@@ -35,15 +35,10 @@ public class AboutXiDuDetailActivity extends Fragment {
     @BindView(R.id.tv_title)
     TextView tv_title;
 
-    public static void startAboutXiDuDetailActivity(Context context) {
-        Intent intent = new Intent(context, AboutXiDuDetailActivity.class);
-        context.startActivity(intent);
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_exchange_info, container, false);//activity_about_xi_du_detail
+        View view = inflater.inflate(R.layout.activity_exchange_info, container, false);
         ButterKnife.bind(this, view);
         tv_title.setText("鑫西都");
         WebSettings settings = exchangeWebView.getSettings();

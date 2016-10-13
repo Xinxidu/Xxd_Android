@@ -7,10 +7,21 @@
         android:id="@+id/includeprofit"
         layout="@layout/title" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/recycler_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_below="@+id/includeprofit"/>-->
+    <android.support.v4.widget.SwipeRefreshLayout
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/includeprofit"/>
+        android:layout_width="match_parent"
+        android:layout_below="@+id/includeprofit"
+        android:id="@+id/swipe_profit">
+    <android.support.v7.widget.RecyclerView
+    android:id="@+id/recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentLeft="true" />
+    </android.support.v4.widget.SwipeRefreshLayout>
 </RelativeLayout>

@@ -3,6 +3,8 @@ package com.xinxidu.xxd.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -41,7 +43,7 @@ public class ProfitSkillActivity extends AppCompatActivity {
     TextView tvTitle;
     private ArrayList<ProfitSkillBean> mItem = new ArrayList<>();
     private RecyclerView mRecyclerView;
-
+    private SwipeRefreshLayout swipe_refresh;
     public static void startProfitSkillActivity(Context context) {
         Intent intent = new Intent(context, ProfitSkillActivity.class);
         context.startActivity(intent);
@@ -53,13 +55,36 @@ public class ProfitSkillActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profit_skill);
         ButterKnife.bind(this);
         tvTitle.setText("盈利技巧");
-        webRequest();
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        swipe_refresh = (SwipeRefreshLayout) findViewById(R.id.swipe_profit);
         //设置布局管理器
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         //设置Item增加、移除动画
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        //网络请求
+        webRequest();
+        //刷新
+        refresh();
+    }
 
+    private void refresh() {
+        swipe_refresh.setColorSchemeResources(R.color.colorPrimaryDark, R.color.colorAccent, R.color.primary_text);
+        swipe_refresh.measure(0, 0);
+        swipe_refresh.setRefreshing(false);
+        //设置刷新监听
+        swipe_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        swipe_refresh.setRefreshing(false);
+                        webRequest();
+                        mItem.clear();
+                    }
+                }, 3000);
+            }
+        });
     }
 
     private void webRequest() {

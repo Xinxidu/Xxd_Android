@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -133,7 +134,11 @@ public class HuaTongLoginActivity extends Activity {
                 login();
                 break;
             case R.id.tv_open_account:
-                HuaTongRegisterBasicActivity.startHuaTongRegisterBasicActivity(this);
+//                String url = "http://trade.huatongsilver.com/accountweb/web/reg2/reg.html";
+//                Intent intent = new Intent(Intent.ACTION_VIEW);
+//                intent.setData(Uri.parse(url));
+//                startActivity(intent);
+                HuaTongRegisterActivity.startHuaTongRegisterActivity(this);
                 break;
             case R.id.cb_mima:
                 if (cbMima.isChecked()) {

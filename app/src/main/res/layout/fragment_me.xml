@@ -20,7 +20,7 @@
             android:layout_height="43dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/head"
+            android:background="@drawable/touxiang"
             android:contentDescription="@null" />
 
         <TextView
@@ -92,7 +92,7 @@
             <TextView
                 android:id="@+id/my_account"
                 style="@style/MyTextView"
-                android:drawableLeft="@drawable/my_account"
+                android:drawableLeft="@drawable/wodeshipanzhanghu"
                 android:text="我的实盘账户" />
 
             <View style="@style/MyView" />
@@ -100,7 +100,7 @@
             <TextView
                 android:id="@+id/my_selection"
                 style="@style/MyTextView"
-                android:drawableLeft="@drawable/my_selection"
+                android:drawableLeft="@drawable/wodezixuan"
                 android:text="我的自选" />
 
             <View style="@style/MyView" />
@@ -110,7 +110,7 @@
             <TextView
                 android:id="@+id/my_event"
                 style="@style/MyTextView"
-                android:drawableLeft="@drawable/my_event"
+                android:drawableLeft="@drawable/wodehuodong"
                 android:text="我的活动" />
 
             <View style="@style/MyView" />
@@ -118,7 +118,7 @@
             <TextView
                 android:id="@+id/my_aboutus"
                 style="@style/MyTextView"
-                android:drawableLeft="@drawable/about_my"
+                android:drawableLeft="@drawable/guanyuwowen"
                 android:text="关于我们" />
 
             <View style="@style/MyView" />
@@ -126,7 +126,7 @@
             <TextView
                 android:id="@+id/my_contactus"
                 style="@style/MyTextView"
-                android:drawableLeft="@drawable/my_contactus"
+                android:drawableLeft="@drawable/lianxiwowen"
                 android:text="联系我们" />
 
             <View style="@style/MyView" />
@@ -136,7 +136,7 @@
             <TextView
                 android:id="@+id/my_help"
                 style="@style/MyTextView"
-                android:drawableLeft="@drawable/my_help"
+                android:drawableLeft="@drawable/shiyongbangzhu"
                 android:text="使用帮助" />
 
             <View style="@style/MyView" />
@@ -144,7 +144,7 @@
             <TextView
                 android:id="@+id/my_setting"
                 style="@style/MyTextView"
-                android:drawableLeft="@drawable/my_setting"
+                android:drawableLeft="@drawable/shezhi"
                 android:text="设置" />
 
             <View style="@style/MyView" />

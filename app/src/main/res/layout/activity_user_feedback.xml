@@ -20,7 +20,7 @@
             android:padding="10dp"
             android:background="@color/color_e4ebf4"
             android:text="感谢您提出宝贵的建议和意见,您留下的每个字都对我们非常重要。如果您有非常紧急的需求和问题,您可以直接拨打我们的客服电话:4001054080 我们将竭诚为您服务!"
-            android:textSize="14dp"
+            android:textSize="14sp"
             android:lineSpacingExtra="5dp"
             android:autoLink="phone"
             android:textColor="@color/black2"/>
@@ -37,6 +37,7 @@
         android:gravity="top|left"
         android:hint="请写下您的宝贵意见,我们会及时处理......"
         android:textColorHint="@color/hui_dan"
+        android:textSize="12sp"
         android:ems="10" />
 
     <EditText

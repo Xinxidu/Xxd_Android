@@ -2,6 +2,7 @@ package com.xinxidu.xxd.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -55,13 +56,12 @@ public class UserFeedbackActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.tv_commit:
-//                if (!etInfo.getText().equals("")&&!etPhone.getText().equals("")){
-//
-//                }else {
-//
-//                }
-                Toast.makeText(UserFeedbackActivity.this, "提交成功", Toast.LENGTH_SHORT).show();
-                finish();
+                if (!etInfo.getText().equals("")&&!etPhone.getText().equals("")){
+                  etInfo.setHint("");
+                  etPhone.setHintTextColor(Color.RED);
+                }else {
+                    Toast.makeText(UserFeedbackActivity.this, "提交成功", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }

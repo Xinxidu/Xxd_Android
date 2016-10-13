@@ -5,7 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-<!-- android:theme="@style/Theme.AppCompat.NoActionBar">-->
+
+    <!-- android:theme="@style/Theme.AppCompat.NoActionBar"> -->
     <application
         android:name=".base.App"
         android:allowBackup="true"
@@ -40,22 +41,24 @@
         <activity android:name=".activity.ElectricTradeActivity" />
         <activity android:name=".activity.TeacherTeamActivity" />
         <activity android:name=".activity.DayInvestmentDetailActivity" />
-        <activity android:name=".activity.HuaTongLoginActivity"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
-        <activity android:name=".activity.HuaTongRegisterBasicActivity" />
-        <activity android:name=".activity.AboutXXiDuActivity"/>
-        <activity android:name=".activity.XiduNewsDetailActivity"/>
-        <activity android:name=".activity.RegisterActivity2"/>
-        <activity android:name=".activity.BackPassActivity"/>
-        <activity android:name=".activity.BackPassActivity2"/>
-        <activity android:name=".activity.MyAccountInfoActivity"/>
-        <activity android:name=".activity.LiveTelecastURLActivity"/>
-        <activity android:name=".activity.TeacherTeamActivity1"/>
-        <activity android:name=".activity.CollectionActivity"/>
-        <activity android:name=".activity.SettingActivity"/>
-        <activity android:name=".activity.UserFeedbackActivity"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
-        <activity android:name=".activity.TeacherDetailsActivity"/>
+        <activity
+            android:name=".activity.HuaTongLoginActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity android:name=".activity.AboutXXiDuActivity" />
+        <activity android:name=".activity.XiduNewsDetailActivity" />
+        <activity android:name=".activity.RegisterActivity2" />
+        <activity android:name=".activity.BackPassActivity" />
+        <activity android:name=".activity.BackPassActivity2" />
+        <activity android:name=".activity.MyAccountInfoActivity" />
+        <activity android:name=".activity.LiveTelecastURLActivity" />
+        <activity android:name=".activity.TeacherTeamActivity1" />
+        <activity android:name=".activity.CollectionActivity" />
+        <activity android:name=".activity.SettingActivity" />
+        <activity
+            android:name=".activity.UserFeedbackActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity android:name=".activity.TeacherDetailsActivity" />
+        <activity android:name=".activity.HuaTongRegisterActivity"></activity>
     </application>
 
 </manifest>

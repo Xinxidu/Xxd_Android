@@ -116,7 +116,7 @@
                     android:drawablePadding="10dp"
                     android:hint="请输入密码"
                     android:maxLength="12"
-                    android:paddingLeft="14dp"
+                    android:paddingLeft="12dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/dan_back"
                     android:textSize="16sp" />
@@ -152,7 +152,7 @@
                         android:drawablePadding="10dp"
                         android:hint="请输入验证码"
                         android:maxLength="12"
-                        android:paddingLeft="6dp"
+                        android:paddingLeft="12dp"
                         android:textColor="@color/black"
                         android:textColorHint="@color/dan_back"
                         android:textSize="16sp" />
@@ -212,15 +212,40 @@
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/tv_open_account"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:text="沒有账号？实盘开户>"
-                android:textColor="@color/common_color_ten"
-                android:textSize="16sp" />
+            <RelativeLayout
+                android:id="@+id/rl_open_account"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="沒有账号?"
+                    android:textColor="@color/black2"
+                    android:textSize="18dp"
+                    android:layout_toLeftOf="@+id/view10"
+                    android:layout_toStartOf="@+id/view10" />
+
+                <View
+                    android:id="@+id/view10"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/hui_dan" />
+
+                <TextView
+                    android:id="@+id/tv_open_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="   实盘开户>"
+                    android:textColor="@color/shortlease_main_text_blue"
+                    android:textSize="18dp"
+                    android:layout_toRightOf="@+id/view10" />
+            </RelativeLayout>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
