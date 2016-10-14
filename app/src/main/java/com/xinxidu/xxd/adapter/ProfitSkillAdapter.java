@@ -22,15 +22,11 @@ import butterknife.ButterKnife;
  */
 public class ProfitSkillAdapter extends RecyclerView.Adapter<ProfitSkillAdapter.ViewHolder> {
     private final Context mContext;
-    private final List<ProfitSkillBean> mItemList;
-    private XiduNewsAdapter.OnItemClickListener mOnItemClickListener;
+    private List<ProfitSkillBean.ResultListBean> mItemList = new ArrayList<>();
+    private OnItemClickListener mOnItemClickListener;
 
-    public void setData(ArrayList<ProfitSkillBean> List){
-        mItemList.addAll(List);
-    }
-
-    public ProfitSkillAdapter(Context mContext, List<ProfitSkillBean> itemList) {
-        this.mItemList = itemList;
+    public ProfitSkillAdapter(Context mContext, List<ProfitSkillBean.ResultListBean> itemList) {
+        mItemList = itemList;
         this.mContext = mContext;
     }
 
@@ -43,20 +39,20 @@ public class ProfitSkillAdapter extends RecyclerView.Adapter<ProfitSkillAdapter.
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.tvTitle.setText(mItemList.get(position).getTitle());
-        holder.tvKeywords.setText(mItemList.get(position).getKeywords());
-        holder.tvSenddate.setText(mItemList.get(position).getSenddate());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mOnItemClickListener.onItemClick(holder.itemView, holder.getLayoutPosition());
-            }
-        });
+        holder.tvTitle.setText(mItemList.get(position).Title);
+        holder.tvKeywords.setText(mItemList.get(position).Keywords);
+        holder.tvSenddate.setText(mItemList.get(position).Senddate);
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mOnItemClickListener.onItemClick(holder.itemView, holder.getLayoutPosition());
+//            }
+//        });
     }
 
     @Override
     public int getItemCount() {
-        return mItemList.size() == 0 ? 0 : mItemList.size();
+        return mItemList.size();
     }
 
 
@@ -77,7 +73,7 @@ public class ProfitSkillAdapter extends RecyclerView.Adapter<ProfitSkillAdapter.
         }
     }
 
-    public void setOnItemClickListener(XiduNewsAdapter.OnItemClickListener onItemClickListener) {
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.mOnItemClickListener = onItemClickListener;
     }
 

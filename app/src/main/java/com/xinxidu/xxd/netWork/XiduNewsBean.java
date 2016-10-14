@@ -1,39 +1,37 @@
 package com.xinxidu.xxd.netWork;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2016/10/1.
  */
 public class XiduNewsBean {
     /**
-     *(int )    id;//编号
-     (int )    typeid;//类型编号
-     (String)  typeid2;//无用
-     (int )    sortrank;//排序
-     (int )    click;//点击量
-     (String)  title;//标题
-     (String)  shorttitle;//短标题
-     (String)  litpic;//图片路径
-     (String)  pubdate;//出版时间
-     (String)  senddate;//发布时间
-     (String)  keywords;//关键字
-     (String)  description;//详情描述
-     (String)  body;//详情信息
+     data:
+     flag : 1
+     indexPage : 1
+     msg : 数据接收成功
+     sumPage ： 1
      *
      */
-    public String Title;
-    public String Senddate;
-    public String Keywords;
-    public String Id;
-
-    public String getTitle() { return Title;}
-    public void setTitle(String title){ Title = title;}
-
-    public String getSenddate() { return Senddate;}
-    public void setSenddate(String senddate) { Senddate = senddate; }
-
-    public String getKeywords() { return Keywords;}
-    public void setKeywords(String keywords) { Keywords = keywords;}
-
-    public String getId() { return Id; }
-    public void setId(String id) { Id = id; }
+    public int flag;
+    public int indexPage;
+    public String msg;
+    public int sumPage;
+    /*
+    * Click : 152
+    * Id : 11913
+    * Keywords : 关于,端午节,正常,开市,通知,
+    * Pubdate : 2016-06-07  15:56:14
+    * Senddate : 2016-06-07  15:57:03
+    * Title : 关于端午节正常开市的通知
+    * Typeid : 30
+    * */
+    public List<ResultListBean> data;
+    public static class ResultListBean {
+        public String Title;
+        public String Senddate;
+        public String Keywords;
+        public String Id;
+    }
 }

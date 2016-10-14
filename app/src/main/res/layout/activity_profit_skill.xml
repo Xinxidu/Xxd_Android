@@ -2,26 +2,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:my="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
     <include
         android:id="@+id/includeprofit"
         layout="@layout/title" />
-
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/recycler_view"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_below="@+id/includeprofit"/>-->
-    <android.support.v4.widget.SwipeRefreshLayout
+    <com.xinxidu.xxd.utils.pull.SwipyRefreshLayout
         android:layout_height="match_parent"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_below="@+id/includeprofit"
-        android:id="@+id/swipe_profit">
+        android:id="@+id/swipe_profit"
+        my:direction="both">
     <android.support.v7.widget.RecyclerView
-    android:id="@+id/recycler_view"
+    android:id="@+id/recycler_profit"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentLeft="true" />
-    </android.support.v4.widget.SwipeRefreshLayout>
+    </com.xinxidu.xxd.utils.pull.SwipyRefreshLayout>
 </RelativeLayout>

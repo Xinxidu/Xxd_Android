@@ -11,6 +11,7 @@ import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.event.XiduNewsEvent;
 import com.xinxidu.xxd.netWork.XiduNewsBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -21,11 +22,11 @@ import butterknife.ButterKnife;
  */
 public class XiduNewsAdapter extends RecyclerView.Adapter<XiduNewsAdapter.ViewHolder> {
     private final Context mContext;
-    private final List<XiduNewsBean> mItemList;
+    private List<XiduNewsBean.ResultListBean> mItemList = new ArrayList<>();
     private OnItemClickListener mOnItemClickListener;
 
-    public XiduNewsAdapter(Context mContext, List<XiduNewsBean> itemList) {
-        this.mItemList = itemList;
+    public XiduNewsAdapter(Context mContext, List<XiduNewsBean.ResultListBean> itemList) {
+        mItemList = itemList;
         this.mContext = mContext;
     }
 
@@ -39,15 +40,15 @@ public class XiduNewsAdapter extends RecyclerView.Adapter<XiduNewsAdapter.ViewHo
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         //
-        holder.title.setText(mItemList.get(position).getTitle());
-        holder.keywords.setText("关键词 :"+mItemList.get(position).getKeywords());
-        holder.senddate.setText(mItemList.get(position).getSenddate());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mOnItemClickListener.onItemClick(holder.itemView, holder.getLayoutPosition());
-            }
-        });
+        holder.title.setText(mItemList.get(position).Title);
+        holder.keywords.setText("关键词 :"+mItemList.get(position).Keywords);
+        holder.senddate.setText(mItemList.get(position).Senddate);
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mOnItemClickListener.onItemClick(holder.itemView, holder.getLayoutPosition());
+//            }
+//        });
     }
 
     @Override

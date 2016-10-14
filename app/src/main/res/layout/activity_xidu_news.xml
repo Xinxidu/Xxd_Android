@@ -2,11 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:my="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
-
+    <com.xinxidu.xxd.utils.pull.SwipyRefreshLayout
+        android:id="@+id/swipe_xidunews"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        my:direction="both">
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/recycler_xidunews"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"/>
+    </com.xinxidu.xxd.utils.pull.SwipyRefreshLayout>
 </RelativeLayout>
