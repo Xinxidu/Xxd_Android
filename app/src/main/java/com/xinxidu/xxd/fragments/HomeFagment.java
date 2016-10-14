@@ -231,11 +231,11 @@ public class HomeFagment extends Fragment {
                 HuaTongLoginActivity.startHuaTongLoginActivity(getActivity());
                 break;
             case R.id.bt_live_telecast:
-//                LiveTelecastURLActivity.startLiveTelecastURLActivityy(getActivity());
-                String url = "http://win.xxidu.com/";
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                startActivity(intent);
+                LiveTelecastURLActivity.startLiveTelecastURLActivityy(getActivity());
+//                String url = "http://win.xxidu.com/";
+//                Intent intent = new Intent(Intent.ACTION_VIEW);
+//                intent.setData(Uri.parse(url));
+//                startActivity(intent);
                 break;
         }
     }

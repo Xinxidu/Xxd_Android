@@ -1,150 +1,67 @@
 package com.xinxidu.xxd.netWork;
 
+import java.util.List;
+
 /**
- * Created by Administrator on 2016/10/1.
+ * Created by limingquan on 2016/10/13.
  */
 public class HotActivityBean {
 
-    private int currentPage;
-    private int pageSize;
-    private int startLimit;
-    private int totalCount;
-    private int totalPage;
-    private String activeTime;
-    private String content;
-    private String createDate;
-    private int deleteFlag;
-    private int id;
-    private String picUrl;
-    private int sortNo;
-    private int status;
-    private String title;
-    private int type;
 
-    public HotActivityBean(String s, String s1, String s2) {
+    /**
+     * currentPage : 1
+     * pageSize : 15
+     * resultList : [{"activeTime":"2016-10-10 10:02","content":"","createDate":"2016-10-10 10:02","deleteFlag":0,"id":17,"picUrl":"/static/upload/appupload/bg2.jpg","sortNo":111,"status":0,"title":"??3","type":2},{"activeTime":"2016-10-11 14:45","content":"","createDate":"2016-10-11 14:45","deleteFlag":0,"id":16,"picUrl":"/static/upload/appupload/bg2.jpg","sortNo":2,"status":0,"title":"??2","type":1},{"activeTime":"2016-10-11 14:45","content":"","createDate":"2016-10-11 14:45","deleteFlag":0,"id":21,"picUrl":"/static/upload/appupload/bg2.jpg","sortNo":2,"status":0,"title":"??5","type":1},{"activeTime":"2016-10-11 14:45","content":"","createDate":"2016-10-11 14:45","deleteFlag":0,"id":23,"picUrl":"/static/upload/appupload/bg2.jpg","sortNo":2,"status":0,"title":"??7","type":1},{"activeTime":"2016-10-11 14:45","content":"","createDate":"2016-10-11 14:45","deleteFlag":0,"id":25,"picUrl":"/static/upload/appupload/bg2.jpg","sortNo":2,"status":0,"title":"??9","type":1},{"activeTime":"2016-10-11 14:45","content":"","createDate":"2016-10-11 14:45","deleteFlag":0,"id":27,"picUrl":"/static/upload/appupload/bg2.jpg","sortNo":2,"status":0,"title":"??11","type":1},{"activeTime":"2016-10-11 14:45","content":"","createDate":"2016-10-11 14:45","deleteFlag":0,"id":29,"picUrl":"/static/upload/appupload/bg2.jpg","sortNo":2,"status":0,"title":"??13","type":1},{"activeTime":"2016-10-11 14:45","content":"","createDate":"2016-10-11 14:45","deleteFlag":0,"id":31,"picUrl":"/static/upload/appupload/bg2.jpg","sortNo":2,"status":0,"title":"??15","type":1},{"activeTime":"2016-10-11 14:45","content":"","createDate":"2016-10-11 14:45","deleteFlag":0,"id":33,"picUrl":"/static/upload/appupload/bg2.jpg","sortNo":2,"status":0,"title":"??17","type":1},{"activeTime":"2016-10-11 14:45","content":"","createDate":"2016-10-11 14:45","deleteFlag":0,"id":35,"picUrl":"/static/upload/appupload/bg2.jpg","sortNo":2,"status":0,"title":"??19","type":1},{"activeTime":"2016-10-11 14:45","content":"","createDate":"2016-10-11 14:45","deleteFlag":0,"id":37,"picUrl":"/static/upload/appupload/bg2.jpg","sortNo":2,"status":0,"title":"??21","type":1},{"activeTime":"2016-10-11 14:45","content":"","createDate":"2016-10-11 14:45","deleteFlag":0,"id":39,"picUrl":"/static/upload/appupload/bg2.jpg","sortNo":2,"status":0,"title":"??23","type":1},{"activeTime":"2016-10-10 10:01","content":"","createDate":"2016-10-10 10:01","deleteFlag":0,"id":15,"picUrl":"/static/upload/appupload/bg.jpg","sortNo":1,"status":1,"title":"??1","type":1},{"activeTime":"2016-10-10 10:01","content":"","createDate":"2016-10-10 10:01","deleteFlag":0,"id":20,"picUrl":"/static/upload/appupload/bg.jpg","sortNo":1,"status":1,"title":"??4","type":1},{"activeTime":"2016-10-10 10:01","content":"","createDate":"2016-10-10 10:01","deleteFlag":0,"id":22,"picUrl":"/static/upload/appupload/bg.jpg","sortNo":1,"status":1,"title":"??6","type":1}]
+     * startLimit : 0
+     * status :
+     * totalCount : 23
+     * totalPage : 2
+     */
 
+    public int currentPage;
+    public int pageSize;
+    public int startLimit;
+    public String status;
+    public int totalCount;
+    public int totalPage;
+    /**
+     * activeTime : 2016-10-10 10:02
+     * content :
+     * createDate : 2016-10-10 10:02
+     * deleteFlag : 0
+     * id : 17
+     * picUrl : /static/upload/appupload/bg2.jpg
+     * sortNo : 111
+     * status : 0
+     * title : ??3
+     * type : 2
+     */
+
+    public List<ResultListBean> resultList;
+
+    public static class ResultListBean {
+        public String activeTime;
+        public String content;
+        public String createDate;
+        public int deleteFlag;
+        public int id;
+        public String picUrl;
+        public int sortNo;
+        public int status;
+        public String title;
+        public int type;
     }
 
-
-    public int getCurrentPage() {
-        return currentPage;
+    @Override
+    public String toString() {
+        return "SportBean{" +
+                "currentPage=" + currentPage +
+                ", pageSize=" + pageSize +
+                ", startLimit=" + startLimit +
+                ", status='" + status + '\'' +
+                ", totalCount=" + totalCount +
+                ", totalPage=" + totalPage +
+                ", resultList=" + resultList +
+                '}';
     }
-
-    public void setCurrentPage(int currentPage) {
-        this.currentPage = currentPage;
-    }
-
-    public int getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(int pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    public int getStartLimit() {
-        return startLimit;
-    }
-
-    public void setStartLimit(int startLimit) {
-        this.startLimit = startLimit;
-    }
-
-    public int getTotalCount() {
-        return totalCount;
-    }
-
-    public void setTotalCount(int totalCount) {
-        this.totalCount = totalCount;
-    }
-
-    public int getTotalPage() {
-        return totalPage;
-    }
-
-    public void setTotalPage(int totalPage) {
-        this.totalPage = totalPage;
-    }
-
-    public String getActiveTime() {
-        return activeTime;
-    }
-
-    public void setActiveTime(String activeTime) {
-        this.activeTime = activeTime;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(String createDate) {
-        this.createDate = createDate;
-    }
-
-    public int getDeleteFlag() {
-        return deleteFlag;
-    }
-
-    public void setDeleteFlag(int deleteFlag) {
-        this.deleteFlag = deleteFlag;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getPicUrl() {
-        return picUrl;
-    }
-
-    public void setPicUrl(String picUrl) {
-        this.picUrl = picUrl;
-    }
-
-    public int getSortNo() {
-        return sortNo;
-    }
-
-    public void setSortNo(int sortNo) {
-        this.sortNo = sortNo;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
-    }
-
-
 }

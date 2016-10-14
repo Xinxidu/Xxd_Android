@@ -1,6 +1,7 @@
 package com.xinxidu.xxd.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +10,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.activity.HotActivity;
 import com.xinxidu.xxd.base.Compares;
+import com.xinxidu.xxd.event.HotActivityEvent;
 import com.xinxidu.xxd.netWork.HotActivityBean;
 
 import java.util.ArrayList;
@@ -26,22 +30,12 @@ import butterknife.ButterKnife;
  */
 public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.ViewHolder> {
     private final Context mContext;
-    private List<HotActivityBean> mItemList = new ArrayList<>();
+    private List<HotActivityBean.ResultListBean> mItemList = new ArrayList<>();
     private OnItemClickListener mOnItemClickListener;
-//    private View mEmptyView;
 
-    public HotActivityAdapter(Context mContext, List<HotActivityBean> itemList, Context context) {
+    public HotActivityAdapter(Context mContext, List<HotActivityBean.ResultListBean> itemList) {
         mItemList = itemList;
-        this.mContext = context;
-    }
-
-    public void setData(ArrayList<HotActivityBean> timeList) {
-        //mItemList.clear();
-        mItemList.addAll(timeList);
-    }
-
-    public HotActivityAdapter(Context context) {
-        mContext = context;
+        this.mContext = mContext;
     }
 
     @Override
@@ -53,22 +47,23 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.textView.setText(mItemList.get(position).getTitle());
-        holder.tvTimeEnd.setText(mItemList.get(position).getCreateDate());
-        holder.tvTimeStart.setText(mItemList.get(position).getActiveTime());
-        if (mItemList.get(position).getType() == 2) {
-            holder.tvActivityState.setText("进行中");
+        holder.textView.setText(mItemList.get(position).title);
+        holder.tvTimeEnd.setText(mItemList.get(position).createDate);
+        holder.tvTimeStart.setText(mItemList.get(position).activeTime);
+        if (mItemList.get(position).type == 2) {
+            holder.tvActivityState.setText("未开始");
             holder.tvActivityState.setBackgroundResource(R.drawable.hot_activity1);
-        } else if (mItemList.get(position).getType() == 1) {
-            holder.tvActivityState.setText("已参与");
+        } else if (mItemList.get(position).type == 1) {
+            holder.tvActivityState.setText("开始");
             holder.tvActivityState.setBackgroundResource(R.drawable.hot_activity2);
-        } else if (mItemList.get(position).getType() == 0){
-            holder.tvActivityState.setText("已结束");
+        } else {
+            holder.tvActivityState.setText("结束");
             holder.tvActivityState.setBackgroundResource(R.drawable.hot_activity3);
         }
+
         //获取图片
-        Glide.with(mContext).load(Compares.URL+mItemList.get(position).getPicUrl()).into(holder.ivHotIcon);
-        System.out.println("abcd"+mItemList.get(position).getPicUrl());
+        Glide.with(mContext).load(Compares.URL +mItemList.get(position).picUrl).centerCrop().into(holder.ivHotIcon);
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,9 +81,12 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
         return mItemList.size();
     }
 
-//    public void setEmptyView(View emptyView) {
-//        mEmptyView = emptyView;
-//    }
+    private void setOnItemClickListener(OnItemClickListener onItemClickListener){
+        this.mOnItemClickListener = onItemClickListener;
+    }
+    interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.imageView2)
@@ -116,11 +114,4 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
         }
     }
 
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
-        this.mOnItemClickListener = onItemClickListener;
-    }
-
-    public interface OnItemClickListener {
-        void onItemClick(View view, int position);
-    }
 }

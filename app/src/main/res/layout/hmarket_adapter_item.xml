@@ -28,7 +28,7 @@
             android:layout_marginTop="9dp"
             android:layout_weight="1"
             android:text="白银现货排期"
-            android:textColor="@color/black"
+            android:textColor="@color/black2"
             android:textSize="12dp"/>
 
         <TextView
@@ -38,7 +38,7 @@
             android:layout_marginTop="9dp"
             android:layout_weight="1"
             android:text="4.15万"
-            android:textColor="@color/black"
+            android:textColor="@color/black2"
             android:textSize="12dp"/>
 
         <TextView
@@ -48,7 +48,7 @@
             android:layout_marginTop="9dp"
             android:layout_weight="1"
             android:text="4131"
-            android:textColor="@color/black"
+            android:textColor="@color/black2"
             android:textSize="12dp"/>
 
         <TextView
@@ -58,14 +58,14 @@
             android:layout_marginTop="9dp"
             android:layout_weight="1"
             android:text="4089"
-            android:textColor="@color/black"
+            android:textColor="@color/black2"
             android:textSize="12dp"/>
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/hui_dan"
+        android:background="@color/trip_detail_fee_jisuangongshi"
         android:layout_below="@+id/line"/>
 
 </RelativeLayout>

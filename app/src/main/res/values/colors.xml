@@ -318,6 +318,7 @@
     <color name="top_category_bar_background">#ffeeeeee</color>
     <color name="transparent">#00000000</color>
     <color name="transparent_30">#50000000</color>
+    <color name="hui_tab">#acacac</color>
     <color name="trip_all_read">#fffbae1a</color>
     <color name="trip_appraise_comment_text">#ffcbcbcb</color>
     <color name="trip_appraise_no_text">#ff182051</color>

@@ -12,7 +12,6 @@
 
 
     <style name="main_tab_bottom">
-        <item name="android:textSize">12sp</item>
         <item name="android:textColor">@drawable/tab_text_indicator</item>
         <item name="android:ellipsize">marquee</item>
         <item name="android:gravity">center</item>
@@ -21,6 +20,7 @@
         <item name="android:button">@null</item>
         <item name="android:singleLine">true</item>
         <item name="android:layout_weight">1.0</item>
+        <item name="android:textSize">11dp</item>
     </style>
 
     <style name="BannerDefaultStyle">

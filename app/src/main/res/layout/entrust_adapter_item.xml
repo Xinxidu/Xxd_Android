@@ -18,7 +18,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:text="03-26"
-            android:textColor="@color/black"
+            android:textColor="@color/black2"
             android:textSize="13dp"/>
 
         <TextView
@@ -41,7 +41,7 @@
             android:maxEms="1"
             android:maxLines="2"
             android:text="1022.0    1023"
-            android:textColor="@color/black"
+            android:textColor="@color/black2"
             android:textSize="13dp"/>
 
         <TextView
@@ -51,7 +51,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:text="34.0"
-            android:textColor="@color/black"
+            android:textColor="@color/black2"
             android:textSize="13dp"/>
 
         <TextView
@@ -60,13 +60,13 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:text="63478"
-            android:textColor="@color/black"
+            android:textColor="@color/black2"
             android:textSize="13dp"/>
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/dan_back" />
+        android:background="@color/trip_detail_fee_jisuangongshi" />
 
 </LinearLayout>

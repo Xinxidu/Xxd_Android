@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.activity.LiveTelecastURLActivity;
 import com.xinxidu.xxd.event.LiveRoomEvent;
 import com.xinxidu.xxd.utils.SelectableRoundedImageView;
 
@@ -55,11 +56,11 @@ public class LiveRoomAdapter extends RecyclerView.Adapter<LiveRoomAdapter.ViewHo
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                TaskDetailsActivity.startTaskDetailsActivity(mContext);
-                String url = "http://win.xxidu.com/";
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                mContext.startActivity(intent);
+                LiveTelecastURLActivity.startLiveTelecastURLActivityy(mContext);
+//                String url = "http://win.xxidu.com/";
+//                Intent intent = new Intent(Intent.ACTION_VIEW);
+//                intent.setData(Uri.parse(url));
+//                mContext.startActivity(intent);
             }
         });
     }
