@@ -241,7 +241,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="   实盘开户>"
-                    android:textColor="@color/shortlease_main_text_blue"
+                    android:textColor="@color/back_title"
                     android:textSize="18dp"
                     android:layout_toRightOf="@+id/view10" />
             </RelativeLayout>

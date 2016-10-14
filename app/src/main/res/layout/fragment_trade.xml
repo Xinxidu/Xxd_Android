@@ -13,10 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:tabBackground="@color/not_enough_business_consumer_"
-        app:tabIndicatorColor="@color/getauthcodebutton"
+        app:tabIndicatorColor="@color/back_title"
         app:tabMode="scrollable"
-        app:tabSelectedTextColor="@color/getauthcodebutton"
-        app:tabTextAppearance="@style/MyTabLayoutTextAppearanceInverse"
+        app:tabSelectedTextColor="@color/back_title"
         app:tabTextColor="@color/black" />
 
     <View

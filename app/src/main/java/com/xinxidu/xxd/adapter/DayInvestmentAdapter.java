@@ -42,7 +42,7 @@ public class DayInvestmentAdapter extends RecyclerView.Adapter<DayInvestmentAdap
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        Glide.with(mContext).load(Compares.URL+mItemList.get(position).getLitpic()).into(holder.imageView);
+        Glide.with(mContext).load(Compares.URL+mItemList.get(position).getLitpic()).centerCrop().into(holder.imageView);
         holder.tvTitle.setText(mItemList.get(position).getTitle());
         holder.tvBody.setText(mItemList.get(position).getBody());
         holder.tvTime.setText(mItemList.get(position).getPubdate());

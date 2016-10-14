@@ -35,8 +35,6 @@ public class ExchangeInfoActivity extends Fragment {
     @BindView(R.id.exchange_webView)
     WebView exchangeWebView;
     protected static final String HOST = "http://app.service.xiduoil.com/ZhuBan?type=.guanwang&defference=jiaoyi";
-    @BindView(R.id.tv_title)
-    TextView tv_title;
 
     public static void startExchangeInfoActivity(Context context) {
         Intent intent = new Intent(context, ExchangeInfoActivity.class);
@@ -48,7 +46,6 @@ public class ExchangeInfoActivity extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_exchange_info, container, false);
         ButterKnife.bind(this, view);
-        tv_title.setText("上海华通铂银交易市场");
         WebSettings settings = exchangeWebView.getSettings();
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         settings.setUseWideViewPort(true);
@@ -84,12 +81,6 @@ public class ExchangeInfoActivity extends Fragment {
                         try {
                             JsonData dataBean = new Gson().fromJson(res, JsonData.class);
                             if (!TextUtils.isEmpty(dataBean.getData().getJiaoyi())) {
-                                String string = null;
-                                try {
-                                    string = URLDecoder.decode(dataBean.getData().getJiaoyi(), "utf-8");
-                                } catch (UnsupportedEncodingException e) {
-                                    e.printStackTrace();
-                                }
                                 exchangeWebView.loadDataWithBaseURL(null, dataBean.getData().getJiaoyi(), "text/html", "utf-8", null);
                                 Log.v("jiaoyiUrl", dataBean.getData().getJiaoyi());
                             } else {

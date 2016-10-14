@@ -67,11 +67,9 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mOnItemClickListener.onItemClick(holder.itemView, holder.getLayoutPosition());
-//                Intent intent = new Intent(mContext, HotActivity.class);
+                Intent intent = new Intent(mContext, HotActivity.class);
 //                intent.putExtra("id", mItemList.get(holder.getLayoutPosition()).getId());
-//                mContext.startActivity(intent);
-                //Toast.makeText(mContext, "id=" + , Toast.LENGTH_SHORT).show();
+                mContext.startActivity(intent);
             }
         });
     }
@@ -81,10 +79,10 @@ public class HotActivityAdapter extends RecyclerView.Adapter<HotActivityAdapter.
         return mItemList.size();
     }
 
-    private void setOnItemClickListener(OnItemClickListener onItemClickListener){
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener){
         this.mOnItemClickListener = onItemClickListener;
     }
-    interface OnItemClickListener {
+    public interface OnItemClickListener {
         void onItemClick(View view, int position);
     }
 

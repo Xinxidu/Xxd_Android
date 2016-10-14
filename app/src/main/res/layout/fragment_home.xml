@@ -64,7 +64,7 @@
                 android:layout_height="42dp"
                 app:tabBackground="@drawable/tablayout_background"
                 app:tabIndicatorColor="@null"
-                app:tabSelectedTextColor="@color/getauthcodebutton"
+                app:tabSelectedTextColor="@color/back_title"
                 app:tabTextAppearance="@style/MyTabLayoutTextAppearanceInverse"
                 app:tabTextColor="@color/black" />
             <View

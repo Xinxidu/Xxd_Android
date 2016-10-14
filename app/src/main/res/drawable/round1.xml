@@ -7,6 +7,6 @@
     <stroke
         android:width="0dp"
         android:color="@color/back_title"/>
-    <size android:width="10dp"
-    android:height="10dp"/>
+    <size android:width="40dp"
+    android:height="40dp"/>
 </shape>

@@ -9,9 +9,9 @@
     <RelativeLayout
         android:id="@+id/rl_live1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="72dp"
         android:layout_below="@+id/includelive"
-        android:padding="10dp">
+        android:padding="5dp">
 
         <RelativeLayout
             android:id="@+id/relative"
@@ -22,7 +22,6 @@
                 android:id="@+id/imageView"
                 android:layout_width="113dp"
                 android:layout_height="83dp"
-                android:src="@drawable/video"
                 app:sriv_left_bottom_corner_radius="3dp"
                 app:sriv_left_top_corner_radius="3dp"
                 app:sriv_right_bottom_corner_radius="3dp"
@@ -35,7 +34,6 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/relative"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:maxLines="1"
             android:layout_toRightOf="@+id/relative"
             android:text="美指绝地反击，原油遇阻回落"
@@ -48,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/tv_title"
             android:layout_below="@+id/tv_title"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             android:maxLines="1"
             android:ellipsize="end"
             android:text="的核心，对此应减少监管，提升产能提升产能"
@@ -65,7 +63,7 @@
             android:textColor="@color/category_text_nomal"
             android:layout_below="@+id/tv_body"
             android:layout_alignLeft="@+id/tv_body"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="9dp"
             android:textSize="10dp"/>
 
     </RelativeLayout>

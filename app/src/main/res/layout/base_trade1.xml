@@ -50,7 +50,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
                             android:background="@drawable/round_login"
-                            android:text="按汇总" />
+                            android:text="按汇总"
+                            android:textColor="@color/white"/>
 
                         <Button
                             android:layout_width="wrap_content"
@@ -75,10 +76,10 @@
                             android:id="@+id/bt_jian"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:background="@drawable/jian"
+                            android:background="@drawable/round1"
                             android:gravity="center"
                             android:text="—"
-                            android:textColor="@color/color_transparent"/>
+                            android:textColor="@color/white"/>
 
                         <TextView
                             android:id="@+id/tv_price_num"
@@ -94,10 +95,10 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_alignParentRight="true"
-                            android:background="@drawable/jia"
+                            android:background="@drawable/round1"
                             android:gravity="center"
                             android:text="+"
-                            android:textColor="@color/color_transparent"/>
+                            android:textColor="@color/white"/>
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -111,10 +112,10 @@
                             android:id="@+id/bt_jian1"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:background="@drawable/jian"
+                            android:background="@drawable/round1"
                             android:gravity="center"
                             android:text="—"
-                            android:textColor="@color/color_transparent"/>
+                            android:textColor="@color/white"/>
 
                         <TextView
                             android:id="@+id/tv_price_num1"
@@ -130,10 +131,10 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_alignParentRight="true"
-                            android:background="@drawable/jia"
+                            android:background="@drawable/round1"
                             android:gravity="center"
                             android:text="+"
-                            android:textColor="@color/color_transparent"/>
+                            android:textColor="@color/white"/>
                     </RelativeLayout>
 
                     <TextView

@@ -131,7 +131,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="忘记密码 > "
-        android:textColor="@color/shortlease_main_text_blue"
+        android:textColor="@color/back_title"
         android:textSize="18dp" />
 
     <RelativeLayout
@@ -163,7 +163,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="注册一个吧 >"
-            android:textColor="@color/shortlease_main_text_blue"
+            android:textColor="@color/back_title"
             android:textSize="18dp"
             android:layout_toRightOf="@+id/view10" />
     </RelativeLayout>

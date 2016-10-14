@@ -118,8 +118,7 @@ public class DayInvestmentActivity extends Activity {
         @Override
         public void onItemClick(View view, int position) {
             Intent intent = new Intent(DayInvestmentActivity.this, DayInvestmentDetailActivity.class);
-//            intent.putExtra("description", mItem.get(position).getDescription());
-//            intent.putExtra("body", mItem.get(position).getBody());
+            intent.putExtra("id", mItem.get(position).getId()+"");//转成Sting不然拿不到
             startActivity(intent);
         }
     };

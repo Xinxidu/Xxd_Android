@@ -32,15 +32,12 @@ public class AboutXiDuDetailActivity extends Fragment {
     @BindView(R.id.exchange_webView)
     WebView exchangeWebView;
     protected static final String URL = "http://app.service.xiduoil.com/ZhuBan?type=.guanwang&defference=gongsi";
-    @BindView(R.id.tv_title)
-    TextView tv_title;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_exchange_info, container, false);
         ButterKnife.bind(this, view);
-        tv_title.setText("鑫西都");
         WebSettings settings = exchangeWebView.getSettings();
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         settings.setUseWideViewPort(true);
@@ -75,12 +72,6 @@ public class AboutXiDuDetailActivity extends Fragment {
                         try {
                             XiduInfoData dataBean = new Gson().fromJson(res, XiduInfoData.class);
                             if (!TextUtils.isEmpty(dataBean.getData().getGongsi())) {
-//                                String string = null;
-//                                try {
-//                                    string = URLDecoder.decode(dataBean.getData().getGongsi(), "utf-8");
-//                                } catch (UnsupportedEncodingException e) {
-//                                    e.printStackTrace();
-//                                }
                                 exchangeWebView.loadDataWithBaseURL(null, dataBean.getData().getGongsi(), "text/html", "utf-8", null);
                                 Log.v("gongsiUrl", dataBean.getData().getGongsi());
                             } else {

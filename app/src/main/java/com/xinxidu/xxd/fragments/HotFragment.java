@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.activity.LoginActivity;
 import com.xinxidu.xxd.adapter.HotActivityAdapter;
 import com.xinxidu.xxd.base.Compares;
 import com.xinxidu.xxd.netWork.HotActivityBean;
