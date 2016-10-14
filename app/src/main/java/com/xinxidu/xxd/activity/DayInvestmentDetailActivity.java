@@ -59,9 +59,10 @@ public class DayInvestmentDetailActivity extends Activity {
         setContentView(R.layout.activity_day_details);
         ButterKnife.bind(this);
         WebSettings settings = exchangeWebView.getSettings();
-        settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+//        settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         settings.setUseWideViewPort(true);
         settings.setLoadWithOverviewMode(true);
+        settings.setJavaScriptEnabled(true);
         tvTitle.setText("投资策略详情");
 
         id = getIntent().getStringExtra("id");
