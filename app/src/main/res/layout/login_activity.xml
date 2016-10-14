@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/hui_color">
 
     <include
@@ -19,14 +20,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/ll_login_body"
-        android:layout_below="@+id/include3">
+        android:layout_below="@+id/include3"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <com.xinxidu.xxd.utils.SelectableRoundedImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/headimage"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/touxiang" />
+            app:sriv_left_bottom_corner_radius="5dp"
+            app:sriv_left_top_corner_radius="5dp"
+            app:sriv_right_bottom_corner_radius="5dp"
+            app:sriv_right_top_corner_radius="5dp"/>
     </RelativeLayout>
 
     <RelativeLayout

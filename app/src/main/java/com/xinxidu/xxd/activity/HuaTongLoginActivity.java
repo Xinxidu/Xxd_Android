@@ -4,17 +4,22 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xinxidu.xxd.R;
+import com.xinxidu.xxd.utils.CodeUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,7 +61,7 @@ public class HuaTongLoginActivity extends Activity {
     @BindView(R.id.et_login_pass)
     EditText etLoginPass;
     @BindView(R.id.tv_for_verification_code)
-    TextView tvForVerificationCode;
+    ImageView tvForVerificationCode;
     @BindView(R.id.et_verification_code)
     EditText etVerificationCode;
     @BindView(R.id.ll_login_body)
@@ -72,6 +77,9 @@ public class HuaTongLoginActivity extends Activity {
     private SharedPreferences sp;
     private String etLoginUserValue;
     private String etLoginPassValue;
+    //图片验证
+    private CodeUtils codeUtils;
+    private String codeStr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +91,7 @@ public class HuaTongLoginActivity extends Activity {
         shipan.setTextColor(getResources().getColor(R.color.shortlease_main_text_blue));
         shipan.setBackgroundColor(getResources().getColor(R.color.hui_color));
         sp = this.getSharedPreferences("userInfo", Context.MODE_WORLD_READABLE);
+        createConfirmCode();
         //判断记住密码多选框的状态
         if (sp.getBoolean("ISCHECK", false)) {
             //设置默认是记录密码状态
@@ -129,9 +138,11 @@ public class HuaTongLoginActivity extends Activity {
                 finish();
                 break;
             case R.id.tv_for_verification_code:
+                createConfirmCode();
                 break;
             case R.id.tv_login_commit:
                 login();
+                yanzhengma();
                 break;
             case R.id.tv_open_account:
 //                String url = "http://trade.huatongsilver.com/accountweb/web/reg2/reg.html";
@@ -155,6 +166,27 @@ public class HuaTongLoginActivity extends Activity {
                 }
                 break;
         }
+    }
+
+    private void yanzhengma() {
+        codeStr = etVerificationCode.getText().toString().trim();
+        if (null == codeStr || TextUtils.isEmpty(codeStr)) {
+            Toast.makeText(this, "请输入验证码", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        String code = codeUtils.getCode();
+        Log.e("code", code);
+        if (code.equalsIgnoreCase(codeStr)) {
+            Toast.makeText(this, "验证码正确", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "验证码错误", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void createConfirmCode() {
+        codeUtils = CodeUtils.getInstance();
+        Bitmap bitmap = codeUtils.createBitmap();
+        tvForVerificationCode.setImageBitmap(bitmap);
     }
 
     private void login() {

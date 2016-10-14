@@ -56,7 +56,7 @@ public class MyFragment extends Fragment {
     @BindView(R.id.btn_my_register)
     TextView btnMyRegister;
     @BindView(R.id.btn_back_login)
-    Button btnBackLogin;
+    TextView btnBackLogin;
     @BindView(R.id.rl_user_center)
     RelativeLayout rlUserCenter;
     @BindView(R.id.my_account)
@@ -113,10 +113,6 @@ public class MyFragment extends Fragment {
                 break;
             case R.id.btn_back_login:
 //                LoginActivity.startLoginActivity(getActivity());
-                tvUserName.setText("未登录");
-                btnMyRegister.setVisibility(View.VISIBLE);
-                btnMyLogin.setVisibility(View.VISIBLE);
-                btnBackLogin.setVisibility(View.GONE);
                 break;
             case R.id.my_event:
                 HotActivity.startHotActivity(getActivity());
@@ -152,6 +148,11 @@ public class MyFragment extends Fragment {
             btnBackLogin.setVisibility(View.GONE);
         }
 
+    }
+
+    @Subscribe
+    public void onChangePassenger(UserLoginEvent event) {
+        btnBackLogin.setText(event.getUserName());
     }
 
     @Override

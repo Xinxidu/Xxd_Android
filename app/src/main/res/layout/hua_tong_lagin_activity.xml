@@ -129,15 +129,14 @@
                     android:focusable="true"
                     android:focusableInTouchMode="true">
 
-                    <TextView
+                    <ImageView
                         android:id="@+id/tv_for_verification_code"
-                        android:layout_width="wrap_content"
-                        android:layout_height="25dp"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="24dp"
-                        android:background="@drawable/yan"
-                        android:gravity="center" />
+                        android:gravity="center"/>
 
                     <EditText
                         android:id="@+id/et_verification_code"
