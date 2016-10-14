@@ -14,10 +14,6 @@ import com.xinxidu.xxd.event.XiduNewsDetails;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,29 +23,27 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import okhttp3.Call;
 
-public class XiduNewsDetailActivity extends AppCompatActivity {
+public class ProfitSkillDetailActivity extends AppCompatActivity {
 
     @BindView(R.id.tv_title)
     TextView tvTitle;
-    @BindView(R.id.wv_xidunews)
-    WebView wvXidunews;
+    @BindView(R.id.news_webView)
+    WebView newsWebView;
     protected static final String URL = "http://app.service.xiduoil.com/Detail";
     private String id;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_xidu_news_detail);
+        setContentView(R.layout.activity_profit_skill_detail);
         ButterKnife.bind(this);
-        tvTitle.setText("西都新闻详情");
-        WebSettings settings = wvXidunews.getSettings();
+        tvTitle.setText("盈利技巧详情");
+        WebSettings settings = newsWebView.getSettings();
         settings.setUseWideViewPort(true);
         settings.setLoadWithOverviewMode(true);
         settings.setJavaScriptEnabled(true);
         id = getIntent().getStringExtra("id");
         initNet();
     }
-
     private void initNet() {
         Map<String, String> map = new HashMap<>();
         map.put("id", id);
@@ -74,7 +68,7 @@ public class XiduNewsDetailActivity extends AppCompatActivity {
                                     List<XiduNewsDetails.DataBean> data = dataBean.getData();
                                     for (int i = 0; i < data.size(); i++) {
                                         if (!TextUtils.isEmpty(data.get(i).getBody())) {
-                                            wvXidunews.loadDataWithBaseURL(null, data.get(i).getBody(), "text/html", "utf-8", null);
+                                            newsWebView.loadDataWithBaseURL(null, data.get(i).getBody(), "text/html", "utf-8", null);
                                             Log.v("fail", data.get(i).getBody());
                                         } else {
                                             Log.v("fail", "fail");
@@ -88,7 +82,6 @@ public class XiduNewsDetailActivity extends AppCompatActivity {
                     }
                 });
     }
-
     @OnClick(R.id.back)
     public void onClick() {
         finish();

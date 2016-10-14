@@ -58,7 +58,8 @@
             android:name=".activity.UserFeedbackActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity android:name=".activity.TeacherDetailsActivity" />
-        <activity android:name=".activity.HuaTongRegisterActivity"></activity>
+        <activity android:name=".activity.HuaTongRegisterActivity" />
+        <activity android:name=".activity.ProfitSkillDetailActivity"></activity>
     </application>
 
 </manifest>

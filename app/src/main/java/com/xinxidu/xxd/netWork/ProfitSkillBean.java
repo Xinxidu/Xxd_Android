@@ -44,14 +44,4 @@ public class ProfitSkillBean {
 
     }
 
-    @Override
-    public String toString(){
-        return "SportBean{" +
-                "flag=" + flag +
-                ", indexPage=" + indexPage +
-                ", msg=" + msg +
-                ", data=" + data +
-                ", sumPage=" + sumPage +
-                '}';
-    }
 }

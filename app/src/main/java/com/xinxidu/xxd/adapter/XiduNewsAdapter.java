@@ -43,12 +43,12 @@ public class XiduNewsAdapter extends RecyclerView.Adapter<XiduNewsAdapter.ViewHo
         holder.title.setText(mItemList.get(position).Title);
         holder.keywords.setText("关键词 :"+mItemList.get(position).Keywords);
         holder.senddate.setText(mItemList.get(position).Senddate);
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mOnItemClickListener.onItemClick(holder.itemView, holder.getLayoutPosition());
-//            }
-//        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mOnItemClickListener.onItemClick(holder.itemView, holder.getLayoutPosition());
+            }
+        });
     }
 
     @Override

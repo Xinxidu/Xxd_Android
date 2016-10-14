@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_profit_skill_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xinxidu.xxd.activity.ProfitSkillDetailActivity">
+   <include layout="@layout/title"
+       android:id="@+id/news_title"/>
+   <WebView
+       android:id="@+id/news_webView"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_below="@+id/news_title"
+       android:background="@color/white">
+   </WebView>
+</RelativeLayout>

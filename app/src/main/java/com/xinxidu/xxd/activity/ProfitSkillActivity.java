@@ -8,11 +8,13 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.adapter.ProfitSkillAdapter;
 import com.xinxidu.xxd.base.Compares;
+import com.xinxidu.xxd.event.ProfitSkillDetails;
 import com.xinxidu.xxd.netWork.ProfitSkillBean;
 import com.xinxidu.xxd.utils.pull.SwipyRefreshLayout;
 import java.util.ArrayList;
@@ -72,6 +74,7 @@ public class ProfitSkillActivity extends AppCompatActivity {
         //设置Item增加、移除动画
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mProfitSkillAdapter = new ProfitSkillAdapter(this, mItem);
+        mProfitSkillAdapter.setOnItemClickListener(mOnItemClickListener);
         mRecyclerView.setAdapter(mProfitSkillAdapter);
     }
     private void webRequest(int pageIndex) {
@@ -138,14 +141,14 @@ public class ProfitSkillActivity extends AppCompatActivity {
 
 
 
-//    XiduNewsAdapter.OnItemClickListener mOnItemClickListener = new XiduNewsAdapter.OnItemClickListener() {
-//        @Override
-//        public void onItemClick(View view, int position) {
-//            Intent intent = new Intent(ProfitSkillActivity.this, XiduNewsDetailActivity.class);
-//            intent.putExtra("Id", mItem.get(position).Id);
-//            startActivity(intent);
-//        }
-//    };
+    ProfitSkillAdapter.OnItemClickListener mOnItemClickListener = new ProfitSkillAdapter.OnItemClickListener() {
+        @Override
+        public void onItemClick(View view, int position) {
+            Intent intent = new Intent(ProfitSkillActivity.this, ProfitSkillDetailActivity.class);
+            intent.putExtra("id", mItem.get(position).Id+"");//转成String
+            startActivity(intent);
+        }
+    };
 
     interface Api {
         @retrofit2.http.GET("/ZhuBan/")

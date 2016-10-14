@@ -1,5 +1,6 @@
 package com.xinxidu.xxd.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -65,6 +66,7 @@ public class XiduNewsActivity extends Fragment {
         //设置Item增加、移除动画
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mXiduNewsAdapter = new XiduNewsAdapter(getActivity(), mItem);
+        mXiduNewsAdapter.setOnItemClickListener(mOnItemClickListener);
         mRecyclerView.setAdapter(mXiduNewsAdapter);
     }
 
@@ -135,5 +137,13 @@ public class XiduNewsActivity extends Fragment {
         retrofit2.Call<XiduNewsBean> getData(@Query("type") String type, @Query("defference") String defference, @Query("indexPage") int indexPage, @Query("pageRows") int pageRows);
     }
 
+    XiduNewsAdapter.OnItemClickListener mOnItemClickListener = new XiduNewsAdapter.OnItemClickListener() {
+        @Override
+        public void onItemClick(View view, int position) {
+            Intent intent = new Intent(getActivity(), XiduNewsDetailActivity.class);
+            intent.putExtra("id", mItem.get(position).Id+"");//转成String不然拿不到
+            startActivity(intent);
+        }
+    };
 
 }

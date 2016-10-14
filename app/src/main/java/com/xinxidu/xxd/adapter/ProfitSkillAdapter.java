@@ -42,12 +42,12 @@ public class ProfitSkillAdapter extends RecyclerView.Adapter<ProfitSkillAdapter.
         holder.tvTitle.setText(mItemList.get(position).Title);
         holder.tvKeywords.setText(mItemList.get(position).Keywords);
         holder.tvSenddate.setText(mItemList.get(position).Senddate);
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mOnItemClickListener.onItemClick(holder.itemView, holder.getLayoutPosition());
-//            }
-//        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mOnItemClickListener.onItemClick(holder.itemView, holder.getLayoutPosition());
+            }
+        });
     }
 
     @Override

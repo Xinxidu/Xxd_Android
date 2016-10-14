@@ -48,10 +48,6 @@ public class DayInvestmentDetailActivity extends Activity {
     protected static final String HOST = "http://app.service.xiduoil.com/Detail";
     private String id;
 
-    public static void startAboutXiDuDetailActivity(Context context) {
-        Intent intent = new Intent(context, AboutXiDuDetailActivity.class);
-        context.startActivity(intent);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
