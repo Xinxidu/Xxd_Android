@@ -54,6 +54,7 @@ public class SettingActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.my_info:
                 MyAccountInfoActivity.startMyAccountInfoActivity(this);
+                finish();
                 break;
             case R.id.user_feedback:
                 UserFeedbackActivity.startUserFeedbackActivity(this);

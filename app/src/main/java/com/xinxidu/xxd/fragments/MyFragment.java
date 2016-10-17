@@ -133,7 +133,7 @@ public class MyFragment extends Fragment {
 
     @Subscribe
     public void onUserLoginEvent(UserLoginEvent event) {
-//            tvUserName.setText(event.getUserName());
+//            btnBackLogin.setText(event.getUserName());
         boolean name = true;
 
         if (name) {

@@ -100,7 +100,8 @@ public class MyAccountInfoActivity extends Activity {
                 showPop();
                 break;
             case R.id.tv_back_login:
-            SysApplication.getInstance().exit();
+//            SysApplication.getInstance().exit();
+                finish();
                 break;
         }
     }
