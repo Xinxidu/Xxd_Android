@@ -23,7 +23,7 @@
         <TextView
             android:id="@+id/my_info"
             style="@style/MyTextView"
-            android:text="个人新息" />
+            android:text="个人信息" />
 
         <View style="@style/MyView" />
 

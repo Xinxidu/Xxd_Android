@@ -28,6 +28,9 @@ import com.xinxidu.xxd.base.SysApplication;
 import com.xinxidu.xxd.event.UserLoginEvent;
 import com.xinxidu.xxd.utils.PhotoUtil;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 
@@ -78,16 +81,21 @@ public class MyAccountInfoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_account_info_activity);
-        SysApplication.getInstance().addActivity(this);
         ButterKnife.bind(this);
+        EventBus.getDefault().register(this);
         tvTitle.setText("我的账户");
-        messageAfferent();
     }
 
-    private void messageAfferent() {
-        UserLoginEvent userLoginEvent = new UserLoginEvent();
-        tvName.setText(userLoginEvent.getUserName());
-        tvPhone.setText(userLoginEvent.getUserPass());
+    @Subscribe
+
+    public void onChangePassenger(UserLoginEvent event) {
+        tvName.setText(event.getUserName());
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 
     @OnClick({R.id.back, R.id.iv_head_portrait, R.id.tv_back_login})
@@ -100,7 +108,6 @@ public class MyAccountInfoActivity extends Activity {
                 showPop();
                 break;
             case R.id.tv_back_login:
-//            SysApplication.getInstance().exit();
                 finish();
                 break;
         }

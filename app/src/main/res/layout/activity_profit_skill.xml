@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:my="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:my="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
+
     <include
         android:id="@+id/includeprofit"
         layout="@layout/title" />
+
     <com.xinxidu.xxd.utils.pull.SwipyRefreshLayout
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
-        android:layout_below="@+id/includeprofit"
         android:id="@+id/swipe_profit"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/includeprofit"
         my:direction="both">
-    <android.support.v7.widget.RecyclerView
-    android:id="@+id/recycler_profit"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_alignParentLeft="true" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_profit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true" />
     </com.xinxidu.xxd.utils.pull.SwipyRefreshLayout>
 </RelativeLayout>

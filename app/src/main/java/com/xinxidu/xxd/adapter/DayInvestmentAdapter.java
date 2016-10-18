@@ -13,7 +13,9 @@ import com.bumptech.glide.Glide;
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.base.Compares;
 import com.xinxidu.xxd.event.DayInvestmentEvent;
+import com.xinxidu.xxd.netWork.DayInvestmentBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -25,11 +27,11 @@ import butterknife.ButterKnife;
  */
 public class DayInvestmentAdapter extends RecyclerView.Adapter<DayInvestmentAdapter.ViewHolder> {
     private final Context mContext;
-    private final List<DayInvestmentEvent> mItemList;
+    private List<DayInvestmentBean.ResultListBean> mItemList = new ArrayList<>();
     private OnItemClickListener mOnItemClickListener;
 
-    public DayInvestmentAdapter(Context mContext, List<DayInvestmentEvent> itemList) {
-        this.mItemList = itemList;
+    public DayInvestmentAdapter(Context mContext, List<DayInvestmentBean.ResultListBean> itemList) {
+        mItemList = itemList;
         this.mContext = mContext;
     }
 
@@ -42,10 +44,10 @@ public class DayInvestmentAdapter extends RecyclerView.Adapter<DayInvestmentAdap
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        Glide.with(mContext).load(Compares.URL+mItemList.get(position).getLitpic()).centerCrop().into(holder.imageView);
-        holder.tvTitle.setText(mItemList.get(position).getTitle());
-        holder.tvBody.setText(mItemList.get(position).getBody());
-        holder.tvTime.setText(mItemList.get(position).getPubdate());
+        Glide.with(mContext).load(Compares.URL+mItemList.get(position).Litpic).centerCrop().into(holder.imageView);
+        holder.tvTitle.setText(mItemList.get(position).Title);
+        holder.tvBody.setText(mItemList.get(position).Body);
+        holder.tvTime.setText(mItemList.get(position).Pubdate);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +58,7 @@ public class DayInvestmentAdapter extends RecyclerView.Adapter<DayInvestmentAdap
 
     @Override
     public int getItemCount() {
-        return mItemList.size() == 0 ? 0 : mItemList.size();
+        return mItemList.size();
     }
 
 

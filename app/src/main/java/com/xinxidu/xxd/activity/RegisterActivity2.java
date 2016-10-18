@@ -138,7 +138,6 @@ public class RegisterActivity2 extends Activity {
         userLoginEvent.setUserPass(etPwdValue);
         EventBus.getDefault().post(userLoginEvent);
         SysApplication.getInstance().exit();
-       // MyAccountInfoActivity.startMyAccountInfoActivity(this);
 
     }
 
