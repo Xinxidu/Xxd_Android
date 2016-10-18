@@ -73,7 +73,7 @@ public class HotTradeFragment extends Fragment {
         arr_adapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner1_trade, data_list);
         //设置样式
         arr_adapter.setDropDownViewResource(R.layout.spinner_trade);
-        //加载适配器
+
         tvDownUp.setAdapter(arr_adapter);
     }
 
