@@ -31,13 +31,13 @@
 
                     <Spinner
                         android:id="@+id/spinner1"
+                        style="@style/Spinner"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
+                        android:layout_height="30dp"
                         android:layout_margin="10dp"
                         android:background="@drawable/frame"
-                        android:dropDownVerticalOffset="31dp"
-                        style="@style/Spinner"/>
-
+                        android:popupBackground="@drawable/beijing_spinner"/>
+                    <!--android:dropDownVerticalOffset="10dp"-->
                     <RelativeLayout
                         android:id="@+id/relative"
                         android:layout_width="match_parent"
@@ -48,14 +48,14 @@
                         <Button
                             android:id="@+id/bt_collect"
                             android:layout_width="wrap_content"
-                            android:layout_height="40dp"
+                            android:layout_height="30dp"
                             android:background="@drawable/round_login"
                             android:text="按汇总"
-                            android:textColor="@color/white"/>
+                            android:textColor="@color/white" />
 
                         <Button
                             android:layout_width="wrap_content"
-                            android:layout_height="40dp"
+                            android:layout_height="30dp"
                             android:layout_alignParentRight="true"
                             android:background="@drawable/hui"
                             android:text="按明细"
@@ -66,81 +66,81 @@
                     <RelativeLayout
                         android:id="@+id/relative1"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_height="30dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
                         android:background="@drawable/frame1">
 
                         <TextView
                             android:id="@+id/bt_jian"
-                            android:layout_width="40dp"
+                            android:layout_width="30dp"
                             android:layout_height="40dp"
                             android:background="@drawable/round1"
                             android:gravity="center"
                             android:text="—"
-                            android:textColor="@color/white"/>
+                            android:textColor="@color/white" />
 
                         <TextView
                             android:id="@+id/tv_price_num"
                             android:layout_width="wrap_content"
-                            android:layout_height="40dp"
+                            android:layout_height="30dp"
                             android:layout_centerHorizontal="true"
                             android:gravity="center"
                             android:textColor="@color/black"
-                            android:textSize="13dp"/>
+                            android:textSize="13dp" />
 
                         <TextView
                             android:id="@+id/bt_jia"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_alignParentRight="true"
                             android:background="@drawable/round1"
                             android:gravity="center"
                             android:text="+"
-                            android:textColor="@color/white"/>
+                            android:textColor="@color/white" />
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:id="@+id/relativeLayout"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="30dp"
                         android:layout_margin="10dp"
                         android:background="@drawable/frame1">
 
                         <TextView
                             android:id="@+id/bt_jian1"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:background="@drawable/round1"
                             android:gravity="center"
                             android:text="—"
-                            android:textColor="@color/white"/>
+                            android:textColor="@color/white" />
 
                         <TextView
                             android:id="@+id/tv_price_num1"
                             android:layout_width="wrap_content"
-                            android:layout_height="40dp"
+                            android:layout_height="30dp"
                             android:layout_centerHorizontal="true"
                             android:gravity="center"
                             android:textColor="@color/black"
-                            android:textSize="13dp"/>
+                            android:textSize="13dp" />
 
                         <TextView
                             android:id="@+id/bt_jia1"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_alignParentRight="true"
                             android:background="@drawable/round1"
                             android:gravity="center"
                             android:text="+"
-                            android:textColor="@color/white"/>
+                            android:textColor="@color/white" />
                     </RelativeLayout>
 
                     <TextView
                         android:id="@+id/tv_tv_trade_puy_sell"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
+                        android:layout_height="30dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/button_commit"
@@ -164,7 +164,7 @@
                         android:layout_marginTop="15dp"
                         android:text="档位"
                         android:textColor="@color/wait_result_gray"
-                        android:textSize="13dp"/>
+                        android:textSize="13dp" />
 
                     <TextView
                         android:id="@+id/textView1"
@@ -174,7 +174,7 @@
                         android:layout_marginTop="15dp"
                         android:text="价格"
                         android:textColor="@color/wait_result_gray"
-                        android:textSize="13dp"/>
+                        android:textSize="13dp" />
 
                     <TextView
                         android:id="@+id/textView3"
@@ -185,7 +185,7 @@
                         android:layout_marginTop="15dp"
                         android:text="数量"
                         android:textColor="@color/wait_result_gray"
-                        android:textSize="13dp"/>
+                        android:textSize="13dp" />
 
                     <View
                         android:layout_width="match_parent"
@@ -227,7 +227,7 @@
                         android:layout_marginTop="20dp"
                         android:text="卖1"
                         android:textColor="@color/wait_result_gray"
-                        android:textSize="13dp"/>
+                        android:textSize="13dp" />
 
                     <TextView
                         android:id="@+id/tv_price"
@@ -237,8 +237,8 @@
                         android:layout_alignLeft="@+id/tv_price_sell"
                         android:layout_alignStart="@+id/tv_price_sell"
                         android:text="1006.0"
-                        android:textColor="@color/black"
-                        android:textSize="13dp"/>
+                        android:textColor="@color/black2"
+                        android:textSize="13dp" />
 
                     <TextView
                         android:id="@+id/tv_num"
@@ -249,8 +249,8 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="20dp"
                         android:text="113"
-                        android:textColor="@color/black"
-                        android:textSize="13dp"/>
+                        android:textColor="@color/black2"
+                        android:textSize="13dp" />
 
                     <TextView
                         android:id="@+id/textView4"
@@ -262,7 +262,7 @@
                         android:layout_marginTop="20dp"
                         android:text="买1"
                         android:textColor="@color/wait_result_gray"
-                        android:textSize="13dp"/>
+                        android:textSize="13dp" />
 
                     <TextView
                         android:id="@+id/tv_price_sell"
@@ -272,7 +272,7 @@
                         android:layout_alignStart="@+id/textView1"
                         android:layout_alignTop="@+id/textView4"
                         android:text="1005.0"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black2" />
 
                     <TextView
                         android:id="@+id/tv_num_sell"
@@ -282,7 +282,7 @@
                         android:layout_alignRight="@+id/textView3"
                         android:layout_alignTop="@+id/tv_price_sell"
                         android:text="220"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black2" />
                 </RelativeLayout>
 
             </RelativeLayout>

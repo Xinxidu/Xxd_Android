@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
@@ -38,9 +39,11 @@ public class ProfitSkillDetailActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         tvTitle.setText("盈利技巧详情");
         WebSettings settings = newsWebView.getSettings();
-        settings.setUseWideViewPort(true);
+        settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+//        settings.setUseWideViewPort(true);
         settings.setLoadWithOverviewMode(true);
         settings.setJavaScriptEnabled(true);
+        newsWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         id = getIntent().getStringExtra("id");
         initNet();
     }

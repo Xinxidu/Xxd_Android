@@ -9,26 +9,26 @@
         android:id="@+id/rl_live1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_marginTop="3dp"
+            android:layout_height="wrap_content"
             android:text="在原油投资中掌握这些数据想不赚钱都不行"
-            android:textColor="@color/trip_detail_btn_frame"
-            android:textSize="18sp" />
+            android:textColor="@color/black2"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tv_keywords"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView10"
             android:layout_below="@+id/tv_title"
+            android:layout_marginTop="5dp"
             android:text="关键词:  原油，资中，掌握，这些，数据，想不，赚钱"
-            android:textSize="16sp"
-            android:textColor="@color/trip_detail_btn_frame" />
+            android:textColor="@color/black2"
+            android:textSize="13sp" />
 
         <TextView
             android:id="@+id/tv_senddate"
@@ -38,12 +38,12 @@
             android:layout_marginTop="5dp"
             android:text="2016-09-01 07:16:39"
             android:textColor="@color/dan_back"
-            android:textSize="16sp"/>
+            android:textSize="12sp" />
 
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/dan_back" />
+        android:background="@color/hui_dan" />
 </LinearLayout>
