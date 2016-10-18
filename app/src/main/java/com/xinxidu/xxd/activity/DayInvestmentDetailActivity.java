@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.RelativeLayout;
@@ -55,10 +56,11 @@ public class DayInvestmentDetailActivity extends Activity {
         setContentView(R.layout.activity_day_details);
         ButterKnife.bind(this);
         WebSettings settings = exchangeWebView.getSettings();
-//        settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
-        settings.setUseWideViewPort(true);
+        settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+//        settings.setUseWideViewPort(true);
         settings.setLoadWithOverviewMode(true);
         settings.setJavaScriptEnabled(true);
+        exchangeWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         tvTitle.setText("投资策略详情");
 
         id = getIntent().getStringExtra("id");

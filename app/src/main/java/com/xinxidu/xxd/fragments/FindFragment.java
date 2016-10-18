@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.activity.AtionMessageActivity;
 import com.xinxidu.xxd.activity.DayInvestmentActivity;
+import com.xinxidu.xxd.activity.HuaTongLoginActivity;
 import com.xinxidu.xxd.activity.LiveRoomActivity;
 import com.xinxidu.xxd.activity.ProfitSkillActivity;
 import com.xinxidu.xxd.activity.TeacherTeamActivity;
@@ -85,6 +86,7 @@ public class FindFragment extends Fragment {
                 TeacherTeamActivity1.startTeacherTeamActivity1(getActivity());
                 break;
             case R.id.find_trade:
+                HuaTongLoginActivity.startHuaTongLoginActivity(getActivity());
                 break;
         }
     }
