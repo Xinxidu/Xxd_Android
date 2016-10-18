@@ -110,6 +110,7 @@ public class MyFragment extends Fragment {
                 MyShiPanAccountActivity.startMyShiPanAccountActivity(getActivity());
                 break;
             case R.id.my_selection:
+
                 break;
             case R.id.btn_back_login:
 //                LoginActivity.startLoginActivity(getActivity());

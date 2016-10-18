@@ -45,23 +45,25 @@
 
         <Spinner
             android:id="@+id/tv_down_up"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="11dp"
             android:layout_toRightOf="@+id/textView15"
             android:background="@null"
-            android:dropDownVerticalOffset="40dp"/>
+            android:popupBackground="@drawable/spinner_background"
+            android:gravity="bottom"/>
 
         <Spinner
             android:id="@+id/tv_volume"
             android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="7dp"
             android:layout_toEndOf="@+id/tv_down_up"
             android:layout_toRightOf="@+id/tv_down_up"
-            android:background="@null"/>
-        <!--android:dropDownVerticalOffset="40dp"-->
+            android:background="@null"
+            android:popupBackground="@drawable/spinner_background"/>
+        <!--android:dropDownVerticalOffset="40dp"
+        android:layout_centerVertical="true"-->
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView

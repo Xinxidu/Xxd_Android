@@ -2,18 +2,18 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <!-- 填充 -->
-    <solid android:color="@color/white" /> <!-- 定义填充的颜色值 -->
+    <solid android:color="@color/hui_dan" /> <!-- 定义填充的颜色值 -->
 
     <!-- 描边 -->
     <stroke
         android:width="1dp"
-        android:color="@color/back_title" /> <!-- 定义描边的宽度和描边的颜色值 -->
+        android:color="@color/myuser_whitegold" /> <!-- 定义描边的宽度和描边的颜色值 -->
 
     <!-- 圆角 -->
     <corners
-        android:bottomLeftRadius="0dp"
-        android:bottomRightRadius="0dp"
-        android:topLeftRadius="0dp"
-        android:topRightRadius="0dp" /> <!-- 设置四个角的半径 -->
+        android:bottomLeftRadius="1dp"
+        android:bottomRightRadius="1dp"
+        android:topLeftRadius="1dp"
+        android:topRightRadius="1dp" /> <!-- 设置四个角的半径 -->
 
 </shape>

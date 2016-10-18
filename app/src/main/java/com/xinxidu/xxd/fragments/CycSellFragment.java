@@ -86,7 +86,7 @@ public class CycSellFragment extends Fragment {
     private BuyIntoFragment buyIntoFragment;
     public View view;
     int num = 1000;//数量
-    int num1 = 10;//数量
+    int num1 = 1;//数量
     @BindView(R.id.spinner1)
     Spinner spinner1;
     private List<String> data_list;

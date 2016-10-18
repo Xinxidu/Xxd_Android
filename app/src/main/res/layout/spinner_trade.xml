@@ -4,5 +4,4 @@
     android:layout_height="wrap_content"
     android:padding="10dip"
     android:gravity="center"
-    android:textColor="@color/black2"
-    android:background="@drawable/spinner_background"/>
+    android:textColor="@color/black2"/>

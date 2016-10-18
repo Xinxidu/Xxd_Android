@@ -1,5 +1,6 @@
 package com.xinxidu.xxd.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -38,6 +39,7 @@ public class MarketFragment extends Fragment {
         RelativeLayout back1= (RelativeLayout) view.findViewById(R.id.back1);
         TextView tv_title= (TextView) view.findViewById(R.id.tv_title);
         tv_title.setText("行情");
+
         back.setVisibility(View.GONE);
         back1.setVisibility(View.VISIBLE);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getActivity().getSupportFragmentManager());//getSupportFragmentManager()

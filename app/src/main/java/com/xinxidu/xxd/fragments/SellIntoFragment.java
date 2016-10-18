@@ -86,7 +86,7 @@ public class SellIntoFragment extends Fragment {
     Spinner spinner1;
     public View view;
     int num = 1000;//数量
-    int num1 = 10;//数量
+    int num1 = 1;//数量
     private List<String> data_list;
     private ArrayAdapter<String> arr_adapter;
     EntrustItemAdapter mEntrustItemAdapter;
