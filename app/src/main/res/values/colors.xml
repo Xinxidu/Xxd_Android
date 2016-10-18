@@ -377,6 +377,9 @@
     <color name="grey1">#eae7de</color>
     <color name="white">#ffffffff</color>
     <color name="color_transparent">#00000000</color>
+    <color name="dan_red">#fef3f1</color>
+    <color name="red1">#f80400</color>
+    <color name="juse">#f64d07</color>
 
     <color name="fu_back">#e3f1ff</color>
     <color name="ivory">#fffff0</color> <!-- 象牙色 -->

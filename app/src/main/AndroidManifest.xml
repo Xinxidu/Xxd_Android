@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <!-- android:theme="@style/Theme.AppCompat.NoActionBar"> -->
     <application
         android:name=".base.App"
@@ -58,7 +59,8 @@
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity android:name=".activity.TeacherDetailsActivity" />
         <activity android:name=".activity.HuaTongRegisterActivity" />
-        <activity android:name=".activity.ProfitSkillDetailActivity"></activity>
+        <activity android:name=".activity.ProfitSkillDetailActivity" />
+        <activity android:name=".fragments.marketunscramble.MarketUnscrambleActivity"/>
     </application>
 
 </manifest>

@@ -50,7 +50,7 @@ public class ProfitSkillActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profit_skill);
         ButterKnife.bind(this);
-        tvTitle.setText("盈利技巧");
+        tvTitle.setText("行情解读");
         //获取控件id
         initView();
         //创建适配器，并设置加载更多监听

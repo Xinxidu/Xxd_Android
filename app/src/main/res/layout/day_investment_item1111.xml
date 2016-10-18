@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ripple_bg"
+    android:id="@+id/linearlayout"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/red1"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dan_red"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:text="鑫西都：论升息美元鑫西都：论升息美元"
+        android:textColor="@color/danback"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="美指绝地反击，原油遇阻回落"
+        android:textColor="@color/danback"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_body"
+        android:layout_below="@+id/tv_body"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="9dp"
+        android:maxLines="3"
+        android:maxWidth="160dp"
+        android:text="2016:12:03"
+        android:textColor="@color/category_text_nomal"
+        android:textSize="10dp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/hui_dan" />
+
+</LinearLayout>

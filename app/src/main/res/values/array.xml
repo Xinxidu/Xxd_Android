@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="languages">
-            <item>白银升贴水1000</item>
-            <item>龙天勇银 </item>
-            <item>白银现货排期</item>
-            <item>白银基差1000</item>
+        <item>白银升贴水1000</item>
+        <item>龙天勇银 </item>
+        <item>白银现货排期</item>
+        <item>白银基差1000</item>
+    </string-array>
+    <string name="ribao">e日报</string>
+    <string name="zhoubao">e周报</string>
+    <string name="yuebao">e月报</string>
+
+    <string-array name="tab_car">
+        <item>@string/ribao</item>
+        <item>@string/zhoubao</item>
+        <item>@string/yuebao</item>
     </string-array>
 </resources>

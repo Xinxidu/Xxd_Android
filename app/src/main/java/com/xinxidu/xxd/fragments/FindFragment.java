@@ -17,6 +17,7 @@ import com.xinxidu.xxd.activity.LiveRoomActivity;
 import com.xinxidu.xxd.activity.ProfitSkillActivity;
 import com.xinxidu.xxd.activity.TeacherTeamActivity;
 import com.xinxidu.xxd.activity.TeacherTeamActivity1;
+import com.xinxidu.xxd.fragments.marketunscramble.MarketUnscrambleActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -79,7 +80,8 @@ public class FindFragment extends Fragment {
                 DayInvestmentActivity.startDayInvestmentActivity(getActivity());
                 break;
             case R.id.find_profit:
-                ProfitSkillActivity.startProfitSkillActivity(getActivity());
+//                ProfitSkillActivity.startProfitSkillActivity(getActivity());
+                MarketUnscrambleActivity.startMarketUnscrambleActivity(getActivity());
                 break;
             case R.id.find_teacherteam:
 //                TeacherTeamActivity.startTeacherTeamActivity(getActivity());

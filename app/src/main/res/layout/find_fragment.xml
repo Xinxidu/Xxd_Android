@@ -52,7 +52,7 @@
                 android:id="@+id/find_profit"
                 style="@style/MyTextView"
                 android:drawableLeft="@drawable/earning_skills"
-                android:text="盈利技巧" />
+                android:text="行情解读" />
 
             <View style="@style/MyView" />
 
