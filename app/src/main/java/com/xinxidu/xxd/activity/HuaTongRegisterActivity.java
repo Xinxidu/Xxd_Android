@@ -58,8 +58,8 @@ public class HuaTongRegisterActivity extends Activity {
         wvReg.setVerticalScrollBarEnabled(false);
         //运行webview通过URI获取安卓文件
         wvReg.getSettings().setAllowFileAccess(true);
-        wvReg.getSettings().setAllowFileAccessFromFileURLs(true);
-        wvReg.getSettings().setAllowUniversalAccessFromFileURLs(true);
+//        wvReg.getSettings().setAllowFileAccessFromFileURLs(true);
+//        wvReg.getSettings().setAllowUniversalAccessFromFileURLs(true);
 
 //        wvReg.setWebChromeClient(new MyWebChromeClient());//设置可以打开图片管理器
 
