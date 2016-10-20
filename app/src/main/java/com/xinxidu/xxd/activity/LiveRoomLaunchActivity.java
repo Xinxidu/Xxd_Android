@@ -22,6 +22,8 @@ public class LiveRoomLaunchActivity extends AppCompatActivity {
     public static void startLiveRoomLaunchActivity(Context context) {
         Intent intent = new Intent(context, LiveRoomLaunchActivity.class);
         context.startActivity(intent);
+
+
     }
 
     @Override

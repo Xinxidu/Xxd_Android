@@ -36,6 +36,7 @@ public class LiveRoomActivity extends AppCompatActivity {
     public static void startLiveRoomActivity(Context context) {
         Intent intent = new Intent(context, LiveRoomActivity.class);
         context.startActivity(intent);
+
     }
 
     @Override
