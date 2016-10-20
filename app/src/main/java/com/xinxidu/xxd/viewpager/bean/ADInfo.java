@@ -9,7 +9,7 @@ public class ADInfo {
 	String url = "";
 	String content = "";
 	String type = "";
-
+    int value = 0;
 	public String getId() {
 		return id;
 	}
@@ -25,7 +25,12 @@ public class ADInfo {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-
+    public void setValue(int value){
+		this.value = value;
+	}
+	public int getValue() {
+		return  value;
+	}
 	public String getContent() {
 		return content;
 	}

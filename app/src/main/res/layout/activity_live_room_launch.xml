@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_live_room_launch"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xinxidu.xxd.activity.LiveRoomLaunchActivity">
+    <include layout="@layout/title"
+        android:id="@+id/title"/>
+
+    <ImageView
+        android:id="@+id/iv_live"
+        android:layout_below="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/liveroom" />
+
+    <Button
+        android:id="@+id/bt_live"
+        android:layout_width="250dp"
+        android:layout_below="@+id/title"
+        android:layout_height="40dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="440dp"
+        android:background="@color/green"/>
+</RelativeLayout>

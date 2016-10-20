@@ -27,12 +27,14 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.nostra13.universalimageloader.utils.L;
 import com.xinxidu.xxd.R;
 import com.xinxidu.xxd.activity.BroadcastNewsActivity;
 import com.xinxidu.xxd.activity.FinanceCalendarActivity;
 import com.xinxidu.xxd.activity.HotActivity;
 import com.xinxidu.xxd.activity.HotTradeActivity;
 import com.xinxidu.xxd.activity.HuaTongLoginActivity;
+import com.xinxidu.xxd.activity.LiveRoomLaunchActivity;
 import com.xinxidu.xxd.activity.LiveTelecastURLActivity;
 import com.xinxidu.xxd.base.App;
 import com.xinxidu.xxd.event.Engine;
@@ -122,7 +124,7 @@ public class HomeFagment extends Fragment {
             "http://pic30.nipic.com/20130626/8174275_085522448172_2.jpg",
             "http://pic18.nipic.com/20111215/577405_080531548148_2.jpg",
             "http://pic15.nipic.com/20110722/2912365_092519919000_2.jpg"};
-
+    private int[] imgs = {R.drawable.banner0,R.drawable.banner0,R.drawable.banner0,R.drawable.banner0};
     @Override
     public void onCreate(Bundle savedInstanceState) {
         mEngine = App.getInstance().getEngine();
@@ -150,29 +152,36 @@ public class HomeFagment extends Fragment {
     @SuppressLint("NewApi")
     private void initialize() {
         cycleViewPager = (CycleViewPager) getChildFragmentManager().findFragmentById(R.id.fragment_cycle_viewpager_content);
-        for (int i = 0; i < imageUrls.length; i++) {
+//        for (int i = 0; i < imageUrls.length; i++) {
+//            ADInfo info = new ADInfo();
+//            info.setUrl(imageUrls[i]);
+//            info.setContent("图片-->" + i);
+//            infos.add(info);
+//        }
+        ImageView[] imageViews = new ImageView[imgs.length];
+        for (int i = 0; i < 4; i++){
+            ImageView imageView = new ImageView(getActivity());
+            imageViews[i] = imageView;
+            imageView.setImageResource(R.drawable.banner0);
             ADInfo info = new ADInfo();
-            info.setUrl(imageUrls[i]);
-            info.setContent("图片-->" + i);
+            info.setValue(imgs[i]);
             infos.add(info);
+            views.add(imageView);
         }
-
         // 将最后一个ImageView添加进来
-        views.add(ViewFactory.getImageView(getActivity(), infos.get(infos.size() - 1).getUrl()));
-        for (int i = 0; i < infos.size(); i++) {
-            views.add(ViewFactory.getImageView(getActivity(), infos.get(i).getUrl()));
-        }
+//        views.add(ViewFactory.getImageView(getActivity(), infos.get(infos.size() - 1).getUrl()));
+//        for (int i = 0; i < infos.size(); i++) {
+//            views.add(ViewFactory.getImageView(getActivity(), infos.get(i).getUrl()));
+//        }
         // 将第一个ImageView添加进来
-        views.add(ViewFactory.getImageView(getActivity(), infos.get(0).getUrl()));
-
+        //views.add(ViewFactory.getImageView(getActivity(), infos.get(0).getUrl()));
         // 设置循环，在调用setData方法前调用
         cycleViewPager.setCycle(true);
-
         // 在加载数据前设置是否循环
-        cycleViewPager.setData(views, infos, mAdCycleViewListener);
+       // cycleViewPager.setData(views, infos, mAdCycleViewListener);
+        cycleViewPager.setData(views,infos,mAdCycleViewListener);
         //设置轮播
         cycleViewPager.setWheel(true);
-
         // 设置轮播时间，默认5000ms
         cycleViewPager.setTime(2000);
         //设置圆点指示图标组居中显示，默认靠右
@@ -186,7 +195,10 @@ public class HomeFagment extends Fragment {
             if (cycleViewPager.isCycle()) {
                 position = position - 1;
             }
-
+            System.out.println(position);
+            if (position == 0){
+                LiveRoomLaunchActivity.startLiveRoomLaunchActivity(getActivity());
+            }
         }
 
     };

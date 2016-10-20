@@ -60,7 +60,8 @@
         <activity android:name=".activity.TeacherDetailsActivity" />
         <activity android:name=".activity.HuaTongRegisterActivity" />
         <activity android:name=".activity.ProfitSkillDetailActivity" />
-        <activity android:name=".fragments.marketunscramble.MarketUnscrambleActivity"/>
+        <activity android:name=".fragments.marketunscramble.MarketUnscrambleActivity" />
+        <activity android:name=".activity.LiveRoomLaunchActivity"></activity>
     </application>
 
 </manifest>
