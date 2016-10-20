@@ -12,77 +12,32 @@
         android:background="@color/dan_back"
         android:layout_below="@+id/include"/>
 
-    <ViewFlipper
-        android:id="@+id/flipper1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_below="@+id/include"/>
-
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/ll_week"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/flipper1"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal">
+        android:layout_below="@+id/include"
+        android:background="@color/not_enough_business_consumer_">
 
-        <TextView
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="周日"
-            android:textColor="@color/black"/>
+            android:layout_centerVertical="true"
+            android:background="@color/not_enough_business_consumer_"
+            android:scrollbars="none"
+            android:layout_toLeftOf="@+id/tv_fabu"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/tv_fabu"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="周一"
-            android:textColor="@color/black"/>
+            android:text="已发布"
+            android:padding="5dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="周二"
-            android:textColor="@color/black"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="周三"
-            android:textColor="@color/black"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="周四"
-            android:textColor="@color/black"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="周五"
-            android:textColor="@color/black"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="周六"
-            android:textColor="@color/black"/>
-    </LinearLayout>
+    </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
@@ -96,6 +51,5 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/ll_week"
-        android:layout_marginTop="5dp"
         android:background="@color/dan_back" />
 </RelativeLayout>

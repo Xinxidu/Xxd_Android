@@ -20,4 +20,6 @@ public class Compares {
     public static final String REG_URL = URL + "/app/controller/user/reg/json";
     //名师团队
     public static final String TEACHER_URL = URL + "/Team";
+    //热门交易
+    public static final String HOT_MARKET = URL + "XDSY/latestInformation";
 }

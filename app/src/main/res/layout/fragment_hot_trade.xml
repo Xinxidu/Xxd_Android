@@ -57,11 +57,10 @@
             android:id="@+id/tv_volume"
             android:layout_width="80dp"
             android:layout_height="40dp"
-            android:layout_marginRight="7dp"
-            android:layout_toEndOf="@+id/tv_down_up"
-            android:layout_toRightOf="@+id/tv_down_up"
             android:background="@null"
-            android:popupBackground="@drawable/spinner_background"/>
+            android:popupBackground="@drawable/spinner_background"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tv_down_up" />
         <!--android:dropDownVerticalOffset="40dp"
         android:layout_centerVertical="true"-->
     </RelativeLayout>
